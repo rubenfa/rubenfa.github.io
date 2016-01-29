@@ -410,3 +410,9 @@ header.header-post .post-heading .post-subheading {
 .blog-post table tr td :last-child {
   margin-bottom: 0;
 }
+
+
+.error-404 {
+    background-image: url("../img/404-gandalf.jpg");
+    background-repeat: no-repeat;
+}
