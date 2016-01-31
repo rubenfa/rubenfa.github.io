@@ -12,5 +12,6 @@ saco un rato, intento programar aplicaciones web con **Elixir** y **Phoenix**.
 
 Mi mayor hobbie es la lectura. Me gustan mucho los libros de ciencia ficción y las novelas históricas, aunque leo cualquier libro que sea bueno. 
 
-Siempre estoy dispuesto a ayudar, así que si quieres hacerme alguna consulta, no dudes en escribirme. En el pie del blog encontrarás como hacerlo.
+Siempre estoy dispuesto a ayudar, así que si quieres hacerme alguna consulta, no dudes en escribirme. Puedes mandarme un correo electrónico a "contacto" + arroba + el dominio de este blog, 
+o buscarme en [Twitter](https://twitter.com/_rubenfa).
 
