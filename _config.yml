@@ -28,7 +28,7 @@ avatar: "/img/avatar-icon.png"
 # List of links in the navigation bar
 navbar-links:
   Blog: ""
-  About me: "Sobre mí"
+  Sobre mi: "aboutme"
   
 # --- Footer options --- #
 

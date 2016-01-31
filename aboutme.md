@@ -1,16 +1,16 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Sobre mí
+subtitle: Quién soy, y a qué me dedico
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Me llamo **Rubén Fernández**, y me gano la vida programando en entornos .NET. Tengo unos cuantos años de experiencia, y durante mi vida laboral, he trabajado práticamente con todo
+(incluso con Visual Basic 6). 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Como no sólo de .NET vive el hombre, intento aprender otras plataformas o tecnologías que no tengan que ver con el mundo Microsoft. Por ejemplo me gusta mucho **MongoDB**, y si 
+saco un rato, intento programar aplicaciones web con **Elixir** y **Phoenix**.
 
-What else do you need?
+Mi mayor hobbie es la lectura. Me gustan mucho los libros de ciencia ficción y las novelas históricas, aunque leo cualquier libro que sea bueno. 
 
-### my history
+Siempre estoy dispuesto a ayudar, así que si quieres hacerme alguna consulta, no dudes en escribirme. En el pie del blog encontrarás como hacerlo.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
