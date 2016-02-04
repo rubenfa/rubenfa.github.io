@@ -12,10 +12,10 @@ layout: default
         {% endif %}
         
         {% assign months = "enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre" | split: "|" %}
-	{% assign m = page.date | date: "%-m" | minus: 1 %}
-	{% assign day = page.date | date: "%d" %}
-	{% assign month = months[m] %}
-	{% assign year = page.date | date: "%Y" %}
+        {% assign m = page.date | date: "%-m" | minus: 1 %}
+        {% assign day = page.date | date: "%d" %}
+        {% assign month = months[m] %}
+        {% assign year = page.date | date: "%Y" %}
         <span class="post-meta">Publicado el {{ day }} de {{ month }} de {{ year }}</span>
       </div>
      </div>
