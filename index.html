@@ -18,7 +18,12 @@ subtitle: Programación en general, .NET en particular
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+    	{% assign months = "enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre" | split: "|" %}
+	{% assign m = page.date | date: "%-m" | minus: 1 %}
+	{% assign day = page.date | date: "%d" %}
+	{% assign month = months[m] %}
+	{% assign year = page.date | date: "%Y" %}
+        Publicado el {{ day }} de {{ month }} de {{ year }}
     </p>
   
     <div class="post-entry">
