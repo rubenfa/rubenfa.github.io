@@ -70,7 +70,7 @@ disqus: "charlascylon"
 # Output options (more information on Jekyll's site)
 timezone: "Europe/Madrid"
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:year-:month-:day-:title
 paginate: 5
 
@@ -134,7 +134,7 @@ prose:
           element: "text"
           label: "Date"
           help: "Enter date of post."
-          placeholder: "yyyy-mm-dd"
+          placeholder: "dd-mm-yyyy"
           alterable: true
       - name: "published"
         field:
