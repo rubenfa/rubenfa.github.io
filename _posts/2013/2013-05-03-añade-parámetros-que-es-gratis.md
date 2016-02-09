@@ -37,8 +37,11 @@ forma bastante sencilla. Por ejemplo, suponiendo el método:
 
 
 {% highlight csharp %}
-public XmlDocument GenerateXML(int id_cliente, string nombre_cliente, boolean recibir_publicidad_cliente, DateTime fecha_alta_cliente,                                                               int id_producto_comprado, string descripcion_producto_comprado,                                                                       DateTime fecha_lanzamiento, string codigo_activacion_producto_comprado,
-                               string version_producto_comprado, int dias_validez_producto_comprado)
+public XmlDocument GenerateXML(
+    int id_cliente, string nombre_cliente, boolean recibir_publicidad_cliente, DateTime fecha_alta_cliente,                                                               
+    int id_producto_comprado, string descripcion_producto_comprado,                                                                       
+    DateTime fecha_lanzamiento, string codigo_activacion_producto_comprado,
+    string version_producto_comprado, int dias_validez_producto_comprado)    
 {% endhighlight %}
  
 
