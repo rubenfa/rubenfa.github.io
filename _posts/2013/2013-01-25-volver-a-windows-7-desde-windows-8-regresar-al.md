@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Volver a Windows 7 desde Windows 8, regresar al pasado
+redirect_from:
+  - /post/61794326558/volver-a-windows-7-desde-windows-8-regresar-al 
 ---
 
 Cuando instalé Windows 8 en mi ordenador portátil hace unos
