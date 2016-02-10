@@ -6,7 +6,7 @@ redirect_from:
 ---
 
 [El otro día
-empecé](http://charlasconuncylon.blogspot.com.es/2013/06/introduccion-nosql-y-las-bases-de-datos.html)
+empecé](http://charlascylon.com/post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html)
 lo que va a ser una serie de artículos sobre **MongoDB**. Aunque la
 intención es explicar como trabajar con **.NET** en MongoDB, la primera
 tanda de artículos estará relacionada directamente con el gestor de base
