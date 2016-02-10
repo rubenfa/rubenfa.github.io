@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Añade parámetros, que es gratis
+redirect_from:
+  - /post/61794331798/añade-parámetros-que-es-gratis.html
 ---
 
 Estoy añadiendo funcionalidad a un web service existente y me he

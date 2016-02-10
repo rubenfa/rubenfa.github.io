@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Mejorando la consola de Windows con ConEmu y PowerShell
+redirect_from:
+  - /post/61794335283/mejorando-la-consola-de-windows-con-conemu-y.html
 ---
 
 [El otro día

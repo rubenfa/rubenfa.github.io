@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Cursos gratuitos sobre MongoDB
+redirect_from:
+  - /post/61794328985/cursos-gratuitos-sobre-mongodb.html
 ---
 Una entrada rápida.
 
