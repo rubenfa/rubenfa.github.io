@@ -196,7 +196,7 @@ proyección**.
     {age:34,isActive:true},
     {name:1,age:1,isActive:1}
   ).pretty()
- ```
+```
 
 Que nos devuelve solo los campos que queremos … además de el *\_id*. El
 *\_id*por defecto se muestra siempre, así que si queremos ocultarlo hay
@@ -247,11 +247,10 @@ comillas. Esto es porque el motor JavaScript de **MongoDB**se encarga de
 añadirlas. Esto nos facilita la escritura de consultas, ya que no son
 obligatorias. De hecho, la siguiente consulta, funcionará perfectamente:
 
-```javascript
+```
 db.people.findOne(
     {“age”:34,”isActive”:true},
-    {“name”:0,”age”:0,”isActive”:0,”_id”:0}
-  )
+    {“name”:0,”age”:0,”isActive”:0,”_id”:0}  
 ```
 
 ### Conclusión
