@@ -36,20 +36,20 @@ En mi caso el método tiene conjuntos de datos que se podrían agrupar de
 forma bastante sencilla. Por ejemplo, suponiendo el método:
 
 
-{% highlight csharp %}
+```csharp
 public XmlDocument GenerateXML(
     int id_cliente, string nombre_cliente, boolean recibir_publicidad_cliente, 
     DateTime fecha_alta_cliente, int id_producto_comprado, string descripcion_producto_comprado,                                   
     DateTime fecha_lanzamiento, string codigo_activacion_producto_comprado, string version_producto_comprado,
     int dias_validez_producto_comprado )    
-{% endhighlight %}
+```
  
 
 He creado un método con 10 parámetros y hasta me he cansado.
 Independientemente de lo que haga este método, ¿no es más fácil hacerlo
 de esta otra manera?:
 
-{% highlight csharp %}
+```csharp
 struct Cliente 
 {    
         public int id { get; set; }    
@@ -71,7 +71,7 @@ struct Cliente
  
  public XmlDocument GenerateXML(Cliente cliente, Producto producto)
 
-{% endhighlight %}
+```
 
 Yo lo he hecho con estructuras, pero se podría hacer lo mismo con
 clases. Instanciando un objecto ***Cliente***y otro ***Producto***, nos
