@@ -191,7 +191,7 @@ Si queremos seleccionar solo algunos de los campos, deberemos utilizar
 el segundo parámetro de la consulta find para **definir una
 proyección**.
 
-```javascript
+```
  db.people.find(
     {age:34,isActive:true},
     {name:1,age:1,isActive:1}
