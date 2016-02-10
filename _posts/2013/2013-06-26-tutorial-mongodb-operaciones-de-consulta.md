@@ -252,7 +252,7 @@ db.people.findOne(
     {“age”:34,”isActive”:true},
     {“name”:0,”age”:0,”isActive”:0,”_id”:0}
   )
- ```
+```
 
 ### Conclusión
 
@@ -260,8 +260,7 @@ Realizar consultas sencillas **con la shell o consola de MongoDB**es
 bastante simple y no tiene demasiadas complicaciones. Pero nos hemos
 dejado varias cosas en el tintero. Por ejemplo ¿cómo selecciono los
 documentos cuyo campo age sea menor o igual a 34? ¿Cómo busco dentro de
-arrays de elementos?\
-\
+arrays de elementos?
 
 Estas son cosas que explicaremos en la siguiente entrada sobre consultas
 avanzadas en **MongoDB**.
