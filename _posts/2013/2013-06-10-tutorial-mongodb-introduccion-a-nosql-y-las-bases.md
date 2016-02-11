@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tutorial MongoDB: Introducción a NoSQL y las bases de datos documentales.
+title: Tutorial MongoDB. Introducción a NoSQL y las bases de datos documentales.
 redirect_from:
   - /post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html
 ---
