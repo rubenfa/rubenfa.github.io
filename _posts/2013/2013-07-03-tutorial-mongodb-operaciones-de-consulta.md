@@ -6,10 +6,8 @@ redirect_from:
 ---
 
 <blockquote>
-<p><strong>Nota: </strong>Recuerda que este artículo foma parte del tutorial de MongoDB, al que puedes acceder desde <a href="http://www.charlascylon.com/mongodb"> este enlace.</a> En el tutorial explico como instalar MongoDB, como conectar a la base de datos o cosas más avanzadas com Aggregation Framework y conjuntos de réplicas. </p> 
+<p><strong>Nota: </strong>Recuerda que este artículo foma parte del tutorial de MongoDB, al que puedes acceder desde <a href="http://www.charlascylon.com/mongodb">este enlace.</a> En el tutorial explico como instalar MongoDB, como conectar a la base de datos o cosas más avanzadas com Aggregation Framework y conjuntos de réplicas. </p> 
 </blockquote>
-
-
 
 <p>En el pasado artículo, hicimos una aproximación a los comandos <em>find </em>y <em>findOne</em>, para realizar consultas sencillas sobre <strong>MongoDB</strong>. En esta entrada profundizaremos un poco más y explicaremos consultas más complicadas. Inicialmente había pensado explicar todo en un solo artículo, pero creo que este hubiera sido demasiado largo, así que vamos a dividirlo en dos partes. </p>
 
@@ -46,7 +44,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({age:{$gt:30}},{name:1,age:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.01.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Como veis la consulta es bastante sencilla. Como primer parámetro del comando find añadimos la consulta y como segunda parte una proyección con los datos que queremos que nos devuelva dicha consulta (en este caso <em>name </em>y <em>age</em>). Todo en <strong>MongoDB </strong>se hace con <em>JSON </em>así que para buscar los mayores de 30 años añadimos otro documento <em>JSON </em>con el operador utilizado y el valor por el que debe filtrar.</span></div>
 </div>
@@ -59,7 +57,7 @@ redirect_from:
 <div><br/><div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({age:{$gte:30}},{name:1,age:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.02.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Lo mismo haremos si queremos obtener las personas menores de 30 años utilizando los comandos <strong><em>$lt</em></strong> (“lower than”) o <strong><em>$lte</em></strong> (“lower than equals”).</span></div>
 </div>
@@ -67,7 +65,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({age:{$lt:30}},{name:1,age:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.03.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Y si quisieramos extraer todas las personas cuya edad NO es 30 utilzaríamos el operador <strong><em>$ne</em></strong>.</span></div>
 </div>
@@ -75,7 +73,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({age:{$ne:30}},{name:1,age:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.04.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Imaginemos ahora que queremos extraer las personas con una edad igual a 25, 30 o 35 años. En SQL podríamos utilizar un <em>WHERE age IN (25,30,35)</em>. En <strong>MongoDB </strong>utilizaríamos el operador <strong><em>$in</em></strong> y un array con los datos.</span></div>
 </div>
@@ -85,7 +83,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({age:{$in:[25,30,35]}},{name:1,age:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.05.js" type="text/javascript"></script><div><br/><span>Esta consulta nos devuelve todos las presonas cuyas edades son igual a 25, 30 o 35.</span><br/><span><br/></span></div>
+<div><br/><span>Esta consulta nos devuelve todos las presonas cuyas edades son igual a 25, 30 o 35.</span><br/><span><br/></span></div>
 <div>
 <h3><strong><span>Comparaciones con strings</span></strong></h3>
 </div>
@@ -128,7 +126,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({company:{$exists:true}},{name:1,age:1,company:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.06.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Si quisieramos buscar los documentos que no tienen el campo company, bastará con cambiar el true por un false en el <strong><em>$exists.</em></strong></span></div>
 </div>
@@ -142,7 +140,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({company:{$type:2}},{name:1,age:1,company:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.07.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>En este caso estamos buscando los documentos cuyo campo company sea de tipo 2, que es el tipo <em>string</em>. Podéis encontrar número asignado a cada tipo <a href="http://docs.mongodb.org/manual/reference/operator/type/#op._S_type">en la ayuda del operador $type en la página de MongoDB</a>.</span></div>
 </div>
@@ -159,7 +157,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find( <br/>  { $or: <br/>     [ <br/>       {gender:"female"}, <br/>       {age:{$gt:20}} <br/>     ] <br/>   } , <br/>   {name:1,gender:1,age:1} )</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.08.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>En este caso buscamos los documentos cuyo campo gender sea “<em>female</em>&ldquo; o cuyo campo <em>age </em>sea mayor que 20. Como vemos basta con especificar un array de condiciones para que el operador <em><strong>$o</strong></em>r realice la consulta.</span></div>
 </div>
@@ -177,7 +175,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find(<br/>  { <br/>    $and: <br/>      [ <br/>        {gender:"female"}, <br/>        {age:{$gt:20}} <br/>      ] <br/>   } , <br/>   {name:1,gender:1,age:1} )</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.09.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Pues es curioso, porque en realidad, la consulta es la misma. En la primera, <strong>MongoDB </strong>hace un<em> and implícito </em>de los parámetros de la consulta, mientras que en la segunda hemos incluido el<em> and explícitamente</em>. </span></div>
 </div>
@@ -192,7 +190,7 @@ redirect_from:
 <pre class="consolestyle">&gt; db.people.find( {age:{$gt:30},age:{$lt:40}} , {name:1,gender:1,age:1} )</pre>
 <pre class="consolestyle">&gt; db.people.find( {age:{$lt:40},age:{$gt:30}} , {name:1,gender:1,age:1} )</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.10.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Si las ejecutáis veréis que devuelven resultados distintos. Esto es porque <strong>MongoDB </strong>coge el último valor para realizar la consulta. La consulta correcta sería:</span></div>
 </div>
@@ -202,7 +200,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find( <br/> {<br/>  $and:<br/>   [<br/>     {age:{$gt:30}},<br/>     {age:{$lt:40}}<br/>   ]} , <br/>   {name:1,gender:1,age:1} )</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.11.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span><em><strong>$and</strong></em> también puede ser útil para filtrar conjuntamente con <strong><em>$or</em></strong></span></div>
 </div>
@@ -210,7 +208,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">db.people.find( <br/>  {$or:<br/>     [ {age:{$gt:30}}, <br/>         {$and:[<br/>                 {age:{$gt:50}},<br/>                 {gender:"female"}<br/>                ]<br/>          } <br/>      ] <br/>   })</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.12.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Este comando nos buscará las personas en people cuya edad es mayor que 30, o cuyo género es “female” y su edad mayor que 50.</span></div>
 </div>
@@ -228,7 +226,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find( {age:{$not:{$gt:30}}})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.13.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Lo importante en este caso, es saber que <strong><em>$not </em></strong>solo puede usarse con otros operadores como <strong><em>$gt o $lt</em></strong>. No puede usarse con valores directos o documentos. Para eso ya existe el operador <strong><em>$ne</em></strong> que hemos explicado antes. También hay que tener en cuenta que estamos buscando edades que no sean mayores que 30. Esto incluye el 30, ya que está fuera del conjunto de números mayores que 30 , y los documentos que no tengan campo <em>age</em>.</span></div>
 </div>
@@ -240,7 +238,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">&gt; db.people.find({$nor:[{age:{$gt:30}},{isActive:true}]},{age:1,isActive:1})</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.14.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>Destacar que al igual que <strong><em>$not</em></strong>, <em><strong>$nor</strong></em> devuelve también los documentos si los campos no existen. Para evitar esto, si es algo que no deseamos, podemos añadir el operador <strong><em>$exists</em></strong>.</span></div>
 </div>
@@ -248,7 +246,7 @@ redirect_from:
 <div class="hiddenCode">
 <pre class="consolestyle">db.people.find(<br/>     {$nor:<br/>       [ {age:{$gt:30}},{age:{$exists:false}},<br/>         {isActive:true},{isActive:{$exists:false}}<br/>       ]<br/>     })</pre>
 </div>
-<script src="https://gist.github.com/rubenfa/7273231.js?file=mongodb.consultas.av.15.js" type="text/javascript"></script><div></div>
+
 <div>
 <div><span>En este caso buscamos los documentos cuya edad NO sea mayor que 30, cuyo campo <em>isActive </em>NO sea true y que ambos campos existan.</span></div>
 </div>
