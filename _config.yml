@@ -29,7 +29,7 @@ avatar: "/img/avatar-icon.png"
 navbar-links:
   Blog: ""
   Sobre mi: "aboutme"
-  Tutorial MongoDB: "tutorialmongo"
+#  Tutorial MongoDB: "tutorialmongo"
   
 # --- Footer options --- #
 
