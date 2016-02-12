@@ -29,11 +29,11 @@ veamos en la necesidad de ordenar los resultados. Y es aquí dónde entra
 el pipeline *$sort*. Su funcionamiento es el siguiente.
 
 ```javascript
-db.people.aggregate(
-     {
-         $sort:{age:1}
-     }
- )
+db.people.aggregate({
+    $sort: {
+        age: 1
+    }
+})
 ```
 
 Con esta consulta devolvemos todos los datos ordenados por edad, en
@@ -41,11 +41,11 @@ orden ascendente. Si quisieramos el orden inverso bastaría con escribir
 un -1 en lugar de un 1 en la consulta.
 
 ```javascript
- db.people.aggregate(
-     {
-         $sort:{age:-1}
-     }
- )
+db.people.aggregate({
+    $sort: {
+        age: -1
+    }
+})
 ```
 
  Coo veis el pipeline es sencillo de entender. Pero ¿qué pasa cuándo
@@ -83,13 +83,13 @@ número de elementos determinado que no serán devueltos en la consulta. 
 Veamos dos ejemplos.
 
 ```javascript
-db.people.aggregate(
-     {$limit: 5}
- )
+db.people.aggregate({
+    $limit: 5
+})
 
- db.people.aggregate(
-     {$skip: 2}
- )
+db.people.aggregate({
+    $skip: 2
+})
 ```
 
 
@@ -98,17 +98,17 @@ otros pipelines. Por ejemplo imaginemos que queremos mostrar la tercera
 persona con más edad de nuestra base de datos. Podríamos hacer algo así:
 
 ```javascript
-db.people.aggregate(
-     {
-         $sort:{age:-1}
-     },
-     {
-         $skip:2
-     },
-     {
-         $limit:1
-     }   
-  )
+db.people.aggregate({
+    $sort: {
+        age: -1
+    }
+},
+{
+    $skip: 2
+},
+{
+    $limit: 1
+})
 ```
 
 Como podéis ver, primero ordenamos los resultados por el campo age de
@@ -128,13 +128,17 @@ veamos un ejemplo del resultado que devolvería una consulta
 **Aggregation Framework** sin utilizar *$unwind*.
 
 ```javascript
-db.people.aggregate(
-     {
-       $match:{name:“Blanchard Giles”}
-     },
-     {$project:{name:1,friends:1}}
-   
-    )
+db.people.aggregate({
+    $match: {
+        name: “BlanchardGiles”
+    }
+},
+{
+    $project: {
+        name: 1,
+        friends: 1
+    }
+})
 ```
 
 Es una consulta que busca una persona cuyo nombre sea “Blanchard Giles”
@@ -143,28 +147,28 @@ así:
 
 ```javascript
 {
-     “result” : [ 
-         {
-             “_id” : ObjectId(“5259c377dcdf4b98c24ca754”),
-             “name” : “Blanchard Giles”,
-             “friends” : [ 
-                 {
-                     “id” : 0,
-                     “name” : “Noble Logan”
-                 }, 
-                 {
-                     “id” : 1,
-                     “name” : “Lessie Francis”
-                 }, 
-                 {
-                     “id” : 2,
-                     “name” : “Susana Ballard”
-                 }
-             ]
-         }
-     ],
-     “ok” : 1
- }
+    “result”: [
+        {
+            “_id”: ObjectId(“5259c377dcdf4b98c24ca754”),
+            “name”: “BlanchardGiles”,
+            “friends”: [
+                {
+                    “id”: 0,
+                    “name”: “NobleLogan”
+                },
+                {
+                    “id”: 1,
+                    “name”: “LessieFrancis”
+                },
+                {
+                    “id”: 2,
+                    “name”: “SusanaBallard”
+                }
+            ]
+        }
+    ],
+    “ok”: 1
+}
 ```
 
 En la consulta normal, se puede ver que *friends* es un array con tantos
@@ -172,13 +176,20 @@ amigos como tenga la persona buscada. Ahora vamos a cambiar la consulta
 para añaidr *$unwind*
 
 ```javascript
-db.people.aggregate(
-     {
-       $match:{name:“Blanchard Giles”}
-     },
-     {$project:{name:1,friends:1}},
-     {$unwind:“$friends”}
-    )
+db.people.aggregate({
+    $match: {
+        name: “BlanchardGiles”
+    }
+},
+{
+    $project: {
+        name: 1,
+        friends: 1
+    }
+},
+{
+    $unwind: “$friends”
+})
 ```
 
 
@@ -188,34 +199,34 @@ resultado sería similar a este:
 
 ```javascript
 {
-     “result” : [ 
-         {
-             “_id” : ObjectId(“5259c377dcdf4b98c24ca754”),
-             “name” : “Blanchard Giles”,
-             “friends” : {
-                 “id” : 0,
-                 “name” : “Noble Logan”
-             }
-         }, 
-         {
-             “_id” : ObjectId(“5259c377dcdf4b98c24ca754”),
-             “name” : “Blanchard Giles”,
-             “friends” : {
-                 “id” : 1,
-                 “name” : “Lessie Francis”
-             }
-         }, 
-         {
-             “_id” : ObjectId(“5259c377dcdf4b98c24ca754”),
-             “name” : “Blanchard Giles”,
-             “friends” : {
-                 “id” : 2,
-                 “name” : “Susana Ballard”
-             }
-         }
-     ],
-     “ok” : 1
- }
+    “result”: [
+        {
+            “_id”: ObjectId(“5259c377dcdf4b98c24ca754”),
+            “name”: “BlanchardGiles”,
+            “friends”: {
+                “id”: 0,
+                “name”: “NobleLogan”
+            }
+        },
+        {
+            “_id”: ObjectId(“5259c377dcdf4b98c24ca754”),
+            “name”: “BlanchardGiles”,
+            “friends”: {
+                “id”: 1,
+                “name”: “LessieFrancis”
+            }
+        },
+        {
+            “_id”: ObjectId(“5259c377dcdf4b98c24ca754”),
+            “name”: “BlanchardGiles”,
+            “friends”: {
+                “id”: 2,
+                “name”: “SusanaBallard”
+            }
+        }
+    ],
+    “ok”: 1
+}
 ```
 
 
@@ -232,13 +243,26 @@ esta entrega. También he añadido el pipeline*$project*, para que quede
 un resultado más limpio.
 
 ```javascript
-db.people.aggregate(   
-     {$project:{friends:1,_id:0}},
-     {$unwind:“$friends”},
-     {$sort:{“friends.name”:1}},
-     {$skip:3},
-     {$limit: 5}
-     )
+db.people.aggregate({
+    $project: {
+        friends: 1,
+        _id: 0
+    }
+},
+{
+    $unwind: “$friends”
+},
+{
+    $sort: {
+        “friends.name”: 1
+    }
+},
+{
+    $skip: 3
+},
+{
+    $limit: 5
+})
 ```
 
 Veamos paso a paso, como **MongoDB** va recuperando los datos. Primero
@@ -255,40 +279,40 @@ resultado obtendremos algo parecido a esto:
 
 ```javascript
 {
-     “result” : [ 
-         {
-             “friends” : {
-                 “id” : 0,
-                 “name” : “Adriana Perry”
-             }
-         }, 
-         {
-             “friends” : {
-                 “id” : 0,
-                 “name” : “Adrienne Herrera”
-             }
-         }, 
-         {
-             “friends” : {
-                 “id” : 1,
-                 “name” : “Adrienne Hester”
-             }
-         }, 
-         {
-             “friends” : {
-                 “id” : 1,
-                 “name” : “Aguilar Holden”
-             }
-         }, 
-         {
-             “friends” : {
-                 “id” : 2,
-                 “name” : “Aguilar Morris”
-             }
-         }
-     ],
-     “ok” : 1
- }
+    “result”: [
+        {
+            “friends”: {
+                “id”: 0,
+                “name”: “AdrianaPerry”
+            }
+        },
+        {
+            “friends”: {
+                “id”: 0,
+                “name”: “AdrienneHerrera”
+            }
+        },
+        {
+            “friends”: {
+                “id”: 1,
+                “name”: “AdrienneHester”
+            }
+        },
+        {
+            “friends”: {
+                “id”: 1,
+                “name”: “AguilarHolden”
+            }
+        },
+        {
+            “friends”: {
+                “id”: 2,
+                “name”: “AguilarMorris”
+            }
+        }
+    ],
+    “ok”: 1
+}
 ```
 
 ### Conclusiones
