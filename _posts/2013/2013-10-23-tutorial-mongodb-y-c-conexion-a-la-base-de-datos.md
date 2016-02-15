@@ -95,7 +95,7 @@ public class PeopleController : ApiController
      var connection = WebConfigurationManager.ConnectionStrings[“MongoDB”].ToString();    
      MongoDataService dataService = new MongoDataService(connection);
 
-     return dataService.findOne(“test”, “people”, String.Format(“{{_id: ObjectId("{0}") }}”, _id));
+     return dataService.findOne(“test”, “people”, String.Format(“{ {_id: ObjectId("{0}") } }”, _id));
   }        
 }
 ```
