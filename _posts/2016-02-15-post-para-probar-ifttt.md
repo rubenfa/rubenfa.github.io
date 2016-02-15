@@ -1,10 +1,11 @@
 ---
 layout: post
 subtitle: y esas cosas
-date: ""
+date: "15-02-2016"
 published: true
 title: Post para probar IFTTT
 ---
+
 
 ## Nuevo post para probar IFTTT
 
