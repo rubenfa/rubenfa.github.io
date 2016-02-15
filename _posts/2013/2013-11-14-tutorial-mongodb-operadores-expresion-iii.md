@@ -71,7 +71,7 @@ db.people.aggregate(
          }   
      
  });
- ```
+```
 
 Esta situación [es la misma que nos
 encontramos](http://www.charlascylon.com/post/61794343130/tutorial-mongodb-operaciones-de-consulta-avanzadas-i "enlace a consultas avanzadas en MongoDB")
@@ -96,7 +96,7 @@ db.people.aggregate(
                  
     }    
  });
- ```
+```
 
 Este ejemplo es un poco más complicado que el anterior. Al igual que
 antes utilizamos el pipeline *$match* con un operador *$and*. La
@@ -122,7 +122,7 @@ db.people.aggregate(
         ]                
     }    
  });
- ```
+```
 
 Todavaía nos queda ver como funciona el operador *$not*, que es un poco
 distinto a los anteriores. Un ejemplo:
@@ -134,7 +134,7 @@ db.people.aggregate(
          age:{$not:{$gte:40}}                   
     }    
  });
- ```
+```
 
 En este caso, al usar el *$not*,  estamos verificando que el campo lo
 contrario a que age sea mayor o igual a 40. Es decir, haremos el
