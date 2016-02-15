@@ -425,3 +425,11 @@ td,
 th {
   padding: 0;
 }
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #E55000;
+  background-color: #DDDAD8;
+  border-radius: 4px;
+}
