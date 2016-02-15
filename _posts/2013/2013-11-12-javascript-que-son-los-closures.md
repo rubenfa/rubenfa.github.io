@@ -34,7 +34,7 @@ function Hucha(monedas) {
     monedasGuardadas += monedas;
     document.write('La hucha tiene ' + monedasGuardadas + 'monedas');
 }
- ```
+```
 
 *JavaScript* maneja esta función de forma que, cuándo se llama por
 ejemplo con un `Hucha(5)`, se crea un contexto con el valor de las
