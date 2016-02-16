@@ -104,19 +104,19 @@ El driver de C# para <strong>MongoDB</strong>, soporta muchos de los operadores 
 
 <p><br/> Lo que buscamos con este método, es generar un método muy genérico, de manera que lo podamos reutilizar para realizar el mayor número de consultas posibles. Y eso podemos conseguir con las <em>expresiones Lambda</em>. Veamos el ejemplo:</p>
 
-// <pre>
-// public string find&amp;lt;T&amp;gt; (string databaseName, string collectionName, Expression&amp;lt;Func&amp;lt;T, bool&amp;gt;&amp;gt; expression) where T: class
-// {
-//     var db = server.GetDatabase(databaseName);
-//     var documents = db.GetCollection&amp;lt;T&amp;gt;(collectionName);
-//     var result = documents.AsQueryable&amp;lt;T&amp;gt;().Where(expression);
-//     
-//     if (result != null)
-//       return result.ToJson();
-//     else
-//       return &amp;quot;{}&amp;quot;;
-// }
-// </pre>
+<code>
+public string find&amp;lt;T&amp;gt; (string databaseName, string collectionName, Expression&amp;lt;Func&amp;lt;T, bool&amp;gt;&amp;gt; expression) where T: class
+{
+    var db = server.GetDatabase(databaseName);
+    var documents = db.GetCollection&amp;lt;T&amp;gt;(collectionName);
+    var result = documents.AsQueryable&amp;lt;T&amp;gt;().Where(expression);
+    
+    if (result != null)
+      return result.ToJson();
+    else
+      return &amp;quot;{}&amp;quot;;
+}
+</code>
 
 En este caso uno de los parámetros recibidos por el método, es una<strong> expresión Lambda</strong> que se resolverá de forma dinámica en tiempo de ejecución. Como veis en ningún momento especificamos el tipo que pasamos como parámetro, ya que los tipos son genéricos y se definirán en el momento de ejecutarse. Veamos como utilizaríamos el método creado para buscar por título, de forma similar a como hacíamos antes:</p>
 
