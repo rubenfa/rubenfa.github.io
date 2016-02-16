@@ -14,7 +14,7 @@ redirect_from:
 <p><br/> El driver de <strong>MongoDB </strong>para <em>C#</em> soporta la utilización de <strong>LINQ </strong>para realizar todo tipo de consultas. La sintaxis de una consulta LINQ será la siguiente<br/><br/>
 
 <pre>
-var collection = database.GetCollection<TDocument>("collectionname");
+var collection = database.GetCollection&lt;TDocument&gt;(&quot;collectionname&quot;);
 </pre>
 
 La clave del asunto, está en el genérico <em>TDocument</em>. El método <em>GetCollection</em> soporta genéricos, por lo que a la hora de usarlo deberemos pasarle el nombre de una clase. En este caso, las clases que utilizaremos como parámetro se conocen como POCO, algo así como <em>Plain Old Class Object</em>, pero que en español suena muy gracioso. Estas clases POCO, no son más que clases simples que solo contienen propiedades, y no contienen métodos, ni implementación de ningún tipo. ¿Y dónde definimos nuestras clases POCO? Como estamos utilizando el patrón <em>modelo-vista-controlador</em>, lo más normal es definir este tipo de elementos en el modelo, ya que son una representación de nuestro modelo de datos. Así que en la carpeta <em>Models </em>de nuestro proyecto vamos a crear un nuevo archivo al que llamaremos <em>DocumentModels.cs</em>. Este archivo contendrá las siguientes clases:</p>
