@@ -105,16 +105,16 @@ El driver de C# para <strong>MongoDB</strong>, soporta muchos de los operadores 
 <p><br/> Lo que buscamos con este método, es generar un método muy genérico, de manera que lo podamos reutilizar para realizar el mayor número de consultas posibles. Y eso podemos conseguir con las <em>expresiones Lambda</em>. Veamos el ejemplo:</p>
 
 <pre>
-public string find<T> (string databaseName, string collectionName, Expression<Func<T, bool>> expression) where T: class
+public string find&lt;T&gt; (string databaseName, string collectionName, Expression&lt;Func&lt;T, bool&gt;&gt; expression) where T: class
 {
     var db = server.GetDatabase(databaseName);
-    var documents = db.GetCollection<T>(collectionName);
-    var result = documents.AsQueryable<T>().Where(expression);
+    var documents = db.GetCollection&lt;T&gt;(collectionName);
+    var result = documents.AsQueryable&lt;T&gt;().Where(expression);
     
     if (result != null)
       return result.ToJson();
     else
-      return "{}";
+      return &quot;{}&quot;;
 }
 </pre>
 
@@ -124,21 +124,21 @@ En este caso uno de los parámetros recibidos por el método, es una<strong> exp
 [HttpPost]
 public ActionResult SearchByTitleLambda(string title)
 {
-    var connection = WebConfigurationManager.ConnectionStrings["MongoDB"].ToString();
+    var connection = WebConfigurationManager.ConnectionStrings[&quot;MongoDB&quot;].ToString();
     MongoDataService dataService = new MongoDataService(connection);
 
-    var documents = dataService.find<Document>( "CylonDM", "Documents", d=> d.title == title);
+    var documents = dataService.find&lt;Document&gt;( &quot;CylonDM&quot;, &quot;Documents&quot;, d=&gt; d.title == title);
 
     ViewBag.Results = documents;
-    ViewBag.TypeSearch = "LINQ y Lambda";
-    return View("SearchResults");
+    ViewBag.TypeSearch = &quot;LINQ y Lambda&quot;;
+    return View(&quot;SearchResults&quot;);
 }
 </pre>
 
 En este caso utilizamos el método find que hemos definido, pero diciéndole que vamos a buscar objetos <em>&lt;Document&gt;</em>. Lo importante está en el tercer parámetro ya que los dos primeros parámetros del método, de tipo string, son el nombre de la base de datos y la colección a consultar. En el último parámetro, en cambio, estamos pasando una <strong>expresión Lambda</strong> para filtrar por el campo <em>title</em>.<br/><br/> Lo bueno de este método, es que podríamos usarlo desde cualquier otra parte de la aplicación, pasándole un filtro y una clase POCO totalmente distinta. ¿Qué queremos consultar de una colección que se llama People? Ya tenemos el método creado, solo hay que llamarlo pasándole como parámetro una clase POCO del tipo <em>People</em>.</p>
 
 <pre>
-var documents = dataService.find<People>( "CylonDM", "People", d=> d.name== name && d.age==33);
+var documents = dataService.find&lt;People&gt;( &quot;CylonDM&quot;, &quot;People&quot;, d=&gt; d.name== name &amp;&amp; d.age==33);
 </pre>
 
 En el método creado para el ejemplo se usa un parámetro string para pasar el nombre de la colección a consultar, pero podemos adaptar el método para que extraiga el nombre  de forma dinámica través de <em>Reflection</em> y ahorrarnos un parámetro. En este caso, el único requisito sería que las clases poco se tendrían que llamar igual que las colecciones de nuestra base de datos <strong> MongoDB</strong>.<br/></p>
