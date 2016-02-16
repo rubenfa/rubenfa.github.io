@@ -105,16 +105,16 @@ El driver de C# para <strong>MongoDB</strong>, soporta muchos de los operadores 
 <p><br/> Lo que buscamos con este método, es generar un método muy genérico, de manera que lo podamos reutilizar para realizar el mayor número de consultas posibles. Y eso podemos conseguir con las <em>expresiones Lambda</em>. Veamos el ejemplo:</p>
 
 <pre>
-public string find&lt;T&gt; (string databaseName, string collectionName, Expression&lt;Func&lt;T, bool&gt;&gt; expression) where T: class
+public string find&amp;lt;T&amp;gt; (string databaseName, string collectionName, Expression&amp;lt;Func&amp;lt;T, bool&amp;gt;&amp;gt; expression) where T: class
 {
     var db = server.GetDatabase(databaseName);
-    var documents = db.GetCollection&lt;T&gt;(collectionName);
-    var result = documents.AsQueryable&lt;T&gt;().Where(expression);
+    var documents = db.GetCollection&amp;lt;T&amp;gt;(collectionName);
+    var result = documents.AsQueryable&amp;lt;T&amp;gt;().Where(expression);
     
     if (result != null)
       return result.ToJson();
     else
-      return &quot;{}&quot;;
+      return &amp;quot;{}&amp;quot;;
 }
 </pre>
 
