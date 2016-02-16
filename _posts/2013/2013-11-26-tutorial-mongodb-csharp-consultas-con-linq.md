@@ -69,16 +69,16 @@ public string findDocumentsByTitle(string databaseName,string collectionName,str
 {
 
     var db = server.GetDatabase(databaseName);
-    var documents = db.GetCollection<Document>(collectionName);
+    var documents = db.GetCollection&lt;Document&gt;(collectionName);
            
-    var result = from d in documents.AsQueryable<Document>()
+    var result = from d in documents.AsQueryable&lt;Document&gt;()
                  where d.title == title
                  select d;
 
     if (result != null)
       return result.ToJson();
     else
-      return "{}";
+      return &quot;{}&quot;;
 }
 </pre>
 
@@ -88,14 +88,14 @@ El método recibe tres parámetros de tipo <em>string</em>. Los dos primeros hac
 [HttpPost]
 public ActionResult SearchByTitle(string title)
 {
-    var connection = WebConfigurationManager.ConnectionStrings["MongoDB"].ToString();
+    var connection = WebConfigurationManager.ConnectionStrings[&quot;MongoDB&quot;].ToString();
     MongoDataService dataService = new MongoDataService(connection);
 
-    var documents = dataService.findDocumentsByTitle("CylonDM", "Documents", title);
+    var documents = dataService.findDocumentsByTitle(&quot;CylonDM&quot;, &quot;Documents&quot;, title);
 
     ViewBag.results = documents;
-    ViewBag.typeSearch = "LINQ";
-    return View("SearchResults");         
+    ViewBag.typeSearch = &quot;LINQ&quot;;
+    return View(&quot;SearchResults&quot;);         
 }
 </pre>
 El driver de C# para <strong>MongoDB</strong>, soporta muchos de los operadores habituales de <strong> LINQ </strong>como son <em>Any</em>, <em>Count</em>, <em>Distinct</em>, <em>First</em>, <em>Last </em>etc. <a href="http://docs.mongodb.org/ecosystem/tutorial/use-linq-queries-with-csharp-driver/" title="enlace a LINQ">Aquí</a> podéis encontrar una lista de ellos, y una explicación de como usarlos.<br/><br/> Pero a pesar de lo bien que funciona, y de lo bonito que ha quedado, tenemos un problema con nuestro método y es que solo nos servirá para buscar por el campo título. Si queremos consultar por otros campos (o combinación de ellos) tendríamos que crear un método para cada caso, lo cual es bastante aburrido e ineficiente. Para solucionar este problema, podemos uilizar la potencia de las <em>expresiónes Lambda</em> y los genéricos.</p>
