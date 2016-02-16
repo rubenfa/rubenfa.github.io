@@ -1,0 +1,92 @@
+---
+layout: post
+title:  Windows Phone. Introducción al patrón MVVM y binding
+redirect_from:
+  - /post/69575487235/windows-phone-introducion-mvvm-y-binding.html
+---
+
+Cuando uno empieza a programar aplicaciones para **Windows Phone**, es
+posible cometer el error de empezar a programar de una forma
+“*tradicional*”. Con tradicional, me refiero, a realizar toda la lógica
+de la aplicación en el *code behind*, para después mostrar los datos
+necesarios directamente sobre la interface gráfica de usuario. Pero
+seguro que pronto nos daremos cuenta de que programar así es caótico,
+complejo y muy difícil de testear. En definitiva, nuestra aplicación se
+puede convertir en un nido de *bugs*.
+
+Todo esto podemos evitarlo en gran medida utilizando  una de las
+características más potentes de **Windows Phone** en particular, y *XAML*
+en general: el patrón **MVVM** y el **binding de datos y de comandos**.
+
+### El patrón MVVM
+
+Si alguna vez habéis utilizado
+[Knockout](http://knockoutjs.com/ "Enlace a Knockout ")para hacer alguna
+aplicación web, entonces habéis utilizado el mismo principio. 
+
+El patrón **MVVM** es un patrón que se utiliza para separar
+completamente la parte visual, de la parte lógica de una aplicación. De
+esta manera modificar una de las partes que forman el modelo no afectará
+al resto de las partes. Las capas que componen el modelo, y que son las
+que le dan nombre, son las siguientes:
+
+-   **Modelo**. Es la capa encargada de gestionar la lógica principal de la aplicación y de controlar el acceso a datos.
+-   **Vista**. Es la parte que es visible para el usuario, y en este caso está programada en *XAML*.
+-   **Vista-Modelo**. Es el pegamento entre la vista y el modelo, y contiene la lógica de presentación. Cuándo algo cambia en el modelo
+    esta capa es la encargada de comunicárselo a la vista. Cuando algo cambia en la vista, o se solicita la ejecución de alguna operación,
+    es esta capa la encargada de comunicárselo al modelo.
+
+Las ventajas entre utilizar el patrón, o meter todo el código
+directamente en el *code behind* de los archivos *XAML* son evidentes.
+El código con la lógica de la aplicación estará completamente separado
+de la vista, por lo que podremos corregir errores, introducir mejoras o
+testearlo con mayor facilidad. Por otro lado, la vista está totalmente
+separada de nuestra lógica de negocio, por lo que es posible repartir
+las tareas entre diseñadores y programadores de forma más sencilla. 
+
+Pero todo esto no serviría de nada sin otra interesante funcionalidad:
+el **data binding** o enlace de datos.
+
+### Data binding
+
+El **data binding**, o en español, enlace de datos, se basa en la idea
+de enlazar propiedades de nuestros archivos *XAML*, con propiedades de
+nuestras vistas-modelos.
+
+Cuándo una propiedad cambia, la vista-modelo se encarga de notificarlo a
+la vista para que pueda actualizar los datos. Esto se consigue
+implementando la interfaz *INotifyPropertyChanged* en la vista-modelo,
+de manera que lancemos un evento con cada cambio en las propiedades.
+
+¿Cómo le decimos a la vista qué vista-modelo debe utilizar? Para ello
+utilizamos el objeto *DataContext* de la vista, que podremos enlazar con
+una vista-modelo en concreto.
+
+Pero ¿y si queremos que la vista comunique algún tipo de cambio o
+petición a realizar? En este caso podremos hacerlo a través del
+**Command Binding** o enlace de comandos.
+
+### Command binding
+
+En este caso, en lugar de datos enlazaremos comandos, de manera que
+cuándo por ejemplo, se pinche en un botón de la vista, se lance una
+petición a un servicio web.
+
+Esto lo conseguimos implementando *ICommand*en nuestras clases. Esta
+interfaz nos obliga a implementar, entre otros, el método *Execute*, que
+ejecutará el código necesario para realizar la operación que ha
+solicitado el usuario. En este caso lo que se realizará, será una
+petición al modelo (recordemos que la lógica de negocio está en el
+modelo), para que realice una petición a nuestro web service.
+
+### Conclusiones
+
+Como vemos el patrón **MVVM** nos ayuda a gestionar de forma sencilla y
+eficiente aplicaciones **Windows Phone**. Cada capa tiene bien
+delimitado su dominio de acción, por lo que realizar cambios en una u
+otra capa, no debería influir en el resto. En futuras entregas, veremos
+algún ejemplo con código, de como podemos implementar este patrón en
+nuestras aplicaciones **Windows Phone**.
+
+
+
