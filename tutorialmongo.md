@@ -37,7 +37,7 @@ Usando MongoDB desde la consola
 
 ## Índices ##
 
-[- Creación, eliminado y tipos de índices](http://charlascylon.com/2013-08-01-tutorial-mongodb-índices)
+- [Creación, eliminado y tipos de índices](http://charlascylon.com/2013-08-01-tutorial-mongodb-índices)
 
 ## Aggregation Framework ##
 
@@ -61,7 +61,6 @@ Usando MongoDB desde la consola
 - [Mapeado de clases con atributos en C#](http://charlascylon.com/2014-10-16-tutorial-mongodb-y-c-mapeado-de-clases-con)
 - [Mapeado de clases con Class Maps y Conventions en C#](http://charlascylon.com/2014-10-24-tutorial-mongodb-modificando-mapeo-class-maps-convention) 
 
-## Administración de MongoDB ##
 ## Réplicas ##
 
 - [Alta disponibilidad con réplicas](http://charlascylon.com/2013-12-05-tutorial-mongodb-alta-disponibilidad-replicas)
