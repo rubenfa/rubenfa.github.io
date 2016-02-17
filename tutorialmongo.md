@@ -14,66 +14,68 @@ no funcionen de la misma manera. Esto es de especial importancia con los artícu
 
 
 Usando MongoDB desde la consola
-Introducción
 
-    Introducción a NoSQL y a las bases de datos documentales
+## Introducción ##
 
-Instalación y configuración
+    
+- [Introducción a NoSQL y a las bases de datos documentales](http://charlascylon.com/2013-06-10-tutorial-mongodb-introduccion-a-nosql-y-las-bases)
 
-    Instalación y configuración de MongoDB
+## Instalación y configuración ##
 
-Operaciones de consulta
+- [Instalación y configuración de MongoDB](http://charlascylon.com/2013-06-20-tutorial-mongodb-instalacion-y-configuración)
 
-    Operaciones de consulta simples
-    Operaciones de consulta avanzadas I
-    Operaciones de consulta avanzadas II
+## Operaciones de consulta ##
 
-Operaciones de actualización
+- [Operaciones de consulta simples](http://charlascylon.com/2013-06-26-tutorial-mongodb-operaciones-de-consulta)
+- [Operaciones de consulta avanzadas I](http://charlascylon.com/2013-07-03-tutorial-mongodb-operaciones-de-consulta)
+- [Operaciones de consulta avanzadas II](http://charlascylon.com/2013-07-10-tutorial-mongodb-operaciones-de-consulta-avanzadas)
 
-    Operaciones de actualización de datos I
-    Operaciones de actualización de datos II
+## Operaciones de actualización ##
 
-Índices
+- [Operaciones de actualización de datos I](http://charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de)
+- Operaciones de actualización de datos II
 
-    Creación, eliminado y tipos de índices
+## Índices ##
 
-Aggregation Framework
+[- Creación, eliminado y tipos de índices](http://charlascylon.com/2013-08-01-tutorial-mongodb-índices)
 
-    Introducción a Aggregation Framework
-    Pipelines con Aggregation Framework I
-    Pipelines con Aggregation Framework II
-    Operadores de expresión I
-    Operadores de expresión II
-    Operadores de expresión III
-    Operadores de expresión IV
+## Aggregation Framework ##
 
-MapReduce
+- [Introducción a Aggregation Framework](http://charlascylon.com/2013-10-10-tutorial-mongodb-introduccion-aggregation-framework)
+- [Pipelines con Aggregation Framework I](http://charlascylon.com/2013-10-17-tutorial-mongodb-pipelines-aggregation-i)
+- [Pipelines con Aggregation Framework II](http://charlascylon.com/2013-10-24-tutorial-mongodb-aggregation-framework-ii)
+- [Operadores de expresión I](http://charlascylon.com/2013-10-31-tutorial-mongodb-operadores-expresion-i)
+- [Operadores de expresión II](http://charlascylon.com/2013-11-05-tutorial-mongodb-operadores-expresion-ii)
+- [Operadores de expresión III](http://charlascylon.com/2013-11-14-tutorial-mongodb-operadores-expresion-iii)
+- [Operadores de expresión IV](http://charlascylon.com/2013-11-21-tutorial-mongodb-aggregation-framework-operadores-iv)
 
-    Consultas de agregación con MapReduce
+## MapReduce ##
 
-Usando MongoDB con el driver de C#
+- [Consultas de agregación con MapReduce](http://charlascylon.com/2013-11-28-tutorial-mongodb-mapreduce)
 
-    Conexión a la base de datos
-    Consultas
-    Consultas con LINQ
-    Mapeado de clases con atributos en C#
-    Mapeado de clases con Class Maps y Conventions en C# 
+## Usando MongoDB con el driver de C# ##
 
-Administración de MongoDB
-Réplicas
+- [Conexión a la base de datos](http://charlascylon.com/2013-10-23-tutorial-mongodb-y-c-conexion-a-la-base-de-datos)
+- [Consultas](http://charlascylon.com/2013-11-08-tutorial-mongodb-csharp-consultas-i)
+- [Consultas con LINQ](http://charlascylon.com/2013-11-26-tutorial-mongodb-csharp-consultas-con-linq)
+- [Mapeado de clases con atributos en C#](http://charlascylon.com/2014-10-16-tutorial-mongodb-y-c-mapeado-de-clases-con)
+- [Mapeado de clases con Class Maps y Conventions en C#](http://charlascylon.com/2014-10-24-tutorial-mongodb-modificando-mapeo-class-maps-convention) 
 
-    Alta disponibilidad con réplicas
-    Creación y configuración de conjuntos de réplicas
-    Trabajando con conjuntos de réplicas
-    Simulando fallos en los conjuntos de réplicas
-    Como funciona el Oplog en un conjunto de réplicas
+## Administración de MongoDB ##
+## Réplicas ##
 
-Sharding
+- [Alta disponibilidad con réplicas](http://charlascylon.com/2013-12-05-tutorial-mongodb-alta-disponibilidad-replicas)
+- [Creación y configuración de conjuntos de réplicas](http://charlascylon.com/2013-12-12-tutorial-mongodb-creacion-configuracion-replicas)
+- [Trabajando con conjuntos de réplicas](http://charlascylon.com/2014-01-09-tutorial-mongodb-trabajando-con-conjuntos-de)
+- [Simulando fallos en los conjuntos de réplicas](2014-01-15-tutorial-mongodb-simulando-fallos-en-los)
+- [Como funciona el Oplog en un conjunto de réplicas](2014-01-24-tutorial-mongodb-como-funciona-el-oplog-en-un)
 
-    Explicando el sharding con una baraja de cartas
-    Eligiendo una sharding key
+## Sharding ##
 
-Trucos y consejos
+- [Explicando el sharding con una baraja de cartas](http://charlascylon.com/2014-01-30-tutorial-mongodb-explicando-el-sharding-con-una)
+- [Eligiendo una sharding key](http://charlascylon.com/2014-10-02-tutorial-mongodb-eligiendo-una-sharding-key)
 
-    Creación y uso de campos autoincrementales
-    Aplicaciones multitenant
+## Trucos y consejos ##
+
+- [Creación y uso de campos autoincrementales](http://charlascylon.com/2013-12-17-mongodb-trucos-y-consejos-campos-autoincrementales)
+- [Aplicaciones multitenant](http://charlascylon.com/2013-10-02-mongodb-trucos-y-consejos-aplicaciones)
