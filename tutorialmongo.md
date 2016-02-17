@@ -13,7 +13,6 @@ con respecto a lo que escribí. Aunque muchos de los artículos que ves en este 
 no funcionen de la misma manera. Esto es de especial importancia con los artículos de MongoDB y .NET, ya que el driver ha sufrido muchos cambios.
 
 
-Usando MongoDB desde la consola
 
 ## Introducción ##
 
