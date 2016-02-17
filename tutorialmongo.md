@@ -4,6 +4,7 @@ title: Tutorial MongoDB
 subtitle: Índice
 redirect_from:
   - /p/tutorial-mongodb.html
+  - /mongodb.html
 ---
 
 
