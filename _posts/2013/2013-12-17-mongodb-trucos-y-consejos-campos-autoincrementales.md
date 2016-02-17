@@ -153,6 +153,6 @@ aquí.](http://www.charlascylon.com/p/tutorial-mongodb.html)*
 ¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog?
 Suscríbete [por correo
 electrónico](http://feedpress.it/e/mailverify?feed_id=charlascylon&loc=es)
-o [por RSS](feed://www.charlascylon.com/rss).*[
+o [por RSS](feed://www.charlascylon.com/feed.xml).*[
 ](http://www.charlascylon.com/p/tutorial-mongodb.html)*
 
