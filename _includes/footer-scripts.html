@@ -1,3 +1,4 @@
+ <!--
 {% if page.common-ext-js %}
   {% for js in page.common-ext-js %}
 	<script src="{{ js }}"></script>
@@ -15,10 +16,12 @@
 	<script src="{{ js | prepend: site.baseurl | replace: '//', '/' }}"></script>
   {% endfor %}
 {% endif %}
-
+-->
+ <!--
 {% if page.common-js %}
-  {% for js in page.common-js %}
+  {% for js in page.common-js %}-->
     <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+     <!--
     {% if js contains 'jquery' %}
       <script>
       	if (typeof jQuery == 'undefined') {
@@ -30,5 +33,10 @@
     {% endif %}
   {% endfor %}
 {% endif %}
+-->
 
 {% include google_analytics.html %}
+
+<script  src="js/bootstrap.min.js"></script>
+<script  src="js/jquery-1.11.2.min.js"></script>
+<script  src="js/main.js"></script>
