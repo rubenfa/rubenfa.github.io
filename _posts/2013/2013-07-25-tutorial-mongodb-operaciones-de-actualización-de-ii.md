@@ -4,13 +4,14 @@ title: Tutorial MongoDB. Operaciones de actualización de datos II
 redirect_from:
   - /post/61794348269/tutorial-mongodb-operaciones-de-actualización-de.html
 ---
-En la pasada entrada](http://www.charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de), vimos como podíamos realizar operaciones que insertaran, borraran o modificaran documentos en **MongoDB**. Para ello utilizabamos comandos como _insert, save, update o remove_, pero con consultas sencillas y sin entrar en modificación de _arrays_ o _subdocumentos_. Así que en esta entrada nos vamos a centrar en la realización de acciones de ese tipo, que lógicamente son muy comunes.
+
+[En la pasada entrada](http://www.charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de), vimos como podíamos realizar operaciones que insertaran, borraran o modificaran documentos en **MongoDB**. Para ello utilizabamos comandos como _insert, save, update o remove_, pero con consultas sencillas y sin entrar en modificación de _arrays_ o _subdocumentos_. Así que en esta entrada nos vamos a centrar en la realización de acciones de ese tipo, que lógicamente son muy comunes.
 
 ## Operadores $set y $unset
 
 Ya vimos en la anterior entrada, que para actualizar o añadir un campo a un documento existente, debemos utilizar el comando _$set_.
 
-    &gt; db.products.update({
+     db.products.update({
       _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
       {
         $set:{cantidad:52,
@@ -31,7 +32,7 @@ En la anterior consulta, nos valemos de _$set_ para modificar el documento con _
 
 Si queremos eliminar un campo de un documento, deberemos hacer una consulta similar, pero utilizando _$unset_.
 
-    &gt; db.products.update(
+     db.products.update(
       { _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
       {
         $unset:{descripcion:1}
@@ -51,7 +52,7 @@ La consulta es bastante similar a la que utilizabamos antes, pero en este caso _
 
 Actualizar datos simples es sencillo, pero la cosa puede complicarse cuando queremos actualizar arrays con varios elementos o subdocumentos con varios campos. Vamos a insertar un nuevo producto para hacer algunas pruebas.
 
-    &gt; db.products.insert(
+     db.products.insert(
     	{
     		nombre : " Placa Base Asus",
     		cantidad : 10,
@@ -72,14 +73,14 @@ Actualizar datos simples es sencillo, pero la cosa puede complicarse cuando quer
 
 Una vez tenemos un documento de ejemplo, vamos a realizar algunas operaciones con él. Lo primero que vamos a probar es a modificar el array de características. Imaginemos que queremos cambiar ese _"AMD socket"_ por _"Intel Socket"_ con **Dot Notation**.
 
-    &gt; db.products.update(
+     db.products.update(
       {tipo:"PLACA"}, 
       {$set:{"caracteristicas.2":"IntelSocket"}}
     )
 
 En este caso volvemos a usar _$set_ para modificar un campo en concreto, solo que esta vez le decimos que queremos modificar el campo _"caracteristicas.2"_. Si recordáis el post sobre consultas avanzadas, de esta manera le estamos diciendo a **MongoDB** que queremos actualizar el elemento 2 del array de características. Los arrays empiezan con el índice 0, por lo que estamos modificando el tercer valor de dicho array. Si ese valor no existe, será añadido al array. Hay que tener cuidado con la posición del array utilizada, porque si añadimos un elemento a un índice cuyos valores anteriores no existen, esos valores serán rellenados con valores nulos. Por ejemplo, en la siguiente consulta añadimos un valor en la posición 5 del array, pero como no hay elementos en las posiciones 3 y 4 se rellenan con valores nulos.
 
-    &gt; db.products.update({tipo:"PLACA"}, {$set:{"caracteristicas.5":"Ethernet"}})
+     db.products.update({tipo:"PLACA"}, {$set:{"caracteristicas.5":"Ethernet"}})
 
     {
             "_id" : ObjectId("51ef8531f62f3dac9e75f13e"),
@@ -110,7 +111,7 @@ En este caso volvemos a usar _$set_ para modificar un campo en concreto, solo qu
 
 Si desconocemos la posición del elemento a modificar, pero sabemos que valor tiene, podemos utilizar **Dot Notation** con el operador _$_.
 
-    &gt; db.products.update(
+     db.products.update(
      {
     	tipo : "PLACA",
     	caracteristicas : "Intel Socket"
@@ -124,7 +125,7 @@ Con el operador _$_ le decimos a **MongoDB** que tiene que actualizar el element
 
 Si bien podemos actualizar arrays con **Dot Notation**, veremos en el siguiente apartado que hay algunos operadores que pueden facilitarnos la tarea. **Dot Notation** se usa de forma más intuitiva cuándo queremos actualizar subdocumentos.
 
-    &gt; db.products.update(
+     db.products.update(
     {
     	tipo : "PLACA"
     }, {
@@ -140,7 +141,7 @@ Las operaciones que podemos realizar sobre subdocumentos son similares a las que
 
 Si queremos añadir un valor a un campo array de un documento existente, podemos utilizar el operador _$addToSet_. Este operador añade el valor que le pasamos como parámetro justo al final del array. Si el campo ya existe, el valor no se añade.
 
-    &gt; db.products.update(
+     db.products.update(
       {
         tipo : "PLACA"
       }, {
@@ -152,7 +153,7 @@ Si queremos añadir un valor a un campo array de un documento existente, podemos
 
 Si volvemos a ejecutar el comando, veremos que no se añaden nuevos valores _"WIFI"_, ya que el valor ya existe en el array. Si queremos añadir varios elementos en un mismo comando, tendremos que añadir el operador _$each_ y un array de elementos justo después del operador _$addToSet_.
 
-      &gt; db.products.update(
+       db.products.update(
         {
             tipo : "PLACA"
         },
@@ -169,7 +170,7 @@ Si volvemos a ejecutar el comando, veremos que no se añaden nuevos valores _"WI
 
 Otra opción para añadir elementos a un array es usar el operador _$push_. Este comando es exactamente igual que _$addToSet_, con la diferencia de que, en este caso, el elemento siempre se añade, exista o no.
 
-    &gt; db.products.update(
+     db.products.update(
     	{
     		tipo : "PLACA"
     	},
@@ -185,7 +186,7 @@ Si ejecutamos el anterior comando y luego un _find_, veremos que el elemento se 
 
 **Desde la versión 2.4 de MongoDB**, _$push_ también permite el uso de _$each_, así que como hacíamos con _$addToSet_ podemos escribir el siguiente comando que añadirá dos elementos al array, existan o no.
 
-     &gt; db.products.update(
+      db.products.update(
     	{
     		tipo : "PLACA"
     	},
@@ -202,7 +203,7 @@ Si ejecutamos el anterior comando y luego un _find_, veremos que el elemento se 
 
 Si lo que queremos es eliminar elementos de un array, también tenemos distintas opciones. Una de ellas es el operador _$pop_, que elimina el primer o último elemento de un array.
 
-    &gt; db.products.update(
+     db.products.update(
     	{
     		tipo : "PLACA"
     	},
@@ -216,7 +217,7 @@ Si lo que queremos es eliminar elementos de un array, también tenemos distintas
 
 Si al operador _$pop_ le pasamos un 1, borrará el último elemento del array. Si le pasamos un -1, eliminará el primer elemento del array. Pero ¿y si queremos borrar un elemento en concreto sin saber su posición?. Para eso utilizaremos el operador _$pull_.
 
-     &gt; db.products.update(
+      db.products.update(
     	{
     		tipo : "PLACA"
     	},
@@ -232,7 +233,7 @@ Este comando realiza una consulta sobre el array, borrando todos los elementos d
 
 Si lo que necesitamos es borrar varios elementos de un array, realizaremos una acción similar, pero utilizando el comando _$pullAll_.
 
-     &gt; db.products.update(
+      db.products.update(
     	{
     		tipo : "PLACA"
     	},
@@ -250,7 +251,7 @@ Para finalizar, vamos a hablar de dos operadores que nos pueden ser útiles a la
 
 Una operación habitual es la de incrementar un valor numérico en una determinada cantidad.  Imaginemos que nos llegan 5 placas base Asus nuevas y queremos aumentar la cantidad en la base de datos. Podríamos realizar una consulta a la base de datos, recuperar la cantidad existente, incrementarla y realizar una actualización. Pero no hace falta complicarse tanto ya que es mucho más sencillo utilizar el operador _$inc_.
 
-      &gt; db.products.update(
+       db.products.update(
     	{
     		nombre : "Placa Base Asus"
     	},
@@ -266,7 +267,7 @@ El comando agrega 5 unidades más al campo cantidad. Por ejemplo si hay 10 a la 
 
 También puede ser que nos equivoquemos a la hora de crear un campo, y el nombre que establezcamos sea incorrecto. Podríamos borrarlo y volverlo a crear, pero es  algo que consumiría recursos de forma innecesaria. Para cambiar el nombre de un campo deberemos utilizar el comando _$rename_.
 
-     &gt; db.products.update(
+      db.products.update(
     	{
     		nombre : "Placa Base Asus"
     	},
