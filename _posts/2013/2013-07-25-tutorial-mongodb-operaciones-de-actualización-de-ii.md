@@ -1,650 +1,430 @@
 ---
 layout: post
-title: Tutorial MongoDB. Operaciones de actualización de datos I
+title: Tutorial MongoDB. Operaciones de actualización de datos II
 redirect_from:
-  - /post/61794347245/tutorial-mongodb-operaciones-de-actualización-de.html
+  - /post/61794348269/tutorial-mongodb-operaciones-de-actualización-de.html
 ---
 
-En los anteriores capítulos de este **tutorial de MongoDB**, nos hemos
-centrado en repasar la mayoría de las operaciones de lectura que podemos
-realizar con esta base de datos **NoSQL**. Como todos sabéis una base de
-datos es capaz de realizar cualquier
-operación[CRUD](http://es.wikipedia.org/wiki/CRUD) (Create, Read,
-Update, Delete), así que una vez entendida la parte del Read, nos queda
-ver como insertar, modificar y borrar datos de nuestra sistema.\
-
-Para que el tutorial sea más sencillo de seguir, vamos a dividir las
-operaciones de modificación en dos capítulos. En este primer capítulo
-veremos los comandos básicos para ejecutar operaciones de modificación.
-En el siguiente mostraremos los operadores que podemos utilizar a la
-hora de modificar datos.
-
-### Inserción de datos
-
-#### Insert
-
-Para insertar documentos en nuestra base de datos, utilizaremos el
-comando *insert*. La sintaxis es la que ya hemos utilizado anteriormente
-con un *db*, seguido por el *nombre de la colección* y el comando a
-ejecutar, que en este caso es *insert*. Veamos un ejemplo:\
-\
-
-```javascript
-db.test.insert({ 
-  _id:1,   
-  nombre:"Pedro Ramírez",
-  telefonos:["465465456","4545654"],
-  direccion: 
+ <p>
+ <a href="http://www.charlascylon.com/2013/07/tutorial-mongodb-operaciones-de_18.html">En
+        la pasada entrada</a>, vimos como podíamos realizar operaciones que
+      insertaran, borraran o modificaran documentos en <strong>MongoDB</strong>.
+      Para ello utilizabamos comandos como <em>insert, save, update o remove</em>,
+      pero con consultas sencillas y sin entrar en modificación de <em>arrays </em>o
+      <em>subdocumentos</em>. Así que en esta entrada nos vamos a centrar en la
+      realización de acciones de ese tipo, que lógicamente son muy comunes.</p>
+    <h2>Operadores $set y $unset</h2>
+    <p>Ya vimos en la anterior entrada, que para actualizar o añadir un campo a
+      un documento existente, debemos utilizar el comando <em>$set</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update({
+  _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
   {
-    calle:"C\ Este",
-    numero:25,
-    extra: "Portal 7, 4º izquierda",
-    ciudad:"Madrid"
+    $set:{cantidad:52,
+          descripcion:"Disco duro de alta densidad"
+          }
+  })</code></pre>
+    <br>
+    <p>En la anterior consulta, nos valemos de <em>$set</em> para modificar el
+      documento con <em>_id 51e6681a2b7e6dab80c1ebd6</em>. En ese documento
+      actualizamos el campo cantidad y añadimos un nuevo campo, que todavía no
+      existe, llamado <em>descripción</em>. El documento resultante es el
+      siguiente.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+{ 
+  "_id": ObjectId("51e6681a2b7e6dab80c1ebd6"),
+  "cantidad" : 52,
+  "descripcion" : "Disco duro de alta densidad",
+  "nombre" : "Kingston 4Gb",
+  "precio" : 26.5,
+  "tipo" : "RAM"<br>
+}</code></pre>
+    <br>
+    <p>Si queremos eliminar un campo de un documento, deberemos hacer una
+      consulta similar, pero utilizando <em>$unset</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update(
+  { _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
+  {
+    $unset:{descripcion:1}
+  })</code></pre>
+    <br>
+    <p>La consulta es bastante similar a la que utilizabamos antes, pero en este
+      caso <em>$unset</em> recibe como parámetro el nombre del campo y un 1
+      indicando que este campo debe eliminarse del documento. Si ejecutamos un <em>find
+        </em>para ver el resultado, encontramos que el campo descripción ya no
+      existe.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+{
+  "_id": ObjectId("51e6681a2b7e6dab80c1ebd6"),
+  "cantidad": 52,
+  "nombre" : "Kingston 4Gb",
+  "precio" : 26.5,
+  "tipo" : "RAM"
+}</code></pre>
+    <h2>Actualización de arrays y subdocumentos con Dot Notation</h2>
+    <p>Actualizar datos simples es sencillo, pero la cosa puede complicarse
+      cuando queremos actualizar arrays con varios elementos o subdocumentos con
+      varios campos. Vamos a insertar un nuevo producto para hacer algunas
+      pruebas.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.insert(
+	{
+		nombre : " Placa Base Asus",
+		cantidad : 10,
+		precio : 78.25,
+		tipo : "PLACA",
+		caracteristicas : ["PCI-E", "USB 3.0", "AMD socket"],
+		extrainfo :
+		{
+			fabricante : "Asus ltd.",
+			anoSalida : 2013,
+			manual : "user-guide.pdf",
+			drivers : ["XP", "W7", "W8" "Linux"]
+		}
+}
+)</code>
+ </pre>
+    <br>
+    <p>Una vez tenemos un documento de ejemplo, vamos a realizar algunas
+      operaciones con él. Lo primero que vamos a probar es a modificar el array
+      de características. Imaginemos que queremos cambiar ese <em>"AMD socket"</em>
+      por <em>"Intel Socket"</em> con <strong>Dot Notation</strong>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update(
+  {tipo:"PLACA"}, 
+  {$set:{"caracteristicas.2":"IntelSocket"}}
+)
+</code></pre>
+    <p><br>
+    </p>
+    <p>En este caso volvemos a usar <em>$set</em> para modificar un campo en
+      concreto, solo que esta vez le decimos que queremos modificar el campo <em>"caracteristicas.2"</em>.
+      Si recordáis el post sobre consultas avanzadas, de esta manera le estamos
+      diciendo a <strong>MongoDB </strong>que queremos actualizar el elemento
+      2 del array de características. Los arrays empiezan con el índice 0, por
+      lo que estamos modificando el tercer valor de dicho array. Si ese valor no
+      existe, será añadido al array. Hay que tener cuidado con la posición del
+      array utilizada, porque si añadimos un elemento a un índice cuyos valores
+      anteriores no existen, esos valores serán rellenados con valores nulos.
+      Por ejemplo, en la siguiente consulta añadimos un valor en la posición 5
+      del array, pero como no hay elementos en las posiciones 3 y 4 se rellenan
+      con valores nulos.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update({tipo:"PLACA"}, {$set:{"caracteristicas.5":"Ethernet"}})
+
+{
+        "_id" : ObjectId("51ef8531f62f3dac9e75f13e"),
+        "cantidad" : 10,
+        "caracteristicas" : [
+                "PCI-E",
+                "USB 3.0",
+                "Intel Socket",
+                null,
+                null,
+                "Ethernet"
+        ],
+        "extrainfo" : {
+                "fabricante" : "Asus ltd.",
+                "anoSalida" : 2013,
+                "manual" : "user-guide.pdf",
+                "drivers" : [
+                        "XP",
+                        "W7",
+                        "W8",
+                        "Linux"
+                ]
+        },
+        "nombre" : " Placa Base Asus",
+        "precio" : 78.25,
+        "tipo" : "PLACA"
+}
+</code>
+</pre>
+    <p><br>
+    </p>
+    <p>Si desconocemos la posición del elemento a modificar, pero sabemos que
+      valor tiene, podemos utilizar <strong>Dot Notation</strong> con el
+      operador <em>$</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update(
+ {
+	tipo : "PLACA",
+	caracteristicas : "Intel Socket"
+ }, {
+	$set : {
+		"caracteristicas.$" : "Intel Haswell Socket"
+	}
+ })</code>
+ </pre>
+    <br>
+    <p>Con el operador <em>$</em> le decimos a <strong>MongoDB </strong>que
+      tiene que actualizar el elemento del array que cumpla la condición de la
+      query (<em>caracteristicas:"Intel Socket"</em>). Cuando usamos <em>$ </em>es
+      obligatorio que el campo que lo usa (en este caso características) esté en
+      la query. Si no es así la <strong>Shell</strong> de <span style="font-weight: bold;">MongoDB
+        </span>nos devolverá un error. En el ejemplo estamos cambiando el
+      elemento caracteristicas:<em>"Intel Socket"</em> por <em>"Intel Haswell
+        Socket"</em>.</p>
+    <p><br>
+    </p>
+    <p>Si bien podemos actualizar arrays con <strong>Dot Notation</strong>,
+      veremos en el siguiente apartado que hay algunos operadores que pueden
+      facilitarnos la tarea. <strong>Dot Notation</strong> se usa de forma más
+      intuitiva cuándo queremos actualizar subdocumentos.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update(
+{
+	tipo : "PLACA"
+}, {
+	$set : {
+		"extrainfo.manual" : "admin-guide.pdf"
+	}
+}
+) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Las operaciones que podemos realizar sobre subdocumentos son similares a
+      las que hemos descrito con los arrays.</p>
+    <h2>Actualización de arrays con operadores</h2>
+    <p>Si queremos añadir un valor a un campo array de un documento existente,
+      podemos utilizar el operador<em> $addToSet</em>. Este operador añade el
+      valor que le pasamos como parámetro justo al final del array. Si el campo
+      ya existe, el valor no se añade.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+&gt; db.products.update(
+  {
+    tipo : "PLACA"
+  }, {
+    $addToSet : {
+      caracteristicas : "WIFI"
+    }
   }
-})
-```
-
-\
-Como se puede ver, la inserción es muy sencilla. Nos basta con pasar
-como parámetro el documento *JSON* que queremos insertar. Si hacemos una
-búsqueda en nuestra colección *test*, encontraremos un único documento,
-que es el que acabamos de crear.\
-\
-
-```javascript
-db.test.find().pretty();
-
-{
-    "_id": 1,
-    "nombre": "Pedro Ramírez",
-    "telefonos": [
-        "465465456",
-        "4545654"
-    ],
-    "direccion": {
-        "calle": "C Este",
-        "numero": 25,
-        "extra": "Portal 7, 4º izquierda",
-        "ciudad": "Madrid"
-    }
-}
-```
-
-Lo importante de la anterior consulta de inserción, es que hemos añadido
-manualmente el campo *_id*. Esto es algo totalmente válido, siempre que
-tengamos en cuenta que el *_id* es un campo único. Si tratamos de
-ejecutar otra inserción, pero con el mismo *_id*, la **shell de
-MongoDB** nos mostrará un error.
-
-
-```javascript
-db.test.insert({
-    _id: 1,
-    nombre: "Ramón Ramírez",
-    telefonos: [
-        "465465456"
-    ],
-    direccion: {
-        calle: "C\ Este",
-        numero: 26,
-        extra: "Portal 8, 4º izquierda",
-        ciudad: "Madrid"
-    }
-})
-
-E11000duplicatekeyerrorindex: test.test.$_id_dupkey: {
-    : 1.0
-}
-```
-
-
-**MongoDB** crea siempre un índice único para el campo *_id* que existe
-en todas las colecciones y en todos los documentos. Si no tenemos
-necesidad de que el campo *_id* tenga un formato especial, lo más
-sencillo es dejar que **MongoDB** lo genere automáticamente para cada
-inserción. Para ello deberemos ignorar el campo *_id* y no introducirlo
-junto con el documento *JSON* que estamos insertando.
-
-
-```javascript
-db.test.insert({
-    nombre: "Ramón Ramírez",
-    telefonos: [
-        "465465456"
-    ],
-    direccion: {
-        calle: "C\ Este",
-        numero: 26,
-        extra: "Portal 8, 4º izquierda",
-        ciudad: "Madrid"
-    }
-})
-```
-
-Tras ejecutar una búsqueda encontraremos los dos documentos insertados,
-el segundo de ellos, con un campo *_id* autogenerado con ObjectId\
-
-```javascript
-db.test.find().pretty()
-
-{
-    "_id": 1,
-    "nombre": "Pedro Ramírez",
-    "telefonos": [
-        "465465456",
-        "4545654"
-    ],
-    "direccion": {
-        "calle": "C Este",
-        "numero": 25,
-        "extra": "Portal 7, 4º izquierda",
-        "ciudad": "Madrid"
-    }
-}
-
-{
-    "_id": ObjectId("51e63d2c403754f2073712cf"),
-    "nombre": "Ramón Ramírez",
-    "telefonos": [
-        "465465456"
-    ],
-    "direccion": {
-        "calle": "C Este",
-        "numero": 26,
-        "extra": "Portal 8, 4º izquierda",
-        "ciudad": "Madrid"
-    }
-}
-```
-
-Otra opción interesante del comando *insert*, es que permite insertar
-varios documentos *JSON* en una misma inserción. Para ello deberemos
-pasar como parámetro un array de documentos en lugar de un solo
-documento.
-
-```javascript
-db.products.insert([
+) </code>
+ </pre>
+    <br>
+    <p>Si volvemos a ejecutar el comando, veremos que no se añaden nuevos
+      valores <em>"WIFI"</em>, ya que el valor ya existe en el array. Si
+      queremos añadir varios elementos en un mismo comando, tendremos que añadir
+      el operador <em>$each</em> y un array de elementos justo después del
+      operador<em> $addToSet</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
     {
-        nombre: "Portátil Asus",
-        cantidad: 25,
-        precio: 459.99
+        tipo : "PLACA"
     },
     {
-        nombre: "Portátil HP",
-        cantidad: 1,
-        precio: 765.50
+        $addToSet :
+        {
+            caracteristicas :
+            {
+                $each : ["WIFI", "Chipset"]
+            }
+        }
     }
-])
-```
-
-
-Tras ejecutar una búsqueda en la colección *products*, vemos que los dos
-documentos se han insertado sin problemas.
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e63e49403754f2073712d0"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-
-{
-    "_id": ObjectId("51e63e49403754f2073712d1"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-#### Save
-
-Para insertar documentos también podemos utilizar el comando *save*, que
-se utiliza de la misma manera que *insert*.
-
-```javascript
-db.products.save({
-    _id: 890,
-    nombre: "Portátil Lenovo",
-    cantidad: 7,
-    precio: 800
-})
-```
-
-Al igual que con insert, si no especificamos el campo *_id*,
-**MongoDB** lo insertará automáticamente. Aquí tenemos el resultado de la
-búsqueda.
-
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e63e49403754f2073712d0"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e63e49403754f2073712d1"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-{
-    "_id": 890,
-    "nombre": "Portátil Lenovo",
-    "cantidad": 7,
-    "precio": 800
-}
-```
-
-Supongo que ahora os habrá surgido la pregunta ¿qué diferencia hay entre
-*insert* y *save*? ¿No es lo mismo? En realidad no, ya que con *save*, si
-el *_id* que especificamos ya existe,  el documento será modificado.
-
-```javascript
-db.products.save({
-    _id: 890,
-    nombre: "Portátil Lenovo",
-    cantidad: 25,
-    precio: 750
-})
-```
-
-El *_id 890* es el que habíamos utilizado para la inserción anterior,
-por lo que al utilizar *save*, en lugar de devolvernos un error de clave
-duplicada como haría el comando *insert*, el documento se actualiza con
-los nuevos datos.
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e63e49403754f2073712d0"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e63e49403754f2073712d1"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-{
-    "_id": 890,
-    "nombre": "Portátil Lenovo",
-    "cantidad": 25,
-    "precio": 750
-}
-```
-
-### Eliminación de datos
-
-Para eliminar datos de nuestra colección, utilizaremos el comando
-*remove*. Este comando recibe como parámetro la consulta que se
-utilizará para filtrar los documentos que se borrarán. Si no
-especificamos ninguna consulta, se eliminarán todos los datos de la
-colección. Como podéis ver el comportamiento es muy similar al de una
-operación *DELETE* de una base de datos relacional. Si no especificamos
-un filtro con la sentencia *WHERE* se borrarán todos los datos de la
-tabla.
-
-```javascript
-db.products.remove({_id:890})
-```
-
-Si hacemos la consulta sobre productos, vemos que el documento con el
-*_id 890* ya no existe.
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e63e49403754f2073712d0"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e63e49403754f2073712d1"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-El comando *remove* acepta un segundo parámetro de tipo booleano llamado
-*justOne*. Por defecto es *false*, pero si lo establecemos como *true*,
-solo se borrará un documento de la colección, aunque existan varios que
-cumplan las condiciones especificadas en la consulta.
-
-### Actualización de datos
-
-Para actualizar datos, utilizaremos el comando *update*. Este comando,
-en su forma básica, recibe dos parámetros: uno con la consulta para
-filtrar los documentos a modificar y otro con los elementos que se
-modificarán. En definitiva un parámetro con el *WHERE* y un parámetro con
-el *SET* de una sentencia *UPDATE* relacional.
-
-Primero para nuestras pruebas, vamos a introducir algún elemento más en
-nuestra colección de productos.
-
-
-```javascript
-db.products.insert([
-    {
-        nombre: "HDD Seagate",
-        cantidad: 45,
-        precio: 79.99,
-        tipo: "HDD"
-    },
-    {
-        nombre: "HDD Maxtor",
-        cantidad: 20,
-        precio: 65.50,
-        tipo: "HDD"
-    }
-])   
-```
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e64cd2403754f2073712d9"),
-    "nombre": "HDD Seagate",
-    "cantidad": 45,
-    "precio": 79.99,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64cd2403754f2073712da"),
-    "nombre": "HDD Maxtor",
-    "cantidad": 20,
-    "precio": 65.5,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712db"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712dc"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-Y ahora vamos a probar el comando *update*. Por ejemplo, si queremos
-actualizar la cantidad de *“HDD Maxtor”* a 30 utilizaríamos la siguiente
-consulta. Ya os aviso de que la consulta tiene trampa
-
-```javascript
-db.products.update({nombre:"HDD Maxtor"},{cantidad:30}) 
-```
-
-Y si ahora hacemos una búsqueda, nos encontramos una sorpresa
-
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e64cd2403754f2073712d9"),
-    "nombre": "HDD Seagate",
-    "cantidad": 45,
-    "precio": 79.99,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64cd2403754f2073712da"),
-    "cantidad": 30
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712db"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712dc"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-
-En el parámetro con los elementos a modificar solo hemos especificado el
-campo cantidad y **MongoDB** ha actualizado el documento dejando solo ese
-campo. El documento siempre se cambia por el documento *JSON* que pasamos
-como parámetro. Para realizar la operación tendremos que incluir un
-documento con  todos los datos, pero cambiando los que queramos
-actualizar.
-
-```javascript
-db.products.update({
-    _id: ObjectId("51e64cd2403754f2073712da")
-},
-{
-    nombre: "HDD Maxtor",
-    cantidad: 30,
-    precio: 65.5,
-    tipo: "HDD"
-})
-```
-
-Ahora hemos filtrado por *_id* ya que el campo nombre había sido
-eliminado tras la anterior actualización, y hemos añadido todos los
-campos que debe incluir el documento. Si hacemos la búsqueda veremos que
-ahora obtenemos los resultados esperados.
-
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e64cd2403754f2073712d9"),
-    "nombre": "HDD Seagate",
-    "cantidad": 45,
-    "precio": 79.99,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64cd2403754f2073712da"),
-    "nombre": "HDD Maxtor",
-    "cantidad": 30,
-    "precio": 65.5,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712db"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712dc"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-
-Está claro que especificar todos los campos cuándo solo queremos
-modificar uno de ellos es bastante molesto, por eso entra en escena el
-operador *$set*. Este operador nos permite modificar (o crear si no
-existe) uno o varios campos sin tener que introducir el documento
-*JSON* completo.
-
-```javascript
-db.products.update({
-    _id: ObjectId("51e64cd2403754f2073712da")
-},
-{
-    $set: {
-        cantidad: 35,
-        precio: 60
-    }
-})
-```
-
-#### Opción multi
-
-En las consultas anteriores el filtro devolvía un solo documento. Vamos
-a hacer una que devuelva y actualice varios documentos.
-
-```javascript
-db.products.update({tipo:"HDD"},{$set:{cantidad:0}})
-```
-
-
-Esta consulta busca los productos de tipo “HDD” y actualiza su cantidad
-a 0. Si hacemos un find veremos algo raro.
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e64cd2403754f2073712d9"),
-    "nombre": "HDD Seagate",
-    "cantidad": 0,
-    "precio": 79.99,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64cd2403754f2073712da"),
-    "nombre": "HDD Maxtor",
-    "cantidad": 35,
-    "precio": 60,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712db"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712dc"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-Y lo raro que podemos ver es que de los dos documentos de tipo *“HDD”*,
-**MongoDB** solo ha actualizado uno de ellos. Por defecto
-**MongoDB** solo actualiza un documento a no ser que le indiquemos lo
-contrario. Es una manera de evitar errores. Para actualizar todos
-deberemos usar la opción multi que debe incluirse como tercer
-parámetro.
-
-```javascript
-> db.products.update({tipo:"HDD"},{$set:{cantidad:10}},{multi:true})
-```
-
-Y si hacemos la consulta, vemos los documentos correctamente
-actualizados.
-
-```javascript
-db.products.find().pretty()
-
-{
-    "_id": ObjectId("51e64cd2403754f2073712d9"),
-    "nombre": "HDD Seagate",
-    "cantidad": 10,
-    "precio": 79.99,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64cd2403754f2073712da"),
-    "nombre": "HDD Maxtor",
-    "cantidad": 10,
-    "precio": 60,
-    "tipo": "HDD"
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712db"),
-    "nombre": "Portátil Asus",
-    "cantidad": 25,
-    "precio": 459.99
-}
-{
-    "_id": ObjectId("51e64d83403754f2073712dc"),
-    "nombre": "Portátil HP",
-    "cantidad": 1,
-    "precio": 765.5
-}
-```
-
-#### Opción upsert
-
-Además de la opción multi, tenemos disponible la opción *upsert*, que lo
-que hace es insertar el documento si este no existe. Es bastante
-parecido al comando *save* que hemos visto en las operaciones de
-inserción En este caso se comprueba toda la consulta en lugar de solo el
-*_id*. Por ejemplo la consulta siguiente buscará elementos de tipo
-*“RAM”*, pero al no existir ninguno insertará un nuevo documento.
-
-```javascript
-db.products.update({
-    tipo: "RAM"
-},
-{
-    nombre: "Kingston 2Gb",
-    cantidad: 50,
-    precio: 26.50,
-    tipo: "RAM"
-},
-{
-    upsert: true
-})
-```
-
-Si volvemos a ejecutar la consulta, cambiando *“2Gb*” por *“4Gb”*, el
-documento se actualizará ya que tras ejecutar la anterior consulta ya
-existe un documento del tipo *“RAM”*.
-
-
-```javascript
-db.products.update({
-    tipo: "RAM"
-},
-{
-    nombre: "Kingston 4Gb",
-    cantidad: 50,
-    precio: 26.50,
-    tipo: "RAM"
-},
-{
-    upsert: true
-})
-```
-
-### Conclusión
-
-Como hemos podido ver las operaciones de inserción, modificación o
-borrado son bastante sencillas. Parte de la modificación de datos
-implica realizar los filtros correctos, cosa que podemos realizar
-utilizando lo aprendido en las entradas de operaciones de consulta.
-
-Para la siguiente entrada veremos como actualizar arrays o
-subdocumentos. No os lo perdáis 
-
-* * * * *
-
-* * * * *
-
-*Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde
-aquí.](http://www.charlascylon.com/p/tutorial-mongodb.html)*
-
+  ) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Otra opción para añadir elementos a un array es usar el operador <em>$push</em>.
+      Este comando es exactamente igual que <em>$addToSet</em>, con la
+      diferencia de que, en este caso, el elemento siempre se añade, exista o
+      no. </p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		tipo : "PLACA"
+	},
+	{
+		$push :
+		{
+			caracteristicas : "Audio 5.1"
+		}
+	}
+  ) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Si ejecutamos el anterior comando y luego un <em>find</em>, veremos que
+      el elemento se añade tantas veces como lo hayamos ejecutado.</p>
+    <p><br>
+    </p>
+    <p><strong>Desde la versión 2.4 de MongoDB</strong>, <em>$push</em> también
+      permite el uso de <em>$each</em>, así que como hacíamos con <em>$addToSet</em>
+      podemos escribir el siguiente comando que añadirá dos elementos al array,
+      existan o no.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		tipo : "PLACA"
+	},
+	{
+		$push :
+		{
+			caracteristicas :
+			{
+				$each : ["Audio 3.0", "Audio 6.0"]
+			}
+		}
+	}
+	) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Si lo que queremos es eliminar elementos de un array, también tenemos
+      distintas opciones. Una de ellas es el operador <em>$pop</em>, que
+      elimina el primer o último elemento de un array.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		tipo : "PLACA"
+	},
+	{
+		$pop :
+		{
+			caracteristicas : 1
+		}
+	}
+)</code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Si al operador <em>$pop</em> le pasamos un 1, borrará el último elemento
+      del array. Si le pasamos un -1, eliminará el primer elemento del array.
+      Pero ¿y si queremos borrar un elemento en concreto sin saber su posición?.
+      Para eso utilizaremos el operador <em>$pull</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		tipo : "PLACA"
+	},
+	{
+		$pull :
+		{
+			caracteristicas : "Chipset"
+		}
+	}
+) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>Este comando realiza una consulta sobre el array, borrando todos los
+      elementos del mismo que la cumplan. En el ejemplo anterior hemos borrado
+      todos los elementos <em>"Chipset"</em>.</p>
+    <p><br>
+    </p>
+    <p>Si lo que necesitamos es borrar varios elementos de un array,
+      realizaremos una acción similar, pero utilizando el comando <em>$pullAll</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		tipo : "PLACA"
+	},
+	{
+		$pullAll :
+		{
+			caracteristicas : ["Audio 5.1", "Ethernet"]
+		}
+	}
+) </code>
+ </pre>
+    <h2>Otras operaciones de actualización</h2>
+    <p>Para finalizar, vamos a hablar de dos operadores que nos pueden ser
+      útiles a la hora de realizar actualizaciones. </p>
+    <p><br>
+    </p>
+    <p>Una operación habitual es la de incrementar un valor numérico en una
+      determinada cantidad.&nbsp; Imaginemos que nos llegan 5 placas base Asus
+      nuevas y queremos aumentar la cantidad en la base de datos. Podríamos
+      realizar una consulta a la base de datos, recuperar la cantidad existente,
+      incrementarla y realizar una actualización. Pero no hace falta complicarse
+      tanto ya que es mucho más sencillo utilizar el operador<em> $inc</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		nombre : "Placa Base Asus"
+	},
+	{
+		$inc :
+		{
+			cantidad : 5
+		}
+	}
+) </code>
+ </pre>
+    <p><br>
+    </p>
+    <p>El comando agrega 5 unidades más al campo cantidad. Por ejemplo si hay 10
+      a la hora de actualizar, pasarán a ser 15. Si utilizamos un valor
+      negativo, se restarán las unidades.</p>
+    <p><br>
+    </p>
+    <p>También puede ser que nos equivoquemos a la hora de crear un campo, y el
+      nombre que establezcamos sea incorrecto. Podríamos borrarlo y volverlo a
+      crear, pero es&nbsp; algo que consumiría recursos de forma innecesaria.
+      Para cambiar el nombre de un campo deberemos utilizar el comando <em>$rename</em>.</p>
+    <p><br>
+    </p>
+    <pre class="consolestyle"><code>
+ &gt; db.products.update(
+	{
+		nombre : "Placa Base Asus"
+	},
+	{
+		$rename :
+		{
+			extrainfo : "masinfo"
+		}
+	}
+) </code> </pre>
+    <h2>Conclusión</h2>
+    <p>En esta nueva entrega de nuestro tutorial, hemos recorrido la mayoría de
+      los comandos disponibles para actualizar documentos en nuestra <strong>base
+        de datos NoSQL</strong>. Con todo lo visto en esta entrega y las
+      anteriores, podremos enfrentarnos en el día a día a una base de datos <strong>MongoDB</strong>.
+      Podremos realizar consultas, inserciones, borrados o modificaciones para
+      garantizar que nuestras aplicaciones funcionan correctamente.</p>
+    <p><br>
+    </p>
+    <p>Sin embargo hay operaciones que todavía no sabemos como llevar a cabo.
+      Por ejemplo a la hora de realizar informes de explotación, suele ser
+      importante realizar operaciones de agregación como agrupar datos, contar,
+      sumar para calcular totales etc. Esas y otras cosas las veremos en las
+      siguientes entregas. Aquí nos vemos.</p>
+    <p><br>
+    </p>
