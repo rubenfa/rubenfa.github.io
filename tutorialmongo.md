@@ -33,7 +33,7 @@ no funcionen de la misma manera. Esto es de especial importancia con los artícu
 ## Operaciones de actualización ##
 
 - [Operaciones de actualización de datos I](http://charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de)
-- Operaciones de actualización de datos II
+- [Operaciones de actualización de datos II](http://charlascylon.com/2013-07-25-tutorial-mongodb-operaciones-de-actualización-de-ii)
 
 ## Índices ##
 
