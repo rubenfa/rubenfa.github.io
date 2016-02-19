@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB y C#. Consultas I
 redirect_from:
   - /post/66358243519/tutorial-mongodb-csharp-consultas-i.html
+  - /post/66358243519/
 ---
 
 Seguimos adelante con nuestro **tutorial de MongoDB**, en esta ocasión
