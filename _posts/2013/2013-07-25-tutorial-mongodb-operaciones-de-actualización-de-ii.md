@@ -13,17 +13,20 @@ redirect_from:
       pero con consultas sencillas y sin entrar en modificación de <em>arrays </em>o
       <em>subdocumentos</em>. Así que en esta entrada nos vamos a centrar en la
       realización de acciones de ese tipo, que lógicamente son muy comunes.</p>
+    
+    
     <h2>Operadores $set y $unset</h2>
     <p>Ya vimos en la anterior entrada, que para actualizar o añadir un campo a
       un documento existente, debemos utilizar el comando <em>$set</em>.</p>
     <p><br>
     </p>
+    
     <pre class="consolestyle"><code>
-&gt; db.products.update({
-  _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
+&amp;gt; db.products.update({
+  _id: ObjectId(&quot;51e6681a2b7e6dab80c1ebd6&quot;)},
   {
     $set:{cantidad:52,
-          descripcion:"Disco duro de alta densidad"
+          descripcion:&quot;Disco duro de alta densidad&quot;
           }
   })</code></pre>
     <br>
@@ -34,14 +37,15 @@ redirect_from:
       siguiente.</p>
     <p><br>
     </p>
-    <pre class="consolestyle"><code>
+    
+<pre class="consolestyle"><code>
 { 
-  "_id": ObjectId("51e6681a2b7e6dab80c1ebd6"),
-  "cantidad" : 52,
-  "descripcion" : "Disco duro de alta densidad",
-  "nombre" : "Kingston 4Gb",
-  "precio" : 26.5,
-  "tipo" : "RAM"<br>
+  &quot;_id&quot;: ObjectId(&quot;51e6681a2b7e6dab80c1ebd6&quot;),
+  &quot;cantidad&quot; : 52,
+  &quot;descripcion&quot; : &quot;Disco duro de alta densidad&quot;,
+  &quot;nombre&quot; : &quot;Kingston 4Gb&quot;,
+  &quot;precio&quot; : 26.5,
+  &quot;tipo&quot; : &quot;RAM&quot;&lt;br&gt;
 }</code></pre>
     <br>
     <p>Si queremos eliminar un campo de un documento, deberemos hacer una
@@ -49,8 +53,8 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update(
-  { _id: ObjectId("51e6681a2b7e6dab80c1ebd6")},
+&amp;gt; db.products.update(
+  { _id: ObjectId(&quot;51e6681a2b7e6dab80c1ebd6&quot;)},
   {
     $unset:{descripcion:1}
   })</code></pre>
@@ -64,11 +68,11 @@ redirect_from:
     </p>
     <pre class="consolestyle"><code>
 {
-  "_id": ObjectId("51e6681a2b7e6dab80c1ebd6"),
-  "cantidad": 52,
-  "nombre" : "Kingston 4Gb",
-  "precio" : 26.5,
-  "tipo" : "RAM"
+  &quot;_id&quot;: ObjectId(&quot;51e6681a2b7e6dab80c1ebd6&quot;),
+  &quot;cantidad&quot;: 52,
+  &quot;nombre&quot; : &quot;Kingston 4Gb&quot;,
+  &quot;precio&quot; : 26.5,
+  &quot;tipo&quot; : &quot;RAM&quot;
 }</code></pre>
     <h2>Actualización de arrays y subdocumentos con Dot Notation</h2>
     <p>Actualizar datos simples es sencillo, pero la cosa puede complicarse
@@ -78,22 +82,22 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.insert(
+&amp;gt; db.products.insert(
 	{
-		nombre : " Placa Base Asus",
+		nombre : &quot; Placa Base Asus&quot;,
 		cantidad : 10,
 		precio : 78.25,
-		tipo : "PLACA",
-		caracteristicas : ["PCI-E", "USB 3.0", "AMD socket"],
+		tipo : &quot;PLACA&quot;,
+		caracteristicas : [&quot;PCI-E&quot;, &quot;USB 3.0&quot;, &quot;AMD socket&quot;],
 		extrainfo :
 		{
-			fabricante : "Asus ltd.",
+			fabricante : &quot;Asus ltd.&quot;,
 			anoSalida : 2013,
-			manual : "user-guide.pdf",
-			drivers : ["XP", "W7", "W8" "Linux"]
+			manual : &quot;user-guide.pdf&quot;,
+			drivers : [&quot;XP&quot;, &quot;W7&quot;, &quot;W8&quot; &quot;Linux&quot;]
 		}
 }
-)</code>
+)/code>
  </pre>
     <br>
     <p>Una vez tenemos un documento de ejemplo, vamos a realizar algunas
@@ -103,9 +107,9 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update(
-  {tipo:"PLACA"}, 
-  {$set:{"caracteristicas.2":"IntelSocket"}}
+&amp;gt; db.products.update(
+  {tipo:&quot;PLACA&quot;}, 
+  {$set:{&quot;caracteristicas.2&quot;:&quot;IntelSocket&quot;}}
 )
 </code></pre>
     <p><br>
@@ -125,33 +129,33 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update({tipo:"PLACA"}, {$set:{"caracteristicas.5":"Ethernet"}})
+&amp;gt; db.products.update({tipo:&quot;PLACA&quot;}, {$set:{&quot;caracteristicas.5&quot;:&quot;Ethernet&quot;}})
 
 {
-        "_id" : ObjectId("51ef8531f62f3dac9e75f13e"),
-        "cantidad" : 10,
-        "caracteristicas" : [
-                "PCI-E",
-                "USB 3.0",
-                "Intel Socket",
+        &quot;_id&quot; : ObjectId(&quot;51ef8531f62f3dac9e75f13e&quot;),
+        &quot;cantidad&quot; : 10,
+        &quot;caracteristicas&quot; : [
+                &quot;PCI-E&quot;,
+                &quot;USB 3.0&quot;,
+                &quot;Intel Socket&quot;,
                 null,
                 null,
-                "Ethernet"
+                &quot;Ethernet&quot;
         ],
-        "extrainfo" : {
-                "fabricante" : "Asus ltd.",
-                "anoSalida" : 2013,
-                "manual" : "user-guide.pdf",
-                "drivers" : [
-                        "XP",
-                        "W7",
-                        "W8",
-                        "Linux"
+        &quot;extrainfo&quot; : {
+                &quot;fabricante&quot; : &quot;Asus ltd.&quot;,
+                &quot;anoSalida&quot; : 2013,
+                &quot;manual&quot; : &quot;user-guide.pdf&quot;,
+                &quot;drivers&quot; : [
+                        &quot;XP&quot;,
+                        &quot;W7&quot;,
+                        &quot;W8&quot;,
+                        &quot;Linux&quot;
                 ]
         },
-        "nombre" : " Placa Base Asus",
-        "precio" : 78.25,
-        "tipo" : "PLACA"
+        &quot;nombre&quot; : &quot; Placa Base Asus&quot;,
+        &quot;precio&quot; : 78.25,
+        &quot;tipo&quot; : &quot;PLACA&quot;
 }
 </code>
 </pre>
@@ -163,13 +167,13 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update(
+&amp;gt; db.products.update(
  {
-	tipo : "PLACA",
-	caracteristicas : "Intel Socket"
+	tipo : &quot;PLACA&quot;,
+	caracteristicas : &quot;Intel Socket&quot;
  }, {
 	$set : {
-		"caracteristicas.$" : "Intel Haswell Socket"
+		&quot;caracteristicas.$&quot; : &quot;Intel Haswell Socket&quot;
 	}
  })</code>
  </pre>
@@ -191,12 +195,12 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update(
+&amp;gt; db.products.update(
 {
-	tipo : "PLACA"
+	tipo : &quot;PLACA&quot;
 }, {
 	$set : {
-		"extrainfo.manual" : "admin-guide.pdf"
+		&quot;extrainfo.manual&quot; : &quot;admin-guide.pdf&quot;
 	}
 }
 ) </code>
@@ -213,15 +217,15 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
-&gt; db.products.update(
+&amp;gt; db.products.update(
   {
-    tipo : "PLACA"
+    tipo : &quot;PLACA&quot;
   }, {
     $addToSet : {
-      caracteristicas : "WIFI"
+      caracteristicas : &quot;WIFI&quot;
     }
   }
-) </code>
+)</code>
  </pre>
     <br>
     <p>Si volvemos a ejecutar el comando, veremos que no se añaden nuevos
@@ -232,20 +236,20 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+  &amp;gt; db.products.update(
     {
-        tipo : "PLACA"
+        tipo : &quot;PLACA&quot;
     },
     {
         $addToSet :
         {
             caracteristicas :
             {
-                $each : ["WIFI", "Chipset"]
+                $each : [&quot;WIFI&quot;, &quot;Chipset&quot;]
             }
         }
     }
-  ) </code>
+  )  </code>
  </pre>
     <p><br>
     </p>
@@ -256,17 +260,17 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+&amp;gt; db.products.update(
 	{
-		tipo : "PLACA"
+		tipo : &quot;PLACA&quot;
 	},
 	{
 		$push :
 		{
-			caracteristicas : "Audio 5.1"
+			caracteristicas : &quot;Audio 5.1&quot;
 		}
 	}
-  ) </code>
+  )  </code>
  </pre>
     <p><br>
     </p>
@@ -281,16 +285,16 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+ &amp;gt; db.products.update(
 	{
-		tipo : "PLACA"
+		tipo : &quot;PLACA&quot;
 	},
 	{
 		$push :
 		{
 			caracteristicas :
 			{
-				$each : ["Audio 3.0", "Audio 6.0"]
+				$each : [&quot;Audio 3.0&quot;, &quot;Audio 6.0&quot;]
 			}
 		}
 	}
@@ -304,9 +308,9 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+&amp;gt; db.products.update(
 	{
-		tipo : "PLACA"
+		tipo : &quot;PLACA&quot;
 	},
 	{
 		$pop :
@@ -325,14 +329,14 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+ &amp;gt; db.products.update(
 	{
-		tipo : "PLACA"
+		tipo : &quot;PLACA&quot;
 	},
 	{
 		$pull :
 		{
-			caracteristicas : "Chipset"
+			caracteristicas : &quot;Chipset&quot;
 		}
 	}
 ) </code>
@@ -349,14 +353,14 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+ &amp;gt; db.products.update(
 	{
-		tipo : "PLACA"
+		tipo : &quot;PLACA&quot;
 	},
 	{
 		$pullAll :
 		{
-			caracteristicas : ["Audio 5.1", "Ethernet"]
+			caracteristicas : [&quot;Audio 5.1&quot;, &quot;Ethernet&quot;]
 		}
 	}
 ) </code>
@@ -375,9 +379,9 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+  &amp;gt; db.products.update(
 	{
-		nombre : "Placa Base Asus"
+		nombre : &quot;Placa Base Asus&quot;
 	},
 	{
 		$inc :
@@ -401,14 +405,14 @@ redirect_from:
     <p><br>
     </p>
     <pre class="consolestyle"><code>
- &gt; db.products.update(
+ &amp;gt; db.products.update(
 	{
-		nombre : "Placa Base Asus"
+		nombre : &quot;Placa Base Asus&quot;
 	},
 	{
 		$rename :
 		{
-			extrainfo : "masinfo"
+			extrainfo : &quot;masinfo&quot;
 		}
 	}
 ) </code> </pre>
