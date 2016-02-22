@@ -3,6 +3,7 @@ layout: post
 title: Usando ELMAH con MongoDB
 redirect_from:
   - /post/81664774505/usando-elmah-con-mongodb.html
+  - /post/81664774505/
 ---
 
 <p>ELMAH (Error Logging Modules and Handlers) es una librería para almacenar logs de las excepciones que se producen en nuestra aplicación. Esta librería podemos utilizarla en aplicaciones ASP.NET y tiene muchas opciones interesantes. Por ejemplo podemos  conectarnos de forma remota para ver los errores o utilizarla con aplicaciones ya existentes sin tener que recompilar. Podéis ver todas las características de ELMAH en su <a href="http://code.google.com/p/elmah/">página de Google Code</a>.</p>

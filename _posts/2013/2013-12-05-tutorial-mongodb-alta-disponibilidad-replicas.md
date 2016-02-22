@@ -3,6 +3,7 @@ layout: post
 title:  Tutorial MongoDB. Alta disponibilidad con réplicas
 redirect_from:
   - /post/69062614637/tutorial-mongodb-alta-disponibilidad-replicas.html
+  - /post/69062614637/
 ---
 
 Empezamos una nueva aventura en nuestro **tutorial de MongoDB**, para

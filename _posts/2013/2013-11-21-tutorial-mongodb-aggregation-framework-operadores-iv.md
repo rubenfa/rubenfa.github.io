@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Operadores de expresión IV
 redirect_from:
   - /post/67646266729/tutorial-mongodb-aggregation-framework-operadores-iv.html
+  - /post/67646266729/
 ---
 
 

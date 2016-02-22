@@ -3,6 +3,7 @@ layout: post
 title: Comprando un portátil usado, pero como nuevo en NBWN
 redirect_from:
   - /post/61794353449/comprando-un-portátil-usado-pero-como-nuevo-en.html
+  - /post/61794353449/
 ---
 
 Publico hoy una entrada que no está relacionada con el mundo de la

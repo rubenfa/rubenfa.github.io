@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Pipelines en Aggregation Framework II
 redirect_from:
   - /post/64941824393/tutorial-mongodb-aggregation-framework-ii.html
+  - /post/64941824393/
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title:  Tutorial MongoDB y C#. Mapeado de clases con atributos.
 redirect_from:
   - /post/100146951744/tutorial-mongodb-y-c-mapeado-de-clases-con.html
+  - /post/100146951744/
 ---
 
 

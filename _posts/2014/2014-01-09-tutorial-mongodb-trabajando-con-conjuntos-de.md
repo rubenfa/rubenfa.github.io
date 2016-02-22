@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Trabajando con conjuntos de réplicas
 redirect_from:
   - /post/72753658228/tutorial-mongodb-trabajando-con-conjuntos-de.html
+  - /post/72753658228/
 ---
 
 <p>Empezamos el 2014 con una nueva entrega del <strong>tutorial de MongoDB</strong>. <a href="http://www.charlascylon.com/post/69774579592/tutorial-mongodb-creacion-configuracion-replicas" title="Link a entrada sobre configuración de réplicas">En el anterior artículo</a>, pudimos ver cómo podemos crear un 

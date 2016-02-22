@@ -3,6 +3,7 @@ layout: post
 title:  Windows Phone. Binding. Un ejemplo práctico.
 redirect_from:
   - /post/70479779067/windows-phone-binding-un-ejemplo-práctico.html
+  - /post/70479779067/
 ---
 
 

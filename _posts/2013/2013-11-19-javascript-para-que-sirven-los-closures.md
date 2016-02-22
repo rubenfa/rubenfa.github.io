@@ -3,6 +3,7 @@ layout: post
 title: JavaScript. ¿Para qué sirven los closures?
 redirect_from:
   - /post/67453523236/javascript-para-que-sirven-los-closures.html
+  - /post/67453523236/
 ---
 
 [En el pasado artículo sobre

@@ -3,6 +3,7 @@ layout: post
 title: Heartbleed, o el ejemplo de que el Código Abierto no es más seguro
 redirect_from:
   - /post/82368632056/heartbleed-o-el-ejemplo-codigo-abierto-no-es-mas-seguro.html
+  - /post/82368632056/
 ---
 
 <p>Esta semana hemos conocido, el que probablemente sea el fallo de seguridad más grande en la historia de internet: <strong>Heartbleed</strong>. Debido a un error en la librería <a href="https://www.openssl.org/">OpenSSL</a>, multitud de sitios han sido vulnerables durante un tiempo indeterminado. El fallo permitía a un atacante poder leer direcciones de memoria a las que de otra manera no tendría acceso. Con un poco de suerte, los malvados pueden haber accedido a contraseñas, usuarios o claves privadas del servidor. El fallo ha sido terrible, y <a href="https://github.com/musalbas/heartbleed-masstest/blob/master/top10000.txt">multitud de los sitios de internet</a> presentes en el Top 1000 de los más visitados han quedado expuestos, ya que son muchos los servicios que utilizan esta librería.</p>

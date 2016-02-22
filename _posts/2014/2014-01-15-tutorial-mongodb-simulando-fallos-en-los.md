@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Simulando fallos en los conjuntos de réplicas
 redirect_from:
   - /post/73396624673/tutorial-mongodb-simulando-fallos-en-los.html
+  - /post/73396624673/
 ---
 
 

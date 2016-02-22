@@ -3,6 +3,7 @@ layout: post
 title:  El mundo laboral del desarrollador. La pescadilla que se muerde la cola
 redirect_from:
   - /post/68867822192/mundo-laboral-desarrollador-pescadilla-muerde-cola.html
+  - /post/68867822192/
 ---
 
 Este fin de semana he estado pasando un buen rato con mis compañeros de

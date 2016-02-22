@@ -3,6 +3,7 @@ layout: post
 title:  Tutorial de MongoDB y C#. Modificando el mapeo de clases con Class Maps y Conventions
 redirect_from:
   - /post/100816290873/tutorial-mongodb-modificando-mapeo-class-maps-convention.html
+  - /post/100816290873/
 ---
 
 <p>En el <a href="http://www.charlascylon.com/post/100146951744/tutorial-mongodb-y-c-mapeado-de-clases-con-atributos">anterior artículo</a> contaba como podíamos tener un mayor control sobre la serialización de los elementos de un documento. <strong>Ayudados por los atributos</strong>, podíamos modificar el comportamiento. Así podíamos mapear un documento con una clase aunque los campos fueran de distinto tipo, no existieran o tuvieran nombres diferentes.</p>

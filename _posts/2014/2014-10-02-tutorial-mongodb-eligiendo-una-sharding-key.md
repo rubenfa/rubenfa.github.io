@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Eligiendo una sharding key
 redirect_from:
   - /post/98959446466/tutorial-mongodb-eligiendo-una-sharding-key.html
+  - /post/98959446466/
 ---
 
 <h1> ![](<a href="https://31.media.tumblr.com/fc5b21b6d7df5df597a873ba634db328/tumblr_inline_ncscb3T5ua1sno6e9.jpg">https://31.media.tumblr.com/fc5b21b6d7df5df597a873ba634db328/tumblr_inline_ncscb3T5ua1sno6e9.jpg</a>) </h1>

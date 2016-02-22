@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Como funciona el Oplog en un conjunto de réplicas
 redirect_from:
   - /post/74370147141/tutorial-mongodb-como-funciona-el-oplog-en-un.html
+  - /post/74370147141/
 ---
 
 <p><a href="http://www.charlascylon.com/post/73396624673/tutorial-mongodb-simulando-fallos-en-los-conjuntos-de">En el anterior artículo</a>  vimos como podemos poner en apuros a un conjunto de réplicas de <strong>MongoDB</strong>. Cuándo un servidor se cae, los servidores restantes se lanzan a un proceso de elección del que será el nuevo servidor principal. Si tenemos todo bien configurado, nuestro sistema será estable y garantizaremos una alta disponibilidad de nuestros datos. Pero, ¿qué pasa cuándo un servidor que se ha caído vuelve a estar operativo? ¿Cómo sincroniza los datos para estar actualizado? Pues eso es lo que vamos a intentar explicar en esta entrada.</p>

@@ -3,6 +3,7 @@ layout: post
 title: El peligro de los parámetros opcionales en C#
 redirect_from:
   - /post/80152144495/el-peligro-de-los-parametros-opcionales-en-csharp.html
+  - /post/80152144495/
 ---
 
 <p>Lo que voy a contar en esta entrada, no es algo nuevo. Seguro que muchos ya habéis lidiado con esto, pero no viene mal explicarlo.</p>

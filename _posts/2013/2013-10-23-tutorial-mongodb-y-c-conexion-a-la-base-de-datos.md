@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB y C#. Conexión a la base de datos
 redirect_from:
   - /post/64851332600/tutorial-mongodb-y-c-conexion-a-la-base-de-datos.html
+  - /post/64851332600/
 ---
 
 Si algo tiene **MongoDB**, es que tiene una enorme cantidad de clientes

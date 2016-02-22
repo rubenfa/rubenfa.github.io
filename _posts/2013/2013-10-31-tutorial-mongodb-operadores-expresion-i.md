@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Operadores de expresión en Aggregation Framework I
 redirect_from:
   - /post/65600378745/tutorial-mongodb-operadores-expresion-i.html
+  - /post/65600378745/
 ---
 
 En las anteriores entregas de nuestro **tutorial de MongoDB** hemos

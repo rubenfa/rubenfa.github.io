@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Operaciones de actualización de datos II
 redirect_from:
   - /post/61794348269/tutorial-mongodb-operaciones-de-actualización-de.html
+  - /post/61794348269/
 ---
 
 [En la pasada entrada](http://www.charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de), vimos como podíamos realizar operaciones que insertaran, borraran o modificaran documentos en **MongoDB**. Para ello utilizabamos comandos como _insert, save, update o remove_, pero con consultas sencillas y sin entrar en modificación de _arrays_ o _subdocumentos_. Así que en esta entrada nos vamos a centrar en la realización de acciones de ese tipo, que lógicamente son muy comunes.

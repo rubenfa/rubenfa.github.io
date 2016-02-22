@@ -3,6 +3,7 @@ layout: post
 title: MongoDB. Trucos y consejos. Aplicaciones multitenant.
 redirect_from:
   - /post/62897226381/mongodb-trucos-y-consejos-aplicaciones.html
+  - /post/62897226381/
 ---
 
 ¿Cómo podemos implementar este tipo de aplicaciones sobre **MongoDB**?

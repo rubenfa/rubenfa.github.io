@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Índices
 redirect_from:
   - /post/61794351054/tutorial-mongodb-índices.html
+  - /post/61794351054/
 ---
 
 <p>Una parte importante en cualquier base de datos, sea relacional o no, son los índices. Los índices se utilizan para incrementar la velocidad de acceso a los datos, pudiendo obtenerlos de manera más directa. En lugar de recorrer una tabla o colección para buscar un conjunto de resultados, buscamos directamente en el índice que nos devuelve el registro o conjunto de registros de forma directa.</p>

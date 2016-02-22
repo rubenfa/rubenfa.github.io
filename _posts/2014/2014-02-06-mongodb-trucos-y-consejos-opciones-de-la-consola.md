@@ -3,9 +3,8 @@ layout: post
 title: MongoDB. Trucos y consejos. Opciones de la consola que quizá no conocías
 redirect_from:
   - /post/75783630985/mongodb-trucos-y-consejos-opciones-de-la-consola.html
+  - /post/75783630985/
 ---
-
-<p>Hace un tiempo, en <a href="http://www.charlascylon.com/post/64100855356/gestion-de-mongodb-con-robomongo">otro artículo</a>, os hablé de Robomongo.</p>
 
 <p>Robomongo es una aplicación muy útil para gestionar nuestras bases de datos <strong>MongoDB</strong>. Tiene ciertas características interesantes, que nos pueden hacer la vida más fácil.</p>
 

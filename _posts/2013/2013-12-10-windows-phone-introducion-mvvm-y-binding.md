@@ -3,6 +3,7 @@ layout: post
 title:  Windows Phone. Introducción al patrón MVVM y binding
 redirect_from:
   - /post/69575487235/windows-phone-introducion-mvvm-y-binding.html
+  - /post/69575487235/
 ---
 
 Cuando uno empieza a programar aplicaciones para **Windows Phone**, es

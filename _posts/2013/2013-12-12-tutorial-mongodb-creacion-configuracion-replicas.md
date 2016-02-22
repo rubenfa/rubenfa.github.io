@@ -3,6 +3,7 @@ layout: post
 title:  Tutorial MongoDB. Creación y configuración de conjuntos de réplicas
 redirect_from:
   - /post/69774579592/tutorial-mongodb-creacion-configuracion-replicas.html
+  - /post/69774579592/
 ---
 
 La anterior entrega de este **tutorial de MongoDB**, explicaba de forma

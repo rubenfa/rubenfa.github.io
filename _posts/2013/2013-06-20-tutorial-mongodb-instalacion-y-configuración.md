@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Instalación y configuración
 redirect_from:
   - /post/61794337102/tutorial-mongodb-instalación-y-configuración.html
+  - /post/61794337102/
 ---
 
 [![logo\_10gen\_mongodb1](http://lh6.ggpht.com/-sOFuOMBtNm4/UcIoiQk6jBI/AAAAAAAAAz0/5lIzCghBMK8/logo_10gen_mongodb1_thumb.png?imgmax=800 "logo_10gen_mongodb1")](http://lh4.ggpht.com/-55DoRJE-qY8/UcIoay823oI/AAAAAAAAAzs/ETO8lK-cmSI/s1600-h/logo_10gen_mongodb1%25255B2%25255D.png)[La

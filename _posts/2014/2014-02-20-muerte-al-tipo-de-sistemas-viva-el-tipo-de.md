@@ -3,6 +3,7 @@ layout: post
 title: Muerte al tipo de sistemas. Viva el tipo de sistemas
 redirect_from:
   - /post/77264626972/muerte-al-tipo-de-sistemas-viva-el-tipo-de.html
+  - /post/77264626972/
 ---
 
 <p>Seguro que esto os suena. Habéis terminado un desarrollo, que os toca subir a producción o preproducción. En esos entornos no tenéis permisos ni para abrir el <em>Notepad</em>. No vaya a ser que rompáis algo.</p>

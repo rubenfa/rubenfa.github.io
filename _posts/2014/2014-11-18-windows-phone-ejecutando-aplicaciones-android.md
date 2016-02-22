@@ -3,6 +3,7 @@ layout: post
 title:  Windows Phone ejecutando aplicaciones Android. Noooo
 redirect_from:
   - /post/102951365332/windows-phone-ejecutando-aplicaciones-android.html
+  - /post/102951365332/
 ---
 
 <p>Hoy se ha montado un interesante debate en Twitter, a propósito de <a href="https://twitter.com/_rubenfa/status/534615956362776576">un tweet que he publicado</a>. En el comentaba la noticia de que <a href="http://www.xatakawindows.com/aplicaciones-windows/microsoft-podria-estar-reconsiderando-la-idea-de-permitir-ejecutar-aplicaciones-android-en-windows">Microsoft estaba volviendo a considerar la posibilidad de ejecutar aplicaciones de Android en Windows Phone</a>.</p>

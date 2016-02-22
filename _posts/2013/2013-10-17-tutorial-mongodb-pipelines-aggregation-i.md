@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Pipelines en Aggregation Framework I
 redirect_from:
   - /post/64283434936/tutorial-mongodb-pipelines-aggregation-i.html
+  - /post/64283434936/
 ---
 
 En la pasada entrega del tutorial, vimos una pequeña introducción a cómo

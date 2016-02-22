@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB y C#. Consultas con LINQ
 redirect_from:
   - /post/68150241999/tutorial-mongodb-csharp-consultas-con-linq.html
+  - /post/68150241999/
 ---
 
 <p>En el pasado artículo de este<strong> tutorial de MongoDB y C#</strong>, vimos varias maneras de realizar consultas a la base de datos a través del <strong>driver de C#</strong>. De manera muy sencilla  podíamos realizar consultas pasando directamente un <em>JSON </em>o utilizando la clase <em>Query</em>. No obstante hay una manera mejor, aprovechándonos de uno de las mejores características que tiene .NET: <strong>LINQ</strong>.<br/></p>

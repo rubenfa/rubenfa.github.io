@@ -3,6 +3,7 @@ layout: post
 title:  Aprendiendo Elixir (o intentándolo)
 redirect_from:
   - /post/134644391731/aprendiendo-elixir-o-intentandolo.html
+  - /post/134644391731/
 ---
 
 <p>Hacía mucho -concretamente un año y pico- que no escribía un post en el blog. Decir que el último año he estado demasiado ocupado, sería una mala excusa. La verdad es que he estado bastante falto de ideas y con pocas ganas de escribir. Pero como dice el refrán, más vale tarde que nunca. Así que estamos de vuelta.</p>

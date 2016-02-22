@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Operaciones de consulta avanzadas II
 redirect_from:
   - /post/61794345688/tutorial-mongodb-operaciones-de-consulta.html
+  - /post/61794345688/
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title:  ¿Y por qué tengo un blog?
 redirect_from:
   - /post/90644914062/y-por-que-tengo-un-blog.html
+  - /post/90644914062/
 ---
 
 <p><img src="http://38.media.tumblr.com/5b0bad7c8cb65fa685a6734f3f25669a/tumblr_inline_n84pqi2VRw1sno6e9.jpg" alt=""/></p>

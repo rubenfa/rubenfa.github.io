@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. MapReduce
 redirect_from:
   - /post/68351468690/tutorial-mongodb-mapreduce.html
+  - /post/68351468690/
 ---
 
 En la anterior entrega de este **tutorial de MongoDB**, completamos el

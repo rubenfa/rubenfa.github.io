@@ -3,6 +3,7 @@ layout: post
 title: Covarianza y contravarianza en C#
 redirect_from:
   - /post/91933019083/covarianza-y-contravarianza-en-c.html
+  - /post/91933019083/
 ---
 
 <p>La <strong>covarianza y la contravarianza</strong> son de esos conceptos de C# que no son fáciles de asimilar. De primeras parece algo fácil de entender, pero cuando te pones a ello te das cuenta de hay que pensarlo más detenidamente. Incluso muchas veces los estamos usando sin darnos cuenta.</p>

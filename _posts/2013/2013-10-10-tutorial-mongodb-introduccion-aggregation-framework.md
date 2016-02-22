@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Introducción a Aggregation Framework
 redirect_from:
   - /post/63631312440/tutorial-mongodb-introduccion-aggregation-framework.html
+  - /post/63631312440/
 ---
 
 Hasta ahora, en nuestro **tutorial de MongoDB**, hemos explicado como

@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Operaciones de actualización de datos I
 redirect_from:
   - /post/61794347245/tutorial-mongodb-operaciones-de-actualización-de.html
+  - /post/61794347245/
 ---
 
 En los anteriores capítulos de este **tutorial de MongoDB**, nos hemos

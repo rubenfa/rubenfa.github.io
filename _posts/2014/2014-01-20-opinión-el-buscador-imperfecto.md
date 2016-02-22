@@ -3,6 +3,7 @@ layout: post
 title: Opinión. El buscador imperfecto.
 redirect_from:
   - /post/73935698689/opinión-el-buscador-imperfecto.html
+  - /post/73935698689/
 ---
 
 <p>La web, según datos de <a href="http://www.worldwidewebsize.com/">World Wide Web Size</a>, tiene más o menos 1.750 millones de páginas. Es un número bastante variable, que cambia cada día. Miles de páginas nuevas son creadas cada día, mientras que otras tantas se destruyen. Los buscadores actuales, con su intención de indexar la web para ofrecernos búsquedas fiables, tienen que llevar a cabo una tarea titánica de indexación y catalogación. ¿Pero hasta que punto son fiables los resultados ofrecidos?</p>

@@ -3,6 +3,7 @@ layout: post
 title: JavaScript. ¿Qué son los closures?
 redirect_from:
   - /post/66767656253/javascript-que-son-los-closures.html
+  - /post/66767656253/
 ---
 
 

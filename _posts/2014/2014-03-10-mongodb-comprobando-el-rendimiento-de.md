@@ -3,6 +3,7 @@ layout: post
 title: MongoDB. Comprobando el rendimiento de usePowerOf2Sizes
 redirect_from:
   - /post/79152194969/mongodb-comprobando-el-rendimiento-de.html
+  - /post/79152194969/
 ---
 
 <p>Hace unos días escribí un artículo para GenbetaDev <a href="http://www.genbetadev.com/bases-de-datos/mongodb-la-vida-cambia-tus-datos-tambien-operaciones-de-actualizacion-simples">a propósito de la actualización de datos</a> en <strong>MongoDB</strong></p>

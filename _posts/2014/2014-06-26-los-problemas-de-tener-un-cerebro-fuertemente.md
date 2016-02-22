@@ -3,6 +3,7 @@ layout: post
 title: Los problemas de tener un cerebro fuertemente tipado
 redirect_from:
   - /post/89958600002/los-problemas-de-tener-un-cerebro-fuertemente.html
+  - /post/89958600002/
 ---
 
 <p>Ayer sufrí en mis carnes una incidencia bastante curiosa. Bueno, en realidad no tan curiosa si eres un programador acostumbrado a lenguajes no tipados, como Javascript o PHP.  Ese no es mi caso.</p>

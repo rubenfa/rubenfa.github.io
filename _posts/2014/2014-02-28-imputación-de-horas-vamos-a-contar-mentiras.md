@@ -3,6 +3,7 @@ layout: post
 title: Imputación de horas. Vamos a contar mentiras tralará
 redirect_from:
   - /post/78099110490/imputación-de-horas-vamos-a-contar-mentiras.html
+  - /post/78099110490/
 ---
 
 <p>Hoy toca otro artículo protesta/queja/sugerencia. Si <a href="http://www.charlascylon.com/post/77264626972/muerte-al-tipo-de-sistemas-viva-el-tipo-de-sistemas">la semana pasada</a> hablaba sobre <em>la muerte del tipo de sistemas</em> y de lo ineficiente que es dividir equipos en departamentos, hoy toca hablar sobre la <strong>imputación de horas</strong>.</p>

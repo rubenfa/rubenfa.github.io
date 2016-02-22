@@ -3,6 +3,7 @@ layout: post
 title:  MongoDB. Trucos y consejos. Creación y uso de campos autoincrementales
 redirect_from:
   - /post/70281280317/mongodb-trucos-y-consejos-campos-autoincrementales.html
+  - /post/70281280317/
 ---
 
 En ocasiones es necesario que en nuestra base de datos creemos *campos

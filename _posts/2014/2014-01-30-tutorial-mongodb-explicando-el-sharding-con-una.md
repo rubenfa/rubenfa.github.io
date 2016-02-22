@@ -3,6 +3,7 @@ layout: post
 title: Tutorial MongoDB. Explicando el sharding con una baraja de cartas
 redirect_from:
   - /post/75034298293/tutorial-mongodb-explicando-el-sharding-con-una.html
+  - /post/75034298293/
 ---
 
 

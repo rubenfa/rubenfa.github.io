@@ -3,6 +3,7 @@ layout: post
 title: La deuda técnica ... aplicada a los desarrolladores
 redirect_from:
   - /post/93487264802/la-deuda-tecnica-aplicada-a-los-desarrolladores.html
+  - /post/93487264802/
 ---
 
 <p><img src="http://38.media.tumblr.com/4a9cab086755fe8531111dca43839a0d/tumblr_inline_n9mdn5SRy31sno6e9.jpg" alt=""/></p>
