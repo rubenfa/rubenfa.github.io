@@ -40,9 +40,10 @@ iex(6)> Elixir.Test1.sum(1,6,1,1)
 9
 ```
 
+> 
 > `IEX` es la línea de comandos interactiva de Elixir. Similar a `REPL` en Node o `F# Interactive` en F#. Para ejecutar la consola
 > solo tenemos que ejecutar el comando `iex` en una línea de comandos de Windows, Linux o Mac (obviamente con Elixir instalado y las rutas necesarias en el PATH).
-
+> 
 
 Se puede ve en el ejemplo, que dependiendo de los parámetros de entrada, Elixir sabe que función debemos ejecutar. Vale, pero tampoco hay mucha diferencia, con otros lenguajes como C# ¿verdad?
 Al fin y al cabo, a diferente número de parámetros la firma de las funciones es diferente. En Elixir esto no es así. Veamos otro ejemplo:
