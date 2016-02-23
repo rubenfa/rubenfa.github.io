@@ -1,7 +1,11 @@
 ---
 layout: post
-title:  Elixir y el pattern matching
+title: Elixir y el pattern matching
+published: true
+subtitle: null
+date: "24-02-2016"
 ---
+
 
 Una de las primeras cosas que he aprendido usando Elixir, es que casi todo funciona con [pattern matching](https://en.wikipedia.org/wiki/Pattern_matching).  Esta técnica propia de los lenguajes funcionales, se utiliza para buscar patrones y decidir qué hacer en cada momento. 
 
@@ -178,8 +182,3 @@ le estaremos diciendo a Elixir, que no nos importa que valor aparezca ahí. Si l
 Para finalizar la entrada, un ejemplo para enteder bien el operador *match* lo leí en el libro [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir). 
 Y es que debemos pensar en este operador no como un signo igual típico de otros lenguajes, si no como el que nos encontramos en una función matemática del tipo
 `x = a + 1`. Es decir que estamos diciendo que `x` y `a + 1` tienen el mismo valor.
-
- 
-
-
-
