@@ -40,10 +40,10 @@ iex(6)> Elixir.Test1.sum(1,6,1,1)
 9
 ```
 
-> 
+ 
 > `IEX` es la línea de comandos interactiva de Elixir. Similar a `REPL` en Node o `F# Interactive` en F#. Para ejecutar la consola
 > solo tenemos que ejecutar el comando `iex` en una línea de comandos de Windows, Linux o Mac (obviamente con Elixir instalado y las rutas necesarias en el PATH).
-> 
+ 
 
 Se puede ve en el ejemplo, que dependiendo de los parámetros de entrada, Elixir sabe que función debemos ejecutar. Vale, pero tampoco hay mucha diferencia, con otros lenguajes como C# ¿verdad?
 Al fin y al cabo, a diferente número de parámetros la firma de las funciones es diferente. En Elixir esto no es así. Veamos otro ejemplo:
@@ -178,7 +178,7 @@ iex(21)> [1, _, _] = list
 ```
 
 Primero hemos enlazado `lista` con `[1, 2, 3]`, y después hemos hecho algunas pruebas. Siempre que tengamos un signo `_` 
-le estaremos diciendo a Elixir, que no nos importa que valor aparezca ahí. Si los demás valores concuerdan se cumplirá el *patter matching*.
+le estaremos diciendo a Elixir, que no nos importa que valor aparezca ahí. Si los demás valores concuerdan se cumplirá el *pattern matching*.
 
 Para finalizar la entrada, un ejemplo para enteder bien el operador *match* lo leí en el libro [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir). 
 Y es que debemos pensar en este operador no como un signo igual típico de otros lenguajes, si no como el que nos encontramos en una función matemática del tipo
