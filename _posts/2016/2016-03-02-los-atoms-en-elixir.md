@@ -6,6 +6,7 @@ subtitle: simples y elegantes
 date: "02-03-2016"
 ---
 
+
 A día de hoy, me gano la vida programando en entornos .NET, concretamente con C#. El principal objetivo de aprender Elixir era el de salir completamente del entorno al que estaba acostumbrado. Otro lenguaje,
 otro entorno de desarrollo, otra forma de pensar etc. Y es que es un ejercicio muy sano para abrir la mente. Y de esta manera he llegado a descubrir un tipo de datos que no conocía, aunque por lo que parece existe en muchos
 otros lenguajes (Ruby, Erlang-Elixir, Clojure y [otros cuantos más](https://en.wikipedia.org/wiki/Symbol_%28programming%29)).
