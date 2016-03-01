@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Los atoms en Elixir
-published: true
-subtitle: simples y elegantes
 ---
 
 
