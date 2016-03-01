@@ -38,7 +38,7 @@ end
 ```
 
 Tenemos una función que lee de un archivo, en el módulo `Fake.File` que se llama `read` y que recibe el nombre de un fichero. Llamando a esa función y aprovechándonos del 
-[pattern matching](www.charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching), llamamos a la función `print_result` que escribirá el resultado según corresponda. Si se ha recibido un *atom*
+[pattern matching](http://www.charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching), llamamos a la función `print_result` que escribirá el resultado según corresponda. Si se ha recibido un *atom*
 `:ok` usaremos la primera función `print_result`. Si se recibe un `:error`, utilizamos la segunda.
 
 Un ejemplo del funcionamiento:
