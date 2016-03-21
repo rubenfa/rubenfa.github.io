@@ -115,7 +115,7 @@ iex(5)> Keyword.Test.concat "primero-", [{:key_1, "uno"}, {:key_2, "dos"}]
 "primero-unodos"
 ```
   
-##Maps
+## Maps
  
 Los mapas o  `Maps` son también colecciones de elementos clave-valor, pero se definen de forma diferente. Estos son algunos ejemplos:
 
