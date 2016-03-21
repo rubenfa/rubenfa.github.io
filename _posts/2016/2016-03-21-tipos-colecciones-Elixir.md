@@ -91,13 +91,14 @@ concretos.
 
 Otro punto útil de este tipo de estructuras, es que podemos omitir los corchetes cuando, en una función se espera una lista de este tipo como último parámetro. Por ejemplo con esta función:
 
-```Elixir
+```elixir
 defmodule Keyword.Test do    
   def concat(first_string , keyword_list) do   
       first_string <> keyword_list[:key_1] <> keyword_list[:key_2]
   end  
 end
 ```
+
 Podemos hacer lo siguiente:
 
 ```
@@ -114,9 +115,9 @@ iex(5)> Keyword.Test.concat "primero-", [{:key_1, "uno"}, {:key_2, "dos"}]
 "primero-unodos"
 ```
   
-## Maps
+##Maps
  
- Los mapas o  `Maps` son también colecciones de elementos clave-valor, pero se definen de forma diferente. Estos son algunos ejemplos:
+Los mapas o  `Maps` son también colecciones de elementos clave-valor, pero se definen de forma diferente. Estos son algunos ejemplos:
 
 ``` 
 iex(1)> provincias = %{"MAD" => "Madrid", "SEG" => "Segovia", "BCN" => "Barcelona"}
