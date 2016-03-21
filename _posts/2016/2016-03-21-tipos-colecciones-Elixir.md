@@ -7,7 +7,7 @@ Una parte importante de cualquier lenguaje de programación son las estructuras 
 con un significado común. Elixir puede manejar distintos tipos de colecciones y es importante que las conozcamos para poder utilizarlas de la mejor manera posible. Uno de los puntos importantes de 
 Elixir, como buen lenguaje funcional, es que **todas las colecciones son inmutables**. Es decir, que una vez se ha creado una colección, ya no se puede modificar.
 
-##Tuplas
+## Tuplas
 
 Las tuplas son colecciones valores que pueden ser de distinto tipo. Normalmente tienen entre dos y cuatro valores, ya que hay otros tipos de colecciones mejor preparadas para trabajar con más datos. Las
 tuplas se definen entre llaves `{}´.
@@ -42,7 +42,7 @@ iex(7)> {:ok, resultado } = Tuplas.hi("va a fallar")
 ** (MatchError) no match of right hand side value: {:error, :noval}
 ```
 
-##Listas
+## Listas
 
 Las listas son colecciones de datos enlazados. Una lista puede estar vacía, o contener una cabeza `head` y una cola `tail`. Es decir que una lista no vacía, estará compuesta por el primer elemento de la lista (`head`)
 y el resto de elementos de la lista (`tail`). Con estos dos elementos y recursividad podemos hacer cosas muy interesantes, aunque lo dejamos para otro momento.
@@ -73,7 +73,7 @@ iex(25)> 1 in lista2
 false 
 ```
  
-##Listas clave-valor
+## Listas clave-valor
 
 Parecidas a las listas tenemos, las *keyword lists*, que no son más que listas de pares clave-valor. 
 
@@ -114,7 +114,7 @@ iex(5)> Keyword.Test.concat "primero-", [{:key_1, "uno"}, {:key_2, "dos"}]
 "primero-unodos"
 ```
   
- ##Maps
+ ## Maps
  
  Los mapas o  `Maps` son también colecciones de elementos clave-valor, pero se definen de forma diferente. Estos son algunos ejemplos:
 
@@ -154,4 +154,4 @@ iex(9)> provincias_atom.madd
 ** (KeyError) key :madd not found in: %{bcn: "Barcelona", mad: "Madrid", seg: "Segovia"}
 ```
 
-Y bueno, aunque hay algún tipo de colección más, como los binarios, lo dejamos aquí. 
+Y bueno, aunque hay algún tipo de colección más, como los binarios, de momento lo dejamos aquí. Nos vemos en la siguiente entrada. 
