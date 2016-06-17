@@ -1,4 +1,7 @@
-#Ser Ingeniero, o no ser... informático
+---
+layout: post
+title: Ser Ingeniero, o no ser... informático
+---
 
 Estos días se está moviendo por Twitter bajo el hashtag `#InformáticaSoluciónYA`, la equiparación de las Ingenierías Informáticas al resto de Ingenierías.
 No me voy a meter con el movimiento, porque muchas cosas de las que solicitan son sensatas, y tienen todo del sentido del mundo. Lo que me asusta, es 
