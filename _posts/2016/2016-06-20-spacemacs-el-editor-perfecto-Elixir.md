@@ -51,7 +51,7 @@ Después de eso, es cuestión de tiempo que vayas cogiendo el truco al editor, y
 
 ## Conclusión
 
-Con **Spacemacs** cada día soy más productivo. Aun estoy lejos de alcanzar la productividad que tengo con Visual Studio, pero creo que será cuestión de tiempo. Ahora mis proyectos son pequeños, y no me he tenido que meter a fondo con *Projectile* (gestión de proyectos), *Helm* (para buscar archivos, completar nombres de archivo etc), o *dired* (para hacer operaciones cona archivos) o *Magit* (para usar Git en Emacs), pero seguramente lo iré haciendo poco a poco.
+Con **Spacemacs** cada día soy más productivo. Aun estoy lejos de alcanzar la productividad que tengo con Visual Studio, pero creo que será cuestión de tiempo. Ahora mis proyectos son pequeños, y no me he tenido que meter a fondo con *Projectile* (gestión de proyectos), *Helm* (para buscar archivos, completar nombres de archivo etc), o *dired* (para hacer operaciones con archivos) o *Magit* (para usar Git en Emacs), pero seguramente lo iré haciendo poco a poco.
 
 Lo que no he podido saborear, es lo de usar el **evil mode**. Dicen que editar en *Vim* es un placer, pero yo no he conseguido pasar del tutorial que viene con **Spacemacs**. Veremos si soy capaz de darle una oportunidad en el futuro.
 
