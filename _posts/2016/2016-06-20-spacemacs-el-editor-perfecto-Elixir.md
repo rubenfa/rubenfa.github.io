@@ -14,13 +14,13 @@ Tras la experiencia con Atom, me pasé a VS Code cuando leí la noticia de que y
 Como principalmente iba a realizar proyectos Web con Elixir, también probé WebStorm. 
 Existe un plugin para programar en Elixir, pero tras probarlo no me convenció (además es de pago y yo buscaba algo gratuito). 
 
-Acabé resignado a usar VS Code, ya que de los más flojos, me parecía el mejor, pero un día, descubrí que la integración perfecta de Elixir con un editor ya existía. Y el editor era Emacs.
+Acabé resignado a usar VS Code, ya que de los más flojos, me parecía el mejor, pero un día, descubrí que ya existía la integración perfecta de Elixir con un editor. Y el editor era Emacs.
 
 ![Leonidas gritando Emacs](/img/posts/2016/this_is_emacs.jpg)
 
 ## Emacs y Spacemacs
 
-Desde que internet es internet, existen varios puntos de fricción que siempre acaban en discusión. Coca-cola o  Pepsi, Linux o Windows, PC o Mac y la que seguramente sea la discusión por antonomasia: Emacs vs Vim. Y es que ambos son los editores utilizados por los programadores "hardocore". Y esto no es más que porque la curva de aprendizaje que tienen es bastante pronunciada.
+Desde que internet es internet, existen varios puntos de fricción que siempre acaban en discusión. Coca-cola o  Pepsi, Linux o Windows, PC o Mac y la que seguramente sea la discusión por antonomasia: Emacs vs Vim. Y es que ambos son los editores utilizados por los programadores "hardocore". Y esto no es más que porque la curva de aprendizaje que tienen es ~~jodidamente~~ bastante pronunciada.
 
 <blockquote class="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">I&#39;ve been using Vim for about 2 years now, mostly because I can&#39;t figure out how to exit it.</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/435555976687923200">17 de febrero de 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -37,15 +37,17 @@ La otra pata de esta configuración es [Alchemist](https://github.com/tonini/alc
 
 ## Pagando el peaje
 
-
-
-Como he dicho **el principal problema de usar Spacemacs es que la curva de aprendizajes es pronunciada**. Aunque se puede utilizar el ratón para algunas cosas, te pasas el tiempo escribiendo combinaciones de teclas para todo. Si eres como yo, incapaz de recordar más de 3 atajos de teclado, al principio estarás totalmente perdido, y tendrás ganas de dejarlo. Y nadie te culpará.
-
-Para que os hagáis una idea, ni el *copy & paste* se hace igual. Esta gente ha decidido llamarlo *Kill-ring save* y *yank*. Y es que `kill-ring` es más o menos como el *clipboard* de toda la vida. Y claro olvídate del `Ctrl+C` y el `Ctrl+V`.  
+Como he dicho **el principal problema de usar Spacemacs es que la curva de aprendizajes es grande**. Aunque se puede utilizar el ratón para algunas cosas, te pasas el tiempo escribiendo combinaciones de teclas para todo. Si eres como yo, incapaz de recordar más de 3 atajos de teclado, al principio estarás totalmente perdido, y tendrás ganas de dejarlo. Y nadie te culpará.
 
 ![Curvas de aprendizaje en algunos editores](/img/posts/2016/learning_curve.jpg)
 
-En fin, que cuando estás decidio a abandonar, es cuando descubres que existe el atajo `Alt + X` (en mundo **Emacs** `M-x`). Este simple comando te muestra una lista de las acciones más comunes ordenadas alfabéticamente. Después de eso, es cuestión de tiempo que vayas cogiendo el truco al editor, y empieces a diferenciar entre *buffers* y *windows*, seas capaz de guardar archivos e incluso abrir `IEX` o compilar un proyecto en Elixir. Yo cada vez soy capaz de recordar más atajos de teclado, e incluso el otro día estaba en Visual Studio y intenté guardar un archivo escribiendo `M-m-f-s`. Esto es una prueba clarísima. Si yo puedo, cualquiera puede.
+Para que os hagáis una idea, ni el *copy & paste* se hace igual. Esta gente ha decidido llamarlo *Kill-ring save* y *yank*. Y es que `kill-ring` es más o menos como el *clipboard* de toda la vida. Y claro olvídate del `Ctrl+C` y el `Ctrl+V`.  
+
+En fin, que cuando estás decidio a abandonar, es cuando descubres que existe el atajo `Alt + X` (en mundo **Emacs** `M-x`). Este simple comando te muestra una lista de las acciones más comunes ordenadas alfabéticamente. 
+
+![Meme de Alt+M](/img/posts/2016/lost_emacs.jpg)
+
+Después de eso, es cuestión de tiempo que vayas cogiendo el truco al editor, y empieces a diferenciar entre *buffers* y *windows*, seas capaz de guardar archivos e incluso abrir `IEX` o compilar un proyecto en Elixir. Yo cada vez soy capaz de recordar más atajos de teclado, e incluso el otro día estaba en Visual Studio y intenté guardar un archivo escribiendo `M-m-f-s`. Esto es una prueba clarísima. Si yo puedo, cualquiera puede.
 
 ## Conclusión
 
