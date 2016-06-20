@@ -16,6 +16,8 @@ Existe un plugin para programar en Elixir, pero tras probarlo no me convenció (
 
 Acabé resignado a usar VS Code, ya que de los más flojos, me parecía el mejor, pero un día, descubrí que la integración perfecta de Elixir con un editor ya existía. Y el editor era Emacs.
 
+![Leonidas gritando Emacs](/img/posts/2016/this_is_emacs.jpg)
+
 ## Emacs y Spacemacs
 
 Desde que internet es internet, existen varios puntos de fricción que siempre acaban en discusión. Coca-cola o  Pepsi, Linux o Windows, PC o Mac y la que seguramente sea la discusión por antonomasia: Emacs vs Vim. Y es que ambos son los editores utilizados por los programadores "hardocore". Y esto no es más que porque la curva de aprendizaje que tienen es bastante pronunciada.
@@ -23,10 +25,9 @@ Desde que internet es internet, existen varios puntos de fricción que siempre a
 <blockquote class="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">I&#39;ve been using Vim for about 2 years now, mostly because I can&#39;t figure out how to exit it.</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/435555976687923200">17 de febrero de 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ¿Por qué Emacs? Bueno, como no estaba contento con mi configuración actual para trabajar con Elixir, estuve investigando alternativas. Aunque mucha gente recomendaba Vim, pronto empecé a ver una opinión mayoritaria: **usar Spacemacs con Alchemist**.  
 
-[Spacemacs](http://spacemacs.org/) es Emacs y Vim a la vez. Como ellos mismos dicen *Emacs focused on Evil*. Por si no lo has imaginado el `evil mode` es la manera tan graciosa que tiene esta gente de decir que usan la configuración de teclado de *Vim* en *Emacs* (el ´holly mode` es el modo normal de Emacs).
+[Spacemacs](http://spacemacs.org/) es Emacs y Vim a la vez. Como ellos mismos dicen *Emacs focused on Evil*. Por si no lo has imaginado el `evil mode` es la manera tan graciosa que tiene esta gente de decir que usan la configuración de teclado de Vim en Emacs (el  `holly mode` es el modo normal de Emacs).
 
 La otra pata de esta configuración es [Alchemist](https://github.com/tonini/alchemist.el), que es la herramienta o configuración responsable de la integración de Elixir en Emacs. Leyendo las funcionalidades que trae a uno le entran ganas de probarlo: integración con **Mix**, funciones de compilación, consulta de documentación, completado de código, integración con IEX, soporte para Phoenix Framework ...      
 
