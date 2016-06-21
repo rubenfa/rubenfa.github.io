@@ -25,11 +25,11 @@ Desde que internet es internet, existen varios puntos de fricción que siempre a
 <blockquote class="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">I&#39;ve been using Vim for about 2 years now, mostly because I can&#39;t figure out how to exit it.</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/435555976687923200">17 de febrero de 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-¿Por qué Emacs? Bueno, como no estaba contento con mi configuración actual para trabajar con Elixir, estuve investigando alternativas. Aunque mucha gente recomendaba Vim, pronto empecé a ver una opinión mayoritaria: **usar Spacemacs con Alchemist**.  
+¿Por qué Emacs? Bueno, como no estaba contento con mi configuración para trabajar con Elixir, estuve investigando alternativas. Aunque mucha gente recomendaba Vim, pronto empecé a ver una opinión mayoritaria: **usar Spacemacs con Alchemist**.  
 
 [Spacemacs](http://spacemacs.org/) es Emacs y Vim a la vez. Como ellos mismos dicen *Emacs focused on Evil*. Por si no lo has imaginado el `evil mode` es la manera tan graciosa que tiene esta gente de decir que usan la configuración de teclado de Vim en Emacs (el  `holly mode` es el modo normal de Emacs).
 
-La otra pata de esta configuración es [Alchemist](https://github.com/tonini/alchemist.el), que es la herramienta o configuración responsable de la integración de Elixir en Emacs. Leyendo las funcionalidades que trae a uno le entran ganas de probarlo: integración con **Mix**, funciones de compilación, consulta de documentación, completado de código, integración con IEX, soporte para Phoenix Framework ...      
+La otra pata de esta configuración es [Alchemist](https://github.com/tonini/alchemist.el), que es la herramienta responsable de la integración de Elixir en Emacs. Leyendo las funcionalidades que trae a uno le entran ganas de probarlo: integración con **Mix**, funciones de compilación, consulta de documentación, completado de código, integración con IEX, soporte para Phoenix Framework ...      
 
 
 ![Tira Ecol](/img/posts/2016/tiraecol-3.jpg)
@@ -51,7 +51,7 @@ Después de eso, es cuestión de tiempo que vayas cogiendo el truco al editor, y
 
 ## Conclusión
 
-Con **Spacemacs** cada día soy más productivo. Aun estoy lejos de alcanzar la productividad que tengo con Visual Studio, pero creo que será cuestión de tiempo. Ahora mis proyectos son pequeños, y no me he tenido que meter a fondo con *Projectile* (gestión de proyectos), *Helm* (para buscar archivos, completar nombres de archivo etc), o *dired* (para hacer operaciones con archivos) o *Magit* (para usar Git en Emacs), pero seguramente lo iré haciendo poco a poco.
+Con **Spacemacs** cada día soy más productivo. Aun estoy lejos de rendir tanto como con Visual Studio, pero creo que será cuestión de tiempo. Ahora mis proyectos son pequeños, y no me he tenido que meter a fondo con *Projectile* (gestión de proyectos), *Helm* (para buscar archivos, completar nombres de archivo etc), o *dired* (para hacer operaciones con archivos) o *Magit* (para usar Git en Emacs), pero seguramente lo iré haciendo poco a poco.
 
 Lo que no he podido saborear, es lo de usar el **evil mode**. Dicen que editar en *Vim* es un placer, pero yo no he conseguido pasar del tutorial que viene con **Spacemacs**. Veremos si soy capaz de darle una oportunidad en el futuro.
 
