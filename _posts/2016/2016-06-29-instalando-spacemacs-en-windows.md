@@ -13,7 +13,7 @@ Instalarlo no es difícil, pero como suele pasar con todo programa venido de Uni
 
 ## Instalando Emacs
 
-Voy a suponer que ya tienes instalado Elixir y Erlang. Con esos dos componentes, y el `PATH` de Windows bien configurado, ya podrías trabajar con cualquier editor. Abres Notepad++, escribes tu programa en Elixir y compilas con `Mix`. Incluso puedes abrir una línea de comandos y trastear con `IEX`. Pero como estamos hablando de Emacs, lo primero que vamos a hacer es instalarlo.
+Voy a suponer que ya tienes instalado Elixir y Erlang. Con esos dos componentes, y el `PATH` de Windows bien configurado, ya podrías trabajar con cualquier editor. Abres Notepad++, escribes tu programa en Elixir y compilas con `Mix`. Incluso puedes abrir una línea de comandos y trastear con `IEX`. Pero como estamos hablando de Emacs, pues vamos a instalarlo.
 
 Para instalar Emacs, bastan con ir a su [flamante y remozada página web](https://www.gnu.org/software/emacs/) y descargarlo. Suele venir en un *zip*, y no es necesario instalarlo. Descomprimimos en una ruta conocida, y ya tenemos Emacs instalado.
 
@@ -27,7 +27,7 @@ Y listo. Emacs se instalará en tu equipo.
 
 ## Añadiendo Spacemacs
 
-Con los pasos anteriores habremos instalado Emacs, y podremos usarlo sin problemas. Pero si no estás seguro de querer usar Emacs, porque te han hablado bien de Vim, puedes tener lo mejor de los dos mundos con Spacemacs. De esta manera podrás elegir entre el `holly-mode`, con la distribución de teclado de Emacs, y su forma de funcionar; o podrás elegir el `evil-mode`, que os hará sentir como si estuvierais en Vim.  Además de eso, Spacemacs viene muy bien preparado, con todos los accesos configurados y listo para ser funcional desde el minuto uno.
+Con los pasos anteriores habremos instalado Emacs, y podremos usarlo sin problemas. Pero si no estás seguro de querer usar Emacs, porque te han hablado bien de Vim, puedes tener lo mejor de los dos mundos con Spacemacs. De esta manera podrás elegir entre el `holly-mode`, con la distribución de teclado de Emacs, y su forma de funcionar; o podrás elegir el `evil-mode`, que os hará sentir como si estuvierais en Vim.  Además de eso, Spacemacs viene muy bien preparado, con todos los accesos configurados y listo para ser funcional desde el principio.
 
 Para instalarlo, tendremos que tener localizado nuestro directorio `emacs.d`. Este directorio en Linux, normalmente se guarda en la carpeta `home` del usuario, pero si estás en Windows, la cosa es un poco más complicada (aunque no mucho). En este caso se guarda en la ruta:
 
@@ -43,9 +43,9 @@ Para instalar Spacemacs, lo haremos directamente desde [su repositorio en GitHub
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
 ```
 
-Como es obvio, necesitareis tener Git instalado para poder ejecutar instrucciones contra el repositorio. Si no lo tiens puedes descargarlo de [aquí](https://git-scm.com/download/win).
+Como es obvio, necesitaréis tener Git instalado para poder ejecutar instrucciones contra el repositorio. Si no lo tienes puedes descargarlo de [aquí](https://git-scm.com/download/win).
 
-Una vez haya terminado la descarga del repositorio de GitHub, y si todo ha ido bien, tendréis Spacemacs listo para funcionar. Podéis comprobarlo si abrís Emacs, ya que la interface de usuario habrá cambiado completamente.
+Una vez haya terminado la descarga del repositorio de GitHub, y si todo ha ido bien, tendréis Spacemacs listo para funcionar. Podéis comprobarlo si abrís Emacs, ya que la *interface* de usuario habrá cambiado completamente.
 
 
 ## Configurando Spacemacs para trabajar con Elixir y Alchemist
@@ -74,23 +74,23 @@ dotspacemacs-configuration-layers
      editorconfig
      themes-megapack
      perspectives
-	 javascript
+	   javascript
      )
 ```
 
-Técnicamente, con la capa `elixir` nos bastaría para programar, pero si utilizáis el editor para más cosas, no viene mal tener alguna capa extra (como por ejemplo la capa `javascript`).
+Técnicamente, con la capa `elixir` nos bastaría para usar el lenguage, pero si utilizáis el editor para más cosas, no viene mal tener alguna capa extra (como por ejemplo la capa `javascript`).
 
-Las capas se encargan de añadir todos los paquetes necesarios para tener un lenguage (u otros componentes) funcionando. En la carpeta `Roaming\.emacs.d\layers\+lang\elixir` podéis encontrar el archivo `packages.el` que contiene los paquetes que se instalarán con esta capa. Podemos ver como se instalarán `alchemist`, `company` o `elixir-mode`.
+Las capas se encargan de añadir todos los paquetes necesarios para tener un lenguaje (u otros componentes) funcionando. En la carpeta `Roaming\.emacs.d\layers\+lang\elixir` podéis encontrar el archivo `packages.el` que contiene los paquetes que se instalarán con esta capa. Podemos ver como se instalarán `alchemist`, `company` o `elixir-mode`.
 
 Una vez cerremos y abramos Spacemacs, los paquetes se descargarán automáticamente y quedarán instalados.
 
-> Si como yo tenéis problemas a la hora de instalar paquetes, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
+> Si como al igual que yo,  tenéis problemas a la hora de instalar paquetes, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
 
 ## Configuraciones adicionales
 
-En el archivo `.spacemacs` podremos configurar algunas cosas para hacer nuestro entorno más funciona. Por ejemplo con `dotspacemacs-themes` podemos configurar el tema de Spacemacs. Yo estoy usando `smyx` pero hay muchos más. Podéis ver ejemplos de como quedan [aquí](http://themegallery.robdor.com/). 
+En el archivo `.spacemacs` podremos configurar algunas cosas para hacer nuestro entorno más funcional. Por ejemplo con `dotspacemacs-themes` podemos configurar el *theme* de Spacemacs. Yo estoy usando `smyx` pero hay muchos más. Podéis ver ejemplos de como quedan [aquí](http://themegallery.robdor.com/). 
 
-También podéis añadir la opción para que os aparezcan los números de línea con `dotspacemacs-line-numbers t` o añadir una configuración especial para incrementar el tamaño de la fuente con:
+También podéis añadir la opción para que os aparezcan los números de línea con `dotspacemacs-line-numbers t` o añadir una configuración especial para incrementar el tamaño de la fuente con (`Ctrl +` y `Ctrl -`):
 
 ```lisp
 (defun dotspacemacs/user-config () 
