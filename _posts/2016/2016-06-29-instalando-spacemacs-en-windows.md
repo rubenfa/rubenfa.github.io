@@ -37,7 +37,7 @@ Para instalarlo, tendremos que tener localizado nuestro directorio `emacs.d`. Es
 
 Este directorio es el que tendremos que modificar para usar Spacemacs, así que no está de más hacer una copia por si rompemos algo.
 
-Para instalar Spacemacs, lo haremos directamente desde [su repositorio en GitHub](https://github.com/syl20bnr/spacemacs). Para ello utilizaremos el comando, estando en en directorio `Roaming`:
+Para instalar Spacemacs, lo haremos directamente desde [su repositorio en GitHub](https://github.com/syl20bnr/spacemacs). Para ello utilizaremos el siguiente comando, estando en en directorio `Roaming`:
 
 ```
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
