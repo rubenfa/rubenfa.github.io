@@ -74,7 +74,7 @@ dotspacemacs-configuration-layers
      editorconfig
      themes-megapack
      perspectives
-	   javascript
+     javascript
      )
 ```
 
