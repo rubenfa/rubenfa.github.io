@@ -84,7 +84,7 @@ Las capas se encargan de añadir todos los paquetes necesarios para tener un len
 
 Una vez cerremos y abramos Spacemacs, los paquetes se descargarán automáticamente y quedarán instalados.
 
-> Si como al igual que yo,  tenéis problemas a la hora de instalar paquetes, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
+> Si al igual que yo,  tenéis problemas a la hora de instalar paquetes al iniciar Spacemacs, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
 
 ## Configuraciones adicionales
 
