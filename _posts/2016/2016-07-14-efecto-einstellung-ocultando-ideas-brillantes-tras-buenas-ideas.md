@@ -1,6 +1,7 @@
 ---
 layout: post
-title: El efecto Einstellung: ocultando ideas brillantes tras buenas ideas
+title: El efecto Einstellung
+subtitle: Ocultando ideas brillantes tras buenas ideas
 ---
 
 Cuando tenemos que enfrentarnos a un problema especialmente difícil, nuestro cerebro tiende a buscar patrones para hallar la solución. Estos patrones están construidos en base a nuestros conocimientos y experiencias. Y cuantos más conocimientos y experiencias tengamos sobre una materia (o en otras materias), más fácil será para nuestro cerebro llegar a la solución del problema. Esto es algo que explican muy bien en el curso [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) de Coursera.
