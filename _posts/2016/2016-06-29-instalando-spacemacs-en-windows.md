@@ -37,7 +37,7 @@ Para instalarlo, tendremos que tener localizado nuestro directorio `emacs.d`. Es
 
 Este directorio es el que tendremos que modificar para usar Spacemacs, así que no está de más hacer una copia por si rompemos algo.
 
-Para instalar Spacemacs, lo haremos directamente desde [su repositorio en GitHub](https://github.com/syl20bnr/spacemacs). Para ello utilizaremos el comando, estando en en directorio `Roaming`:
+Para instalar Spacemacs, lo haremos directamente desde [su repositorio en GitHub](https://github.com/syl20bnr/spacemacs). Para ello utilizaremos el siguiente comando, estando en en directorio `Roaming`:
 
 ```
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
@@ -74,7 +74,7 @@ dotspacemacs-configuration-layers
      editorconfig
      themes-megapack
      perspectives
-	   javascript
+     javascript
      )
 ```
 
@@ -84,7 +84,7 @@ Las capas se encargan de añadir todos los paquetes necesarios para tener un len
 
 Una vez cerremos y abramos Spacemacs, los paquetes se descargarán automáticamente y quedarán instalados.
 
-> Si como al igual que yo,  tenéis problemas a la hora de instalar paquetes, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
+> Si al igual que yo,  tenéis problemas a la hora de instalar paquetes al iniciar Spacemacs, intentad establecer el parámetro `dotspacemacs-elpa-https` con  `nil`. Por alguna razón los paquetes no se me descargaban utilizando https.
 
 ## Configuraciones adicionales
 
