@@ -1,16 +1,15 @@
 ---
 layout: post
-title: El efecto Einstellung: ocultando ideas brillantes tras buenas ideas
+title: Instalando Spacemacs en Windows
 ---
-
-![patrones](/img/posts/2016/chunks.png)
-
 
 Cuando tenemos que enfrentarnos a un problema especialmente difícil, nuestro cerebro tiende a buscar patrones para hallar la solución. Estos patrones están construidos en base a nuestros conocimientos y experiencias. Y cuantos más conocimientos y experiencias tengamos sobre una materia (o en otras materias), más fácil será para nuestro cerebro llegar a la solución del problema. Esto es algo que explican muy bien en el curso [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) de Coursera.
 
 Por ejemplo, cuando aprendemos a conducir un coche, nos parece una tarea imposible. Tenemos que estar concentrados en mil cosas diferentes: pisar el embrague, meter la marcha correcta, acelerar o frenar, prestar atención a la carretera, mirar por los retrovisores etc. Con el tiempo, nuestro cerebro va construyendo los patrones de manera que conducir nos parece una tarea muy sencilla, y que nuestro cerebro es capaz de hacer sin la menor dificultad.
 
 Cuando programamos, también vamos consultando los patrones que existen en nuestro cerebro. Nos basamos en conocimientos y experiencias pasadas, que nos ayudan a la solución del problema. Pero tanto en programación como en otras disciplinas, se puede dar un efecto curioso: el efecto Einstellung.
+
+![patrones](/img/posts/2016/chunks.png)
 
 ## Einstellung
 
