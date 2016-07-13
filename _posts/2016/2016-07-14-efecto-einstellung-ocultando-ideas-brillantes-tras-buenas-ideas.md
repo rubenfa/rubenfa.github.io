@@ -10,7 +10,7 @@ Por ejemplo, cuando aprendemos a conducir un coche, nos parece una tarea imposib
 
 Cuando programamos, también vamos consultando los patrones que existen en nuestro cerebro. Nos basamos en conocimientos y experiencias pasadas, que nos ayudan a la solución del problema. Pero tanto en programación como en otras disciplinas, se puede dar un efecto curioso: el efecto Einstellung.
 
-![patrones](/img/posts/2016/chunks.png)
+![patrones](/img/posts/2016/chunks.PNG)
 
 ## Einstellung
 
