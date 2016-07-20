@@ -52,4 +52,68 @@ iex(2)> sort [2,1,5]
 [1, 2, 5]
 ```
 
+Ahora ya no hace falta que escribamos toda la ruta de las funciones que hay en `Enum` (como `sort`), ya que estas funciones están disponibles en nuestro módulo, como si las hubiéramos programado nosotros.
+
+Con `import` también podemos indicar qué funciones queremos importar, evitando cargar todas.
+
+```elixir
+import Integer only: :macros # importa solo macros de la librería Integer
+import Integer only: :functions # importa solo las funciones de la librería Integer
+import Enum only: [sort:1] # importa solo la función sort con "arity" 2 de la librería Enum
+```
+
+## Require 
+
+En Elixir podemos utilizar `macros` para ampliar el lenguaje. De hecho Elixir está lleno de macros que podremos usar y aquí es cuando entra la directiva `require`.
+
+Para que una macro funcione al usarla desde nuestros módulos, le tendremos que decir al compilador que necesitamos tenerla lista y compilada, antes de ejecutar nuestro código. Por ejemplo para utilizar la macro `is_even` de la librería Integer, antes tendremos que hacer un `require`.
+
+```elixir
+defmodule Enteros do
+  require Integer
+
+  def es_par(num) do
+    Integer.is_even(num)
+  end
+end
+```
+
+Si no lo hacemos Elixir nos devolverá el error *"you must require Integer before invoking the macro Integer.is_even/1"*.
+
+
+## Use
+
+En este caso `use` se trata de una macro, que está relacionada con `require`. Si utilizamos `use` en un módulo, nos aseguramos de primero hacer un `require` y luego llamar a la función `__using__` para inicializar algún tipo de estado o importar librerías asociadas.
+
+Un caso típico es el del framework de test que podemos usar en Elixir. Así, cuando hacemos esto:
+
+```elixir
+defmodule AssertionTest do
+  use ExUnit.Case, async: true
+
+  test "always pass" do
+    assert true
+  end
+end
+```
+
+El compilador acaba traduciéndolo en esto:
+
+```elixir
+defmodule AssertionTest do
+  require ExUnit.Case
+  ExUnit.Case.__using__([async: true])
+
+  test "always pass" do
+    assert true
+  end
+end
+```
+
+La función `__using__` la podremos definir en cualquiera de nuestros módulos para poder llamarla al utilizar `use`. 
+
+
+## Conclusión
+
+En definitiva, Elixir tiene varias formas diferentes de reutilizar código, y es improtante que las conozcamos todas. Aunque algunas como `alias` e `import` son sencillas de entender, `use` y  `require` son algo más complejas, ya que implican la utilización de macros.
 
