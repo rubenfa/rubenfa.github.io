@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Reutilizando código en Elixir
+title:  Compartiendo código en Elixir
 subtitle: alias, use, import y require
 ---
 
