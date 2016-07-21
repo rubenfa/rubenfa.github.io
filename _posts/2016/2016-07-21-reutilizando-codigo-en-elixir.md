@@ -5,13 +5,11 @@ subtitle: alias, use, import y require
 ---
 
 
-Cuando uno viene de programar en `C#`, piensa que utilizar código de otros proyectos o `namespaces` será igual de sencillo en todos los lenguajes. Pero resulta que hay lenguajes como Elixir en los que la cosa no es tan sencilla y existen varias maneras de compartir código entre módulos. Sin duda es una de las cosas que más me ha costando pillar (igual es que soy un zote), así que he pensado en escribirlo para aclararme yo, y de paso aclarar a quién pueda leerlo.
+Cuando uno viene de programar en C#, piensa que utilizar código de otros proyectos o `namespaces` será igual de sencillo en todos los lenguajes. Pero resulta que hay lenguajes como Elixir en los que la cosa no es tan sencilla y existen varias maneras de compartir código entre módulos. Sin duda es una de las cosas que más me ha costando pillar (igual es que soy un zote), así que he pensado en escribirlo para aclararme yo, y de paso aclarar a quién pueda leerlo. Ojo, no es que sea difícil, pero hay que tener en cuenta que en Elixir existen las `macros` y que no existe el concepto de `namespace`. Así que hay más métodos para importar que el clásico `using` de C#.
 
 ## Alias
 
-Esta es sin duda la directiva más fácil de entender. Aunque no se utiliza para compartir código, si puede simplificar mucho lo que escribamos. 
-
-En Elixir, no existen `namespaces`, pero se pueden prefijar los módulos para tenerlos organizados. Podemos imaginar el siguiente módulo:
+Esta es sin duda la directiva más fácil de entender. Aunque no se utiliza para compartir código, si puede simplificar mucho lo que escribamos. En Elixir, coomo he dicho antes, no existen `namespaces`, pero se pueden prefijar los módulos para tenerlos organizados. Imaginando el siguiente módulo:
 
 ```elixir
 defmodule Console.Writer do
@@ -21,7 +19,7 @@ defmodule Console.Writer do
 end
 ```
 
-El módulo es sencillo de entender. Cuando dese otro módulo, queramos escribir algo en la consola, solo tendremos que escribir `Console.Writer.write_line "mensaje en pantalla"`. Si solo lo tenemos que escribir una vez, no hay problema, pero ¿y si lo utilizamos muchas veces? Entonces es cuando `alias` nos puede servir de ayuda. Por ejemplo si al principio de nuestro módulo, escribimos lo siguiente:
+El módulo es sencillo de entender. Cuando desde otro módulo, queramos escribir algo en la consola, solo tendremos que escribir `Console.Writer.write_line "mensaje en pantalla"`. Si solo lo tenemos que escribir una vez, no hay problema. ¿Y si lo utilizamos muchas veces? Entonces es cuando `alias` nos puede servir de ayuda. Por ejemplo si al principio de nuestro módulo, escribimos lo siguiente:
 
 ```elixir
 alias Console.Writer 
@@ -57,9 +55,9 @@ Ahora ya no hace falta que escribamos toda la ruta de las funciones que hay en `
 Con `import` también podemos indicar qué funciones queremos importar, evitando cargar todas.
 
 ```elixir
-import Integer only: :macros # importa solo macros de la librería Integer
-import Integer only: :functions # importa solo las funciones de la librería Integer
-import Enum only: [sort:1] # importa solo la función sort con "arity" 2 de la librería Enum
+import Integer only: :macros #importa solo macros de la librería Integer
+import Integer only: :functions #importa solo las funciones de la librería Integer
+import Enum only: [sort:1] #importa solo la función sort con "arity" 2 (que recibe dos parámetros) de la librería Enum
 ```
 
 ## Require 
@@ -78,12 +76,12 @@ defmodule Enteros do
 end
 ```
 
-Si no lo hacemos Elixir nos devolverá el error *"you must require Integer before invoking the macro Integer.is_even/1"*.
+Si no lo hacemos Elixir nos devolverá el error *"you must require Integer before invoking the macro Integer.is_even/1"*. En definitiva, para usar macros, nos tenemos que asegurar de que están cargadas antes de utilziarlas, y esto lo hacemos con `require`.
 
 
 ## Use
 
-En este caso `use` se trata de una macro, que está relacionada con `require`. Si utilizamos `use` en un módulo, nos aseguramos de primero hacer un `require` y luego llamar a la función `__using__` para inicializar algún tipo de estado o importar librerías asociadas.
+En este caso `use` se trata de una macro, que está relacionada con `require`. Si utilizamos `use` en un módulo, nos aseguramos de primero hacer un `require` y luego llamar a la función `__using__` para inicializar algún tipo de estado o importar librerías asociadas. Esta función es una especie de constructor, salvando las distancias.
 
 Un caso típico es el del framework de test que podemos usar en Elixir. Así, cuando hacemos esto:
 
@@ -115,5 +113,5 @@ La función `__using__` la podremos definir en cualquiera de nuestros módulos p
 
 ## Conclusión
 
-En definitiva, Elixir tiene varias formas diferentes de reutilizar código, y es improtante que las conozcamos todas. Aunque algunas como `alias` e `import` son sencillas de entender, `use` y  `require` son algo más complejas, ya que implican la utilización de macros.
+En definitiva, Elixir tiene varias formas diferentes de compartir código entre módulos, y es improtante que las conozcamos todas. Aunque algunas como `alias` e `import` son sencillas de entender, `use` y  `require` son algo más complejas, ya que implican la utilización de macros. Y espero poder hablaros de macros en un futuro no muy lejano.
 
