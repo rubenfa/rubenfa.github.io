@@ -4,7 +4,7 @@ title:  Usando estructuras en Elixir
 subtitle: 
 ---
 
-Hace un tiempo, os hablaba [de los tipos de colecciones que podíamos encontrar en Elixir](http://charlascylon.com/2016-03-21-tipos-colecciones-Elixir), y entre ellas se encontraban los *Maps*. Un *Map* no es más que una colección de elementos clave-valor, cuya clave no puede repetirse. En este caso vamos a hablar de *Structs*, que vienen a ser una especie de *Maps* tipados, lo cual nos da unas propiedades bastante útiles e interesantes.
+Hace un tiempo, os hablaba [de los tipos de colecciones que podíamos encontrar en Elixir](http://charlascylon.com/2016-03-21-tipos-colecciones-Elixir), y entre ellas se encontraban los *Maps*. Un *Map* no es más que una colección de elementos clave-valor, cuya clave no puede repetirse. En este caso vamos a hablar de *Structs*, que vienen a ser una especie de *Maps* tipados, lo cual nos da muchas posibilidades.
 
 ## Struct
 
