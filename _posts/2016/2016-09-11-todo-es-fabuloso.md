@@ -19,9 +19,9 @@ Lo cierto es que el mundo real no es Twitter, y aunque es es fácil encontrar ar
 
 Y es que en el mundo real, la mayoría de las veces, los programadores no tenemos la capacidad de aplicar buenas prácticas. Dependemos también de otras personas, ya sean jefes, compañeros o incluso la propia empresa como organización. 
 
-Si eres un programador de 9 a 6, que solo se preocupa de sus 8 horas de trabajo, no tendrás problemas (al menos mientras no tengas que hacer horas extra). Pero si eres un programador en estado de [incompetencia consciente o competencia consciente](http://blog.koalite.com/2016/02/se-consciente-de-lo-que-sabes-y-de-lo-que-no) seguramente trabajar así acabes desmotivándote. 
+Si eres un programador de 9 a 6, que solo se preocupa de sus 8 horas de trabajo, no tendrás problemas (al menos mientras no tengas que hacer horas extra). Pero si eres un programador en estado de [incompetencia consciente o competencia consciente](http://blog.koalite.com/2016/02/se-consciente-de-lo-que-sabes-y-de-lo-que-no) seguramente al trabajar así acabes desmotivándote. 
 
-Lo más normal, desgraciamente, es que te toque trabajar con código heredado. ¿Y si el código no tiene tests unitarios? ¿Qué haces? Hacer test es algo que implica a toda a la compañía o departamento de desarrollo, y muchas veces es un coste que no se está dispuesta a asumir (aunque parezca mentira se siguen viendo como un gasto).
+Y es que, lo más normal desgraciamente, es que te toque trabajar con código heredado. ¿Y si el código no tiene tests unitarios? ¿Qué haces? Hacer test es algo que implica a toda a la compañía o departamento de desarrollo, y muchas veces es un coste que no se quiere asumir (aunque parezca mentira se siguen viendo como un gasto).
 
 Y sin entrar en el tema del testing podemos ir a cosas más básicas como las políticas del equipo a la hora de codificar. Nombres de variables, nombres de clases,  dónde y como llamar los archivos con el código etc. Si nadie sigue una guía de estilo, al final el código se ensucia, ya que cada desarrollador del equipo lo hace a su manera. Y si es el típico proyecto de cárnica, por el que pasan varias personas distintas al año, acabas con una guarrería muy difícil de manejar.
 
@@ -49,6 +49,6 @@ El otro día leí un artículo de [@xurxodev](https://twitter.com/xurxodev) en *
 
 Hasta hace unos años, yo era programador de cárnica mala. Lo importante era cumplir con el cliente, y yo eso lo hacía bien. Soy un tío discreto, que no da guerra, y que hace las cosas razonablemente bien (dentro del caos) y sin quejarse. Pero un día me di cuenta que no estaba contento con eso. Empecé a investigar y vi que había un mundo mejor. Empecé a leer libros sobre buenas prácticas (Clean Code, The Pragmatic Programmer etc.). Leí (y sigo leyendo) libros técnicos para ampliar mi formación. Incluso abrí un blog para comentar lo que aprendía, y una cuenta de Twitter para seguir a los buenos y aprender de ellos.  
 
-Si echo la vista atrás, me doy cuenta de que en unos cuantos años, he mejorado mucho. Pero aun así, siempre tengo la sensación de que no es suficiente. Siempre hay un proyecto malo, en el que las cosas no se hacen bien, y eso te hace cometer errores. Y eso me desmotiva mucho.
+Si echo la vista atrás, me doy cuenta de que en unos cuantos años, he mejorado mucho. Pero aun así, siempre tengo la sensación de que no es suficiente. Siempre hay un proyecto malo, en el que las cosas no se hacen bien, y eso como digo, te hace cometer errores. Eso me desmotiva mucho. De momento no he encontrado de motivarme en este tipo de proyectos. Mi válvula de escape son mis proyectos personales. Al final yo soy el que toma las decisiones, sean buenas o malas. Pero en el trabajo, cuando te toca un proyecto feo (en mi caso casi siempre), no me veo con fuerzas de pelear con todos para mejorarlo.
 
 En fin, ¿os ha pasado? ¿Soy el único? ¿Qué recomendáis?
