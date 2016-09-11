@@ -19,7 +19,7 @@ Lo cierto es que el mundo real no es Twitter, y aunque es es fácil encontrar ar
 
 Y es que en el mundo real, la mayoría de las veces, los programadores no tenemos la capacidad de aplicar buenas prácticas. Dependemos también de otras personas, ya sean jefes, compañeros o incluso la propia empresa como organización. 
 
-Si eres un programador de 9 a 6, que solo se preocupa de sus 8 horas de trabajo, no tendrás problemas (al menos mientras no tengas que hacer horas extra). Pero si eres un programador en estado de [incompetencia consciente o competencia inconsciente](http://blog.koalite.com/2016/02/se-consciente-de-lo-que-sabes-y-de-lo-que-no) seguramente trabajar así acabes desmotivándote. 
+Si eres un programador de 9 a 6, que solo se preocupa de sus 8 horas de trabajo, no tendrás problemas (al menos mientras no tengas que hacer horas extra). Pero si eres un programador en estado de [incompetencia consciente o competencia consciente](http://blog.koalite.com/2016/02/se-consciente-de-lo-que-sabes-y-de-lo-que-no) seguramente trabajar así acabes desmotivándote. 
 
 Lo más normal, desgraciamente, es que te toque trabajar con código heredado. ¿Y si el código no tiene tests unitarios? ¿Qué haces? Hacer test es algo que implica a toda a la compañía o departamento de desarrollo, y muchas veces es un coste que no se está dispuesta a asumir (aunque parezca mentira se siguen viendo como un gasto).
 
