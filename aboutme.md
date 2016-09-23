@@ -11,6 +11,8 @@ saco un rato, intento programar aplicaciones web con **Elixir** y **Phoenix**.
 
 Mi mayor afición es la lectura. Mi sueño imposible es leer todos los libros del mundo. Mis favoritos son los libros de ciencia ficción y las novelas históricas, aunque leo cualquier libro que sea bueno. También leo los malos, pero prefiero olvidarlo (cuánto tiempo perdido). Por supuesto también leo libros técnicos para seguir aprendiendo.
 
-Siempre estoy dispuesto a ayudar, así que si crees que puedo echarte una mano en algo, no dudes en escribirme. Puedes mandarme un correo electrónico a "contacto" + arroba + el dominio de este blog (intento de esquivar los spam bots), 
-o buscarme en [Twitter](https://twitter.com/_rubenfa).
+Siempre estoy dispuesto a ayudar, así que si crees que puedo echarte una mano en algo, no dudes en contactarme. Puedes hacerlo de la siguiente manera:
+
+* Envíandome un correo electrónico a "contacto" + arroba + el dominio de este blog (intento de esquivar los spam bots),
+* O puedes enviarme un mensaje directo a través de Twitter con el siguiente botón: <a href="https://twitter.com/messages/compose?recipient_id=749179032" class="twitter-dm-button" data-size="large" data-lang="es" data-screen-name="_rubenfa" data-show-count="false">Message @_rubenfa</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
