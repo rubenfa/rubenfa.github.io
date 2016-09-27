@@ -128,7 +128,7 @@ end
 
 ## Utilizando Ecto
 
-Y ahora es cuando viene el pollo del arroz con pollo. Una vez está todo configurado, podemos usar nuestra base de datos. Lo primero que habría que hacer sería crear la base de datos con el comando `mix ecto.create`. Luego tendríamos que crear la tabla donde vamos a persistir los datos, pero como vamos a usar **MongoDB** esto no es necesario. Ventajas de utilizar una base de datos sin esquema. Si usáis PostgreSQL, podéis echarle un ojo [a las Migraciones](https://hexdocs.pm/ecto/getting-started.html#setting-up-the-database), que  permitirán crear las tablas desde Elixir.
+Y ahora es cuando viene el pollo del arroz con pollo. Una vez está todo configurado, podemos usar nuestra base de datos. Lo primero que habría que hacer sería crear la base de datos con el comando `mix ecto.create`. Luego tendríamos que crear la tabla donde vamos a persistir los datos, pero como vamos a usar **MongoDB** esto no es necesario. Ventajas de utilizar una base de datos sin esquema. Si usáis PostgreSQL, podéis echarle un ojo [a las Migraciones](https://hexdocs.pm/ecto/Ecto.Migration.html), que  permitirán crear las tablas desde Elixir.
 
 En cualquier caso, y como es lógico, **debemos tener una base de datos configurada y funcionando**. Elixir no hace magia. 
 
