@@ -28,4 +28,4 @@ Este mismo cliclo, puede aplicarse a cualquier tecnología de desarrollo, ya sea
 
 ## ¿Entonces qué aprendo?
 
-
+Leyendo esto parece que
