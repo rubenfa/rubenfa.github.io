@@ -1,0 +1,46 @@
+---
+layout: post
+title:  Como desarrollar tu memoria
+subtitle: O como Anki puede mejorar tu vida
+---
+
+Reconozco que una de las cosas que más me gusta en la vida es leer. No suelo tener mucho tiempo libre (tengo dos hijos así que algunos me entenderán), pero el poco que tengo suelo usarlo para leer. Como herramienta de lectura utilizo un Kindle Paperwhite, que es sin duda el mejor *gadget* que he tenido nunca. Lo que hace, lo hace bien, y no hace falta cambiarlo cada año por reducción del rendimiento. Una joya. Para aprovechar el Kindle, estoy apuntado a los [Kindle flash de Amazon](https://www.amazon.es/gp/feature.html?ie=UTF8&docId=1000626083), por lo que cada día llegan a mi correo tres o cuatro libros en oferta, que generalmente cuestan menos de 2 €. Con ese precio, muchos libros que no pensarías comprar, acaban en tu biblioteca virtual y por poco más de lo que cuesta un café. Lo bueno de estas ofertas, además de los librazos que encuentras a veces (Salamina, La trilogía de la Fundación, muchos de Brandon Sanderson etc.) es que puedes lanzarte a comprar libros del mal llamado género *desarrollo personal* o *autoayuda*. 
+
+Este género es bastante peligroso, porque puedes encontrarte libros de dudosa calidad con mucha fecuencia. Libros llenos de filosofía barata, o con gurús de alguna temática que no hacen más que dar consejos de sentido común (en el mejor de los casos), o consejos inútiles (en el peor de los casos). Así a ojo yo diría que cada diez libros de este género, solo uno o dos merecen la pena.
+
+![Imagen de Homer Simpson](http://www.charlascylon.com/img/posts/2016/homer.jpg)
+
+Pero a veces, de alguno de esos libros, puedes sacar algo interesante. Y de dos de ellos yo aprendí algunas cosillas para mejorar la memoria: [Desarrolla una mente prodigiosa](https://www.amazon.es/Desarrolla-Mente-Prodigiosa-Best-Book/dp/8441421269/ref=sr_1_1?ie=UTF8&qid=1476040370&sr=8-1&keywords=desarrolla+una+mente+prodigiosa) y [Construye tu SUPERMEMORIA volviendo a ser niño](https://www.amazon.es/Construye-SUPERMEMORIA-volviendo-ser-ni%C3%B1o-ebook/dp/B015VIANCK/ref=sr_1_2?ie=UTF8&qid=1476040370&sr=8-2&keywords=desarrolla+una+mente+prodigiosa). 
+
+
+## ¿Se puede desarrollar la memoria?
+
+Con esos títulos, se podría pensar que los libros son el típico gancho para engañar incautos. Bueno, supongo que son cosas del marketing, y que los títulos tienen que ser llamativos para poder venderse bien. Aunque no todo en los libros es aprovechable (lo siento pero no consigo mejorar mi velocidad de lectura sin perder información), hay muy buenas técnicas y métodos para mejorar nuestra memoria. Y aunque parezca mentira, son válidas para cualquier persona, sin necesidad de tener una mente prodigiosa.
+
+En uno de estos libros me tope con la historia historia de Joshua Foer, un periodista y escritor, que quería escribir sobre la gente que iba a los concursos de memoria. Para ello fue a uno de esos concursos, en la que la gente participa memorizando barajas de cartas o largas series de números. El caso es que vio, que el concurso en sí no era muy emocionante (ver a gente memorizando no creo que sea divertido), así que decidió hacerse concursante para contarlo de primera mano. Al año siguiente se presentó al concurso, y no solo le fue bien, si no que lo ganó. Os dejo un vídeo de una charla TED que dio. Es muy entretenido.
+
+<iframe  title="YouTube video player" width="480" height="390" src="https://www.youtube.com/watch?v=U6PoUg7jXsA" frameborder="0" allowfullscreen></iframe>
+
+Una cosa que se puede desprender del vídeo, es que cualquiera puede mejorar su mente. La gente que va a esos concursos no tienen supercerebros. Suelen ser gente normal, que utiliza métodos  para memorizar más cosas, y lo consiguen. Y esos métodos no son novedosos. Algunos llevan milenios entre nosotros, como el de los [Palacios de Loci](https://es.wikipedia.org/wiki/Palacio_de_la_memoria) que usa Joshua Foer en el vídeo. El caso es que como tenemos toda la información a golpe de internet, estamos olvidando como memorizar de forma efectiva, ya que no lo necesitamos.
+
+Algunas de estas técnicas, como los sistemas espaciados de repetición (SRS en inglés), se cuentan en los libros que he comentado antes. Si queréis más libros de este tipo, no dejéis de [ver este enlace con los 25 mejores libros para mejorar tu memoria](http://www.multipotens.com/memory-improvement-books/?utm_medium=email&utm_source=other&utm_campaign=opencourse.GdeNrll1EeSROyIACtiVvg.announcements%7Eopencourse.GdeNrll1EeSROyIACtiVvg.819FcHXgEeawABKCSjpYXw). En esa lista me he encontrado con un libro estupendo para aprender idiomas [Fluent Forever](https://www.amazon.es/Fluent-Forever-Learn-Language-Forget-ebook/dp/B00IBZ405W/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1476045593&sr=1-1&keywords=fluent+forever), que hace uso extensivo de los sistemas espaciados de repetición, para aprender un idioma. 
+
+## El sistema SRS
+
+Un sistema [SRS (Spaced Repetition System)](https://es.wikipedia.org/wiki/Repaso_espaciado), es un sistema que se basa en la idea de los incrementos crecientes para recordar algo. Básicamente  tienes una tarjeta con la que aprendes algo: por ejemplo que *dog* en inglés es perro. Para no olivdarlo, el sistema te vuelve a preguntar al poco tiempo (digamos al día siguiente) que significa *dog* en español. Si eres capaz de recordarlo, se lo dices al sistema, que guardará esa definición para mostrártela dentro de cinco días. A los cinco días, *dog* volverá a aparecer. Si no la recuerdas te la volverá a mostrar en poco tiempo, pero si lo haces, no la volverá a mostrar hasta dentro de muchos más días, porque entenderá que es una palabra que recuerdas. De esta manera, incrementando poco a poco el espacio de repetición, la palabra va quedándose fijada en tu memoria.
+
+Este sistema que parece tan tonto, funciona de verdad. Para poder ponerlo en práctica solo necesitas utilizar [Anki](http://ankisrs.net/), un programa multiplataforma que te permite crear mazos con tarjetas de definiciones, traducciones, o lo que quieras, para memorizarlos. Además creando una cuenta (gratis), tus mazos se sincronizarán entre dispositivos. Canela fina.
+
+Por ejemplo si quieres aprender *phrasal verbs* de inglés, puedes crearte un mazon en Anki. Cada tarjeta, tendrá un *phrasal verb* en la parte frontal de la tarjeta, y su definición en el dorso. Aprender en base a texto puede ser duro, así que una cosa que ayuda mucho, como dicen en el libro *Fluent Forever*, es añadir una imagen a la tarjeta que signifique algo para ti. Ojo, que signifique algo para ti, no tiene porque significar algo para los demás. Si quieres recordar *dog* puedes añadir una foto de tu perro. Yo por ejemplo para recordar que *break out* en inglés puede significar escaparse (por ejemplo de la cárcel), tengo esta tarjeta:
+
+![Imagen de Homer Simpson](http://www.charlascylon.com/img/posts/2016/breakout.png)
+
+Igual no conoces a los hermanos Dalton, pero a mi de pequeño me gustaban mucho los dibujos de Lucky Luke, así que la tarjeta es fácil de memorizar para mí. Aunque en la página web de Anki puedes encontrar [muchos mazos compartidos](https://ankiweb.net/shared/decks/), yo solo los uso de base. La gracia es hacer los mazos tuyos, para que te sea fácil memorizarlos. Da mucho trabajo pero merece la pena.
+
+Esto funciona porque nuestro cerebro funciona mucho visualmente y con asociaciones. Además el tiempo que pasas creando la tarjeta también queda registrado en tu cerebro, y más si has estado buscando en Google Images, imágenes divertidas de los hermanos Dalton.
+
+Ahora tengo unos cuantos mazos para mejorar mi inglés, tengo otro para recordar los atajos de teclado de Emacs (chúpate esa Stallman), y seguramente iré creando más mazos. Con veinte minutos al día, me basta para practicar unas 200 tarjetas. Algunas son nuevas, y otras son tarjetas que el SRS ya me ha mostrado antes. Y lo puedo hacer en el móvil (en Android uso AnkiDroid), o en mi ordenador (ya sea Ubuntu o Windows).
+
+Para las personas como yo, que somos unos zotes memorizando cosas, esto no tiene precio. Pero resulta que es gratis.  
+
+Además de usar un SRS he aprendido otras cosas interesantes. Como la de crear historias extraordinarias para recordar listas de palabras, o representar números con palabras para que sea más fácil memorizarlos. Pero esto, lo dejamos para otro post.
