@@ -47,60 +47,238 @@ Cuando compilamos, no recibimos ningún error. Ni siquiera un mísero *warning*.
 
 ### Declarando tipos personalziados
 
-Además de los tipos por defecto que existen en Elixir, también podemos declarar nuestros tipos personalizados, lo cual puede ser útil en algunas circunstancias. Por ejemplo, podemos declarar el tipo 
+Además de los tipos por defecto que existen en Elixir, también podemos declarar nuestros tipos personalizados, lo cual puede ser útil en algunas circunstancias. Por ejemplo, [GenServer](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/gen_server.ex), uno de los módulos más interesantes de Elixir (y del que espero hablar pronto), define tipos como el siguiente:
+
+``` elixir
+   @type on_start :: {:ok, pid} | :ignore | {:error, {:already_started, pid} | term}
+```
+
+El tipo personalizado `on_start` puede ser una tupla `{:ok, pid}`, `:ignore`, etc.
+
+Los tipos personalizdos como este, después se utilizan en las especificaciones de las funciones:
+
+``` Elixir
+ @spec start_link(module, any, options) :: on_start
+  def start_link(module, args, options \\ []) when is_atom(module) and is_list(options) do
+    do_start(:link, module, args, options)
+end
+```
+
+Como vemos, la función `start_link` devuelve un elemento de tipo `on_start`.   
 
 
-## Comportamientos en Elixir.
+## Comportamientos (behaviours) en Elixir.
 
-Y después del rollo, vamos a hablar de los comportamientos. En Elixir los comportamientos o *behaviours*, sirven para definir las funciones que debe implementar un módulo, y asegurarnos que todos los módulos que implementan ese comportamiento tengan dichas funciones. Para definir un comportamiento deberemos utilizar la directiva `callback`.
+Y después del rollo, vamos a hablar de los comportamientos. En Elixir los comportamientos o *behaviours*, sirven para definir las funciones que debe implementar un módulo, y "asegurarnos" que todos los módulos que implementan ese comportamiento tengan dichas funciones. Y digo "asegurarnos", entre comillas, porque a diferencia de los lenguajes tipados com C# o Java, el compilador solo nos va a devolver un *warning*. Si no implementamos todas las funciones indicadas por el comportamiento, podremos ejecutar el programa sin problemas. O al menos hasta que nos falle porque intentamos llamar a una funciión que no existe. 
+
+En defninitiva, que para definir un comportamiento deberemos crear un módulo que utilice alguna vez la directiva `callback`. Esta directiva nos dice, que los módulos que implementen este comportamiento, deberían tener esa función definida. Por ejemplo:
 
 ```Elixir
-defmodule Printable do
-  @callback print(String.t) :: String.t  
-end
+defmodule CalculadorImpuestos do
+  @callback importe_con_impuestos(importe :: float) :: float
+end module
 ```
 
-Aquí definimos un comportaminento, que podremos utilizar en otros módulos. Por ejemplo:
+Tenemos un módulo, que se llama `CalculadorImpuestos` que define un `@callback` que todos los módulos que implemente el comportamiento deben tener. Este comportamiento, podremos usarlo en otros módulos con la directiva `@behaviour`.
 
 ```Elixir
-defmodule SmartWatch do
-	@behaviour Printable
-	
-	def print(brand), do: "I'm a smartwatch of " <> brand	
+defmodule CalculadorIVAReducido do
+  @behaviour CalculadorImpuestos
+ 
+  def importe_con_impuestos(importe) do
+    importe * 1.10
+  end
 end
 
-defmodule Computer do
-	@behaviour Printable
-	
-	def print(brand), do: "I'm a computer of " <> brand	
+defmodule CalculadorIVASuperReducido do
+  @behaviour CalculadorImpuestos
+
+  def importe_con_impuestos(importe) do
+    importe * 1.04
+  end
+
 end
 ```
 
-En ambos casos decimos que el módulo va a implementar el comportamiento `Printable` con la directiva `@behaviour`. ¿Pero qué pasa si no implementamos la función `print`? En ese caso recibiremos un *warning* al compilar.
+En ambos casos decimos que el módulo va a implementar el comportamiento `CalculadorImpuestos` con la directiva `@behaviour`. ¿Pero qué pasa si no implementamos la función `importe_con_impuestos`? En ese caso recibiremos un *warning* al compilar.
 
 ```Elixir
-defmodule MobilePhone do
-	@behaviour Printable		
+defmodule CalculadorIVA do
+    @behaviour CalculadorImpuestos		
 end
 ```
 
 ```
-warning: undefined behaviour function print/1 (for behaviour Printable)
+warning: undefined behaviour function importe_con_impuestos/1 (for behaviour CalculadorImpuestos)
 ``` 
 
-¿Y qué pasa si definimos una función `print`que devuelva un tipo diferente (por ejemplo un número)?
-
-```Elixir
-defmodule UnknownDevice do
-	@behaviour Printable		
-	
-	def print(brand), do: 888
-end
-```
-
-Pues no pasa absolutamente nada. Aunque hemos definido que tipo debe devolver la función con una especificación, no recibimos ni un triste *warning*. No debemos olvidar que estamos ante un lenguaje dinámico y esos detalles no le importan mucho al compilador.
+¿Y qué pasa si definimos una función `importe_con_impuestos` que devuelva un tipo diferente (por ejemplo un *string*)? Pues no pasaría absolutamente nada. Aunque hemos definido que tipo debe devolver la función con una especificación, no recibimos ni un triste *warning*. No debemos olvidar que estamos ante un lenguaje dinámico y esos detalles no le importan mucho al compilador.
 
 
 ## Y entonces ¿de qué vale esto?
 
-Como hemos visto, a pesar de que Elixir nos da algunas opciones para gestionar tipos, estas no van más allá de poder utilizar algunas herramientas estáticas y generar documentación. 
+Como hemos visto, a pesar de que Elixir nos da algunas opciones para gestionar tipos, estas no van más allá de poder utilizar algunas herramientas estáticas y generar documentación. En el caso de implementar un comportamiento, lo único que vamos a ver es algún que otro *warning* en el compilador. Esto que parece poca cosa, es muy útil si hacemos las cosas bien. Hay que tener en cuenta que aquí el compilador es nuestro amigo, y nos está advirtiendo de que algo puede ir mal si ejecutamos el programa. Podemos hacerle caso o no, pero él nos a avisado.
+
+Ahora vamos a cambiar nuestro `CalculadorDeImpuestos` para hacer que implemente por defecto una función `importe_con_impuestos`.
+
+```Elixir
+defmodule CalculadorImpuestos do
+  @callback importe_con_impuestos(importe :: float) :: float
+
+  defmacro __using__(_) do
+    quote do
+      @behaviour CalculadorImpuestos
+      @impuestos 21
+
+      def importe_con_impuestos(importe) do
+        importe * (@impuestos/100 + 1)
+      end      
+      
+      defoverridable [importe_con_impuestos: 1]
+    end
+  end
+end
+```
+
+Nuestor módulo, sigue implementando el comportamiento, pero ahora usamos una macro, para hacer que se implemente la función `importe_con_impuestos` de forma predeterminada. Además con `defoverridable`, indicamos que esta función puede sobreescribirse en otros módulos. ¿Y cómo se utiliza en otros módulos? Pues utilizando la macro `use` [que ya os expliqué en un post anterior](http://charlascylon.com/2016-07-21-compartiendo-codigo-en-elixir).
+
+Veamos un par de ejemplos:
+
+```Elixir
+defmodule CalculadorIVA do
+ use CalculadorImpuestos  
+end
+
+defmodule CalculadorIVAReducido do
+  use CalculadorImpuestos
+ 
+  def importe_con_impuestos(importe) do
+    importe * 1.10
+  end
+end
+
+defmodule CalculadorIVASuperReducido do
+  use CalculadorImpuestos
+
+  def importe_con_impuestos(importe) do
+    importe * 1.04
+  end
+end
+``` 
+
+En estos ejemplos, en lugar de utilizar el comportamiento directamente, estamos utilizando `use` para hacer que el compilador incluya la función `importe_con_impuestos` directamente dentro de esos módulos. Esa es la razón de que en el módulo `CalculadorIVA` no haga falta implementar la función, ya que estamos usando la que existe por defecto. Es decir, que si llamamos a la función `CalculadorIVA.importe_con_impuestos(11222)` desde `IEx` va a funcionar sin problemas, ya que el compilador ha añadido la función como si fuera del propio módulo. 
+
+En el caso de `CalculadorIVAReducido` y `CalculadorIVASuperReducido` estamos sobreescribiendo la función original, para utilizar un cálculo nuevo.  Ahí hay que tener en cuenta que estamos definiendo como sobreescribible (toma palabro), esa función. Lo hacemos con `defoverridable`, y un array de funciones con especificadas con su *arity*. Si no hacemos esto, el compilador nos va a lanzar un *warning* diciendo que existen dos funciones haciendo lo mismo (la añadida con el `use` y la que hemos sobreescrito) y que una se va a ignorar.
+
+Y ahora vamos a ver porque los comportamientos pueden ser muy útiles. Imaginemos que los requisitos de nuestra aplicación cambian. Además de devolver el importe final con impuestos, hay que dar la opción de poder devolver solo los impuestos. Lo primero que deberíamos hacer es incluir otro `@callback` en nuestro comportamiento:
+
+```Elixir
+defmodule CalculadorImpuestos do
+  @callback importe_con_impuestos(importe :: float) :: float
+  @callback solo_impuestos(importe :: float) :: float
+
+  defmacro __using__(_) do
+    quote do
+      @behaviour CalculadorImpuestos
+      @impuestos 21
+
+      def importe_con_impuestos(importe) do
+        importe * (@impuestos/100 + 1)
+      end      
+      
+      defoverridable [importe_con_impuestos: 1]
+    end
+  end
+end
+```
+
+
+Ahora estamos diciendo que además de `importe_con_impuestos`, nuestros módulos deberán tener también la función `solo_impuestos`. 
+
+```
+warning: undefined behaviour function solo_impuestos/1 (for behaviour CalculadorImpuestos)
+  lib/behaviours/calculadorIVA.ex:1
+
+warning: undefined behaviour function solo_impuestos/1 (for behaviour CalculadorImpuestos)
+  lib/behaviours/calculadorIVAsuper.ex:1
+```
+
+Aquí tendríamos dos opciones, añadir una nueva función a la macro `__using__` para hacer una implementación por defecto, o definir la función en cada módulo.
+
+
+## Polimorfismo con behaviours
+
+¿Cómo podemos utilizar los comportamientos que hemos definido? Imaginemos que tenemos una función que recibe una lista con tuplas de dos elementos. Cada tupla será una línea de pedido. El primer elemento será el importe, y el segundo la cantidad. A partir de eso debemos ser capaces de calcular el importe total, con los impuestos aplicados. Eso sí, haciendo que el cálculo dependa del tipo de impuesto (IVA normal, reducido o superreducido). El módulo lo llamaremos `Contabilidad` y la función será `calcular_impuestos`.
+
+
+```elixir
+defmodule Contabilidad do
+
+  @default_calculator CalculadorIVA 
+
+  def calcular_impuestos(lineas_pedido, opts \\ []) do
+
+    {calculador, _} = Keyword.pop(opts, :calculator, @default_calculator)    
+
+    total_sin_impuestos = calcular_total(lineas_pedido)
+    total_con_impuestos = calcular_total_con_impuestos(total_sin_impuestos, calculador)
+
+    {total_sin_impuestos, total_con_impuestos}
+  end
+
+  defp calcular_total(lineas_pedido) do
+    lineas_pedido
+    |> Enum.reduce(0, fn({importe, cantidad}, acc) -> acc + (importe * cantidad) end)
+  end
+
+  defp calcular_total_con_impuestos(importe_total, calculador) do
+    importe_total |> aplicar_impuestos(calculador)
+  end
+
+  defp aplicar_impuestos(importe, calculador) do
+    calculador.importe_con_impuestos(importe)
+  end
+end
+```
+
+Lo importante aquí es que en la función `calcular_impuestos` estamos pasando un parámetro `ops`. Este parámetro es una lista de *keywords*, en la que buscaremos el elemento `:calculator`. Un ejemplo de llamada en `IEx`:
+
+```
+iex(1)> pedido = [{1.40, 2}, {3.50, 5}, {8.0, 1}]
+pedido = [{1.40, 2}, {3.50, 5}, {8.0, 1}]
+[{1.4, 2}, {3.5, 5}, {8.0, 1}]
+
+iex(2)> Contabilidad.calcular_impuestos(pedido)
+Contabilidad.calcular_impuestos(pedido)
+{28.3, 34.243}
+```
+
+El ejemplo es bastante sencillo. Creamos un pedido, pasando cada línea de pedido en una tupla que incluye el importe, y la cantidad. Luego utilizamos esa lista para pasársela a la función `calcular_impuestos`. En este caso no estamos pasando nada en el parámetro  'ops', así que la función utilizara el calculador por defecto `@default_calculator`, que en este caso es `CalculadorIVA`. Con ese calculador, y dentro de la función privada `aplicar_impuestos` llamamos a la implementación de `importe_con_impuestos` correspondiente. 
+
+¿Y si queremos cambiar el tipo de calculador de impuestos? Pues chupado:
+
+```
+iex(3)> Contabilidad.calcular_impuestos(pedido, calculator: CalculadorIVAReducido)
+Contabilidad.calcular_impuestos(pedido, calculator: CalculadorIVAReducido)
+{28.3, 31.130000000000003}
+
+iex(4)> Contabilidad.calcular_impuestos(pedido, calculator: CalculadorIVASuperReducido)
+Contabilidad.calcular_impuestos(pedido, calculator: CalculadorIVASuperReducido)
+{28.3, 29.432000000000002}
+
+```
+
+Como podemos ver en el parámetro `opts` estamos pasando el calculador, que se extrae de la lista con `Keyword.pop` (si no existe se devuelve el calculador por defecto).
+
+Y recuerdo una vez más, que aunque no hubiese ningún `behaviour` definido, todo funcionaría perfectamente si todos los calculadores de impuestos tuvieran una función `importe_con_impuestos`. 
+
+
+## Conclusión
+
+Puede parecer que los *behaviours* tienen poca utilidad. Al fin y al cabo solo nos proporcionan un *warning* al compilar. Cuando uno está acostumbrado a tener un compilador **que no te deja seguir si no haces las cosas bien** esta libertad es  difícil de entender.
+
+Pero en realidad, cuando utilizamos comportamientos, estamos expresando la intención que tiene nuestro código. Estamos expresando que funciones deberían implementarse para que todo funcione como se espera. Además, con los *typespecs* añadimos todavía más información, pudiendo incluso definir tipos personalizados.
+
+
+
+
