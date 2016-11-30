@@ -3,9 +3,9 @@ layout: post
 title:  Behaviours en Elixir
 ---
 
-En programación orientada a objetos, nos pasamos el día utilizando interfaces. Se podría decir que una interfaz es un contrato que especifica que métodos y propiedades deben tener las clases que  implementen dicho contrato. Así, si decimos que una clase implementa el contrato (interfaz) `IPrintable`, esa clase deberá tener un método `PrintMessage` que hará algo con un `string` 
+En programación orientada a objetos, nos pasamos el día utilizando interfaces. Se podría decir que una interfaz es un contrato que especifica que métodos y propiedades deben tener las clases que  implementen dicho contrato. Así, si decimos que una clase implementa el contrato (interfaz) `IPrintable`, esa clase deberá tener un método `PrintMessage` que hará algo con un `string`.
 
-Aunque Elixir no es un lenguaje orientado a objetos, también tenemos la posibilidad de utilizar algo parecido a las interfaces: los *behaviours* (comportamientos). Pero antes de hablar de *behaviours* hay que hablar de otra cosa: los *typespecs*.
+Aunque Elixir no es un lenguaje orientado a objetos, también tenemos la posibilidad de utilizar algo parecido a las interfaces: los *behaviours* (comportamientos). Con muchas diferencias claro, porque en Elixir todo se resuelve en tiempo de ejecución. Pero antes de hablar de *behaviours* hay que hablar de otra cosa: los *typespecs*.
 
 
 ## Typespecs
@@ -28,7 +28,7 @@ end
 
 Cómo veis el ejemplo es muy sencillo. Definimos una función `increment`, que lo único que hace es sumar uno, al número pasado como parámetro
 
-¿Y para qué sirve esto en un lenguaje dinámico? Pues sirve para utilizar herramientas como [ExDoc](https://github.com/elixir-lang/ex_doc), utilizada para documentar); o [Dialyzer](https://github.com/elixir-lang/ex_doc) que se utiliza para analizar el código para encontrar posibles problemas con los tipos.
+¿Y para qué sirve esto en un lenguaje como Elixir? Al fin y al cabo, esto no va a devolver ni si quiera un *warnign* al compilar. Pues sirve para utilizar herramientas como [ExDoc](https://github.com/elixir-lang/ex_doc), utilizada para documentar); o [Dialyzer](https://github.com/elixir-lang/ex_doc) que se utiliza para analizar el código para encontrar posibles problemas con los tipos.
 
 Por ejemplo si modificamos el código anterior:
 
@@ -42,8 +42,7 @@ defmodule Test do
 end
 ``` 
 
-Cuando compilamos, no recibimos ningún error. Ni siquiera un mísero *warning*. Elixir es dinámico, y ese código se lo traga perfectamente. Pero si utilizamos *Dialyzer* nos cantará el error antes que nadie.  
-
+Cuando compilamos, no recibimos ningún error. Elixir es dinámico, y ese código se lo traga perfectamente. Pero si utilizamos *Dialyzer* nos cantará el error antes que nadie. 
 
 ### Declarando tipos personalziados
 
@@ -64,12 +63,14 @@ Los tipos personalizdos como este, después se utilizan en las especificaciones 
 end
 ```
 
-Como vemos, la función `start_link` devuelve un elemento de tipo `on_start`.   
+Como vemos, la función `start_link` devuelve un elemento de tipo `on_start`. 
+
+Insisto, aunque puede parecer una tontería usar los *typespecs*, es muy buena práctica usarlos. De hecho si os pasáis por [el repo de código de Elixir](https://github.com/elixir-lang/elixir) veréis que se hace uso extensivo de los *typespecs* en todos los módulos. 
 
 
 ## Comportamientos (behaviours) en Elixir.
 
-Y después del rollo, vamos a hablar de los comportamientos. En Elixir los comportamientos o *behaviours*, sirven para definir las funciones que debe implementar un módulo, y "asegurarnos" que todos los módulos que implementan ese comportamiento tengan dichas funciones. Y digo "asegurarnos", entre comillas, porque a diferencia de los lenguajes tipados com C# o Java, el compilador solo nos va a devolver un *warning*. Si no implementamos todas las funciones indicadas por el comportamiento, podremos ejecutar el programa sin problemas. O al menos hasta que nos falle porque intentamos llamar a una funciión que no existe. 
+Y después del rollo, vamos a hablar de los *behaviours*. En Elixir los comportamientos, **sirven para definir las funciones que debe implementar un módulo**, y "asegurarnos" que todos los módulos que implementan ese comportamiento tengan dichas funciones. Y digo "asegurarnos", entre comillas, porque a diferencia de los lenguajes que se evaluan en tiempo de compilación como C# o Java, el compilador solo nos va a devolver un *warning*. Si no implementamos todas las funciones indicadas por el comportamiento, podremos ejecutar el programa sin problemas. O al menos hasta que nos falle estreptiosamente porque **intentamos llamar a una funciión que no existe**. 
 
 En defninitiva, que para definir un comportamiento deberemos crear un módulo que utilice alguna vez la directiva `callback`. Esta directiva nos dice, que los módulos que implementen este comportamiento, deberían tener esa función definida. Por ejemplo:
 
@@ -117,9 +118,9 @@ warning: undefined behaviour function importe_con_impuestos/1 (for behaviour Cal
 
 ## Y entonces ¿de qué vale esto?
 
-Como hemos visto, a pesar de que Elixir nos da algunas opciones para gestionar tipos, estas no van más allá de poder utilizar algunas herramientas estáticas y generar documentación. En el caso de implementar un comportamiento, lo único que vamos a ver es algún que otro *warning* en el compilador. Esto que parece poca cosa, es muy útil si hacemos las cosas bien. Hay que tener en cuenta que aquí el compilador es nuestro amigo, y nos está advirtiendo de que algo puede ir mal si ejecutamos el programa. Podemos hacerle caso o no, pero él nos a avisado.
+Como hemos visto, a pesar de que Elixir nos da algunas opciones para gestionar tipos, estas **no van más allá de poder utilizar algunas herramientas estáticas y generar documentación**. En el caso de implementar un comportamiento, lo único que vamos a ver es algún que otro *warning* en el compilador. Esto que parece poca cosa, es muy útil si hacemos las cosas bien. Hay que tener en cuenta que aquí el compilador es nuestro amigo, y nos está advirtiendo de que algo puede ir mal si ejecutamos el programa. Podemos hacerle caso o no, pero oye, él nos ha avisado.
 
-Ahora vamos a cambiar nuestro `CalculadorDeImpuestos` para hacer que implemente por defecto una función `importe_con_impuestos`.
+Ahora vamos a rizar el rizo, y vamos cambiar nuestro `CalculadorDeImpuestos` para hacer que implemente por defecto una función `importe_con_impuestos`.
 
 ```Elixir
 defmodule CalculadorImpuestos do
@@ -140,7 +141,7 @@ defmodule CalculadorImpuestos do
 end
 ```
 
-Nuestor módulo, sigue implementando el comportamiento, pero ahora usamos una macro, para hacer que se implemente la función `importe_con_impuestos` de forma predeterminada. Además con `defoverridable`, indicamos que esta función puede sobreescribirse en otros módulos. ¿Y cómo se utiliza en otros módulos? Pues utilizando la macro `use` [que ya os expliqué en un post anterior](http://charlascylon.com/2016-07-21-compartiendo-codigo-en-elixir).
+Nuestor módulo, sigue implementando el *behaviour*, pero ahora usamos una macro, para hacer añadir la implementación de la función `importe_con_impuestos` de forma predeterminada. Además con `defoverridable`, indicamos que esta función puede sobreescribirse en otros módulos. ¿Y cómo se utiliza en otros módulos? Pues utilizando la macro `use` [que ya os expliqué en un post anterior](http://charlascylon.com/2016-07-21-compartiendo-codigo-en-elixir).
 
 Veamos un par de ejemplos:
 
@@ -170,7 +171,7 @@ En estos ejemplos, en lugar de utilizar el comportamiento directamente, estamos 
 
 En el caso de `CalculadorIVAReducido` y `CalculadorIVASuperReducido` estamos sobreescribiendo la función original, para utilizar un cálculo nuevo.  Ahí hay que tener en cuenta que estamos definiendo como sobreescribible (toma palabro), esa función. Lo hacemos con `defoverridable`, y un array de funciones con especificadas con su *arity*. Si no hacemos esto, el compilador nos va a lanzar un *warning* diciendo que existen dos funciones haciendo lo mismo (la añadida con el `use` y la que hemos sobreescrito) y que una se va a ignorar.
 
-Y ahora vamos a ver porque los comportamientos pueden ser muy útiles. Imaginemos que los requisitos de nuestra aplicación cambian. Además de devolver el importe final con impuestos, hay que dar la opción de poder devolver solo los impuestos. Lo primero que deberíamos hacer es incluir otro `@callback` en nuestro comportamiento:
+Y ahora vamos a ver porque los comportamientos pueden ser muy útiles. Imaginemos que los requisitos de nuestra aplicación cambian. Además de devolver el importe final con impuestos, hay que dar la opción de poder devolver solo el importe de los impuestos. Lo primero que deberíamos hacer es incluir otro `@callback` en nuestro comportamiento:
 
 ```Elixir
 defmodule CalculadorImpuestos do
@@ -192,8 +193,7 @@ defmodule CalculadorImpuestos do
 end
 ```
 
-
-Ahora estamos diciendo que además de `importe_con_impuestos`, nuestros módulos deberán tener también la función `solo_impuestos`. 
+Hecho. Ahora estamos diciendo que además de `importe_con_impuestos`, nuestros módulos deberán tener también la función `solo_impuestos`.  Si compilamos, pasa esto:
 
 ```
 warning: undefined behaviour function solo_impuestos/1 (for behaviour CalculadorImpuestos)
@@ -203,12 +203,12 @@ warning: undefined behaviour function solo_impuestos/1 (for behaviour Calculador
   lib/behaviours/calculadorIVAsuper.ex:1
 ```
 
-Aquí tendríamos dos opciones, añadir una nueva función a la macro `__using__` para hacer una implementación por defecto, o definir la función en cada módulo.
+Aquí tendríamos dos opciones, añadir una nueva función a la macro `__using__` para hacer una implementación por defecto (y el correspondiente elemento en `defoverridable`, o definir la función en cada módulo.
 
 
 ## Polimorfismo con behaviours
 
-¿Cómo podemos utilizar los comportamientos que hemos definido? Imaginemos que tenemos una función que recibe una lista con tuplas de dos elementos. Cada tupla será una línea de pedido. El primer elemento será el importe, y el segundo la cantidad. A partir de eso debemos ser capaces de calcular el importe total, con los impuestos aplicados. Eso sí, haciendo que el cálculo dependa del tipo de impuesto (IVA normal, reducido o superreducido). El módulo lo llamaremos `Contabilidad` y la función será `calcular_impuestos`.
+¿Cómo podemos utilizar los comportamientos que hemos definido? Imaginemos que tenemos una función que recibe una lista con tuplas de dos elementos. Cada tupla será una línea de pedido. El primer elemento será el importe, y el segundo la cantidad. A partir de eso debemos ser capaces de calcular el importe total con los impuestos aplicados. Eso sí, haciendo que el cálculo dependa del tipo de impuesto (IVA normal, reducido o superreducido). El módulo lo llamaremos `Contabilidad` y la función será `calcular_impuestos`.
 
 
 ```elixir
@@ -270,14 +270,14 @@ Contabilidad.calcular_impuestos(pedido, calculator: CalculadorIVASuperReducido)
 
 Como podemos ver en el parámetro `opts` estamos pasando el calculador, que se extrae de la lista con `Keyword.pop` (si no existe se devuelve el calculador por defecto).
 
-Y recuerdo una vez más, que aunque no hubiese ningún `behaviour` definido, todo funcionaría perfectamente si todos los calculadores de impuestos tuvieran una función `importe_con_impuestos`. 
+Y recuerdo una vez más, que aunque no hubiese ningún `behaviour` definido, todo funcionaría perfectamente si todos los calculadores de impuestos tuvieran una función `importe_con_impuestos` definida y funcionando.  
 
 
 ## Conclusión
 
 Puede parecer que los *behaviours* tienen poca utilidad. Al fin y al cabo solo nos proporcionan un *warning* al compilar. Cuando uno está acostumbrado a tener un compilador **que no te deja seguir si no haces las cosas bien** esta libertad es  difícil de entender.
 
-Pero en realidad, cuando utilizamos comportamientos, estamos expresando la intención que tiene nuestro código. Estamos expresando que funciones deberían implementarse para que todo funcione como se espera. Además, con los *typespecs* añadimos todavía más información, pudiendo incluso definir tipos personalizados.
+Pero en realidad, cuando utilizamos comportamientos, estamos expresando la intención que tiene nuestro código. Estamos expresando que funciones deberían implementarse para que todo funcione como se espera. Además, con los *typespecs* añadimos todavía más información, pudiendo incluso definir tipos personalizados. En definitiva, estamos haciendo nuestro código más amigable para que otros (o nuetro yo del futuro) lo entiendan mejor. 
 
 
 
