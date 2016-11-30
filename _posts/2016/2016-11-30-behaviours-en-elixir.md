@@ -17,7 +17,7 @@ Elixir es un lenguaje dinámico, por lo que los tipos de datos se infieren en ti
 
 Una especificación en una función, nos permite saber qué tipo de dato va a devolver al ejecutarse.  Para hacer esto, deberemos usar `@spec`. Un ejemplo:
 
-``` Elixir
+```elixir
 defmodule Test do
     @spec increment(number) :: integer
     def increment(a) do
@@ -28,12 +28,12 @@ end
 
 Cómo veis el ejemplo es muy sencillo. Definimos una función `increment`, que lo único que hace es sumar uno, al número pasado como parámetro
 
-¿Y para qué sirve esto en un lenguaje como Elixir? Al fin y al cabo, esto no va a devolver ni si quiera un *warnign* al compilar. Pues sirve para utilizar herramientas como [ExDoc](https://github.com/elixir-lang/ex_doc), utilizada para documentar); o [Dialyzer](https://github.com/elixir-lang/ex_doc) que se utiliza para analizar el código para encontrar posibles problemas con los tipos.
+¿Y para qué sirve esto en un lenguaje como Elixir? Al fin y al cabo, esto no va a devolver ni si quiera un *warning* al compilar. Pues sirve para utilizar herramientas como [ExDoc](https://github.com/elixir-lang/ex_doc), (utilizada para documentar); o [Dialyzer](https://github.com/elixir-lang/ex_doc) que se utiliza para analizar el código para encontrar posibles problemas con los tipos.
 
 Por ejemplo si modificamos el código anterior:
 
 
-``` Elixir
+```elixir
 defmodule Test do
     @spec increment(number) :: integer
     def increment(a) do
@@ -48,24 +48,26 @@ Cuando compilamos, no recibimos ningún error. Elixir es dinámico, y ese códig
 
 Además de los tipos por defecto que existen en Elixir, también podemos declarar nuestros tipos personalizados, lo cual puede ser útil en algunas circunstancias. Por ejemplo, [GenServer](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/gen_server.ex), uno de los módulos más interesantes de Elixir (y del que espero hablar pronto), define tipos como el siguiente:
 
-``` elixir
-   @type on_start :: {:ok, pid} | :ignore | {:error, {:already_started, pid} | term}
+```elixir
+   @type on_start :: {:ok, pid} | :ignore | 
+                     {:error, {:already_started, pid} | term}
 ```
 
 El tipo personalizado `on_start` puede ser una tupla `{:ok, pid}`, `:ignore`, etc.
 
 Los tipos personalizdos como este, después se utilizan en las especificaciones de las funciones:
 
-``` Elixir
- @spec start_link(module, any, options) :: on_start
-  def start_link(module, args, options \\ []) when is_atom(module) and is_list(options) do
+```elixir
+  @spec start_link(module, any, options) :: on_start
+  def start_link(module, args, options \\ []) 
+                when is_atom(module) and is_list(options) do
     do_start(:link, module, args, options)
-end
+  end
 ```
 
 Como vemos, la función `start_link` devuelve un elemento de tipo `on_start`. 
 
-Insisto, aunque puede parecer una tontería usar los *typespecs*, es muy buena práctica usarlos. De hecho si os pasáis por [el repo de código de Elixir](https://github.com/elixir-lang/elixir) veréis que se hace uso extensivo de los *typespecs* en todos los módulos. 
+Insisto, aunque los *typespecs* parecen una tontería, es muy buena práctica usarlos. De hecho si os pasáis por [el repo de código de Elixir](https://github.com/elixir-lang/elixir) veréis que se hace uso extensivo de los *typespecs* en todos los módulos. 
 
 
 ## Comportamientos (behaviours) en Elixir.
@@ -74,7 +76,7 @@ Y después del rollo, vamos a hablar de los *behaviours*. En Elixir los comporta
 
 En defninitiva, que para definir un comportamiento deberemos crear un módulo que utilice alguna vez la directiva `callback`. Esta directiva nos dice, que los módulos que implementen este comportamiento, deberían tener esa función definida. Por ejemplo:
 
-```Elixir
+```elixir
 defmodule CalculadorImpuestos do
   @callback importe_con_impuestos(importe :: float) :: float
 end module
@@ -82,7 +84,7 @@ end module
 
 Tenemos un módulo, que se llama `CalculadorImpuestos` que define un `@callback` que todos los módulos que implemente el comportamiento deben tener. Este comportamiento, podremos usarlo en otros módulos con la directiva `@behaviour`.
 
-```Elixir
+```elixir
 defmodule CalculadorIVAReducido do
   @behaviour CalculadorImpuestos
  
@@ -103,7 +105,7 @@ end
 
 En ambos casos decimos que el módulo va a implementar el comportamiento `CalculadorImpuestos` con la directiva `@behaviour`. ¿Pero qué pasa si no implementamos la función `importe_con_impuestos`? En ese caso recibiremos un *warning* al compilar.
 
-```Elixir
+```elixir
 defmodule CalculadorIVA do
     @behaviour CalculadorImpuestos		
 end
@@ -122,7 +124,7 @@ Como hemos visto, a pesar de que Elixir nos da algunas opciones para gestionar t
 
 Ahora vamos a rizar el rizo, y vamos cambiar nuestro `CalculadorDeImpuestos` para hacer que implemente por defecto una función `importe_con_impuestos`.
 
-```Elixir
+```elixir
 defmodule CalculadorImpuestos do
   @callback importe_con_impuestos(importe :: float) :: float
 
@@ -145,7 +147,7 @@ Nuestor módulo, sigue implementando el *behaviour*, pero ahora usamos una macro
 
 Veamos un par de ejemplos:
 
-```Elixir
+```elixir
 defmodule CalculadorIVA do
  use CalculadorImpuestos  
 end
@@ -173,7 +175,7 @@ En el caso de `CalculadorIVAReducido` y `CalculadorIVASuperReducido` estamos sob
 
 Y ahora vamos a ver porque los comportamientos pueden ser muy útiles. Imaginemos que los requisitos de nuestra aplicación cambian. Además de devolver el importe final con impuestos, hay que dar la opción de poder devolver solo el importe de los impuestos. Lo primero que deberíamos hacer es incluir otro `@callback` en nuestro comportamiento:
 
-```Elixir
+```elixir
 defmodule CalculadorImpuestos do
   @callback importe_con_impuestos(importe :: float) :: float
   @callback solo_impuestos(importe :: float) :: float
@@ -203,7 +205,7 @@ warning: undefined behaviour function solo_impuestos/1 (for behaviour Calculador
   lib/behaviours/calculadorIVAsuper.ex:1
 ```
 
-Aquí tendríamos dos opciones, añadir una nueva función a la macro `__using__` para hacer una implementación por defecto (y el correspondiente elemento en `defoverridable`, o definir la función en cada módulo.
+Aquí tendríamos dos opciones, añadir una nueva función a la macro `__using__` para hacer una implementación por defecto (y el correspondiente elemento en `defoverridable`), o definir la función en cada módulo.
 
 
 ## Polimorfismo con behaviours
@@ -253,7 +255,7 @@ Contabilidad.calcular_impuestos(pedido)
 {28.3, 34.243}
 ```
 
-El ejemplo es bastante sencillo. Creamos un pedido, pasando cada línea de pedido en una tupla que incluye el importe, y la cantidad. Luego utilizamos esa lista para pasársela a la función `calcular_impuestos`. En este caso no estamos pasando nada en el parámetro  'ops', así que la función utilizara el calculador por defecto `@default_calculator`, que en este caso es `CalculadorIVA`. Con ese calculador, y dentro de la función privada `aplicar_impuestos` llamamos a la implementación de `importe_con_impuestos` correspondiente. 
+El ejemplo es bastante sencillo. Creamos un pedido, pasando cada línea de pedido en una tupla que incluye el importe, y la cantidad. Luego utilizamos esa lista para pasársela a la función `calcular_impuestos`. En este caso no estamos pasando nada en el parámetro  `ops`, así que la función utilizara el calculador por defecto `@default_calculator`, que en este caso es `CalculadorIVA`. Con ese calculador, y dentro de la función privada `aplicar_impuestos` llamamos a la implementación de `importe_con_impuestos` correspondiente. 
 
 ¿Y si queremos cambiar el tipo de calculador de impuestos? Pues chupado:
 
