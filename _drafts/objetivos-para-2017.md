@@ -1,0 +1,34 @@
+---
+layout: post
+title:  Objetivos para 2017
+---
+
+No soy muy fan de los propósitos de año nuevo. Aunque supongo que tiene que ver el que siempre tienda a incumplirlos. En cualquier caso, me parece interesante hacer retropectiva de lo que ha sido 2016 y de lo que espero conseguir en 2017. Siempre teniendo en cuenta que el 1 de enero es un día como cualquier otro, y hay proyectos que ya tengo en marcha desde hace tiempo y que por tanto no se inician en este nuevo año.
+
+## Retrospectiva
+
+En líneas generales 2016 ha sido un buen año. En mayo cambié de empleo logrando un objetivo muy importante para mí: conciliar mi vida profesional con mi vida laboral. Encontré un trabajo muy cerca de mi casa, lo que me permite disfrutar más de mi mujer y mis hijos, lo que sin duda es de agradecer. Al final eso influye mucho en mi felicidad general y la de la familia, por lo que se viene a trabajar más contento. No ha habido cambio en cuanto a tecnologías (sigo programando cosas en .NET con MVC), pero si he caido en un sitio en el que la mentalidad es abierta y se busca aportar valor, aunque implique salir de la zona de confort y haya que romper cosas. Me gusta.
+
+En cuanto a mi formación profesional, sigo mejorando. Haciendo memoria de los libros y cursos que he podido seguir el pasado 2016, me doy cuenta que han sido unos cuantos. Eso hace que haya aprendido muchas cosas, aunque es cierto que en mi haber tengo pendiente aplicar más el *learn by doing*. No consigo sacar todo el tiempo que me gustaría para afianzar en mi mente los conocimientos adquiridos. Eso tengo que mejorarlo.
+
+En cuanto al blog, al menos conseguí resucitarlo, después de un 2015 demasiado ajetreado. Mi objetivo era el de publicar un post semanal, pero me he dado cuenta de que es algo imposible. Así que he decidido reducirlo a la mitad e intentar publicar dos entradas mensuales. Veremos si lo consigo. En Twitter tuvimos una interesante discusión sobre la "obligatoriedad" de escribir en el blog. Como intenté explicar en 140 caracteres (sin éxito), a mí me ayuda marcarme un objetivo. Con una meta clara, rindo mejor. También, como comenté ese día, si no escribo tengo la sensación de que no estoy aprendiendo. Si aprendo algo, se me ocurren ideas para escribir en el blog. Si paso un tiempo sin aprender, me quedo sin ideas y sin inspiración. Para mí el blog es una parte importante de mi formación.
+
+## Y en 2017 ...
+
+En 2017 tengo ganas de unas cuantas cosas así que las pongo en puntitos molones.
+
+- En 2017 quiero enfrentarme a mi talón de aquiles: **el testing**. Es un deficit terrible que tengo desde hace mucho tiempo, pero no ayuda caer siempre en equipos donde no se testea y con mucho *legacy code*. Así que toca luchar por crear tendencia e intentar refactorizar código antiguo, creando un buen andamiaje con tests, y por supuesto añadir tests a código nuevo. 
+- Seguir aprendiendo Elixir. Es un lenguaje que me está gustando mucho y cada vez descburo algo nuevo. Ahora estoy leyendo [Metaprograming Elixir]() de Chris McCord y me está encantando. Increíble las posibilidades que puede dar un lenguaje con macros.
+- Sacar a la luz algún proyecto personal. Tengo algún proyecto personal a medio empezar, pero me gustaría darle caña y ponerlo a funcionar. Además la idea es sacar unas perras extra, aunque si no es así, tampoco va a pasar nada. La idea es aprender mientras construyo cosas.
+- Dar alguna charla. Esto es algo que no sé si seré capaz de hacer, porque tienen que darse ciertas circunstancias. En general soy un tío tímido y esas cosas me intimidan mucho. Asi que tendría que ser con una audiencia pequeña. Y luego tiene que ser sobre un tema que controle y sobre el que pueda aportar. Elixir es una buena opción ya que podría hacer una charla introductoria para los que no lo conocen. No sé, veremos si consigo enfrentarme a este reto.
+
+Esas son algunas de las cosas que quiero conseguir, pero hay otra a la que quiero dedicar un poquito más de tiempo: **el proyecto mentoría**. Como ya sabéis los que me leéis de vez en cuando, estuve buscando colaboraciones para el [proyecto de mentoría](https://github.com/rubenfa/mentoria/). La idea surgió por una tontada que se me ocurrió y la verdad es que está teniendo más éxito del que hubiera pensado. Ocho tipos que saben de esto han colaborado dando su opinión, el repo de GitHub tiene 20 seguidores y he recibido muy buen feedback. Esto para mí es un exitazo. 
+
+Además a raíz del post [Ojalá hubiese tenido un mentor](http://charlascylon.com/2016-12-14-ojala-hubiese-tenido-un-mentor), en el que me ofrecía como posible mentor para quién quisiera, he podido contactar con gente con ganas de aprender pero que necesitaban un poco de guía. Es muy emocionante ver que algo que haces puede ayudar a otra gente. De momento la ayuda solo ha sido por correo electrónico, pero ya iremos viendo.
+
+El problema que tiene esto es que no escala. Así que estoy madurando la idea para llevar a cabo un proyecto de mentoría más ambicioso. En breve espero poder dar más información, aunque ya os aviso que necesitaré mentores para colaborar. Así que si quieres ayudar a algún desarrollador de forma altruistra, *stay tunned*.
+
+En fin, que si la vida lo permite, el año que viene estaremos por aquí repasando este post y escribiendo sobre los objetivos para 2018. A por 2017.
+
+
+
