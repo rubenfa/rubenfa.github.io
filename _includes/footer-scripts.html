@@ -37,8 +37,19 @@
 
 {% include google_analytics.html %}
 
-<script  src="js/bootstrap.min.js"></script>
-<script  src="js/jquery-1.11.2.min.js"></script>
+<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script  src="https://code.jquery.com/jquery-1.11.2.min.js"
+			  integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
+			  crossorigin="anonymous""></script>
 <script  src="js/main.js"></script>
+<script  src="js/jquery.cookiebar.js"></script>
 
-<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d10089f0af971191798ad6e2b43bf669"})});</script>
+<!--
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d10089f0af971191798ad6e2b43bf669"})});</script>-->
+
+<scritp>
+  $.cookieBar({
+      fixed: true,
+      acceptOnScroll: 100
+  }); 
+</script>
