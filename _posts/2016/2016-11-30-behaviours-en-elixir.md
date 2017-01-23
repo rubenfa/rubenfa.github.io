@@ -72,7 +72,7 @@ Insisto, aunque los *typespecs* parecen una tontería, es muy buena práctica us
 
 ## Comportamientos (behaviours) en Elixir.
 
-Y después del rollo, vamos a hablar de los *behaviours*. En Elixir los comportamientos, **sirven para definir las funciones que debe implementar un módulo**, y "asegurarnos" que todos los módulos que implementan ese comportamiento tengan dichas funciones. Y digo "asegurarnos", entre comillas, porque a diferencia de los lenguajes que se evaluan en tiempo de compilación como C# o Java, el compilador solo nos va a devolver un *warning*. Si no implementamos todas las funciones indicadas por el comportamiento, podremos ejecutar el programa sin problemas. O al menos hasta que nos falle estreptiosamente porque **intentamos llamar a una funciión que no existe**. 
+Y después del rollo, vamos a hablar de los *behaviours*. En Elixir los comportamientos, **sirven para definir las funciones que debe implementar un módulo**, y "asegurarnos" que todos los módulos que implementan ese comportamiento tengan dichas funciones. Y digo "asegurarnos", entre comillas, porque a diferencia de los lenguajes que se evaluan en tiempo de compilación como C# o Java, el compilador solo nos va a devolver un *warning*. Si no implementamos todas las funciones indicadas por el comportamiento, podremos ejecutar el programa sin problemas. O al menos hasta que nos falle estreptiosamente porque **intentamos llamar a una función que no existe**. 
 
 En defninitiva, que para definir un comportamiento deberemos crear un módulo que utilice alguna vez la directiva `callback`. Esta directiva nos dice, que los módulos que implementen este comportamiento, deberían tener esa función definida. Por ejemplo:
 
