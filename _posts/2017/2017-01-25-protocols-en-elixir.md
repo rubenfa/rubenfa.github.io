@@ -4,7 +4,7 @@ title:  Protocols en Elixir
 ---
 
 
-Una de las partes más interesantes de un lenguaje es la de poder usar polimorfismo. Como os comenté [en el post sobre Behaviours]() en Elixir podíamos conseguir algo parecido. Pero además de los *Behaviours* también podemos usar *Protocols*, que nos permitirán usar el polimorfismo a nivel de tipo. Es decir que podemos tener distintas implementaciones de una función para distintos tipos de datos. Vamos a explicarlo.
+Una de las partes más interesantes de un lenguaje es la de poder usar polimorfismo. Como os comenté [en el post sobre Behaviours](http://charlascylon.com/2016-11-30-behaviours-en-elixir) en Elixir podíamos conseguir algo parecido. Pero además de los *Behaviours* también podemos usar *Protocols*, que nos permitirán usar el polimorfismo a nivel de tipo. Es decir que podemos tener distintas implementaciones de una función para distintos tipos de datos. Vamos a explicarlo.
 
 
 ## Definiendo Protocols
