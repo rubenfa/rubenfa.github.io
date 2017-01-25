@@ -39,7 +39,7 @@ end
 
 Para usar esta implementación desde `Iex` solo tendremos que llamar a esa función y pasarle un `string` como parámetro.
 
-```
+```iex
 iex(1)> import ConcatReverse
 import ConcatReverse
 ConcatReverse
@@ -80,7 +80,7 @@ end
 
 Y al igual que antes, para usar estas implementaciones solo tenemos que llamar a la función pasándole uno de los tipos especificados.
 
-```
+```iex
 iex(3)> ConcatReverse.concat_reverse(12345)
 ConcatReverse.concat_reverse(12345)
 "54321"
@@ -94,7 +94,7 @@ ConcatReverse.concat_reverse({1,2,3,4,5})
 
 ¿Y qué pasa si pasamos un tipo que no hemos definido? Pues lógicamente que recibiremos un bonito error:
 
-```
+```iex
 iex(6)> ConcatReverse.concat_reverse(1.33)
 ConcatReverse.concat_reverse(1.33)
 ** (Protocol.UndefinedError) protocol ConcatReverse not implemented for 1.33
@@ -127,7 +127,7 @@ end
 
 Y listo, ahora para otros tipos que no hayamos definido, en lugar de un error, recibiremos un `String` vacío.
 
-```
+```iex
 iex(2)> ConcatReverse.concat_reverse(1.33)
 ConcatReverse.concat_reverse(1.33)
 ""
@@ -165,7 +165,7 @@ end
 ```
 En esta implementación, lo único que hacemos es cambiar el campo `price` para incluir el símbolo del euro. Y aquí un ejemplo de como se utilizaría.
 
-```
+```iex
 iex(1)> alias CustomParser.Product
 alias CustomParser.Product
 CustomParser.Product
