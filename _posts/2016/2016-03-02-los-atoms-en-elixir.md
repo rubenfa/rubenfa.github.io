@@ -9,7 +9,7 @@ otro entorno de desarrollo, otra forma de pensar etc. Y es que es un ejercicio m
 otros lenguajes (Ruby, Erlang-Elixir, Clojure y [otros cuantos más](https://en.wikipedia.org/wiki/Symbol_%28programming%29)).
 
 Los *atoms*, son simples de entender, fáciles de usar, y muy útiles. Un *atom* es básicamente una constante cuyo valor es su propio nombre. Unos cuántos ejemplos de *atoms* serían:
-`:error`, `:ok`, `is_enabled?`, `:paused` ...
+`:error`, `:ok`, `:paused` ...
 
 Como se puede ver en los ejemplos, un *atom* se define con `:` y unos cuantos caracteres, que representan su valor. La gracia de este tipo de datos, es que el *atom* `:error` tiene el mismo valor en cualquier
 programa escrito en Elixir, por lo que es muy útil para dar consistencia a nuestro código.
