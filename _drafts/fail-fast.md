@@ -3,7 +3,7 @@ layout: post
 title:  Mis progresos aprendiendo Elixir
 ---
 
-Hay un concepto en Elixir que siempre me ha maravillado por su sencillez: el **Fail fast** o *falla pronto*. En lenguajes orientados a objetos estamos acostumbrados a utilizar excepciones, y aunque en Elixir también existen, capturarlas se considera casi un *code smell*. En Elixir es tan barato lanzar procesos, que es mejor dejar que mueran a tratar de recuperarlos. Por eso lo de *fail fast*.
+Hay un concepto en Elixir que siempre me ha maravillado por su sencillez: el **Fail fast** o *falla pronto*. En lenguajes orientados a objetos estamos acostumbrados a utilizar excepciones, y aunque en Elixir también existen, capturarlas se considera casi un *code smell*. 
 
 ## Un poquito de OTP
 
@@ -13,15 +13,30 @@ Volviendo a Elixir, que en este caso funciona muy parecido a Erlang, podríamos 
 
 Gracias a OTP, encapsular nuestro código en un proceso es muy sencillo, y lanzar *instancias* del mismo mucho más. Para ello se suele usar `GenServer` que es un [behaviour o comportamiento]() muy útil para implementar en nuestros sistemas. Este post no va a tener código (hablaré de OTP en futuras etradas) así que si queréis saber más podéis visitar [la guía de inicio de Elxir]().
 
-A todo esto se le añade el concepto de **supervisor** o *supervisor*. Un `Supervisor` es otro comportamiento, que nos ayuda a gestionar la creación de procesos y la estrategia que vamos a seguir para iniciarlos (especialmente cuando fallan). Por ejemplo el supervisor puede seguir la estrategia de reiniciar solo un proceso hijo cuando falla, reiniciar todos los procesos hijos cuando fallan, o reiniciar todos los procesos hijos creados después de que uno de ellos fallara.
+A todo esto se le añade el concepto de **supervisor**. Un `Supervisor` es otro comportamiento, que nos ayuda a gestionar la creación de procesos y la estrategia que vamos a seguir para iniciarlos (especialmente cuando fallan). Por ejemplo el supervisor puede seguir la estrategia de reiniciar solo un proceso hijo cuando falla, reiniciar todos los procesos hijos cuando fallan, o reiniciar todos los procesos hijos creados después de que uno de ellos fallara.
 
 Además podemos crear un árbol de supervisión, ya que un supervisor, puede contener supervisores.
 
 ## Excepciones
 
-Como os decía antes, en Elixir existen las excepciones. Y de hecho estas se usan a menudo. Si usais `Enum` y sus diferentes funciones, veréis que hay algunas de ellas que se llaman igual, pero con la diferencia de que una tiene un símbolo de exclamación en el nombre. Por ejemplo `fetch` y `fetch!` se utilizan para recuperar un elemento determinado en base a su posición. Si el elemento no se encuentra con `fetch` obtendremos un [atom]() `:error` mientras que con `fetch!` recibiremos una excepción. Esta convención es muy típica en Elixir para así estar seguros de cuando lanzaremos excepciones.
+En Elixir existen las excepciones. Y de hecho estas se usan a menudo. Si usais `Enum` y sus diferentes funciones, veréis que hay algunas de ellas que se llaman igual, pero con la diferencia de que una tiene un símbolo de exclamación en el nombre. Por ejemplo `fetch` y `fetch!` se utilizan para recuperar un elemento determinado en base a su posición. Si el elemento no se encuentra con `fetch` obtendremos un [atom]() `:error` mientras que con `fetch!` recibiremos una excepción. Esta convención es muy típica en Elixir para así estar seguros de cuando lanzaremos excepciones.
+
+Además de las excepciones, Elixir también tiene [su forma de manejarlas](http://elixir-lang.org/getting-started/try-catch-and-rescue.html) con `try`, `rescue` etc. Incluso cuando un proceso muere, envía una señal `exit` que es parecida a una excepción. 
+
+Pero como decía antes usarlas en Elixir es algo bastante extraño. Y es aquí cuando entra el concepto de **fail fast**.
 
 
+## Fail fast
+
+Cuando yo fui a la Universidad, me enseñaron que una de las peores cosas que podían pasar en mis prácticas, es que un programa o aplicación mostrara errores no controlados al usuario. Que una aplicación mostrara un `NullReferenceException` o un `StackOverflowException` era prácticamente motivo de suspenso. Y esto es algo que es bastante aceptado cuando desarrollamos software.
+
+Para evitar este tipo de problemas, acabamos envolviendo nuestras aplicaciones entre capas de control de excepciones para así poder controlar todos los fallos conocidos. Por esta razón es común que un fallo se produzca en un momento dado, pero la ejecución del programa continue tras gestionar ese fallo. Si la aplicación está bien hecha (y dependiendo de la excepción), conseguirá recuperarse del problema y continuar su ejecución normal. Si no está tan bien hecha, es posible que acabe fallando en otro punto, haciendo muy difícil encontrar dónde estaba el problema original.
+
+En Elixir el concepto es diferente. **Como lanzar procesos es muy barato, lo mejor es simplemente dejarlos morir**. Si un proceso falla no tiene sentido capturar la excepción e intentar recuperarlo. En el `Supervisor` ya tendremos controlada la estrategia a seguir, y seguramente el proceso *muerto* sea sustituido por otro.
+
+Por esta razón es recomendable *fallar pronto*, ya que si envolvemos nuestro código en capas de control de excepciones, estamos perdiendo tiempo y recursos.
+
+La verdad es que este concepto me ha hecho pensar mucho en como gestiono las excepciones en el código que escribo en C#, e intento controlar solo las excepciones cuando es extrictamente necesario. 
 
 
 
