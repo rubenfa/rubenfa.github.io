@@ -82,7 +82,9 @@ De todas formas tampoco es mucho problema, y una vez vuelve todo a la normalidad
 
 ## Al final todo son prioridades
 
-Muchas veces caemos en la trampa de decir que no tenemos tiempo. No puedo hacer tal cosa, porque no tengo tiempo. No puedo hacer esta otra cosa, porque no tengo tiempo. En realidad es mentira. Es cierto que el tiempo es finito y muy escaso, pero al final, la vida son prioridades. **Si no tienes tiempo para algo, es porque no tiene la suficiente prioridad para ti**.
+Muchas veces caemos en la trampa de decir que no tenemos tiempo. No puedo hacer tal cosa, porque no tengo tiempo. No puedo hacer esta otra cosa, porque no tengo tiempo. En realidad es mentira. Es cierto que el tiempo es finito y muy escaso, pero al final, la vida son prioridades. **Si no tienes tiempo para algo, es porque no tiene la suficiente prioridad para ti**. En el siguiente vídeo Laura Vanderkam, lo explica muy bien:
+
+[![There is time](https://i.ytimg.com/vi/n3kNlFMXslo/hqdefault.jpg)](https://www.youtube.com/watch?time_continue=709&v=n3kNlFMXslo)
 
 A mí me ha ayudado mucho pensar en cuáles son mis prioridades, qué es lo que quieres conseguir y a dónde quieres llegar (algo que propone el *GTD* de manual). Una vez lo tienes claro, es más fácil gastar tiempo en tareas que te llevan por ese camino, y no en otras que en ese momento son más superfluas. De todas formas, como todo queda apuntado, siempre puedes retomarlo en otro momento. Mi lista de *Tal vez nunca* está bastante llena, pero las cosas que se me ocurrieron en aquel momento, siguen allí, esperando a que sean relevantes para mí.
 
