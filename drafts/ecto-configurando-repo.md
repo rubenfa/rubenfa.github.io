@@ -4,8 +4,14 @@ title:  Usando Ecto en Elixir I
 subtitle: Configurando la aplicación 
 ---
 
+Aunque estemos programando una aplicación con un lenguaje funcional, al final vamos a necesitar persistir los datos en algún sitio. Y lo más normal, es una base de datos. En Elixir, para estas tareas, tenemos la opción de utilizar [Ecto](https://hexdocs.pm/ecto/Ecto.html). Ecto es un DSL (Domain Specific Language) que nos permite acceder a base de datos utilizando una sintaxis parecida a la de SQL. Su funcionamiento se basa en la utilización de repositorios, esquemas, y migraciones, que permiten consultar la base de datos, insertar registros o actualizarlos. 
 
-## Configuración manual
+Una vez Ecto está configurado, no es difícil de usar, pero primero hay que ponerlo en funcionamiento, que es lo que voy a explicar en esta entrada.
+
+> Nota importante. Este post solo va a explicar como configurar Ecto con MongoDB o PostgreSQL. Si no estás interesado en ese tema, no sigas leyendo, porque probablemente te aburriras mucho.
+
+
+## Configuración manual de Ecto con MongoDB
 
 Lo primero que tenemos que hacer para utilizar Ecto en nuestra aplicación, es añadir las dependencias. Vamos a nuestro archivo `mix.exs' y añadimos las siguientes líneas.
 
@@ -16,7 +22,7 @@ Lo primero que tenemos que hacer para utilizar Ecto en nuestra aplicación, es a
   end
 ```
 
-> Nota importante. La versión actual de `Ecto` es la [2.x]() . Aunque tiene muchísimos cambios interesantes, todavía no soporta MongoDB (solo PostgreSQL). Como yo estoy trasteando con Mongo, voy a usar la versión anterior. En la medida de lo posible intentaré comentar los cambios que existan entre versiones, pero seguro que me dejo alguno.
+> Nota importante. La versión actual de `Ecto` es la [2.1.4](https://hexdocs.pm/ecto/Ecto.html) . Aunque tiene muchísimos cambios interesantes, todavía no soporta MongoDB (solo PostgreSQL). Como yo estoy trasteando con Mongo, voy a usar la versión anterior.
 
 Una vez tenemos añadidas nuestras dependencias, desde la consola hacemos un `mix.deps get` y Hex, se bajará las dependencias necesarias y las compilará. 
 
@@ -29,7 +35,7 @@ config :ecto_blog_samples, Repo,
   hostname: "localhost"
 ```
 
-Y ahora tendremos que crear nuestro repositorio:fs
+Y ahora tendremos que crear nuestro repositorio:
 
 ```elixir
 defmodule Repo do
@@ -82,7 +88,7 @@ def application do
 end
 ```
 
-Aquí estamos diciendo que nuestr aplicación va a usar tres aplicaciones más que son `logger`, `ecto` y `mongodb_ecto`. Además le estamos diciendo que nuestra aplicación está configurada en el módulo `EctoBlogSamples`. Así que en ese módulo deberemos añadir el código para iniciar nuestro `Supervisor`.
+Aquí estamos diciendo que nuestra aplicación va a usar tres aplicaciones más, que son `logger`, `ecto` y `mongodb_ecto`. Además le estamos diciendo que nuestra aplicación está configurada en el módulo `EctoBlogSamples`. Así que en ese módulo deberemos añadir el código para iniciar nuestro `Supervisor`.
 
 ```elixir
 defmodule EctoBlogSamples do
@@ -112,11 +118,108 @@ Repo.all(query)
 ```
 Bueno, en la base de datos no tenemos nada, así que la consulta no devuelve nada.
 
-## Configuración automática
+## Configuración semiautomática
 
-Todo esto que os he contado biene bien para saber qué pasos hay que seguir, pero por suerte Elixir tiene una forma más automática para hacerlo. Así no nos aburriremos cada vez que haya que crear un repositorio.
+Todo esto que os he contado viene bien para saber qué pasos hay que seguir, pero por suerte Elixir tiene una forma más automática para hacerlo. Así no nos aburriremos cada vez que haya que crear un repositorio. En esta ocasión voy hacerlo con la nueva versión de Ecto, y PostgreSQL.
 
 Lo primero es que cuando creemos nuestro proyecto, podemos asegurarnos de que tiene un supervisor configurado. Esto lo hacemos con el comando `mix new ecto_blog_samples --sup`. Al añadir la opción `--sup`, nos evitamos tener que configurar esa parte.
+
+Ahora, añadimos las dependencias, que en este caso son `ecto` y `postgrex`. Esta parte como siempre se hace en el archivo `mix.ex`.
+
+```elixir
+defp deps do
+  [{:ecto, "~> 2.0"},
+   {:postgrex, "~> 0.11"}]
+end
+```
+
+No hay que olvidarse de hacer un `mix deps.get` para poder bajar con Hex esas dependencias. Y ahora, como hicimos antes, debemos añadir esas dependencias a la sección `application` del archivo `mix.ex`.  Como hemos creado el proyecto con la opción `--sup` esa sección la tenemos en parte configurada. 
+
+```elixir
+ # Configuration for the OTP application
+ #
+ # Type "mix help compile.app" for more information
+ def application do
+   # Specify extra applications you'll use from Erlang/Elixir
+   [extra_applications: [:logger],
+    mod: {Ecto2BlogSamples.Application, []}]
+ end
+```
+
+Automáticamente ya se nos ha añaido parte de la configuración, así que solo tendremos que añadir `ecto` y `postgrex` a la lista `extra_applications`.
+
+```elixir
+ # Configuration for the OTP application
+ #
+ # Type "mix help compile.app" for more information
+ def application do
+   # Specify extra applications you'll use from Erlang/Elixir
+   [extra_applications: [:logger, :ecto, :postgrex],
+    mod: {Ecto2BlogSamples.Application, []}]
+ end
+```
+
+El siguiente paso es generar el repositorio, para lo cual utilizaremos el comando siguiente:
+
+```
+mix ecto.gen.repo -r Ecto2BlogSamples.Repo
+``` 
+
+Esto nos genera el archivo `repo.ex` que contiene el módulo con el repositorio. El archivo contiene las siguientes líneas:
+
+```elixir
+defmodule Ecto2BlogSamples.Repo do
+  use Ecto.Repo, otp_app: :ecto2_blog_samples
+end
+```
+
+También nos crea la configuración en el archivo `config.ex`, que deberemos modificar para incluir nuestro usuario y contraseña, para conectar a la base de datos y también para inciar el `Repo`.
+
+```elixir
+config :ecto2_blog_samples, Ecto2BlogSamples.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "ecto2_blog_samples_repo",
+  username: "user",
+  password: "pass",
+  hostname: "localhost"
+
+
+config :ecto2_blog_samples, ecto_repos: [Ecto2BlogSamples.Repo]
+```
+
+Y como paso final, deberemos añadir nuestro repositorio, al archivo `Ecto2BlogSamples.Application`, para que el `Supervisor` lance el proceso necesario al arrancar la aplicación.
+
+
+```elixir
+defmodule Ecto2BlogSamples.Application do
+  # See http://elixir-lang.org/docs/stable/elixir/Application.html
+  # for more information on OTP Applications
+  @moduledoc false
+
+  use Application
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    # Define workers and child supervisors to be supervised
+    children = [ supervisor(Ecto2BlogSamples.Repo, []),
+    ]
+
+    # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
+    # for other strategies and supported options
+    opts = [strategy: :one_for_one, name: Ecto2BlogSamples.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+end
+```
+
+Y listo. Después de unos cuantos pasos, ya está todo configurado. Como en esta ocasión estamos usando una base de datos relacional, hay que crear la base de datos. Esto lo podemos hacer con `mix` y el comando `mix ecto.create`. 
+
+A partir de aquí habría que hacer otras operaciones, como crear `schemas` y crear migraciones para que Ecto, cree las tablas en nuestra base de datos. Pero eso lo dejamos para otro post.fs
+
+
+
+
 
 
 
