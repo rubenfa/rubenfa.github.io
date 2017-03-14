@@ -118,11 +118,9 @@
   <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncatewords: 50 }}" />
-  <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+  <meta name="twitter:image" content="http://charlascylon.com/img/new-post.png" />
   {% if page.share-img %}
-  <meta name="twitter:image" content="{{ page.share-img }}" />
-  {% elsif site.avatar %}
-  <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />
+  <meta name="twitter:image" content="{{ page.share-img }}" /> 
   {% endif %}
 
   {% include google_analytics.html %}
