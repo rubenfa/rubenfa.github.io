@@ -2,7 +2,7 @@
 layout: post
 title:  Productividad
 subtitle: Organizando la vida para intentar hacerlo todo con GTD
-share-img: /img/posts/2017/time.jpg
+share-img: http://charlascylon.com/img/posts/2017/time.jpg
 ---
 
 La productividad es uno de esos conceptos que vende millones de euros en todo tipo de productos. Los libros, cursos o charlas de gurús con recetas milagrosas están por todas partes y es muy fácil quedar atrapado entre ellos. De hecho a mí me ha pasado alguna vez. Vas saltando de método de organización en método de organización intentando buscar la solución a tus problemas, hasta que te das cuenta que en realidad el problema eres tú. 
