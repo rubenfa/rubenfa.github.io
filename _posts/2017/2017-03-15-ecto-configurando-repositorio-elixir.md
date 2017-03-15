@@ -2,18 +2,55 @@
 layout: post
 title:  Usando Ecto en Elixir I
 subtitle: Configurando la aplicación 
+share-img: http://elixir-lang.org/images/logo/logo.png
 ---
 
-Aunque estemos programando una aplicación con un lenguaje funcional, al final vamos a necesitar persistir los datos en algún sitio. Y lo más normal, es una base de datos. En Elixir, para estas tareas, tenemos la opción de utilizar [Ecto](https://hexdocs.pm/ecto/Ecto.html). Ecto es un DSL (Domain Specific Language) que nos permite acceder a base de datos utilizando una sintaxis parecida a la de SQL. Su funcionamiento se basa en la utilización de repositorios, esquemas, y migraciones, que permiten consultar la base de datos, insertar registros o actualizarlos. 
+Aunque estemos programando una aplicación con un lenguaje funcional, al final vamos a necesitar persistir los datos en algún sitio. Y lo más normal, es hacerlo en una base de datos. En Elixir, para estas tareas, tenemos la opción de utilizar [Ecto](https://hexdocs.pm/ecto/Ecto.html). Ecto es un DSL (Domain Specific Language) que nos permite acceder a base de datos utilizando una sintaxis parecida a la de SQL. Su funcionamiento se basa en la utilización de repositorios, esquemas, y migraciones, que permiten consultar la base de datos, insertar registros o actualizarlos. 
+
+## Características de Ecto
+
+Ecto es algo difícil de definir, ya que no es un ORM al uso (al fin y al cabo en Elixir no hay objetos). Así que lo voy a intentar definir con algunas de sus caracterísitcas más interesantes.
+
+ - **Reositorios**: utilizados para *encapsular* toda la lógica utilizada para acceso y modificación de datos. Como es lógico podremos tener varios en nuestra aplicación, accediendo a distintos almacenes de datos.
+
+ - **Migraciones**: utilizadas para crear tablas, actualizar campos etc. Dependiendo del tipo de base de datos que estemos utilizando esto puede ser algo importante, o no. Si usamos una base de datos relacional (PostgreSQL, MySQL etc.), las migraciones nos serán muy útiles, ya que nos permiten mantener concordancia entre nuestro modelo de datos y nuestra base de datos. Si usamos MongoDB las migraciones posiblemente no sean necesarias.
+
+ - **Esquemas**: usemos una base de datos NoSQL o relacional, nuestros datos tendrán un esquema determinado. Con Ecto podremos hacer mapeo entre esos esquemas (que no son otra cosa que [estructuras](http://charlascylon.com/2016-08-03-usando-estructuras-en-elixir)), y las tablas de base de datos.
+
+ - **Changesets**: se utilizan a la hora de insertar o actualizar datos y nos proporcionan elementos importantes como validación de datos, conversión de formatos, restricciónes (valores únicos, claves foráneas etc.). 
+
+ - **Ecto.Query**: muy parecido a [LINQ](https://msdn.microsoft.com/es-es/library/mt693024.aspx) nos permite realizar consultas a nuestra base de datos desde el propio código de Elixir. Al igual que LINQ tiene dos formatos.
+
+La versión típica parecida a SQL:
+
+```elixir
+# Create a query
+query = from u in "users",
+          where: u.age > 18,
+          select: u.name
+
+# Send the query to the repository
+Repo.all(query)
+```
+
+Y la versión utilizada con *pipe operators*:
+
+```elixir
+"users"
+|> where([u], u.age > 18)
+|> select([u], u.name)
+```
+
+Puedes usar la que más te guste.
 
 Una vez Ecto está configurado, no es difícil de usar, pero primero hay que ponerlo en funcionamiento, que es lo que voy a explicar en esta entrada.
 
-> Nota importante. Este post solo va a explicar como configurar Ecto con MongoDB o PostgreSQL. Si no estás interesado en ese tema, no sigas leyendo, porque probablemente te aburriras mucho.
+> Nota importante. El resto del post solo va a explicar como configurar Ecto con MongoDB o PostgreSQL. Si no estás interesado en ese tema, no sigas leyendo, porque probablemente te aburriras mucho.
 
 
 ## Configuración manual de Ecto con MongoDB
 
-Lo primero que tenemos que hacer para utilizar Ecto en nuestra aplicación, es añadir las dependencias. Vamos a nuestro archivo `mix.exs' y añadimos las siguientes líneas.
+Lo primero que tenemos que hacer para utilizar Ecto en nuestra aplicación, es **añadir las dependencias**. Vamos a nuestro archivo `mix.exs' y añadimos las siguientes líneas.
 
 ```elixir
  defp deps do
@@ -22,7 +59,7 @@ Lo primero que tenemos que hacer para utilizar Ecto en nuestra aplicación, es a
   end
 ```
 
-> Nota importante. La versión actual de `Ecto` es la [2.1.4](https://hexdocs.pm/ecto/Ecto.html) . Aunque tiene muchísimos cambios interesantes, todavía no soporta MongoDB (solo PostgreSQL). Como yo estoy trasteando con Mongo, voy a usar la versión anterior.
+> Nota. La versión  de `Ecto` es la [2.1.4](https://hexdocs.pm/ecto/Ecto.html) (al menos en la publicación de este artículo).  Aunque tiene muchísimos cambios interesantes, todavía no soporta MongoDB (solo PostgreSQL y MySQL). Como yo estoy trasteando con Mongo, voy a usar la versión anterior. Más adelante en el post explico como configurar PostgreSQL.
 
 Una vez tenemos añadidas nuestras dependencias, desde la consola hacemos un `mix.deps get` y Hex, se bajará las dependencias necesarias y las compilará. 
 
@@ -35,7 +72,7 @@ config :ecto_blog_samples, Repo,
   hostname: "localhost"
 ```
 
-Y ahora tendremos que crear nuestro repositorio:
+Y ahora tendremos que crear nuestro repositorio, cosa que haremos en un nuevo archivo `repo.ex`:
 
 ```elixir
 defmodule Repo do
@@ -61,7 +98,7 @@ defmodule Pelicula do
 end
 ```
 
-Y con esto "casi" podemos hacer consultas a la base de datos. Si arrancamos `iex` y tratamos de ejecutar una consulta, recibiremos un error:
+Y con esto "casi" podemos hacer consultas a la base de datos. Y digo casi porque si arrancamos `iex` y tratamos de ejecutar una consulta, recibiremos un error:
 
 ```
 iex(2)> import Ecto.Query
@@ -79,7 +116,7 @@ Repo.all(query)
     (ecto) lib/ecto/repo/queryable.ex:15: Ecto.Repo.Queryable.all/4
 ```
 
-Como os comentaba en un [post anterior sobre OTP](), Elixir funciona iniciando procesos para casi todo. En este caso no tenemos configurado ningún proceso para `Repo` en nuestra aplicación, cosa que es necesaria para que funcione. Vamos a añadirlo. Primero vamos al archivo `mix.ex` que es dónde se configura la chicha, y deberemos cambiar la función `application`:
+Como os comentaba en un [post anterior sobre OTP](http://charlascylon.com/2017-02-15-fail-fast), Elixir funciona iniciando procesos para casi todo. En este caso no tenemos configurado ningún proceso para `Repo` en nuestra aplicación, cosa que es necesaria para que funcione. Vamos a añadirlo. Primero vamos al archivo `mix.ex` que es dónde se configura la chicha, y deberemos cambiar la función `application`:
 
 ```elixir
 def application do
@@ -118,9 +155,9 @@ Repo.all(query)
 ```
 Bueno, en la base de datos no tenemos nada, así que la consulta no devuelve nada.
 
-## Configuración semiautomática
+## Configuración semiautomática con PostgreSQL
 
-Todo esto que os he contado viene bien para saber qué pasos hay que seguir, pero por suerte Elixir tiene una forma más automática para hacerlo. Así no nos aburriremos cada vez que haya que crear un repositorio. En esta ocasión voy hacerlo con la nueva versión de Ecto, y PostgreSQL.
+Todo esto que os he contado viene bien para saber qué pasos hay que seguir, pero por suerte Elixir tiene una forma más automática para hacerlo. Así no nos aburriremos cada vez que haya que crear un repositorio. **En esta ocasión voy hacerlo con la nueva versión de Ecto, y PostgreSQL**.
 
 Lo primero es que cuando creemos nuestro proyecto, podemos asegurarnos de que tiene un supervisor configurado. Esto lo hacemos con el comando `mix new ecto_blog_samples --sup`. Al añadir la opción `--sup`, nos evitamos tener que configurar esa parte.
 
@@ -187,7 +224,7 @@ config :ecto2_blog_samples, Ecto2BlogSamples.Repo,
 config :ecto2_blog_samples, ecto_repos: [Ecto2BlogSamples.Repo]
 ```
 
-Y como paso final, deberemos añadir nuestro repositorio, al archivo `Ecto2BlogSamples.Application`, para que el `Supervisor` lance el proceso necesario al arrancar la aplicación.
+Y como paso final, deberemos añadir nuestro repositorio, al archivo `Ecto2BlogSamples.Application`, para que el `Supervisor` lance el proceso necesario al arrancar la aplicación. En esta ocasión también tenemos parte del archivo configurado.
 
 
 ```elixir
@@ -215,7 +252,7 @@ end
 
 Y listo. Después de unos cuantos pasos, ya está todo configurado. Como en esta ocasión estamos usando una base de datos relacional, hay que crear la base de datos. Esto lo podemos hacer con `mix` y el comando `mix ecto.create`. 
 
-A partir de aquí habría que hacer otras operaciones, como crear `schemas` y crear migraciones para que Ecto, cree las tablas en nuestra base de datos. Pero eso lo dejamos para otro post.fs
+A partir de aquí habría que hacer otras operaciones, como crear `schemas` y crear migraciones para que Ecto, cree las tablas en nuestra base de datos. Pero eso lo dejamos para otro post.
 
 
 
