@@ -2,7 +2,7 @@
 layout: post
 title:  Usando Ecto en Elixir I
 subtitle: Configurando la aplicación 
-share-img: http://elixir-lang.org/images/logo/logo.png
+share-img: https://s.yimg.com/ny/api/res/1.2/OQkvI_20nXmxyrTrs3zJIg--/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NzIwO2g9NDgwO2lsPXBsYW5l/http://listings.zenfs.com/en-US/cms/autos/Boldride/Ghostbusters-Ecto-1-2.jpg
 ---
 
 Aunque estemos programando una aplicación con un lenguaje funcional, al final vamos a necesitar persistir los datos en algún sitio. Y lo más normal, es hacerlo en una base de datos. En Elixir, para estas tareas, tenemos la opción de utilizar [Ecto](https://hexdocs.pm/ecto/Ecto.html). Ecto es un DSL (Domain Specific Language) que nos permite acceder a base de datos utilizando una sintaxis parecida a la de SQL. Su funcionamiento se basa en la utilización de repositorios, esquemas, y migraciones, que permiten consultar la base de datos, insertar registros o actualizarlos. 
