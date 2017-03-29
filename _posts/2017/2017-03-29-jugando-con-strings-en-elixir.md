@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Jugando con strings en Elixir
-share-img: https://s.yimg.com/ny/api/res/1.2/OQkvI_20nXmxyrTrs3zJIg--/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NzIwO2g9NDgwO2lsPXBsYW5l/http://listings.zenfs.com/en-US/cms/autos/Boldride/Ghostbusters-Ecto-1-2.jpg
+share-img: https://avatars2.githubusercontent.com/u/1481354?v=3&s=400
 ---
 
 En el Elixir a diferencia de otros lenguajes, los strings, son tratados directamente como binarios. De hecho la gente que programa en Elixir habla muy bien de la gestión que hace el lenguaje. En la [propia documentación de Elixir](http://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html) "presumen" de que Elixir pasa todos los test del interesante post [the string type is broken](http://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html). En este post voy a explicar algunas cosillas sobre los strings.
@@ -9,7 +9,7 @@ En el Elixir a diferencia de otros lenguajes, los strings, son tratados directam
 
 ## El tipo string
 
-Como ya he dicho en Elixir los strings son directamente binarios (codificados en UTF-8). ¿Y esto qué quiere decir? Pues por ejemplo que en `iex` podemos escribir cosas así:
+Como ya he dicho en Elixir los strings **son directamente binarios codificados en UTF-8**. ¿Y esto qué quiere decir? Pues por ejemplo que en `iex` podemos escribir cosas así:
 
 ```
 iex(2)> <<97, 98, 99, 100>>
@@ -19,6 +19,9 @@ iex(2)> <<97, 98, 99, 100>>
 Con `<<` y `>>` en Elixir podemos representar binarios, que es lo que estamos haciendo en el ejemplo. En este caso estamos definiendo los caracteres *abcd* con su correspondiente representación UTF-8.
 
 Una vez comprendido esto, podemos ver que los strings tienen muchas posibilidades.
+
+
+> **NOTA IMPORTANTE**: si ejecutáis los ejemplos en Windows, podéis tener problemas con el tipo de codificación del terminal de Windows, ya que no utiliza UTF-8 por defecto. Para cambiarlo podéis ejecutar el comando `chcp 65001`.
 
 ## Listas de caracteres
 
@@ -52,11 +55,11 @@ Al utilizar comentarios en el texto, lo más normal es que utilicemos saltos de 
   against `t2` and returns `:lt`, `:eq` or `:gt`.
   """
 ```
-Es importante destacar que las triples comillas de cierre deben ir en una nueva línea.
+Es importante destacar que las triples comillas de cierre deben ir en una nueva línea. Y si os fijáis en los comentarios se puede utilizar sintaxis *Markdown*.
 
 ## Interpolación de strings
 
-Hasta hace no mucho en C# la interpolación de strings era un verdadero suplicio, ya que debíamos hacerlo con `String.format`. Desde que añadieron la interpolación de strings con `$`, esto ha mejorado muchísimo. En Elixir por suerte, esto viene desde el principio y se utiliza de forma similar.
+Hasta hace no mucho en C# la interpolación de strings era un verdadero suplicio, ya que debíamos hacerlo con `String.Format`. Desde que añadieron la interpolación de strings con `$`, esto ha mejorado muchísimo. En Elixir por suerte, esto viene desde el principio y se utiliza de forma similar.
 
 ``` 
 iex(1)> name = "Pedro"
@@ -65,6 +68,31 @@ iex(2)> "Hola #{name}"
 "Hola Pedro"
 ```
 
+## Sigils
+
+Bajo este nombre tan extraño, se encuentran estructuras de datos que **permiten trabajar con representaciones de texto**. Empiezan por el símbolo `~` y las hay de distintos tipos como `~s` para strings, `~c` para listas de caracteres, `~w` para listas de plabras o `~r` para expresiones regulares.
+
+``` 
+iex(1)> ~s(Esto es una frase escrita con un sigil)
+"Esto es una frase escrita con un sigil"
+iex(2)> ~c(Esto es una lista de caracteres)
+'Esto es una lista de caracteres'
+iex(3)> ~w(esto es una lista de palabras)
+["esto", "es", "una", "lista", "de", "palabras"]
+``` 
+
+Y si queremos usar expresiones regulares:
+
+``` 
+iex(1)> regex = ~r"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$" 
+~r/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/                  
+iex(1)> "charlascylon.com" =~ regex                                                
+true                                                                                
+iex(1)> "charlascyloncom" =~ regex                                                 
+false                                                                               
+``` 
+
+Una cosa interesante de los sigils, es que se pueden usar distintos delimitadores. En los primeros ejemplos he usado `()` mientras que en las expresiones regulares he utilizado `""`. Esto es útil porque así no hay que escapar los caracteres especiales con `\`. Otros delimitadores permitidos son `/`, `|`, `[]`, `{}`, `<>`. Podemos utilizar el que más nos convenga, y así evitar escapar los caracteres uno a uno.
 
 
 ### Pattern matching con strings
@@ -91,7 +119,7 @@ defmodule StringsExamples do
 end
 ```
 
-En un momento hemos hecho una especie de procesador de comandos, con las opciones `write:`, `reverse:` y `uppercase:`. Para que funcionen estamos diciendo por *pattern matching* que si por ejemplo un comando empieza por "write:" hagamos algo con el resto del string. Veamos como funciona en `iex`.
+En un momento hemos hecho una especie de procesador de comandos, con las opciones `write:`, `reverse:` y `uppercase:`. Para que funcionen estamos diciendo por *pattern matching* que si por ejemplo un comando empieza por "write:" pintemos en pantalla el resto del string. Veamos como funciona en `iex`.
 
 ```
 iex(1)> StringsExamples.command_parser("write:uno,dos,tres")
@@ -122,4 +150,5 @@ end
 
 Si tratamos de añadir esa función a Elixir recibiremos un error de compilación diciendo que `a binary field without size is only allowed at the end of a binary pattern`, y esto es sencillamente porque como `text` puede tener cualquier tamaño, no puede procesarlo correctamente. 
 
+Y de momento lo dejamos aquí. Espero que os haya resultado interesante.
 
