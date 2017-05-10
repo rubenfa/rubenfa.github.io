@@ -1,0 +1,76 @@
+---
+layout: post
+title:  Lenguajes dinámicos y lenguajes estáticos
+share-img: http://charlascylon.com/img/posts/2017/gangs-of-new-york.jpg
+---
+
+Cuenta la leyenda, que una vez una princesa fue capturada por un terrible dragón. El abominable monstruo encerró a la princesa en la más alta torre de su castillo dejándola atrapada durante años. Muchos valientes caballeros intentaron rescatarla, pero no lo consiguieron y perecieron en el intento. La princesa estaba desesperada, ya que pensaba que nunca podría salir de aquel horrible castillo. 
+
+El caballero Dinámico, que conocía la triste historia de la princesa, entrenó día y noche para poder enfrentarse al dragón. Él sabía que podría rescatarla, ya que tenía un arma secreta: una espada mágica. Esta espada, que emitía una luz azulada, era capaz de inflingir terribles heridas a todo tipo de monstruos, pero en el caso de los dragones, era mortal. Con un solo golpe, el dragón sería destruído y la princesa sería rescatada.
+
+Cuando el caballero Dinámico estuvo preparado viajó hasta el castillo del dragón dispuesto a enfrentarse al monstruo. El dragón que nunca dormía y siempre estaba vigilante, escuchó llegar al caballero y salió a su encuentro. El momento había llegado. Dinámico había estado preparándose durante años para aquel enfrentamiento y sabía que con la ayuda de su espada mágica podría vencer. Con decisión, Dinámico llevó la mano a la empuñadura de su espada mágica, dispuesto a desenvainarla. El horrible dragón, recibiría su merecido. Pero entonces ... `undefined`, la espada no estaba allí, ya que el caballero Dinámico se había olvidado de cogerla. El dragón aniquiló al caballero y la princesa siguió encerrada para siempre.
+
+Esta historia con dramático final, refleja lo que los programadores de lenguajes estáticos opinan de los lenguajes dinámicos. Un error que el compilador podría haber detectado sin problemas, se convierte en un terrible error en tiempo de ejecución. Para los programadores de lenguajes dinámicos, tampoco es para tanto, ya que errores de ese tipo se podrían detectar con tests. **Y así llevamos años y años, sin que nadie sepa dar una razón definitiva para elegir una opción u otra**.
+
+
+## Lenguajes de tipado estático y lenguajes de tipado dinámico
+
+Decimos que un **lenguaje es de tipado estático**, porque los tipos tienen que definirse en tiempo de compilación para que el programa funcione. Si definimos una variable de tipo `StringBuilder` esta solo podrá contener instancias de este tipo, y si no es así, el compilador nos mostrará un error. Lo mismo puede pasar cuando llamamos a un método o función. Si no existe o hemos escrito mal el nombre, el compilador nos mostrará un error y no nos dejará ejecutar el programa hasta que lo arreglemos.
+
+En el caso de los **lenguajes de tipado dinámico**, esto no pasa, y los tipos de las variables se definen en tiempo de ejecución. El ejemplo que se suele dar es que una variable puede contener valores de distintos tipos durante la ejecución del programa, pero me parece un ejemplo bastante malo, porque salvo casos excepcionales, es algo que yo no haría. Al final en los lenguajes dinámicos, lo que cuenta es que si te equivocas en algo, casi siempre lo vas a ver en tiempo de ejecución, ya que no tienes el paracaídas del compilador. Si pones mal el nombre de una función, fallará cuando vayas a usarla.
+
+Otra cosa que suele confundirse aquí, es el tipado fuerte, o el tipado débil. Tanto Elixir como JavaScript, son lenguajes dinámicos, pero Elixir tiene un tipado mucho más fuerte que JavaScript. Si sumas `1 + "1"` en Elixir, recibes un error en tiempo de ejecución. Si haces la misma operación en JavaScript obtienes `"11"`. En definitiva, unos lenguajes son más permisivos que otros cuando tienen que hacer conversiones entre tipos y JavaScript tiende a convertirlo todo para poder continuar con la ejecución. De hecho yo creo que el tipado tan débil (y raruno) de JavaScript, es lo que ha hecho que este lenguaje tenga a veces tan mala fama.
+
+## ¿Y qué opción es mejor?
+
+![Gangs of new york](/img/posts/2017/gangs-of-new-york.jpg)
+
+Desde que el mundo es mundo, la humanidad se ha dividido en dos bandos. ¿Tortilla de patata con cebolla o sin cebolla? ¿Pizza con piña o sin piña? ¿Lenguajes dinámicos o lenguajes estáticos? Mientras que todo el mundo sabe que la tortilla de patata tiene que ser con cebolla, el debate entre si debemos usar lenguajes de un tipo u otro continua. ¿Pero qué ventajas e inconvenientes tiene cada uno? Aquí van algunas (aunque hay más):
+
+### Lenguajes de tipado estático
+
+**Supuestas Ventajas**:
+- Detención temprana de algunos tipos de errores.
+- Es más sencillo refactorizar nombres de variables, funciones, métodos etc.
+- En general el código es más expresivo, y muchas veces es fácil entender lo que se está haciendo gracias a los tipos.
+- Mejor autocompletado del código. Como el compilador tiene más información, es más fácil que te ayude mientras estás escribiendo, ganando en productividad.
+
+**Supuestas Desventajas**:
+- Compilar es lento. Y si tienes mucho código, es muy lento.
+- Tienes que invertir tiempo en aprender el sistema de tipos.
+- A veces los errores que se producen con los tipos, son difíciles de solucionar, porque el compilador no es demasiado claro.
+- Estar atado a los tipos, hace que tengas más restricciones.
+
+
+### Lenguajes de tipado dinámico
+
+**Supuestas Ventajas**:
+- No pierdes el tiempo compilando. De hecho hacer TDD tiene un flujo mucho más ágil, ya que no tienes que compilar.
+- Aunque no hay compilador, muchos lenguajes dinámicos tienen *linterns* que te ayudan a cazar muchos errores.
+- Son lenguajes un poco más interactivos. Suelen tener REPL que te permiten probar el código fácilmente. Algunos lenguajes estáticos también tienen, como C#, pero no son tan útiles.
+- El código es más flexible. 
+
+**Supuestas Desventajas**:
+- Hay errores que un compilador te detectaría, pero que con un lenguaje dinámico te vas a tragar.
+- ¿Quieres cambiar el nombre a una función? Preparate para buscar bien en todo el código (y más si no tienes tests).
+- Que los tipos sean dinámicos, no quiere decir que no te tengas que preocupar por ellos. De hecho no tienes tipos que te guíen mientras codificas, así que tienes que tener en mente de qué tipo es cada variable, o que tipo devuelve una función. Y no siempre es sencillo.
+
+
+## Elixir es dinámico, pero ...
+
+Es cierto que Elixir es un lenguaje dinámico, pero tiene una cosa que puede ayudar mucho a trabajar con tipos: [el pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching). Puesto que Elixir está construido para utilizar *pattern matching* en todas partes, si lo hacemos bien, tendremos que muchos de los errores que caza un compilador, también los cazará el *pattern matching*, aunque es cierto que en tiempo de ejecución. Por ejemplo podemos declarar funciones que reciban un tipo concreto de [estructuras](http://charlascylon.com/2016-08-03-usando-estructuras-en-elixir) y estar seguro de que esa función solo se llamará si se cumplen los requisitos.
+
+
+## ¿Dinámico, o estático? No hay una opción buena, ni una opción mala
+
+Documentándome un poco para este post, he llegado a leer un post de 2015, que decía "el tipado dinámico está muerto, no se desarrollaran nuevos lenguajes dinámicos que tengan éxito". Así sin miedo. Jugar a adivino es siempre peligroso, y más en este mundillo. 
+
+Al final yo creo que todo esto de los tipos es cuestión de gustos. Hay gente muy cómoda con los lenguajes fuertemente tipados, que incluso están haciendo cosas como TypeScript, para tipar lenguajes como JavaScript. Hay otras personas que se sienten como peces en el agua con su JavaScript, Python o Ruby.
+
+Yo personalmente estoy muy cómodo con C#, y también con Elixir. Aunque es cierto que con Elixir no he escrito programas realmente grandes, donde algunas de las desventajas que he citado, podría ser un verdadero problema (como la de refactorizar).
+
+Y es que no nos engañemos, **si la respuesta fuese sencilla, si hubiese una mejor opción (sea estático o dinámico), todos esataríamos usando esa opción, y no habría debate**.
+
+
+
+
