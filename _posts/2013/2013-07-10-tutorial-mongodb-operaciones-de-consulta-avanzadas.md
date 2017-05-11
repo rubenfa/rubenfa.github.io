@@ -6,6 +6,8 @@ redirect_from:
   - /post/61794345688/
 ---
 
+>Nota: Esta serie de artículos pertenece al tutorial que escribí hace unos años sobre MongoDB. La versión de MongoDB ha sido actualizada varias veces, pero podéis ver el resto de los artículos de la serie en [este enlace](http://charlascylon.com/tutorialmongo)
+
 
 <p>Volvemos a la carga con nuestro tutorial de <strong>MongoDB</strong>, continuando con las operaciones de consulta avanzadas <a href="http://www.charlascylon.com/2013/07/tutorial-mongodb-operaciones-de.html" title="artículo Operaciones Avanzadas I">que ya empezamos la semana pasada.</a></p>
 <p>En la anterior entrega vimos como realizar consultas complejas con find o findOne, incluyendo en ellas operadores lógicos como <strong>$gt, $lt, $exists, $and</strong> y algunos más. En esta entrada nos vamos a centrar en las consultas sobre elementos complejos, como  los arrays y los subdocumentos. Así que vamos a ello.</p>
