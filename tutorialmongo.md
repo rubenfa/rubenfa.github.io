@@ -7,13 +7,7 @@ redirect_from:
   - /mongodb.html
 ---
 
-
-Si has llegado hasta esta página, es probable que sea por algún enlace antiguo o a través de Google. Este tutorial empecé a escribirlo en 2013, y por aquel entonces 
-se utilizaba la versión 2.3 de MongoDB. Ha cambiado muchas cosas. Mientras escribo estas líneas (febrero de 2016) la versión publicada es la 3.2, con muchas mejoras y variaciones 
-con respecto a lo que escribí. Aunque muchos de los artículos que ves en este índice pueden serte útiles, tómalos con precaución. Es posible que las cosas
-no funcionen de la misma manera. Esto es de especial importancia con los artículos de MongoDB y .NET, ya que el driver ha sufrido muchos cambios.
-
-
+Este tutorial empecé a escribirlo en 2013, y por aquel entonces se utilizaba la versión 2.3 de MongoDB. Han cambiado muchas cosas desde entonces. Mientras escribo estas líneas (febrero de 2016) la versión publicada es la 3.2, con muchas mejoras y variaciones con respecto a lo que escribí. Aunque muchos de los artículos que ves en este índice pueden serte útiles, tómalos con precaución. Es posible que las cosas no funcionen de la misma manera. Esto es de especial importancia con los artículos de MongoDB y .NET, ya que el driver ha sufrido muchos cambios.
 
 ## Introducción ##
 
