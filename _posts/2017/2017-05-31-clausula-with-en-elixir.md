@@ -67,7 +67,7 @@ end
 En este caso no nos sirve el pipe, así que en definitiva, necesitamos algo que sirva para concatenar funciones y que permita gestionar los errores. Y para eso entre otras cosas se utiliza `with`.
 
 
-## Widh
+## With
 
 Como el movimiento se muestra andando, vamos a reescribir el ejemplo anterior, pero usando `with`. Ahí va:
 
