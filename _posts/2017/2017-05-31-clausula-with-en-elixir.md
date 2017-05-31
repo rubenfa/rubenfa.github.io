@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Operador With en Elixir
+title:  Cláusula With en Elixir
 share-img: https://elixir-lang.org/images/logo/logo.png
 ---
 
-Lo bueno de un lenguaje que está principalmente guiado por la comunidad, es que va evolucionando según las necesidades que se van encontrando sus usuarios. Un ejemplo es el que nos encontramos con el operador `with` de Elixir, que fue introducido en la versión 1.2 del lenguaje, y mejorado en la 1.3 para incluir la cláusula `else`.
+Lo bueno de un lenguaje que está principalmente guiado por la comunidad, es que va evolucionando según las necesidades que se van encontrando sus usuarios. Un ejemplo es el que nos encontramos con la cláusula `with` de Elixir, que fue introducido en la versión 1.2 del lenguaje, y mejorado en la 1.3 para incluir la cláusula `else`.
 
 
 ## El problema
