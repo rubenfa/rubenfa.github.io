@@ -84,6 +84,6 @@ Como el movimiento se muestra andando, vamos a reescribir el ejemplo anterior, p
   end
 ```
 
-Como veis solo he cambiado la función `verify`, ya que el resto puede seguir igual. Con `with` iremos ejecutando las diferentes funciones, siempre que el [pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) se vaya cumpliendo. En el caso de que no se cumpla en algún caso se pasará al bloque `else`. En este bloque también podemos tener *pattern matching*, y tener varias cláusulas. Yo solo he puesto un `{:error, e}`, pero podríamos ponero distintos tipos de error según su mensaje y hacer diferentes opciones.
+Como veis solo he cambiado la función `verify`, ya que el resto puede seguir igual. Con `with` iremos ejecutando las diferentes funciones, siempre que el [pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) se vaya cumpliendo. En el caso de que no se cumpla en algún caso se pasará al bloque `else`. En este bloque también podemos tener *pattern matching*, y tener varias cláusulas. Yo solo he puesto un `{:error, e}`, pero podríamos ponero distintos tipos de error según su mensaje y para realizar distintas operaciones según el error devuelto.
 
 
