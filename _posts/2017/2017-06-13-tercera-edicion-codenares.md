@@ -53,7 +53,7 @@ También me di cuenta de que como llevaba la charla bien preparada, no me fijé 
 
 ## Y lo mejor llegó después
 
-Como siempre en estos eventos, seas ponente o no, lo mejor siempre viene después, cuando puedes tomarte algo con buena gente compartiendo opiniones y batallitas. Fue un placer conocer a mi tocayo (Rubén Chavarría)[https://twitter.com/rchavarriat], ya que juntos estamos aprendiendo Elixir, y curiosamente todavía no nos conocíamos en persona. También estuvo genial ver a mi compi de fatigas en .NET [Sergio León](https://twitter.com/panicoenlaxbox), que se tomó la molestia de levantarse un sábado para escuchar mi chapa.
+Como siempre en estos eventos, seas ponente o no, lo mejor siempre viene después, cuando puedes tomarte algo con buena gente compartiendo opiniones y batallitas. Fue un placer conocer a mi tocayo [Rubén Chavarría](https://twitter.com/rchavarriat), ya que juntos estamos aprendiendo Elixir, y curiosamente todavía no nos conocíamos en persona. También estuvo genial ver a mi compi de fatigas en .NET [Sergio León](https://twitter.com/panicoenlaxbox), que se tomó la molestia de levantarse un sábado para escuchar mi chapa.
 
 También pude charlar con otras muchas personas, y conocer a Ángel, que me dejó impresionado con todo lo que sabe (en especial de Erlang) y que me dio un par de consejos muy buenos sobre la gestión de los procesos en Elixir. 
 
