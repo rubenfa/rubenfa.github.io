@@ -28,8 +28,8 @@ En la semana previa a la charla, y con todo casi terminado, ensayé unas cuantas
 
 
 ## El día de la charla
-
-![dando la chapa](http://charlascylon.com/img/posts/2017/codenares3.jpg)
+![Gangs of new york](/img/posts/2017/gangs-of-new-york.jpg)
+![dando la chapa](/img/posts/2017/codenares3.jpg)
 
 La verdad, pensaba que iba a estar mucho más nervioso. Aunque siempre he sido un tío tímido, y estas cosas me intimidan, los momentos previos no fueron un suplicio y estuve más tranquilo de lo esperado. A todo ello ayudaron el ambiente, ya que la sala era estupenda (en la Caja del Arte de Torrejón de Ardoz) y tanto Jose, como [Sergio Canis](https://twitter.com/sergcns), y el resto de personas que los ayudaron, estuvieron muy atentos para que los ponentes estuviéramos a gusto.
 
@@ -61,4 +61,4 @@ Ese día charlé con mucha gente, y gracias a todos, el día fue muy agradable. 
 
 En definitiva, un gran día para enmarcar. Al final en mi corazoncito siempre estará Codenares, porque allí di mi primera charla. Cuando queráis, y para lo que queráis, ya sabéis donde estoy.
 
-![foto de grupo](http://charlascylon.com/img/posts/2017/codenares4.jpg)
+![foto de grupo](/img/posts/2017/codenares4.jpg)
