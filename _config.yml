@@ -27,6 +27,7 @@ avatar: "/img/avatar-icon.png"
 
 # List of links in the navigation bar
 navbar-links:
+  Suscribirse: "suscribe"
   Sobre mi: "aboutme"
   Buscar: "search"
 #  Tutorial MongoDB: "tutorialmongo"
