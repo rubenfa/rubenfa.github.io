@@ -174,8 +174,9 @@ CYLON-MACHINE&gt;
 
 <p>Aunque la consola de <strong>MongoDB</strong> en ciertos aspectos no es muy amigable, tiene una serie de opciones que cualquier administrador debería conocer. Teniendo una buena colección con las funciones más utilizadas, nos evitaremos repetir pasos y podremos automatizar mejor las tareas.</p>
 
-<hr><hr><ul><li><p>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter.</p></li>
-<li><p>Recuerda que puedes ver el índice del tutorial de MongoDB y acceder a todos los artículos de la serie desde <a href="http://www.charlascylon.com/mongodb" title="Enlace a página principal del tutorial">aquí</a>.</p></li>
-<li><p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete por <a href="feed://www.charlascylon.com/feed.xml" title="Suscripción RSS">RSS</a>.</p></li>
+* * * * *
 
-</ul>
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

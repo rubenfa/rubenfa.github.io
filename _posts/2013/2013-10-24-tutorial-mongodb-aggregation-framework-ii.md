@@ -330,14 +330,5 @@ que podemos utilizar. Lo veremos en la siguiente entrega.
 
 * * * * *
 
-***Si te ha gustado el artículo**, colabora con un +1 de Google+, un
-Like de Facebook o compartiendo por Twitter. *
-
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde
-aquí.](http://www.charlascylon.com/p/tutorial-mongodb.html)*
-
-¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog?
-Suscríbete [por RSS](feed://www.charlascylon.com/feed.xml).*[
-](http://www.charlascylon.com/p/tutorial-mongodb.html)*
-
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

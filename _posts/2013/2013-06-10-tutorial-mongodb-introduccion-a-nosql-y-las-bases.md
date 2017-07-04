@@ -271,3 +271,12 @@ mejor es utilizar una base de datos relacional clásica.
 Y de momento lo dejamos aquí. En próximas entradas veremos como ejecutar
 MongoDB y realizar consultas simples.
 
+
+
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde
+aquí.](http://charlascylon.com/tutorialmongo)*

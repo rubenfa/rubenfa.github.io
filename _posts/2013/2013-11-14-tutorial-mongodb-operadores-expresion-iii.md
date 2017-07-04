@@ -209,15 +209,6 @@ No os lo perdáis.
 
 * * * * *
 
-*¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me
-gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !
-*
-
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde
-aquí.](http://www.charlascylon.com/p/tutorial-mongodb.html)*
-
-¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog?
-Suscríbete [por RSS](feed://www.charlascylon.com/feed.xml).*[
-](http://www.charlascylon.com/p/tutorial-mongodb.html)*
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
 

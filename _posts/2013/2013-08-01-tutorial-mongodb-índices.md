@@ -193,4 +193,9 @@ redirect_from:
 
 <p>Los índices son un punto importante a la hora de realizar consultas contra una base de datos <strong>MongoDB</strong>. Una mala gestión de los índices puede derivar en un rendimiento pobre, por lo que deberemos ser conscientes del tipo de consutlas que se realizan a la base de datos. Sabiendo qué campos se utilizan para filtrar y cuáles suelen ser los devueltos en las consultas, seremos capaces de crear los índices necesarios para que nuestra base de datos se comporte correctamente.</p>
 
-<hr><hr><p><em>Recuerda que puedes ver el índice del tutorial y acceder a todos los artículos de la serie <a href="http://www.charlascylon.com/p/tutorial-mongodb.html">desde aquí.</a></em></p>
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

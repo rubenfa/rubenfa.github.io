@@ -187,3 +187,9 @@ el acomplamiento empezará a ser un problema más grave.
 
 Veremos como solucionar esto en futuras entregas.
 
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

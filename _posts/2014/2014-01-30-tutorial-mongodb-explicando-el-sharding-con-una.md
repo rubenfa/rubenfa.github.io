@@ -93,8 +93,9 @@ redirect_from:
 
 <p>Imagen | <a href="http://www.flickr.com/photos/16435172@N05/3543021627/in/photolist-6p5UTM-6QJjJ8-6QJjP6-6QNoxm-6SvA7H-6U2hrz-71xyuT-7bwxNv-7dLd5z-7f2oJo-7gCGUJ-7iFNHR-7kANZs-7x3xZs-9PvAmW-foEJpd-dxK6PA-8FsFzV-8FsFxP-8FsFuX-8MGdGK-j6bcMh-7DirQm-8N1gZp-81aRGf-azzWZS-9XpnKq-9XEpKS-7HCQz6-abNYLb-98nQue-7UMxTR-8FsFyX-7M5r9P-9FUeyV-aBmBVA-82Y9pE-7Z6mug-9XBwvz-9XpnRh-eWXvQw-8kYWWk-egKFMy-8Nc38b-99xnop-bH29cz-8vDMEM-8PXwUh-adSeyj-8QeUJN-bSC5Ap">Guillermo Viciano</a></p>
 
-<hr><hr><ul><li><p>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter.</p></li>
-<li><p>Recuerda que puedes ver el índice del tutorial de MongoDB y acceder a todos los artículos de la serie desde <a href="http://www.charlascylon.com/mongodb" title="Enlace a página principal del tutorial">aquí</a>.</p></li>
-<li><p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete por <a href="feed://www.charlascylon.com/feed.xml" title="Suscripción RSS">RSS</a>.</p></li>
-<li><p>¿Tienes alguna pregunta? Deja un comentario o házmela directamente desde <a href="http://www.charlascylon.com/ask" title="Enlace a preguntas">aquí</a>.</p></li>
-</ul>
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

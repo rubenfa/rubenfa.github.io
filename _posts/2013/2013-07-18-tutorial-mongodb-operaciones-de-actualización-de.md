@@ -646,6 +646,5 @@ subdocumentos. No os lo perdáis
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde
-aquí.](http://www.charlascylon.com/p/tutorial-mongodb.html)*
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
 

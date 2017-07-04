@@ -367,3 +367,10 @@ db.powerOf2Sizes.stats();
 <p>Con este sencillo test, hemos podido comprobar por qué <em>usePowerOf2Sizes</em> será el modo de reserva de espacio que la nueva versión 2.6 de <strong>MongoDB</strong> utilizará por defecto. El espacio requerido por la base de datos será más previsible, y estable que con el método tradicional.</p>
 
 <p>Eso sí, hay que tener en cuenta que el método actual de <em>padding factor</em> no se elimina. Simplemente pasará a ser opcional.</p>
+
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

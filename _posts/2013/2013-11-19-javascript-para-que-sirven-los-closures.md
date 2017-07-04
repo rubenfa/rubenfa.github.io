@@ -173,14 +173,4 @@ diversas tareas. En especial a la hora de crear métodos y variables
 privados.
 
 
-* * * * *
-
-* * * * *
-
-*¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me
-gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !*
-
-¿Quiéres que te avisemos cuándo se publiquen nuevas entradas en el blog?
-Suscríbete [por RSS](feed://www.charlascylon.com/feed.xml).*[
-](http://www.charlascylon.com/p/tutorial-mongodb.html)*
 

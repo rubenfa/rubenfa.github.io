@@ -140,7 +140,9 @@ rep1:SECONDARY&gt;
 
 <p>Hoy hemos aprendido que podemos realizar consultas sobre un servidor secundario de <strong>MongoDB</strong> siempre que lo especifiquemos, pero que las inserciones y actualizaciones solo se pueden hacer sobre el servidor principal. También hemos aprendido que <strong>MongoDB</strong> gestiona una colección llamada <em>Oplog</em> dónde se guardan las operaciones realizadas. Esta colección es auditable, y nos servirá para detectar posible problemas de replicación. Problemas, que generaremos en la siguiente entrada.</p>
 
-<hr><hr><ul><li><p>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter.</p></li>
-<li><p>Recuerda que puedes ver el índice del tutorial de MongoDB y acceder a todos los artículos de la serie desde <a href="http://www.charlascylon.com/mongodb" title="Enlace a página principal del tutorial">aquí</a>.</p></li>
-<li><p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete por <a href="feed://www.charlascylon.com/feed.xml" title="Suscripción RSS">RSS</a>.</p></li>
-</ul>
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

@@ -266,8 +266,12 @@ redirect_from:
 </div>
 <div><br/><br/></div>
 <hr><hr><p><em>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !<br/></em></p>
-<p><em>Recuerda que puedes ver el índice del tutorial y acceder a todos los artículos de la serie <a href="http://www.charlascylon.com/p/tutorial-mongodb.html">desde aquí.</a></em></p>
-<p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete <a href="feed://www.charlascylon.com/feed.xml">por RSS</a>.<em><a href="http://www.charlascylon.com/p/tutorial-mongodb.html"><br/></a></em></p>
 </div>
 </div>
 </div>
+
+* * * * *
+
+* * * * *
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

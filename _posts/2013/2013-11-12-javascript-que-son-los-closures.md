@@ -120,14 +120,5 @@ monedas.
 Ahora qué ya sabemos qué son los closures, nos queda saber para qué se
 utilizan, pero eso lo dejaremos para la siguiente entrega.
 
-* * * * *
 
-* * * * *
-
-*¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me
-gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !*
-
-¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog?
-Suscríbete [por RSS](feed://www.charlascylon.com/feed.xml).*[
-](http://www.charlascylon.com/p/tutorial-mongodb.html)*
 

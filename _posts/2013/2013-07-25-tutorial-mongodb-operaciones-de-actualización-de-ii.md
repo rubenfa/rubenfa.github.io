@@ -285,3 +285,10 @@ También puede ser que nos equivoquemos a la hora de crear un campo, y el nombre
 En esta nueva entrega de nuestro tutorial, hemos recorrido la mayoría de los comandos disponibles para actualizar documentos en nuestra **base de datos NoSQL**. Con todo lo visto en esta entrega y las anteriores, podremos enfrentarnos en el día a día a una base de datos **MongoDB**. Podremos realizar consultas, inserciones, borrados o modificaciones para garantizar que nuestras aplicaciones funcionan correctamente.
 
 Sin embargo hay operaciones que todavía no sabemos como llevar a cabo. Por ejemplo a la hora de realizar informes de explotación, suele ser importante realizar operaciones de agregación como agrupar datos, contar, sumar para calcular totales etc. Esas y otras cosas las veremos en las siguientes entregas. Aquí nos vemos.
+
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

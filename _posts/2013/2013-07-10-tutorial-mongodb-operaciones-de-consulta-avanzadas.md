@@ -95,10 +95,9 @@ redirect_from:
 <p><strong>Conclusiones</strong></p>
 <p>En esta entrada hemos profundizado en las consultas de MongoDB. Hemos aprendido a consultar sobre arrays, a usar Dot Notation, expresiones regulares y echado un vistazo a alguna de las operaciones que podemos hacer con los cursores.</p>
 <p>Ahora que sabemos realizar consultas, nos toca aprender a realizar modificaciones. Pero eso será en futuras entradas.</p>
-<hr>
-<hr>
-<p>_¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !
-_</p>
-<p><em>Recuerda que puedes ver el índice del tutorial y acceder a todos los artículos de la serie <a href="http://www.charlascylon.com/p/tutorial-mongodb.html">desde aquí.</a></em></p>
-<p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete  por <a href="feed://www.charlascylon.com/feed.xml">por RSS</a>.<em><a href="http://www.charlascylon.com/p/tutorial-mongodb.html">
-</a></em></p>
+
+* * * * *
+
+* * * * *
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*

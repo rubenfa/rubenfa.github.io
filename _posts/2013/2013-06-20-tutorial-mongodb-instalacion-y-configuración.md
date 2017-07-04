@@ -195,10 +195,8 @@ consultas. No os perdáis las próximas entregas.
 
 * * * * *
 
+* * * * *
 
-*Otros artículos de la serie:*
-
--    [Introducción a NoSQL y a las bases de datos
-    documentales]((http://charlascylon.com/post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html)
-
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
 

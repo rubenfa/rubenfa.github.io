@@ -101,3 +101,10 @@ usuario. Si tenemos muchos usuarios y/o poco dinero, mejor una base de
 datos para todos e identificar de forma unívoca a que usuario pertenece
 cada documento almacenado en las colecciones.
 
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+

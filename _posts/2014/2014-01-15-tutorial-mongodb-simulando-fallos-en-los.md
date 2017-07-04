@@ -193,7 +193,9 @@ rep1:SECONDARY&gt;
 
 <p><strong>MongoDB</strong> tiene un sistema robusto y fiable para elegir un servidor principal en caso de que se produzca un fallo. En una arquitectura en la que solo puede haber un servidor principal, y en la que solo se pueden realizar operaciones de actualización sobre el servidor principal, este proceso es <strong>crítico</strong>. En el próximo artículo, veremos como se comporta un conjunto de réplicas a la hora de realizar cambios, y qué pasa cuándo un servidor falla y tiene que actualizar sus datos.</p>
 
-<hr><hr><ul><li><p>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter.</p></li>
-<li><p>Recuerda que puedes ver el índice del tutorial de MongoDB y acceder a todos los artículos de la serie desde <a href="http://www.charlascylon.com/mongodb" title="Enlace a página principal del tutorial">aquí</a>.</p></li>
-<li><p>¿Quiéres que te avisemos cuando se publiquen nuevas entradas en el blog? Suscríbete por <a href="feed://www.charlascylon.com/feed.xml" title="Suscripción RSS">RSS</a>.</p></li>
-</ul>
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
