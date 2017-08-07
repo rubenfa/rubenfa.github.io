@@ -86,6 +86,7 @@ future: false
 
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
