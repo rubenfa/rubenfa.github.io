@@ -36,7 +36,7 @@ Para hacerlo más bonito tengo instalado [*all the icons*](https://github.com/do
 
 ### Tema
 
-Aunque el tema de nuestro editor puede parecer una cuestión simplemente estética, no es del todo así. Un tema con colores demasiado chirriantes, puede acabar con tus ojos echos papilla. El contraste entre el fondo y el color del texto también es importante. Yo ya soy bastante miope, así que no quiero fastidiarme más la vista. 
+Aunque el tema de nuestro editor puede parecer una cuestión simplemente estética, no es del todo así. Un tema con colores demasiado chirriantes, puede acabar con tus ojos hechos papilla. El contraste entre el fondo y el color del texto también es importante. Yo ya soy bastante miope, así que no quiero fastidiarme más la vista. 
 
 Antiguamente yo era partidario de los temas claros, con fondo blanco y texto oscuro. Pero con el tiempo he ido tirando más hacia temas oscuros. Eso sí, el fondo no tiene que ser completamente negro, ya que las letras se iluminan demasiado y me resulta molesto. Prefiero un fondo más gris y textos de colores suaves. 
 
