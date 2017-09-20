@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spacemacs, mi configuración personal
-share-img: http://spacemacs.org/img/logo.svg
+share-img: https://camo.githubusercontent.com/f64bd3e47045358060788cfc035e3bf1961439aa/687474703a2f2f7777772e6e61737333722e636f6d2f73706163656d6163732e706e67
 ---
 
 
