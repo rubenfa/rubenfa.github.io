@@ -71,4 +71,17 @@ Lo mismo aplicaría para por ejemplo, presentar información a un servicio exter
 
 ### Frameworks y drivers
 
-En la capa más externa 
+En la capa más externa es, como dice Bob Martin, donde van los detalles. Y la base de datos es un detalle, nuestro framework web, es un detalle. 
+
+
+## Las fronteras de una arquitectura limpia
+
+En el esquema anterior, vemos que una arquitectura limpia está dividida en distintas secciones. Cada separación entre capas, contiene una frontera o límite, que puede ser traspasada, siempre siguiendo la regla de las dependencias.
+
+### La regla de las dependencias
+
+Esta regla es muy importante, ya que sin ella, nuestra arquitectura no sería más que un bonito diagrama. **Las capas interiores de una arquitectura limpia, no deben saber nada de las capas exteriores**. Por ejemplo la capa de entidades, no puede saber de la existencia de los casos de uso, y los casos de uso no deben saber nada de la existencia de los adaptadores de interface. Así las dependencias están controladas y van siempre en un solo sentido.
+
+
+
+
