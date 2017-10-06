@@ -2,7 +2,6 @@ Estoy seguro de que si te dedicas a programar, conoces a Robert "Uncle" Martin. 
 
 Recientemente, Bob Martin, ha publicado un nuevo libro llamado Clean Architecture. ¿Pero qué se entiende por arquitectura limpia?
 
-
 ## Clean Code
 
 Como comentaba antes, *Clean Code* es un libro muy recomendable, que desgrana algunas ideas importantes para poder escribir código limpio.
@@ -17,14 +16,13 @@ Si hacéis programación orientada a objetos, seguro que conocéis los conceptos
 
 ### Cohesión
 
-- **The Reuse/Release Equivalence Principle**: que nos dice que los componentes deben poder ser desplegados de forma independiente sin afectar a los demás. Las clases, o código que van en ese componente, deben tener una relación, y por tanto deben poderse desplegar de forma conjunta. 
+- **The Reuse/Release Equivalence Principle**: que nos dice que los componentes deben poder ser desplegados de forma independiente sin afectar a los demás. Las clases, o código que van en ese componente, deben tener una relación, y por tanto deben poderse desplegar de forma conjunta.
 
 - **The common closure principle**: se podría decir que hablamos del [principio de responsabilidad única (SRP)](https://www.genbetadev.com/metodologias-de-programacion/doce-principios-de-diseno-que-todo-desarrollador-deberia-conocer) aplicado a componentes. La idea es agrupar clases que puedan cambiar por la misma razón en un solo componente. Si tenemos que hacer un cambio, y hay que tocar varios componentes, esto supondrá tener que desplegarlos todos, en lugar de solo uno.
 
 - **The common reuse principle**: este principio nos habla de evitar que los usuarios que utilizan un componente dependan de cosas que no necesitan. Si un componente depende de otro, hay que intentar que sea porque necesita todas las clases que lo componen. Lo contrario nos obligará a trabajar de más, cuando nos toque hacer el despliegue. De esta manera será más fácil reutilizar componentes.
 
 Conseguir cumplir estos tres principios a la vez es algo bastante difícil, por lo que a veces hay que aceptar compromisos. Por ejemplo es común sacrificar un poco la reusabilidad,  para conseguir que los componentes sean fáciles de desplegar.
-
 
 ### Acoplamiento
 
@@ -33,7 +31,6 @@ Conseguir cumplir estos tres principios a la vez es algo bastante difícil, por 
 - **The stable dependencies Principle**: todo sistema tiende a cambiar y evolucionar, pero no todos los componentes cambian con la misma frecuencia, ni es igual de fácil modificarlos. Este principio nos dice que un componente, que cambia a menudo, no debería depender de otro que es difícil modificar, ya que entonces será también difícil de modificar. 
 
 - **The stable Abstractions Principle**: este principio nos dice que si un componente de nuestro sistema va a cambiar poco ya que es difícil hacerlo, debe estar compuesto mayoritariamente por interfaces y clases abstractas. De esta manera el componente será  fácilmente extensible, y no afectará tanto al resto de la arquitectura. 
-
 
 ## Características de una arquitectura limpia
 
@@ -53,15 +50,17 @@ Todas estas características, según Bob Martin, se agrupan en el siguiente grá
 
 [imagen]
 
-
-
 ### Entidades
 
-Las entidades son las que incluyen las reglas de negocio críticas para el sistema. Estas entidades pueden ser utilizadas por distintos componentes de la arquitectura, por lo que son independientes, y no deben cambiar a consecuencia de otros elementos externos. 
+Las entidades son las que incluyen las reglas de negocio críticas para el sistema. Estas entidades pueden ser utilizadas por distintos componentes de la arquitectura, por lo que son independientes, y no deben cambiar a consecuencia de otros elementos externos.
+
+Una entidad deberá englobar un concepto crítico para el negocio, y nosotros tendremos que separarlo lo más posible del resto de conceptos. Esa entidad recibirá los datos necesarios, y realizará operaciones sobre ellos para conseguir el objetivo deseado. 
 
 ### Casos de uso
 
-En este caso nos encontramos con las reglas de negocio aplicables a una aplicación concreta. Estos casos de uso siguen un flujo para conseguir que las reglas definidas por las entidades se cumplan. Los cambios en esta capa no deberían afectar a las entidades, al igual que los cambios en otras capas externas no deberían afectar a los casos de uso.
+En este caso nos encontramos con las reglas de negocio aplicables a una aplicación concreta. Estos casos de uso siguen un flujo para conseguir que las reglas definidas por las entidades se cumplan. Los casos de uso, solo definen como se comporta nuestro sistema, definiendo los datos de entrada necesarios, y cual será su salida. Los cambios en esta capa no deberían afectar a las entidades, al igual que los cambios en otras capas externas no deberían afectar a los casos de uso.
+
+Es importante que no pensemos en como los datos que genera un caso de uso serán presentados al usuario. No deberemos pensar en HTML, o en SQL. Un caso de uso recibe datos estructurados y devuelve más datos estructurados.
 
 ### Adaptadores de interfaz
 
@@ -71,16 +70,31 @@ Lo mismo aplicaría para por ejemplo, presentar información a un servicio exter
 
 ### Frameworks y drivers
 
-En la capa más externa es, como dice Bob Martin, donde van los detalles. Y la base de datos es un detalle, nuestro framework web, es un detalle. 
+En la capa más externa es, como dice Bob Martin, donde van los detalles. Y la base de datos es un detalle, nuestro framework web, es un detalle etc.
 
+## Fronteras o límites
+
+O como dicen los ingleses *boundaries*. Una frontera es una separación que definimos en nuestra arquitectura para separar componentes y definir dependencias. Estas fronteras tenemos que decidir dónde ponerlas, y cuándo ponerlas. Esta decisión es importante ya que puede condicionar el buen desempeño del proyecto. Una mala decisión sobre los límites puede complicar el desarrollo de nuestra aplicación o su mantenimiento futuro.
+
+Por ejemplo, podemos sentirnos tentados de pensar que las reglas de negocio deben poder guardar información directamente en la base de datos. Como ya hemos visto antes, la base de datos es un detalle, así que esto deberíamos evitarlo. En ese punto deberíamos trazar una frontera. Nuestras reglas de negocio, se comunicarían siempre con una interface, sin saber nada sobre la base de datos. La base de datos en cambio, si sabrá cosas sobre las reglas de negocio, ya que tiene que transformar los datos en sentencias SQL que puedan almacenar la información.
+
+Otra ventaja adicional de este enfoque, es que podemos retrasar ciertas decisiones. Podemos empezar a desarrollar todas nuestras reglas de negocio, sin tener en cuenta su persistencia, ya que esa parte se realiza a través de una interface. Primero podemos utilizar objetos en memoria, y según avancemos, ir añadiendo sistemas más sofisticados. Al final podremos elegir entre usar una base de datos relacional, NoSQL, o incluso guardar la información en archivos.
+
+En definitiva, debemos pensar en nuestro sistema, como un sistema de plugins, de forma que los componentes estén aislados y podamos sustituir unos por otros sin demasiados problemas.
 
 ## Las fronteras de una arquitectura limpia
 
-En el esquema anterior, vemos que una arquitectura limpia está dividida en distintas secciones. Cada separación entre capas, contiene una frontera o límite, que puede ser traspasada, siempre siguiendo la regla de las dependencias.
+En el esquema de arquitectura limpia, que hemos visto anteriormente, podemos ver dónde se han trazado las fronteras o límites. Entre entidades y casos de uso, hay una frontera. Lo mismo con los adaptadores de interface, o los frameworks y drivers. Esta separación es importante, pero mucho más importante es la gestión que hagamos de las dependencias entre estas capas. Para ello siempre hay que seguir la regla de las dependencias.
 
 ### La regla de las dependencias
 
 Esta regla es muy importante, ya que sin ella, nuestra arquitectura no sería más que un bonito diagrama. **Las capas interiores de una arquitectura limpia, no deben saber nada de las capas exteriores**. Por ejemplo la capa de entidades, no puede saber de la existencia de los casos de uso, y los casos de uso no deben saber nada de la existencia de los adaptadores de interface. Así las dependencias están controladas y van siempre en un solo sentido.
+
+### Estructuras de datos simples
+
+A la hora de traspasar una frontera, deberemos utilizar estructuras de datos simples, evitando utilizar conceptos como *DatabaseRows* o similares. 
+
+
 
 
 
