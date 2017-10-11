@@ -97,7 +97,7 @@ Este libro de Juan Marín Pozo, es muy básico. Pero a mí me hizo pensar un poc
 En este libro aglutina una serie de preguntas que le ha hecho su público, e intenta responderlas desde un punto de vista científico y con mucho sentido del humor. ¿Qué pasaría si juntáramos un mol de topos? ¿Qué pasaría si en un partido de baseball, alguien lanzara una bola a la velocidad de la luz? ¿Cuánta energía puede generar Yoda con el uso de la fuerza? Buenísimo.
 
 ## Una breve historia de casi todo 
-### [Enlace al libro] (https://www.amazon.es/Breve-Historia-Casi-Todo-FICCION/dp/8492966793)
+### [Enlace al libro](https://www.amazon.es/Breve-Historia-Casi-Todo-FICCION/dp/8492966793)
 
 En este libro, Bill Bryson, nos cuenta de forma magistral la historia de la ciencia desde los inicios, hasta la actualidad. Así dicho, puede parecer un rollo, pero el libro está narrado de forma muy amena, y se hace hasta corto.
 
