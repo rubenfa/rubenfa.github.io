@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Retrospectiva 2017, y propósitos para 2018
+title: Retrospectiva 2017, y objetivos para 2018
 ---
 
 
