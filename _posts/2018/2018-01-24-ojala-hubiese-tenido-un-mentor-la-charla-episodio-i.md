@@ -2,6 +2,7 @@
 layout: post
 title: Ojalá hubiese tenido un mentor, la charla
 subtitle: Episodio I
+share-img: http://charlascylon.com/img/posts/2018/yoda.jpg
 ---
 
 Supongo que algunos recordaréis el post que escribí hace un tiempo, titulado [ojalá hubiese tenido un mentor](http://charlascylon.com/2016-12-14-ojala-hubiese-tenido-un-mentor). Es uno de los mejores post que he escrito, explicando un poco porque me hubiese gustado tener un mentor, y cómo me habría ayudado a **ser mejor profesional**.
