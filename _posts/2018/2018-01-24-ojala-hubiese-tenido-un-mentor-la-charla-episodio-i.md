@@ -75,15 +75,16 @@ Así que ya sabes, la actitud en esta profesión es un multiplicador que puede h
 
 ### Haz preguntas
 
+Recuerda, **no hay preguntas tontas, solo tontos que no preguntan**.
+
 Muchas veces nos da vergüenza preguntar. Es algo que ha mi me ha pasado siempre, y que me sigue pasando. Por no hacer una pregunta que pueda parecer tonta, acabas no haciéndola. Y es un error. Ahí nos podemos fijar en los niños, que no tienen miedo a preguntar. Ellos hacen las preguntas porque es la manera que tienen que aprender y descubrir el mundo. Pues haz como los niños y aprovéchate de tus amigos y compañeros de profesión. Asédiales a preguntas. Es una muy buena manera de aprender y de salir de atascos mentales que pueden suponer perder horas de tiempo.
 
-Recuerda, **no hay preguntas tontas, solo tontos que no preguntan**.
 
 ### Siempre aprendiendo
 
 ![aprendiendo](/img/posts/2018/siempre_aprendiendo.jpg)
 
-Como ya he dicho antes, en esta profesión vas a estar siempre aprendiendo. Y da igual si quieres hacerlo. En este caso no tienes elección. Por las buenas o por las malas vas a tener que aprender. Lo bueno es que hoy en día la información es muy accesible. Tienes blogs, tienes libros, tienes cursos online (próximamente muy bien organizados en [Learning Paths Academy](https://es.learningpaths.academy). Aquí el que se aburre es porque quiere.
+Como ya he dicho antes, en esta profesión vas a estar siempre aprendiendo. Y da igual si quieres hacerlo. En este caso no tienes elección. Por las buenas o por las malas vas a tener que aprender. Lo bueno es que hoy en día la información es muy accesible. Tienes blogs, tienes libros, tienes cursos online (próximamente muy bien organizados en [Learning Paths Academy](https://es.learningpaths.academy)). Aquí el que se aburre es porque quiere.
 
 Mi consejo es que siempre estés aprendiendo algo. Puede ser un nuevo lenguaje, un nuevo framework, o a mejorar tus técnicas de programación. Da igual, pero sigue progresando.
 
@@ -132,6 +133,6 @@ En algún momento todos tenemos que criticar el trabajo de alguien. Intentémosl
 
 
 
-Y bueno, de momento lo dejamos aquí. Estos consejos están pensados para cualquier persona, y no solo para informáticos. A mí me hubiese gustado que me los hubieran dicho en su momento, pero nadie lo hizo. **Auqnue es probable yo no le hubiera escuchado**. A veces hay cosas que no estamos preparados para escuchar.
+Y bueno, de momento lo dejamos aquí. Estos consejos están pensados para cualquier persona, y no solo para informáticos. A mí me hubiese gustado que me los hubieran dicho en su momento, pero nadie lo hizo. **Aunque es probable yo no le hubiera escuchado**. A veces hay cosas que no estamos preparados para escuchar.
 
-Para la próxima entrada, espero poder hablar de algunos otros consejos más relacionados con el mundo del desarrollo.
+Para la próxima entrada, seguiré contando algunas de las cosas que a mi me hubiese gustado que me dijeran hace años. 
