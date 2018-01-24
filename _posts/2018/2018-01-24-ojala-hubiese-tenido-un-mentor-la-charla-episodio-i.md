@@ -69,7 +69,7 @@ Está bien recurrir a recursos externos para obtener ideas, pero hay que ser sie
 
 > Valor de una persona = (Talento + Conocimientos) * Actitud
 
-Esta ecuación la vi en la charla TED de [Victor Krüppers](https://www.youtube.com/watch?v=nWecIwtN2ho) y aunque no tenga una demostración científica yo creo que viene a decir una cosa que todos intuimos: lo importante es la actitud. Puedes ser muy bueno y tener muchos conocimientos, que sin la actitud adecuada no vas a progresar. Una persona con actitud, con ganas de aprender, con inquietud profesional, con ganas de mejorar y con ganas de presentar soluciones, proporciona mucho más valor añadido que una que es simplemente conocimiento en bruto. 
+Esta ecuación la vi en la charla TED de [Victor Krüppers](https://www.youtube.com/watch?v=nWecIwtN2ho) y aunque no tenga una demostración científica yo creo que viene a decir una cosa que todos intuimos: lo importante es la actitud. Puedes ser muy bueno y tener muchos conocimientos, que sin la actitud adecuada no vas a progresar. Una persona con actitud, con ganas de aprender, con inquietud profesional, con ganas de mejorar y con ganas de presentar soluciones, proporciona mucho más valor añadido que una que es simplemente conocimiento en bruto. Además ser proactivo te ayuda a [estar en continua formación](http://charlascylon.com/2017-09-13-en-continua-formacion).
 
 Así que ya sabes, la actitud en esta profesión es un multiplicador que puede hacer que seas mucho mejor profesional de lo que dicen tu experiencia o conocimientos.
 
@@ -84,9 +84,9 @@ Muchas veces nos da vergüenza preguntar. Es algo que ha mi me ha pasado siempre
 
 ![aprendiendo](/img/posts/2018/siempre_aprendiendo.jpg)
 
-Como ya he dicho antes, en esta profesión vas a estar siempre aprendiendo. Y da igual si quieres hacerlo. En este caso no tienes elección. Por las buenas o por las malas vas a tener que aprender. Lo bueno es que hoy en día la información es muy accesible. Tienes blogs, tienes libros, tienes cursos online (próximamente muy bien organizados en [Learning Paths Academy](https://es.learningpaths.academy)). Aquí el que se aburre es porque quiere.
+Como ya he dicho antes, en esta profesión vas a estar siempre aprendiendo. Y da igual si quieres hacerlo. En este caso no tienes elección. Por las buenas o por las malas vas a tener que aprender. Lo bueno es que hoy en día la información es muy accesible. Tienes blogs, tienes libros, tienes cursos online (próximamente muy bien organizados en [Learning Paths Academy](https://es.learningpaths.academy)). Aquí el que se aburre es porque quiere. 
 
-Mi consejo es que siempre estés aprendiendo algo. Puede ser un nuevo lenguaje, un nuevo framework, o a mejorar tus técnicas de programación. Da igual, pero sigue progresando.
+Mi consejo es que siempre estés aprendiendo algo. Puede ser un nuevo lenguaje, un nuevo framework, o a mejorar tus técnicas de programación. Da igual, pero sigue progresando. Esto te ayudará a ser mejor en tu carrera laboral y también te ayudará a lidiar con el [síndrome del impostor](http://charlascylon.com/2017-04-12-el-sindrome-del-impostor).
 
 
 ### No te compares con otros
