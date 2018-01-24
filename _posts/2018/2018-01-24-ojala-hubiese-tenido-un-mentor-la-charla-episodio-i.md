@@ -15,9 +15,11 @@ La charla la pude impartir el pasado 17 de enero, y podéis encontrar las diapos
 
 ## Mi historia
 
-En el post sobre el mentor ya contaba un poco mi historia, así que tampoco quiero repetirme mucho. Básicamente yo estudié en la Universidad de Alcalá de Henares, pero pasé por ella sin pena ni gloria. Fui pasando las asignaturas como buenamente podía, algunas veces con más éxito que otras. En general la parte de las prácticas me gustaba mucho, aunque desperdicié tiempo aprendiendo cosas que entonces no pensaba que me fueran a servir para algo.
+![Simpson](/img/posts/2018/simpson.jpg)
 
-Sigo manteniendo que mi plan de estudios tenía demasiadas asignaturas prescindibles (demasiada contabilidad y gestión de empresas), y faltaban otras que deberían haber estado (¿una de buenas prácticas o código limpio?). Pero la verdad es que aprendí mucho y muchas cosas útiles. Aun así creo firmemente que los conocimientos se pueden adquirir en cualquier parte, y que **no necesitas ir a la Universidad para aprender algo**. 
+En el post sobre el mentor ya contaba un poco mi historia, así que tampoco quiero repetirme mucho. Resumiendo yo estudié en la Universidad de Alcalá de Henares, pero pasé por ella sin pena ni gloria. Fui pasando las asignaturas como buenamente podía, algunas veces con más éxito que otras. En general la parte de las prácticas me gustaba mucho, aunque desperdicié tiempo aprendiendo cosas que entonces no pensaba que me fueran a servir para algo.
+
+Sigo manteniendo que mi plan de estudios tenía demasiadas asignaturas prescindibles (demasiada contabilidad y gestión de empresas), y faltaban otras que deberían haber estado (¿una de buenas prácticas o código limpio?). Pero la verdad es que aprendí mucho y muchas cosas útiles. Aun así creo firmemente que los conocimientos se pueden adquirir en cualquier parte, y que **no necesitas ir a la Universidad para aprender**. 
 
 Lo que me resulta curioso es pensar en cómo veíamos la profesión cuando estábamos estudiando. En aquellas charlas que tenía con mis compañeros en tiempos muertos, o cuando íbamos camino de la estación de tren, íbamos hablando de lo que haríamos cuando *fuéramos mayores*. Pensábamos que las consultoras eran un sitio genial para trabajar (ilusos), que íbamos a salir ganando un pastizal y que íbamos a ser jefes. Los picateclas serían otros, porque nosotros éramos **INGENIEROS**. Así con mayúsculas.
 
@@ -28,11 +30,13 @@ Lo de pensar que directamente seríamos jefes, también me hace mucha gracia. No
 
 ## Las consultoras
 
+![Consultora](/img/posts/2018/mordor.jpg)
+
 Si algo era desconocido para mí cuando estaba estudiando, ese era el mundo laboral. Yo creía que las consultoras eran un buen sitio para trabajar. Y nadie me avisó durante mis tres años de carrera (quién dice tres dice seis), de que eso no era verdad. Así que en la charla quise contárselo a los estudiantes.
 
 El caso es que existen unos entes, llamados consultoras, también conocidos como cárnicas. La consultoría tiempo atrás era un arte noble, en la que un experto acudía a tu empresa, analizaba un problema y según su experiencia te daba una solución. Nada que objetar. 
 
-El problema es que en algún momento las consultoras se convirtieron en meros intermediarios entre programadores y empresas. En ETTs encubiertas. Como resultado tenemos un mercado laboral viciado, en el que priman los proyectos con tiempos poco realistas (o directamente falsos), los proyectos mal ejecutados y los proyectos poco atractivos. Y esto se traduce en que el programador tiene que echar horas y hacer trabajos de poca calidad, para que las consultoras sean rentables.
+El problema es que en algún momento **las consultoras se convirtieron en meros intermediarios entre programadores y empresas**. En ETTs encubiertas. Como resultado tenemos un mercado laboral viciado, en el que priman los proyectos con tiempos poco realistas (o directamente falsos), los proyectos mal ejecutados y los proyectos poco atractivos. Y esto se traduce en que el programador tiene que echar horas y hacer trabajos de poca calidad, para que las consultoras sean rentables.
 
 Ojo, por suerte no todas las consultoras son así, y me consta que las hay mucho mejores. Pero es cierto que la mayoría de ofertas de trabajo que circulan por los portales de empleo son de empresas de este tipo. Huye de las *empresas líderes en su sector*. Como diría el [almirante Ackbar](http://es.starwars.wikia.com/wiki/Gial_Ackbar): es una trampa.
 
@@ -43,7 +47,7 @@ El caso es que todo esto me hizo pensar. ¿Qué habría sido de mí, de haber te
 
 ## Consejos gratis
 
-Al final todos acabamos en el mercado laboral y vamos teniendo una trayectoria profesional, que puede ser mejor o peor. En la mía me he dado cuenta de muchas cosas, y algunas de estas se las quería contar a los estudiantes para que las tuvieran en cuenta. Así que ahí va una de consejos gratis.
+Al final todos acabamos en el mercado laboral y vamos teniendo una trayectoria profesional, que puede ser mejor o peor. En la mía me he dado cuenta de muchas cosas, y algunas de estas se las quería contar a los estudiantes para que las tuvieran en cuenta. Así que ahí va una de consejos gratis. No se devuelve el dinero.
 
 ### Aprende las bases
 
@@ -77,6 +81,8 @@ Recuerda, **no hay preguntas tontas, solo tontos que no preguntan**.
 
 ### Siempre aprendiendo
 
+![aprendiendo](/img/posts/2018/siempre_aprendiendo.jpg)
+
 Como ya he dicho antes, en esta profesión vas a estar siempre aprendiendo. Y da igual si quieres hacerlo. En este caso no tienes elección. Por las buenas o por las malas vas a tener que aprender. Lo bueno es que hoy en día la información es muy accesible. Tienes blogs, tienes libros, tienes cursos online (próximamente muy bien organizados en [Learning Paths Academy](https://es.learningpaths.academy). Aquí el que se aburre es porque quiere.
 
 Mi consejo es que siempre estés aprendiendo algo. Puede ser un nuevo lenguaje, un nuevo framework, o a mejorar tus técnicas de programación. Da igual, pero sigue progresando.
@@ -100,37 +106,32 @@ Hay muchas maneras de adquirir conocimiento. La Universidad es solo una de ellas
 
 ### No pienses solo en el dinero
 
+![Wolf](/img/posts/2018/wolf.gif)
+
 Cuando eres joven y empiezas a trabajar, te emocionas un poco pensando en el sueldo. Si ahora gano 20, y me cambio de trabajo, puedo ganar 22. Y si el año que viene me cambio, serán 24. No es mala estrategia, pero puede serla si solo te fijas en el dinero para cambiar de trabajo. 
 
-Yo he aprendido con el tiempo, que hay otras cosas más importantes en un trabajo. La posibilidad de aprender me parece imprescindible, y no se da en todos los trabajos. Si eres joven y estás empezando, yo me fijaría más en eso que en otras cosas. Con la edad tus prioridades cambian y pasas a valorar otras cosas, como un buen horario o la conciliación familiar. 
+**Yo he aprendido con el tiempo, que hay otras cosas más importantes en un trabajo**. La posibilidad de aprender me parece imprescindible, y no se da en todos los trabajos. Si eres joven y estás empezando, yo me fijaría más en eso que en otras cosas. Con la edad tus prioridades cambian y pasas a valorar otras cosas, como un buen horario o la conciliación familiar. 
 
 Pero lo mejor sin duda es **no ser esclavo del dinero**. Si eres esclavo tomarás tus decisiones profesionales de forma equivocada, ya sea por miedo o por responsabilidad (familia, hipoteca etc.)
 
 
 ### Aprovecha el tiempo
 
-Ahora que tengo hijos, no dejo de pensar en todo ese tiempo que desperdicié cuando era más joven. Haciendo zaping, durmiendo muchas horas o sentado en un banco con los colegas sin hacer nada en especial. Ojo, no digo que tengas que estar todo el día metido en casa leyendo libros o programando. Al menos que sea lo que te apetece hacer. Es importante desconectar y tener vida más allá del código. Pero también recomiendo que tengas en cuenta que el tiempo no se recupera. Si no lo usas, se gasta. Así que intenta aprovechar ese tiempo para cumplir tus objetivos y metas.
+Ahora que tengo hijos, no dejo de pensar en todo ese tiempo que desperdicié cuando era más joven. Haciendo zaping, durmiendo muchas horas o sentado en un banco con los colegas sin hacer nada en especial. Antes tiraba el tiempo porque quería, ahora simplemente no lo tengo. Los niños requieren mucha atención. 
+
+No digo que tengas que estar todo el día metido en casa leyendo libros o programando. Al menos que sea lo que te apetece hacer. Es importante desconectar y tener vida más allá del código. Pero también recomiendo que tengas en cuenta que el tiempo no se recupera. Si no lo usas, se gasta. Así que intenta aprovechar ese tiempo para cumplir tus objetivos y metas.
 
 
 ### No seas un cretino
 
 Seguro que alguna vez has tenido a un cretino por compañero (o lo has sido tú). El típico con aires de superioridad, que te daba consejos como perdonándote la vida y que no te alababa ni aunque hubieras descubierto el bosón de Higgs. Es muy triste convertirte en una persona así. 
 
-Yo creo que no cuesta nada ser amable y reconocer el trabajo de los compañeros. ¿Alguna vez te han dicho, *"esto que has hecho está genial"*? ¿O *"buen trabajo"*? Si te ha pasado sabrás que te sienta muy bien. A todos nos gusta que alaben lo que hacemos, así que intenta hacerlo con los compañeros siempre que puedas.
+**Yo  creo que no cuesta nada ser amable y reconocer el trabajo de los compañeros**. ¿Alguna vez te han dicho, *"esto que has hecho está genial"*? ¿O *"buen trabajo"*? Si te ha pasado sabrás que te sienta muy bien. A todos nos gusta que alaben lo que hacemos, así que intenta hacerlo con los compañeros siempre que puedas.
 
 En algún momento todos tenemos que criticar el trabajo de alguien. Intentémoslo hacer con respeto, educación y buenas palabras. No cobran por ser simpático. Al menos de momento.
 
 
 
-Y bueno, de momento lo dejamos aquí. Estos consejos están pensados para cualquier persona, y no solo para informáticos. A mí me hubiese gustado que me los hubieran dicho en su momento, pero nadie lo hizo. Aunque ciertamente es posible que yo no le hubiera escuchado. Para la próxima entrada, espero poder hablar de algunos otros consejos más relacionados con el mundo del desarrollo.
+Y bueno, de momento lo dejamos aquí. Estos consejos están pensados para cualquier persona, y no solo para informáticos. A mí me hubiese gustado que me los hubieran dicho en su momento, pero nadie lo hizo. **Auqnue es probable yo no le hubiera escuchado**. A veces hay cosas que no estamos preparados para escuchar.
 
-
-
-
-
-
-
-
-
-
-
+Para la próxima entrada, espero poder hablar de algunos otros consejos más relacionados con el mundo del desarrollo.
