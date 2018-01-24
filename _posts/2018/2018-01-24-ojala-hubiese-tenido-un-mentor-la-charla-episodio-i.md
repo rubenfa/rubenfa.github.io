@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ojalá hubiese tenido un mentor: la charla
+title: Ojalá hubiese tenido un mentor, la charla
 subtitle: Episodio I
 ---
 
