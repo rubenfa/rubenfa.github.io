@@ -39,12 +39,12 @@ subtitle: Programación en general, .NET en particular
 <ul class="pager main-pager">
   {% if paginator.previous_page %}
   <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Anteriores</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">&larr; Anteriores</a>
   </li>
   {% endif %}
   {% if paginator.next_page %}
   <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Siguientes &rarr;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Siguientes &rarr;</a>
   </li>
   {% endif %}
 </ul>
