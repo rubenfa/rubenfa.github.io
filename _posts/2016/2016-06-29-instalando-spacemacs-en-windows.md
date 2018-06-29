@@ -7,7 +7,7 @@ title: Instalando Spacemacs en Windows
 ![spacemacs](/img/posts/2016/spacemacs.png)
 
 
-Ya os comentaba en la entrada anterior, estoy siendo un valiente y [estoy usado Emacs para programar en Elixir](http://charlascylon.com/2016-06-20-spacemacs-el-editor-perfecto-Elixir). Bueno, en realidad no estoy usando Emacs puro y duro, si no que **estoy usando Spacemacs**, que es una especie de personalización de Emacs para poder utilizar como si fuera Vim.
+Ya os comentaba en la entrada anterior, estoy siendo un valiente y [estoy usado Emacs para programar en Elixir](https://charlascylon.com/2016-06-20-spacemacs-el-editor-perfecto-Elixir). Bueno, en realidad no estoy usando Emacs puro y duro, si no que **estoy usando Spacemacs**, que es una especie de personalización de Emacs para poder utilizar como si fuera Vim.
 
 Instalarlo no es difícil, pero como suele pasar con todo programa venido de Unix/Linux, hay cosas que te pueden hacer perder un poco el tiempo hasta que consigues hacerlas funcionar. Y como yo ya he perdido el tiempo con ello ¿por qué no escribir un post para evitar que más gente pierda el tiempo?
 

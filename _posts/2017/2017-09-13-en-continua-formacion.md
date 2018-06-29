@@ -26,7 +26,7 @@ Yo me he visto en el dilema de tener que buscar trabajo después de estar estanc
 
 En la era de internet, es muy sencillo acceder a casi cualquier tipo de información. Hay montones de plataformas de formación online, específicas para ciertas temáticas o generales para un público más amplio. Podemos acceder a cursos empaquetados e impartidos por desarrolladores contrastados, comprar libros sobre desarrollo y diseño, podemos acercarnos a un Meetup para charlar con gente que sabe de esto, o incluso podemos preguntar por Twitter a la gente que sabe. Y claro, también podemos formarnos en nuestro trabajo.
 
-Al final el límite está en el tiempo y el presupuesto de los que dispongamos. La información está ahí, y suponiendo que tenemos el presupuesto, solo necesitamos el tiempo. Eso sí, siempre es interesante [no caer en un hype](http://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender) y aprender cosas útiles.
+Al final el límite está en el tiempo y el presupuesto de los que dispongamos. La información está ahí, y suponiendo que tenemos el presupuesto, solo necesitamos el tiempo. Eso sí, siempre es interesante [no caer en un hype](https://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender) y aprender cosas útiles.
 
 ## Tiempo para formarse
 

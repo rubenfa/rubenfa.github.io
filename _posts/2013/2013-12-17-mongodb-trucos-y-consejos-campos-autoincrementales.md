@@ -146,7 +146,7 @@ esta interesante alternativa.
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
 artículos de la serie [desde
-aquí.](http://charlascylon.com/tutorialmongo)*
+aquí.](https://charlascylon.com/tutorialmongo)*
 
 
 

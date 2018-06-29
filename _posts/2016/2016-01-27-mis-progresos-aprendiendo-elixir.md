@@ -6,7 +6,7 @@ redirect_from:
   - /post/138142174936/
 ---
 
-<p>Como comentaba en mi último post, para acabar el año, me había propuesto aprender algo nuevo, <a href="http://www.charlascylon.com/post/134644391731/aprendiendo-elixir-o-intent%C3%A1ndolo">y había empezado a aprender Elixir</a>. Han pasado casi dos meses desde aquella declaración de intenciones, y de momento sigo con ello. Este post no va a ser técnico, simplemente una forma de revisar el camino que llevo recorrido hasta ahora.</p>
+<p>Como comentaba en mi último post, para acabar el año, me había propuesto aprender algo nuevo, <a href="https://www.charlascylon.com/post/134644391731/aprendiendo-elixir-o-intent%C3%A1ndolo">y había empezado a aprender Elixir</a>. Han pasado casi dos meses desde aquella declaración de intenciones, y de momento sigo con ello. Este post no va a ser técnico, simplemente una forma de revisar el camino que llevo recorrido hasta ahora.</p>
 
 <h3>Documentación y materiales de consulta utilizados</h3>
 

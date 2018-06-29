@@ -5,7 +5,7 @@ subtitle: Mi primera vez como ponente
 share-img: https://secure.meetupstatic.com/photos/event/7/6/0/6/global_456510214.jpeg
 ---
 
-Al empezar el 2017, como millones de personas en el mundo, me propuse [una serie de retos para cumplir a lo largo del nuevo año](http://charlascylon.com/2017-01-10-objetivos-para-2017). Algunas estoy con ellas ya que son proyectos de largo recorrido (ese testing), otras las he abandonado para repensarlas y darles un nuevo rumbo (mi proyecto personal) y otras he podido cumplirlas. Y por suerte el pasado sábado y gracias a la comunidad de [Codenares](https://www.meetup.com/es-ES/codenares/), pude realizar uno de los objetivos que creía más difíciles: pude dar mi primera charla técnica.
+Al empezar el 2017, como millones de personas en el mundo, me propuse [una serie de retos para cumplir a lo largo del nuevo año](https://charlascylon.com/2017-01-10-objetivos-para-2017). Algunas estoy con ellas ya que son proyectos de largo recorrido (ese testing), otras las he abandonado para repensarlas y darles un nuevo rumbo (mi proyecto personal) y otras he podido cumplirlas. Y por suerte el pasado sábado y gracias a la comunidad de [Codenares](https://www.meetup.com/es-ES/codenares/), pude realizar uno de los objetivos que creía más difíciles: pude dar mi primera charla técnica.
 
 ## ¿Cómo empezó la historia?
 

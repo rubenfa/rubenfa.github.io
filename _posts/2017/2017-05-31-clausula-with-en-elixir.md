@@ -9,7 +9,7 @@ Lo bueno de un lenguaje que está principalmente guiado por la comunidad, es que
 
 ## El problema
 
-Primero vamos a ver el problema que soluciona. Supongamos que tenemos una [estructura](http://charlascylon.com/2016-08-03-usando-estructuras-en-elixir) del tipo `%User{}`. La estructura tendrá los campos típicos que tiene un usuario de una aplicación.
+Primero vamos a ver el problema que soluciona. Supongamos que tenemos una [estructura](https://charlascylon.com/2016-08-03-usando-estructuras-en-elixir) del tipo `%User{}`. La estructura tendrá los campos típicos que tiene un usuario de una aplicación.
 
 ```elixir
 defmodule Example.With.User do
@@ -84,6 +84,6 @@ Como el movimiento se muestra andando, vamos a reescribir el ejemplo anterior, p
   end
 ```
 
-Como veis solo he cambiado la función `verify`, ya que el resto puede seguir igual. Con `with` iremos ejecutando las diferentes funciones, siempre que el [pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) se vaya cumpliendo. En el caso de que no se cumpla en algún caso se pasará al bloque `else`. En este bloque también podemos tener *pattern matching*, y tener varias cláusulas. Yo solo he puesto un `{:error, e}`, pero podríamos ponero distintos tipos de error según su mensaje y para realizar distintas operaciones según el error devuelto.
+Como veis solo he cambiado la función `verify`, ya que el resto puede seguir igual. Con `with` iremos ejecutando las diferentes funciones, siempre que el [pattern matching](https://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) se vaya cumpliendo. En el caso de que no se cumpla en algún caso se pasará al bloque `else`. En este bloque también podemos tener *pattern matching*, y tener varias cláusulas. Yo solo he puesto un `{:error, e}`, pero podríamos ponero distintos tipos de error según su mensaje y para realizar distintas operaciones según el error devuelto.
 
 

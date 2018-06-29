@@ -2,14 +2,14 @@
 layout: post
 title:  El síndrome del impostor
 subtitle: Deal with it
-share-img: http://charlascylon.com/img/posts/2017/deal_with_it.jpg
+share-img: https://charlascylon.com/img/posts/2017/deal_with_it.jpg
 ---
 
 El mundo de la programación va muy deprisa. Nuevos lenguajes, nuevos frameworks o nuevos paradigmas. Si eres uno de esos programadores que intenta estar al día, seguro que has tenido la sensación de estar aprendiendo algo y ver como ese algo se está quedando obsoleto. Aunque no sea cierto, ya que normalmente esas tecnologías se usarán durante años, hay siempre hay algo nuevo que hace más ruido y eclipsa la anterior tecnología. Además esas tecnologías las utilizan los rockstar y nija developers, algo que todos querríamos ser, pero que muy poocos elegidos llegan a conseguir. Y entonces llega el agobio y el pensamiento *"es que yo no soy tan bueno"*.
 
 ## El síndrome del impostor
 
-Aunque ignoremos [los hypes existentes en el sector](http://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender), es fácil sentir el archiconocido **síndrome del impostor**. Este síndrome es un fenómeno psicológico por el que una persona no es capaz de aceptar sus logros (en este caso profesionales), sintiendo que es un impostor y que no debería estar dónde está, ya que no es tan bueno. Os pego aquí la definición exacta de este síndrome, que podéis leer en [Wikipedia](https://es.wikipedia.org/wiki/S%C3%ADndrome_del_impostor):
+Aunque ignoremos [los hypes existentes en el sector](https://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender), es fácil sentir el archiconocido **síndrome del impostor**. Este síndrome es un fenómeno psicológico por el que una persona no es capaz de aceptar sus logros (en este caso profesionales), sintiendo que es un impostor y que no debería estar dónde está, ya que no es tan bueno. Os pego aquí la definición exacta de este síndrome, que podéis leer en [Wikipedia](https://es.wikipedia.org/wiki/S%C3%ADndrome_del_impostor):
 
 > El síndrome del impostor, a veces llamado fenómeno del impostor o síndrome de fraude, es un fenómeno psicológico en el que la gente es incapaz de internalizar sus logros. No es una enfermedad mental oficialmente reconocida, y no se encuentra entre las condiciones descritas en el Manual diagnóstico y estadístico de los trastornos mentales, pero ha sido el sujeto de numerosos libros y artículos por psicólogos y educadores. El término fue acuñado por las psicólogas clínicas Pauline Clance y Suzanne Imes en 1978.
 
@@ -19,9 +19,9 @@ Si te das un paseo por Twitter, verás que es algo que todos los programadores a
 
 ## No pienses en lo que te queda por saber, si no en lo que has aprendido
 
-Creo que ya os he contado un poco mi historia alguna vez, y de como mi vida profesional seguramente sería diferente [si hubiese tenido un mentor](http://charlascylon.com/2016-12-14-ojala-hubiese-tenido-un-mentor). Además de la universidad, desperdicié preciosos años de experiencia en empleos, en los que solo se chapuceaba y no se aprendía a ser buen programador. Al principio te crees que avanzas, pero cuando echas la vista atrás, ves que la mayoría de las cosas que sabes están cogidas con pinzas. Por suerte me di cuenta e intenté darle un cambio a mi vida profesional (años tarde por desgracia). Y ahí es cuando empecé a buscar trabajo en una empresa en la que aprender. El resultado fue descorazonador, porque al no poder demostrar experiencia seria en ciertos temas fundamentales, me rechazaron en varias entrevistas.
+Creo que ya os he contado un poco mi historia alguna vez, y de como mi vida profesional seguramente sería diferente [si hubiese tenido un mentor](https://charlascylon.com/2016-12-14-ojala-hubiese-tenido-un-mentor). Además de la universidad, desperdicié preciosos años de experiencia en empleos, en los que solo se chapuceaba y no se aprendía a ser buen programador. Al principio te crees que avanzas, pero cuando echas la vista atrás, ves que la mayoría de las cosas que sabes están cogidas con pinzas. Por suerte me di cuenta e intenté darle un cambio a mi vida profesional (años tarde por desgracia). Y ahí es cuando empecé a buscar trabajo en una empresa en la que aprender. El resultado fue descorazonador, porque al no poder demostrar experiencia seria en ciertos temas fundamentales, me rechazaron en varias entrevistas.
 
-Ahí es cuándo más he sentido el síndrome del impostor, ya que me di cuenta que era un poco paquete. Te pasas unos cuantos años haciendo lo mismo, y al intentar buscar un trabajo donde aprender, descubres que la experiencia que tienes a la mayoría de las empresas les importa un pimimiento. Tú que tienes una carrera ([cómo si eso marcara la diferencia](http://charlascylon.com/2016-06-17-ser-ingeniero-o-no-ser-informatico)) y un montón de conocimientos en tu bonito curriculum, no puedes aspirar al trabajo que te gustaría. Como mucho a otro parecido, cambiando Cárnica S.A por BitCárnica S.A. 
+Ahí es cuándo más he sentido el síndrome del impostor, ya que me di cuenta que era un poco paquete. Te pasas unos cuantos años haciendo lo mismo, y al intentar buscar un trabajo donde aprender, descubres que la experiencia que tienes a la mayoría de las empresas les importa un pimimiento. Tú que tienes una carrera ([cómo si eso marcara la diferencia](https://charlascylon.com/2016-06-17-ser-ingeniero-o-no-ser-informatico)) y un montón de conocimientos en tu bonito curriculum, no puedes aspirar al trabajo que te gustaría. Como mucho a otro parecido, cambiando Cárnica S.A por BitCárnica S.A. 
 
 ## Yo también me siento un impostor, ¿o no?
 
@@ -34,4 +34,4 @@ Y ya está. **Yo estoy contento si mañana soy un poquito mejor programador que 
 
 Así que dejémonos de angustiarnos por no saberlo todo y sigamos aprendiendo. Si no sabes algo, reconócelo, que no pasa nada. Seguro que hay montones de programadores que te pueden ayudar (y seguramente quieran hacerlo si se lo pides amablemente). No lo sabes todo, y nunca vas a saberlo. *Deal with it*.
 
-![Image of batman](http://charlascylon.com/img/posts/2017/deal_with_it.jpg)
+![Image of batman](https://charlascylon.com/img/posts/2017/deal_with_it.jpg)

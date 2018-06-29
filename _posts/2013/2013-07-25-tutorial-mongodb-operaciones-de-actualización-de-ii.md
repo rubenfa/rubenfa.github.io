@@ -6,7 +6,7 @@ redirect_from:
   - /post/61794348269/
 ---
 
-[En la pasada entrada](http://www.charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de), vimos como podíamos realizar operaciones que insertaran, borraran o modificaran documentos en **MongoDB**. Para ello utilizabamos comandos como _insert, save, update o remove_, pero con consultas sencillas y sin entrar en modificación de _arrays_ o _subdocumentos_. Así que en esta entrada nos vamos a centrar en la realización de acciones de ese tipo, que lógicamente son muy comunes.
+[En la pasada entrada](https://www.charlascylon.com/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de), vimos como podíamos realizar operaciones que insertaran, borraran o modificaran documentos en **MongoDB**. Para ello utilizabamos comandos como _insert, save, update o remove_, pero con consultas sencillas y sin entrar en modificación de _arrays_ o _subdocumentos_. Así que en esta entrada nos vamos a centrar en la realización de acciones de ese tipo, que lógicamente son muy comunes.
 
 ## Operadores $set y $unset
 
@@ -291,4 +291,4 @@ Sin embargo hay operaciones que todavía no sabemos como llevar a cabo. Por ejem
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

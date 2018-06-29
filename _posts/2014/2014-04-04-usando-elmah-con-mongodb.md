@@ -16,7 +16,7 @@ redirect_from:
 
 <h3>Componentes necesarios</h3>
 
-<ul><li>Obviamente, lo primero que necesitamos es un servidor <strong>MongoDB</strong> arrancado y funcionando. Recordad que en <a href="http://www.charlascylon.com/mongodb">mi Tutorial de MongoDB</a>, explico como  instalar y usar <strong>MongoDB</strong>.</li>
+<ul><li>Obviamente, lo primero que necesitamos es un servidor <strong>MongoDB</strong> arrancado y funcionando. Recordad que en <a href="https://www.charlascylon.com/mongodb">mi Tutorial de MongoDB</a>, explico como  instalar y usar <strong>MongoDB</strong>.</li>
 <li>También nos hace falta un proyecto ASP.NET. Por ejemplo, yo he usado para este artículo una aplicación MVC 5.</li>
 <li>Y para acabar, nos hacen falta los paquetes ELMAH, el driver de <strong>MongoDB</strong> para C#, y <em>ELMAH on MongoDB</em>. Instalarlos es muy sencillo, ya que desde NuGet bastará con hacer un <code>Install-Package elmah.mongodb</code> para que se instalen todas las dependencias.</li>
 </ul><p>Y ya está. Una vez tengamos todo preparado, tan solo tenemos que configurar ELMAH, para que guarde los datos en nuestro  servidor <strong>MongoDB</strong></p>
@@ -119,4 +119,4 @@ redirect_from:
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

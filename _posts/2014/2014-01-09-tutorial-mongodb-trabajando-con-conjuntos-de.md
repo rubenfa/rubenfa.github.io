@@ -6,7 +6,7 @@ redirect_from:
   - /post/72753658228/
 ---
 
-<p>Empezamos el 2014 con una nueva entrega del <strong>tutorial de MongoDB</strong>. <a href="http://www.charlascylon.com/post/69774579592/tutorial-mongodb-creacion-configuracion-replicas" title="Link a entrada sobre configuración de réplicas">En el anterior artículo</a>, pudimos ver cómo podemos crear un 
+<p>Empezamos el 2014 con una nueva entrega del <strong>tutorial de MongoDB</strong>. <a href="https://www.charlascylon.com/post/69774579592/tutorial-mongodb-creacion-configuracion-replicas" title="Link a entrada sobre configuración de réplicas">En el anterior artículo</a>, pudimos ver cómo podemos crear un 
 <strong>conjunto de réplicas</strong> y las distintas opciones que tenemos para configurarlo. En esta entrada, veremos como funciona dicho conjunto a la hora de realizar consultas o grabar nuevos documentos. También veremos como obtener información sobre el estado de la replicación de los elementos insertados, consultando la colección <em>Oplog</em>. Vamos al lío.</p>
 
 <blockquote>
@@ -145,4 +145,4 @@ rep1:SECONDARY&gt;
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

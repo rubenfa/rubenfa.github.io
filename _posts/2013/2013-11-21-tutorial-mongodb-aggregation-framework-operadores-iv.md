@@ -10,7 +10,7 @@ redirect_from:
 Continuamos con una nueva entrega del **tutorial de MongoDB**,  para
 acabar con la parte de los operadores de expresión de**Aggregation
 Framework**.  Ya os comenté en las conclusiones [del pasado artículo del
-tutorial](http://www.charlascylon.com/post/66954001864/tutorial-mongodb-operadores-expresion-iii "enlace a aggregation framework operadores III"),
+tutorial](https://www.charlascylon.com/post/66954001864/tutorial-mongodb-operadores-expresion-iii "enlace a aggregation framework operadores III"),
 que aún nos quedan por repasar los operadores de fecha y los operadores
 de cadena. Así que vamos a ello.'
 
@@ -19,9 +19,9 @@ de cadena. Así que vamos a ello.'
 > [aquí](https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE%211168 "enlace a conjunto de datos de los ejemplos").
 > Si todavía no sabes como importar estos datos a tu base de datos
 > **MongoDB**tienes una pequeña guía de como hacerlo
-> [aquí](http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
+> [aquí](https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
 > Si aún no tienes instalado
-> **MongoDB**[aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
+> **MongoDB**[aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
 > como puedes hacerlo.
 
 ### Operadores de cadena
@@ -227,5 +227,5 @@ veremos en la siguiente entrega.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

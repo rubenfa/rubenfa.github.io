@@ -11,11 +11,11 @@ Seguimos avanzando con el **tutorial de MongoDB**, en esta ocasión para
 repasar algunos de los operadores de expresión de **Aggregation
 Framework** que todavía nos quedan. En las anteriores entregas hemos
 repasado los [operadores de
-agrupación](http://www.charlascylon.com/post/65600378745/tutorial-mongodb-operadores-expresion-i "enlace a entrada de operadores de agrupación"),
+agrupación](https://www.charlascylon.com/post/65600378745/tutorial-mongodb-operadores-expresion-i "enlace a entrada de operadores de agrupación"),
 [los
-aritméticos](http://www.charlascylon.com/post/65600378745/tutorial-mongodb-operadores-expresion-i "enlace a entrada de operadores aritméticos")
+aritméticos](https://www.charlascylon.com/post/65600378745/tutorial-mongodb-operadores-expresion-i "enlace a entrada de operadores aritméticos")
 y los [operadores de
-comparación](http://www.charlascylon.com/post/66079577017/tutorial-mongodb-operadores-expresion-ii "enlace a entrada sobre operadores de comparación").
+comparación](https://www.charlascylon.com/post/66079577017/tutorial-mongodb-operadores-expresion-ii "enlace a entrada sobre operadores de comparación").
 En esta entrega, vamos a repasar dos nuevos tipos de operadores de
 expresión: los operadores booleanos y los operadores condicionales.
 
@@ -24,9 +24,9 @@ expresión: los operadores booleanos y los operadores condicionales.
 > [aquí](https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE%211168 "enlace a conjunto de datos de los ejemplos").
 > Si todavía no sabes como importar estos datos a tu base de datos
 > **MongoDB**tienes una pequeña guía de como hacerlo
-> [aquí](http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
+> [aquí](https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
 > Si aún no tienes instalado
-> **MongoDB**[aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
+> **MongoDB**[aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
 > como puedes hacerlo.
 
 ### Operadores booleanos
@@ -75,7 +75,7 @@ db.people.aggregate(
 ```
 
 Esta situación [es la misma que nos
-encontramos](http://www.charlascylon.com/post/61794343130/tutorial-mongodb-operaciones-de-consulta-avanzadas-i "enlace a consultas avanzadas en MongoDB")
+encontramos](https://www.charlascylon.com/post/61794343130/tutorial-mongodb-operaciones-de-consulta-avanzadas-i "enlace a consultas avanzadas en MongoDB")
 a la hora de ralizar consultas simples. Entonces, ¿para qué usar
 *$and* si ya lo hace implícitamente? Pues porque en ocasiones, lo
 utilizaremos para concatenar operadores *$and* y operadores *$or*.
@@ -210,5 +210,5 @@ No os lo perdáis.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

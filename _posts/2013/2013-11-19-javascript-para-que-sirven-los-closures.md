@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 [En el pasado artículo sobre
-programación](http://www.charlascylon.com/post/66767656253/javascript-que-son-los-closures "Enlace a artículo de explicación de los closures"),
+programación](https://www.charlascylon.com/post/66767656253/javascript-que-son-los-closures "Enlace a artículo de explicación de los closures"),
 explicaba qué son los *closures* de JavaScript. Resumiendo mucho,
 podríamos decir que los *closures* en **JavaScript**están compuestos por
 una función (llamémosla externa) que contiene otra función (llamémosla
@@ -83,7 +83,7 @@ su contexto, que en este caso es la variable *name*. Justo después, con
 otro paréntesis, hacemos la llamada a dicha función pasándole el valor
 para el parámetro *name*. En realidad es una manera más rápida de hacer
 lo mismo que hacíamos [en el anterior
-artículo](http://www.charlascylon.com/post/66767656253/javascript-que-son-los-closures "enlace a artículo sobre closures"),
+artículo](https://www.charlascylon.com/post/66767656253/javascript-que-son-los-closures "enlace a artículo sobre closures"),
 al explicar los *closures*:
 
 ```javascript

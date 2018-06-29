@@ -142,7 +142,7 @@ A partir de aquí ya tenemos las opciones más típicas para hacer depuración. 
 
 > **Nota importante**: he tenido muchos problemas en Ubuntu para ejecutar `:debugger`. El repositorio de Erlang Solutions, me instala siempre una versión *release candidate* de Erlang (la 20). Haciendo downgrade del paquete `esl-erlang` a la versión 1.9.3, el depurador volvió a funcionar. Podéis ver como pude solucionarlo [gracias a la gente del foro de Elixir](https://elixirforum.com/t/observer-start-is-not-working-on-ubuntu/6018/10)
 
-Y aquí lo dejamos. Como vemos en Elixir también podemos depurar, lo cual siempre puede ser útil. Eso sí, hay que tener en cuenta que este tipo de depuración no es muy útil en aplicaciones que explotan la concurrencia, y como sabemos [Elixir/Erlang se presta mucho a ello con OTP](http://charlascylon.com/2017-02-15-fail-fast) .
+Y aquí lo dejamos. Como vemos en Elixir también podemos depurar, lo cual siempre puede ser útil. Eso sí, hay que tener en cuenta que este tipo de depuración no es muy útil en aplicaciones que explotan la concurrencia, y como sabemos [Elixir/Erlang se presta mucho a ello con OTP](https://charlascylon.com/2017-02-15-fail-fast) .
 
 
 

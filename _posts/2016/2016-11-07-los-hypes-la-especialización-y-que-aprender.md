@@ -8,7 +8,7 @@ Ser desarrollador no es nada fácil. Y no lo digo por la complejidad que pueda t
 
 Pero ahí no acaba la especialización. Dentro de cada ramo, puedes especializarte aun más. Si eres desarrollador backend puedes especializarte en *C#*, *Java*, o *PHP* (hay gustos para todo). Si eres desarrollador frontend, probablemente morirás antes de especializarte en algo, pero mientras tanto podrás aprender *React*, *Angular* o incluso *elm*. El mundo de las bases de datos parecía más tranquilo, pero no contentos con tener *SQL Server*, *MySQL* u *ORACLE* (léelo al revés, verás que risa), ahora están de moda las bases de datos no relacionales. Así que puedes ser especialista en *MongoDB*, *Redis* o *Neo4j*. Nadie dijo que la vida fuera fácil ¿verdad?
 
-![Meme del hype](http://www.charlascylon.com/img/posts/2016/hype-meme.jpg)
+![Meme del hype](https://www.charlascylon.com/img/posts/2016/hype-meme.jpg)
 
 El caso es que el tiempo de cualquier persona es finito, así que al final te quedan dos opciones: utilizar algún lenguaje/tecnología/plataforma *mainstream* o intentar adivinar cual será el lenguaje/tecnología/plataforma que partirá la pana en el futuro. Y eso queridos amigos, no es nada fácil. Porque los desarrolladores somos tan volubles como los tertulianos de los programas balompédicos. Lo que hoy es *lo más*, mañana es *lo menos*. Y con esos *hypes* continuos, tenemos que vivir.
 
@@ -20,7 +20,7 @@ En Internet un *hype* es cuando las expectativas sobre algo se elevan tanto, que
 ## El ciclo de sobreexpectación
 
 
-![Imagen del gráfico de Gartner](http://www.charlascylon.com/img/posts/2016/gartner.png)
+![Imagen del gráfico de Gartner](https://www.charlascylon.com/img/posts/2016/gartner.png)
 
 Este fenómeno es bastante común, y ha sido explicado en numerosas ocasiones. Gartner, una empresa de consultoría especializada en TI, acuñó el término **ciclo de sobreexpectación** normalmente se aplica a tecnologías o conceptos como *Big Data*, *Internet de las cosas* etc. Yo creo que el fenómeno es más social, y puede aplicarse a muchas cosas. Por ejemplo al desarrollo de software.
 

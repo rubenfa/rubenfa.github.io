@@ -97,7 +97,7 @@ Una cosa interesante de los sigils, es que se pueden usar distintos delimitadore
 
 ### Pattern matching con strings
 
-Ya sabéis que el [pattern matching en Elixir](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) es una de las características más potentes del lenguaje. Lo bueno es que aprovechando que los strings son binarios, podemos hacer *pattern matching* sobre ellos. Un ejemplo:
+Ya sabéis que el [pattern matching en Elixir](https://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) es una de las características más potentes del lenguaje. Lo bueno es que aprovechando que los strings son binarios, podemos hacer *pattern matching* sobre ellos. Un ejemplo:
 
 ``` elixir
 defmodule StringsExamples do

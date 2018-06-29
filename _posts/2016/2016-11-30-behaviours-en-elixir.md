@@ -143,7 +143,7 @@ defmodule CalculadorImpuestos do
 end
 ```
 
-Nuestor módulo, sigue implementando el *behaviour*, pero ahora usamos una macro, para hacer añadir la implementación de la función `importe_con_impuestos` de forma predeterminada. Además con `defoverridable`, indicamos que esta función puede sobreescribirse en otros módulos. ¿Y cómo se utiliza en otros módulos? Pues utilizando la macro `use` [que ya os expliqué en un post anterior](http://charlascylon.com/2016-07-21-compartiendo-codigo-en-elixir).
+Nuestor módulo, sigue implementando el *behaviour*, pero ahora usamos una macro, para hacer añadir la implementación de la función `importe_con_impuestos` de forma predeterminada. Además con `defoverridable`, indicamos que esta función puede sobreescribirse en otros módulos. ¿Y cómo se utiliza en otros módulos? Pues utilizando la macro `use` [que ya os expliqué en un post anterior](https://charlascylon.com/2016-07-21-compartiendo-codigo-en-elixir).
 
 Veamos un par de ejemplos:
 

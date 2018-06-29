@@ -52,7 +52,7 @@ A mí me gustó especialmente el consejo de evitar las discusiones. Nadie ha gan
 
 Este libro es otro clásico, y en él Stephen Covey, nos cuenta 7 hábitos para ser más efectivo en la vida. Algunas cosas pueden parecer de perogrullo, pero es cierto que a veces no nos paramos a pensarlas y no las aplicamos.
 
-El libro nos dice que debemos de ser proactivos, tener el fin de lo que empezamos en mente, que hagamos primero lo más importante etc. Las ideas de este libro me gustaron tanto, que [como ya os conté cuando hablaba de formación](http://charlascylon.com/2017-09-13-en-continua-formacion) compré una [versión infantil](https://www.amazon.es/Los-h%C3%A1bitos-los-ni%C3%B1os-felices/dp/849801400X/ref=sr_1_fkmr1_3?s=books&ie=UTF8&qid=1507704585&sr=1-3-fkmr1&keywords=los+siete+habitos+de+la+gente+altamente+efectiva+infantil) para leerla con mis hijos.
+El libro nos dice que debemos de ser proactivos, tener el fin de lo que empezamos en mente, que hagamos primero lo más importante etc. Las ideas de este libro me gustaron tanto, que [como ya os conté cuando hablaba de formación](https://charlascylon.com/2017-09-13-en-continua-formacion) compré una [versión infantil](https://www.amazon.es/Los-h%C3%A1bitos-los-ni%C3%B1os-felices/dp/849801400X/ref=sr_1_fkmr1_3?s=books&ie=UTF8&qid=1507704585&sr=1-3-fkmr1&keywords=los+siete+habitos+de+la+gente+altamente+efectiva+infantil) para leerla con mis hijos.
 
 ## Pensar rápido, pensar despacio 
 ### [Enlace al libro](https://www.amazon.es/Pensar-r%C3%A1pido-pensar-despacio-Kahneman-ebook/dp/B008BPHBTO/)
@@ -82,7 +82,7 @@ En el libro, Eric Ries, nos cuenta algunas cosas que él ha aprendido a lo largo
 
 Esto suena a magufada, pero no lo es. Ramón Campayo es campeón mundial de memorización y lectura rápida, y lo curioso es que es algo que podría conseguir cualquiera. En este libro el autor nos cuenta algunas técnicas de memorización interesantes y muy útiles. Algunas de ellas ya se utilizaban en la antigüedad, pero por alguna razón en estos tiempos de bombardeo de información se han olvidado. 
 
-Ya os [hablé hace un tiempo sobre el desarrollo de la memoria](http://charlascylon.com/2016-10-10-tecnicas-para-mejorar-tu-memoria)  y como estaba usando un sistema de repetición espaciado para conseguir mejorarla.
+Ya os [hablé hace un tiempo sobre el desarrollo de la memoria](https://charlascylon.com/2016-10-10-tecnicas-para-mejorar-tu-memoria)  y como estaba usando un sistema de repetición espaciado para conseguir mejorarla.
 
 ## Finanzas para un tonto: Reeducación financiera para el día a día 
 ### [Enlace al libro](https://www.amazon.es/gp/product/B006WB2CJ8)

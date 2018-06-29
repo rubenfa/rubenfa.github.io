@@ -6,7 +6,7 @@ redirect_from:
   - /post/78099110490/
 ---
 
-<p>Hoy toca otro artículo protesta/queja/sugerencia. Si <a href="http://www.charlascylon.com/post/77264626972/muerte-al-tipo-de-sistemas-viva-el-tipo-de-sistemas">la semana pasada</a> hablaba sobre <em>la muerte del tipo de sistemas</em> y de lo ineficiente que es dividir equipos en departamentos, hoy toca hablar sobre la <strong>imputación de horas</strong>.</p>
+<p>Hoy toca otro artículo protesta/queja/sugerencia. Si <a href="https://www.charlascylon.com/post/77264626972/muerte-al-tipo-de-sistemas-viva-el-tipo-de-sistemas">la semana pasada</a> hablaba sobre <em>la muerte del tipo de sistemas</em> y de lo ineficiente que es dividir equipos en departamentos, hoy toca hablar sobre la <strong>imputación de horas</strong>.</p>
 
 <p>Seguro que habéis estado en alguna empresa, en la que había que imputar las horas. Más o menos funciona así. Un desarrollador está asignado a uno o varios proyectos. De forma periódica, debe rellenar un parte de horas, definiendo por cada día, a qué tareas ha estado dedicado y cuánto tiempo ha utilizado en ellas. Dependiendo de la empresa, la frecuencia puede variar. Las hay que prefieren que el parte de horas esté al día, aunque no suela revisarse con esa frecuencia; otras prefieren que el parte de horas este terminado todas las semanas, para empezar la semana siguiente con una visión clara de los proyectos en marcha; o lo más típico, imputar las horas una vez al mes.</p>
 

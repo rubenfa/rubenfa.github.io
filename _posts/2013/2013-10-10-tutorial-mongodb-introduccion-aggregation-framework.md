@@ -199,5 +199,5 @@ disponibles en **MongoDB** explicando su funcionamiento con ejemplos.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

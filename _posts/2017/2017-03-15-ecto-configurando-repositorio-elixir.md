@@ -14,7 +14,7 @@ Ecto es algo difícil de definir, ya que no es un ORM al uso (al fin y al cabo e
 
  - **Migraciones**: utilizadas para crear tablas, actualizar campos etc. Dependiendo del tipo de base de datos que estemos utilizando esto puede ser algo importante, o no. Si usamos una base de datos relacional (PostgreSQL, MySQL etc.), las migraciones nos serán muy útiles, ya que nos permiten mantener concordancia entre nuestro modelo de datos y nuestra base de datos. Si usamos MongoDB las migraciones posiblemente no sean necesarias.
 
- - **Esquemas**: usemos una base de datos NoSQL o relacional, nuestros datos tendrán un esquema determinado. Con Ecto podremos hacer mapeo entre esos esquemas (que no son otra cosa que [estructuras](http://charlascylon.com/2016-08-03-usando-estructuras-en-elixir)), y las tablas de base de datos.
+ - **Esquemas**: usemos una base de datos NoSQL o relacional, nuestros datos tendrán un esquema determinado. Con Ecto podremos hacer mapeo entre esos esquemas (que no son otra cosa que [estructuras](https://charlascylon.com/2016-08-03-usando-estructuras-en-elixir)), y las tablas de base de datos.
 
  - **Changesets**: se utilizan a la hora de insertar o actualizar datos y nos proporcionan elementos importantes como validación de datos, conversión de formatos, restricciónes (valores únicos, claves foráneas etc.). 
 
@@ -115,7 +115,7 @@ Repo.all(query)
     (ecto) lib/ecto/repo/queryable.ex:15: Ecto.Repo.Queryable.all/4
 ```
 
-Como os comentaba en un [post anterior sobre OTP](http://charlascylon.com/2017-02-15-fail-fast), Elixir funciona iniciando procesos para casi todo. En este caso no tenemos configurado ningún proceso para `Repo` en nuestra aplicación, cosa que es necesaria para que funcione. Vamos a añadirlo. Primero vamos al archivo `mix.ex` que es dónde se configura la chicha, y deberemos cambiar la función `application`:
+Como os comentaba en un [post anterior sobre OTP](https://charlascylon.com/2017-02-15-fail-fast), Elixir funciona iniciando procesos para casi todo. En este caso no tenemos configurado ningún proceso para `Repo` en nuestra aplicación, cosa que es necesaria para que funcione. Vamos a añadirlo. Primero vamos al archivo `mix.ex` que es dónde se configura la chicha, y deberemos cambiar la función `application`:
 
 ```elixir
 def application do

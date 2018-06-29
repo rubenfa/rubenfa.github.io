@@ -11,7 +11,7 @@ contando un poco más sobre el accceso a datos a través del **driver de
 C#**. 
 
  Revisando[la primera
-entrega](http://www.charlascylon.com/post/64851332600/tutorial-mongodb-y-c-conexion-a-la-base-de-datos "Enlace a Tutorial MongoDB. Conexión a base de datos con C#")
+entrega](https://www.charlascylon.com/post/64851332600/tutorial-mongodb-y-c-conexion-a-la-base-de-datos "Enlace a Tutorial MongoDB. Conexión a base de datos con C#")
 de esta parte del tutorial, he decidido cambiar un poco el enfoque. En
 aquella entrega, comencé los ejemplos con una aplicación**Web API**, que
 para la parte de conexión a **MongoDB**era más que suficiente. Pero al
@@ -201,5 +201,5 @@ entrega.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

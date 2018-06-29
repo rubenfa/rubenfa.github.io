@@ -8,7 +8,7 @@ Reconozco que una de las cosas que más me gusta en la vida es leer. No suelo te
 
 Este género es bastante peligroso, porque puedes encontrarte libros de dudosa calidad con mucha frecuencia. Libros llenos de filosofía barata, o con *gurús* de alguna temática que no hacen más que dar consejos de sentido común, o directamente consejos inútiles. Así a ojo yo diría que cada diez libros de este género, solo uno o dos merecen la pena.
 
-![Imagen de Homer Simpson](http://www.charlascylon.com/img/posts/2016/homer.jpg)
+![Imagen de Homer Simpson](https://www.charlascylon.com/img/posts/2016/homer.jpg)
 
 Pero a veces, de alguno de esos libros, puedes sacar algo interesante. De dos de ellos yo aprendí algunas cosillas para mejorar la memoria: [Desarrolla una mente prodigiosa](https://www.amazon.es/Desarrolla-Mente-Prodigiosa-Best-Book/dp/8441421269/ref=sr_1_1?ie=UTF8&qid=1476040370&sr=8-1&keywords=desarrolla+una+mente+prodigiosa) y [Construye tu SUPERMEMORIA volviendo a ser niño](https://www.amazon.es/Construye-SUPERMEMORIA-volviendo-ser-ni%C3%B1o-ebook/dp/B015VIANCK/ref=sr_1_2?ie=UTF8&qid=1476040370&sr=8-2&keywords=desarrolla+una+mente+prodigiosa). 
 
@@ -33,7 +33,7 @@ Este sistema que parece tan tonto, funciona de verdad. Para poder ponerlo en pr�
 
 Por ejemplo si quieres aprender *phrasal verbs* de inglés, puedes crearte un mazo en Anki. Cada tarjeta, tendrá un *phrasal verb* en la parte frontal de la tarjeta, y su definición en el dorso. Aprender en base a texto puede ser duro, así que una cosa que ayuda mucho, como dicen en el libro *Fluent Forever*, es añadir una imagen a la tarjeta que signifique algo para ti. Ojo, que signifique algo para ti, no tiene porque significar algo para los demás. Si quieres recordar *dog* puedes añadir una foto de tu perro. Yo por ejemplo para recordar que *break out* en inglés puede significar escaparse (quizá de la cárcel), tengo esta tarjeta:
 
-![Imagen de Homer Simpson](http://www.charlascylon.com/img/posts/2016/breakout.png)
+![Imagen de Homer Simpson](https://www.charlascylon.com/img/posts/2016/breakout.png)
 
 Igual no conoces a los hermanos Dalton, pero a mi de pequeño me gustaban mucho los dibujos de Lucky Luke, así que la tarjeta es fácil de memorizar para mí. Aunque en la página web de Anki puedes encontrar [muchos mazos compartidos](https://ankiweb.net/shared/decks/), yo solo los uso de base. **La gracia está hacer los mazos tuyos, para que te sea fácil memorizarlos**. Da mucho trabajo pero merece la pena.
 

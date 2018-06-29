@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 
-<p><a href="http://www.charlascylon.com/post/69575487235/windows-phone-introducion-mvvm-y-binding" title="Enlace a patrón MVVM en Windows Phone">Hace unos días</a> os contaba qué es el <strong>patrón MVVM</strong> y cómo se utiliza. Así que hoy vamos a ha ver un ejemplo sencillo de como podemos utilizar el enlace de datos o binding en nuestra aplicación <strong>Windows Phone</strong> para aprovecharnos de las ventajas de usar este patrón. El ejemplo es bastante sencillo, pero será suficiente para ilustrar como enlazar propiedades y colecciones con nuestra vista <em>XAML</em>.<br/></p>
+<p><a href="https://www.charlascylon.com/post/69575487235/windows-phone-introducion-mvvm-y-binding" title="Enlace a patrón MVVM en Windows Phone">Hace unos días</a> os contaba qué es el <strong>patrón MVVM</strong> y cómo se utiliza. Así que hoy vamos a ha ver un ejemplo sencillo de como podemos utilizar el enlace de datos o binding en nuestra aplicación <strong>Windows Phone</strong> para aprovecharnos de las ventajas de usar este patrón. El ejemplo es bastante sencillo, pero será suficiente para ilustrar como enlazar propiedades y colecciones con nuestra vista <em>XAML</em>.<br/></p>
 
 <blockquote><strong>Nota</strong>: el ejemplo lo podéis descargar desde <a href="https://github.com/rubenfa/BindingExampleApp" title="Enlace al código de ejemplo.">aquí</a>. El proyecto está desarrollado para <strong>Windows Phone 8</strong>, así que necesitaréis <strong>Windos Phone SDK </strong>que podéis descargar desde <a href="http://developer.windowsphone.com/en-us/downloadsdk" title="Enlace a descarga de SDK's de Windows Phone">aquí</a>. <br/></blockquote>
 
@@ -57,4 +57,4 @@ redirect_from:
 
 <hr><hr><p><em>¿Te ha gustado el artículo? No te olvides de hacer +1 en Google+, Me gusta en Facebook o de publicarlo en Twitter. ¡ Gracias !</em></p>
 
-<p>¿Quiéres que te avisemos cuándo se publiquen nuevas entradas en el blog? Suscríbete <a href="feed://www.charlascylon.com/feed.xml">por RSS</a>.<em><a href="http://www.charlascylon.com/p/tutorial-mongodb.html"><br/></a></em></p>
+<p>¿Quiéres que te avisemos cuándo se publiquen nuevas entradas en el blog? Suscríbete <a href="feed://www.charlascylon.com/feed.xml">por RSS</a>.<em><a href="https://www.charlascylon.com/p/tutorial-mongodb.html"><br/></a></em></p>

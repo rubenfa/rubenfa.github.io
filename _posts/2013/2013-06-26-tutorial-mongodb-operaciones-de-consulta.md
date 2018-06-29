@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 [En la anterior
-entrega](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalación-y-configuración)
+entrega](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalación-y-configuración)
 de nuestro **tutorial de MongoDB**, veíamos como arrancar el proceso
 *mongod*, como configurarlo y cómo conectarnos a la consola. Así que una
 vez tenemos preparado el entorno, vamos a empezar a realizar consultas.
@@ -271,5 +271,5 @@ avanzadas en **MongoDB**.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

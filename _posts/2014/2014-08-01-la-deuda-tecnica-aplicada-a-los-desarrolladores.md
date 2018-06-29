@@ -24,7 +24,7 @@ redirect_from:
 
 <p><strong>Si solo te conformas con lo que has aprendido en la Universidad, en un ciclo formativo o de tu experiencia, estás aumentando tu deuda técnica</strong>. En el sistema educativo español, existe una brecha importante entre lo que se enseña, y lo que en realidad se aplica en el mundo real. Y la experiencia, dependiendo de el entorno en el que trabajes, puede no ser suficiente para hacerte progresar.</p>
 
-<p>Como dije en el artículo <a href="http://www.charlascylon.com/post/90644914062/y-por-que-tengo-un-blog">¿Y por qué tengo un blog?</a> yo empecé tarde a escribir. Y también tardé mucho en darme de alta en Twitter. ¿Por qué digo esto? Porque ambas plataformas son muy útiles para aprender.</p>
+<p>Como dije en el artículo <a href="https://www.charlascylon.com/post/90644914062/y-por-que-tengo-un-blog">¿Y por qué tengo un blog?</a> yo empecé tarde a escribir. Y también tardé mucho en darme de alta en Twitter. ¿Por qué digo esto? Porque ambas plataformas son muy útiles para aprender.</p>
 
 <p>Con el blog he descubierto que escribir artículos sobre programación me ayuda mucho a aprender. Al poner cosas por escrito fijas los conceptos. Y al buscar cierta calidad en los artículos, te obligas a consultar muchas fuentes de información. Libros, artículos téncicos, charlas técnicas. Acabas formándote sin darte cuenta.</p>
 

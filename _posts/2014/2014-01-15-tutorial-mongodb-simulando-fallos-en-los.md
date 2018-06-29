@@ -10,7 +10,7 @@ redirect_from:
 <p>En los últimos artículos sobre <strong>conjuntos de réplicas</strong> de este <strong>tutorial de MongoDB</strong>, hemos podido ver cómo crear un conjunto de réplicas, cómo configurarlo y cómo se trabaja con él. Lo único que nos queda por ver es cómo se comporta <strong>MongoDB</strong> en situaciones en las que algún miembro del conjunto deja de funcionar. Así que en esta ocasión intentaremos poner en apuros a nuestras réplicas para ver cómo se comportan.</p>
 
 <blockquote>
-  <p><strong>Nota</strong>: recuerda que para probar los ejemplos de este artículo, necesitas crear un conjunto de replicas. Si no sabes como hacerlo <a href="http://www.charlascylon.com/post/69774579592/tutorial-mongodb-creacion-configuracion-replicas" title="Enlace a creación y configuración de réplicas">aquí explico como hacerlo</a>. Si no sabes qué son las réplicas,  <a href="http://www.charlascylon.com/post/69062614637/tutorial-mongodb-alta-disponibilidad-replicas" title="enlace a alta disponibilidad con réplicas">en este otro artículo</a> explico qué son y para qué sirven.</p>
+  <p><strong>Nota</strong>: recuerda que para probar los ejemplos de este artículo, necesitas crear un conjunto de replicas. Si no sabes como hacerlo <a href="https://www.charlascylon.com/post/69774579592/tutorial-mongodb-creacion-configuracion-replicas" title="Enlace a creación y configuración de réplicas">aquí explico como hacerlo</a>. Si no sabes qué son las réplicas,  <a href="https://www.charlascylon.com/post/69062614637/tutorial-mongodb-alta-disponibilidad-replicas" title="enlace a alta disponibilidad con réplicas">en este otro artículo</a> explico qué son y para qué sirven.</p>
 </blockquote>
 
 <h3>Verificando el estado de los servidores</h3>
@@ -120,7 +120,7 @@ Mon Jan 13 23:18:00.641 [rsMgr] replSet info electSelf 1
 Mon Jan 13 23:18:00.855 [rsMgr] replSet PRIMARY
 </code></pre>
 
-<p>Cuando se producen unas elecciones para nuevo servidor principal, los servidores se comunican unos con otros con la intención de decidir quién es el servidor que debería ser el principal. El proceso de elección tiene múltiples variantes, que ya expliqué <a href="http://www.charlascylon.com/post/69062614637/tutorial-mongodb-alta-disponibilidad-replicas" title="enlace a alta disponibilidad con réplicas">en el artículo teórico sobre conjuntos de réplicas.</a>. En nuestro caso el servidor que escucha por el puerto <em>27667</em> se ha establecido como principal tras finalizar la elección.</p>
+<p>Cuando se producen unas elecciones para nuevo servidor principal, los servidores se comunican unos con otros con la intención de decidir quién es el servidor que debería ser el principal. El proceso de elección tiene múltiples variantes, que ya expliqué <a href="https://www.charlascylon.com/post/69062614637/tutorial-mongodb-alta-disponibilidad-replicas" title="enlace a alta disponibilidad con réplicas">en el artículo teórico sobre conjuntos de réplicas.</a>. En nuestro caso el servidor que escucha por el puerto <em>27667</em> se ha establecido como principal tras finalizar la elección.</p>
 
 <h3>¿Qué pasa si se cae otro servidor más?</h3>
 
@@ -198,4 +198,4 @@ rep1:SECONDARY&gt;
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

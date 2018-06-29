@@ -22,7 +22,7 @@ agrupación y los operadores aritméticos.
 
 Los operadores de agrupación son aquellos que se utilizan a la hora de
 agrupar información con el pipeline *$group*. [En el
-artículo](http://www.charlascylon.com/post/64283434936/tutorial-mongodb-pipelines-aggregation-i)
+artículo](https://www.charlascylon.com/post/64283434936/tutorial-mongodb-pipelines-aggregation-i)
 dónde explicábamos el funcionamiento de *$group* en **MongoDB**, ya
 vimos un par de ejemplos con *$avg* y *$sum*. Pero estos no son los
 únicos operadores que puedemos utilizar. Existen otros muy útiles.
@@ -279,5 +279,5 @@ expresión.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

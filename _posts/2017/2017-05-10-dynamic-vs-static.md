@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Lenguajes dinámicos y lenguajes estáticos
-share-img: http://charlascylon.com/img/posts/2017/gangs-of-new-york.jpg
+share-img: https://charlascylon.com/img/posts/2017/gangs-of-new-york.jpg
 ---
 
 Cuenta la leyenda, que una vez una princesa fue capturada por un terrible dragón. El abominable monstruo encerró a la princesa en la más alta torre de su castillo dejándola atrapada durante años. Muchos valientes caballeros intentaron rescatarla, pero no lo consiguieron y perecieron en el intento. La princesa estaba desesperada, ya que pensaba que nunca podría salir de aquel horrible castillo. 
@@ -60,7 +60,7 @@ Desde que el mundo es mundo, la humanidad se ha dividido en dos bandos. ¿Tortil
 
 ## Elixir es dinámico, pero ...
 
-Es cierto que Elixir es un lenguaje dinámico, pero tiene una cosa que puede ayudar mucho a trabajar con tipos: [el pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching). Puesto que Elixir está construido para utilizar *pattern matching* en todas partes, si lo hacemos bien, tendremos que muchos de los errores que caza un compilador, también los cazará el *pattern matching*, aunque es cierto que en tiempo de ejecución. Por ejemplo podemos declarar funciones que reciban un tipo concreto de [estructuras](http://charlascylon.com/2016-08-03-usando-estructuras-en-elixir) y estar seguro de que esa función solo se llamará si se cumplen los requisitos.
+Es cierto que Elixir es un lenguaje dinámico, pero tiene una cosa que puede ayudar mucho a trabajar con tipos: [el pattern matching](https://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching). Puesto que Elixir está construido para utilizar *pattern matching* en todas partes, si lo hacemos bien, tendremos que muchos de los errores que caza un compilador, también los cazará el *pattern matching*, aunque es cierto que en tiempo de ejecución. Por ejemplo podemos declarar funciones que reciban un tipo concreto de [estructuras](https://charlascylon.com/2016-08-03-usando-estructuras-en-elixir) y estar seguro de que esa función solo se llamará si se cumplen los requisitos.
 
 
 ## ¿Dinámico, o estático? No hay una opción buena, ni una opción mala

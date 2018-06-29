@@ -86,7 +86,7 @@ iex(12)> keywordlist[:url]
 "charlascylon.com"
 ```
 
-En el ejemplo podemos ver que para crear una lista de elementos clave valor utilizamos `:`. Elixir convierte las claves de la lista automáticamente en [atoms](http://www.charlascylon.com/2016-03-02-los-atoms-en-elixir) que podremos utilizar para acceder a valores
+En el ejemplo podemos ver que para crear una lista de elementos clave valor utilizamos `:`. Elixir convierte las claves de la lista automáticamente en [atoms](https://www.charlascylon.com/2016-03-02-los-atoms-en-elixir) que podremos utilizar para acceder a valores
 concretos.
 
 Otro punto útil de este tipo de estructuras, es que podemos omitir los corchetes cuando, en una función se espera una lista de este tipo como último parámetro. Por ejemplo con esta función:

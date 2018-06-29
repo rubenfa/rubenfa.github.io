@@ -25,9 +25,9 @@ pruebas, lo que haremos será ejecutar tres instancias distintas de
 > [aquí](https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE%211168 "enlace a conjunto de datos de los ejemplos").
 > Si todavía no sabes como importar estos datos a tu base de datos
 > **MongoDB**tienes una pequeña guía de como hacerlo
-> [aquí](http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
+> [aquí](https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
 > Si aún no tienes instalado
-> **MongoDB**[aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
+> **MongoDB**[aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
 > como puedes hacerlo.
 
 ### Convirtiendo nuestro servidor en miembro de un conjunto de réplicas
@@ -72,7 +72,7 @@ réplicas, no lo hemos inicializado. Para hacerlo conectamos a la shell
 de **MongoDB**, con el típico comando **mongo localhost:27666** que
 seguro que ya conocéis. Si no habéis leído las anteriores entradas del
 tutorial, os recomiendo que os paséis por
-[aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "Enlace a configuración de MongoDB")
+[aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "Enlace a configuración de MongoDB")
 para saber más sobre la consola.
 
  Una vez hemos conectado a la consola ejecutamos el
@@ -266,4 +266,4 @@ lo perdáis.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

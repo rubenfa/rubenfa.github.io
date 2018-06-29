@@ -18,9 +18,9 @@ opción extra para realizar este tipo de consultas. Y esta opción es
 > [aquí](https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE%211168 "enlace a conjunto de datos de los ejemplos").
 > Si todavía no sabes como importar estos datos a tu base de datos
 > **MongoDB**tienes una pequeña guía de como hacerlo
-> [aquí](http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
+> [aquí](https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "enlace a entrada donde se explica el comando mongoimport").
 > Si aún no tienes instalado
-> **MongoDB**[aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
+> **MongoDB**[aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "enlace a entrada de instalación de MongoDB")explico
 > como puedes hacerlo.
 
 ### ¿Qué es MapReduce?
@@ -221,5 +221,5 @@ utilizando **Aggregation Framework**.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

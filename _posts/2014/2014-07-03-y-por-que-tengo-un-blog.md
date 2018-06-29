@@ -18,7 +18,7 @@ redirect_from:
 
 <p>Tras un parón fruto de la decepción inicial, decidí cambiar el enfoque. Desde entonces <strong>la razón principal de escribir, es la de aprender</strong>. Poner por escrito tus ideas, para comunicárselas a otros, es la mejor manera de mejorar tus conocimientos sobre un tema. Si quieres que tu artículo sea lo más completo posible, tienes que documentarte, y aprender de los mejores.</p>
 
-<p>Un claro ejemplo de esto es mi <a href="http://charlascylon.com/mongodb">Tutorial de MongoDB</a>. Mis conocimientos de <strong>MongoDB</strong> han aumentado exponencialmente gracias a este tutorial. Simplemente por el hecho de intentar plasmarlos en un artículo de forma comprensible para todos.</p>
+<p>Un claro ejemplo de esto es mi <a href="https://charlascylon.com/mongodb">Tutorial de MongoDB</a>. Mis conocimientos de <strong>MongoDB</strong> han aumentado exponencialmente gracias a este tutorial. Simplemente por el hecho de intentar plasmarlos en un artículo de forma comprensible para todos.</p>
 
 <p>A día de hoy, el blog tiene más visitas. Unas 30-40 diarias. No es para tirar cohetes, pero la progresión está ahí.</p>
 

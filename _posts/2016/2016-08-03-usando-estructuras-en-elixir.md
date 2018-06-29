@@ -4,7 +4,7 @@ title:  Usando estructuras en Elixir
 subtitle: 
 ---
 
-Hace un tiempo, os hablaba [de los tipos de colecciones que podíamos encontrar en Elixir](http://charlascylon.com/2016-03-21-tipos-colecciones-Elixir), y entre ellas se encontraban los *Maps*. Un *Map* no es más que una colección de elementos clave-valor, cuya clave no puede repetirse. En este caso vamos a hablar de *Structs*, que vienen a ser una especie de *Maps* tipados, lo cual nos da muchas posibilidades.
+Hace un tiempo, os hablaba [de los tipos de colecciones que podíamos encontrar en Elixir](https://charlascylon.com/2016-03-21-tipos-colecciones-Elixir), y entre ellas se encontraban los *Maps*. Un *Map* no es más que una colección de elementos clave-valor, cuya clave no puede repetirse. En este caso vamos a hablar de *Structs*, que vienen a ser una especie de *Maps* tipados, lo cual nos da muchas posibilidades.
 
 ## Struct
 
@@ -14,9 +14,9 @@ Como os comentaba antes los *Structs* son muy parecidos a los *Maps* (de hecho i
 iex(3)> jugador = %{:health => 1000, :level => 1, :status => :alive }
 ```
 
-En este caso estamos definiendo una lista clave-valor, a la que podremos acceder a través de los `atom` que hemos usado como claves (puedes ver qué son los `atom` [en esta otra entrada](http://charlascylon.com/2016-03-02-los-atoms-en-elixir) ).
+En este caso estamos definiendo una lista clave-valor, a la que podremos acceder a través de los `atom` que hemos usado como claves (puedes ver qué son los `atom` [en esta otra entrada](https://charlascylon.com/2016-03-02-los-atoms-en-elixir) ).
 
-Con los *Maps* podemos hacer [pattern matching](http://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) a su contenido, pero si usamos *Structs* además podremos hacerlo por el tipo.
+Con los *Maps* podemos hacer [pattern matching](https://charlascylon.com/2016-02-24-Elixir-y-el-pattern-matching) a su contenido, pero si usamos *Structs* además podremos hacerlo por el tipo.
 
 Para definir un *Struct*, debemos utilizar un módulo. El nombre del módulo será también el tipo del *Struct*. Si el ejemplo anterior lo transformamos en un *Struct*, quedaría de la siguiente manera:
 

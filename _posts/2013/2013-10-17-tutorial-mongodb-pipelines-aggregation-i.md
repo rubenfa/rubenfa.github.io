@@ -18,9 +18,9 @@ esta nueva entrega.
 > que he utilizado. Podéis importarlo a vuestra base de datos con
 > *mongoimport*, como se explica en [la primera entrada dedicada a las
 > operaciones de
-> consulta](http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "entrada anterior de consultas simples en MongoDB"). 
+> consulta](https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta "entrada anterior de consultas simples en MongoDB"). 
 > Si todavía no tenéis instalado **MongoDB** tenéis una pequeña guía
-> [aquí](http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "Instalación y configuración de MongoDB").
+> [aquí](https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion "Instalación y configuración de MongoDB").
 
 ### $project
 
@@ -308,5 +308,5 @@ dejaremos para la siguiente entrega.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 

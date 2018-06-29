@@ -8,13 +8,13 @@ redirect_from:
 
 <h1> ![](<a href="https://31.media.tumblr.com/fc5b21b6d7df5df597a873ba634db328/tumblr_inline_ncscb3T5ua1sno6e9.jpg">https://31.media.tumblr.com/fc5b21b6d7df5df597a873ba634db328/tumblr_inline_ncscb3T5ua1sno6e9.jpg</a>) </h1>
 
-<p>En el artículo anterior, <a href="http://www.charlascylon.com/post/75034298293/tutorial-mongodb-explicando-el-sharding-con-una-baraja">explicaba el concepto de sharding con una baraja de cartas</a>. Básicamente el <em>sharding</em> trata de repartir los documentos entre servidores. De esta manera la carga se distribuye, ya que el documento solo se insertará en uno de los servidores.</p>
+<p>En el artículo anterior, <a href="https://www.charlascylon.com/post/75034298293/tutorial-mongodb-explicando-el-sharding-con-una-baraja">explicaba el concepto de sharding con una baraja de cartas</a>. Básicamente el <em>sharding</em> trata de repartir los documentos entre servidores. De esta manera la carga se distribuye, ya que el documento solo se insertará en uno de los servidores.</p>
 
 <p>Para repartir los documentos se utiliza lo que se conoce como <strong>sharding key</strong>. Esta clave no es más que un campo de <strong>MongoDB</strong> (o varios, en realidad), que nos permite decidir en qué servidor debe almacenarse el documento. El encargado de esta decisión es un proceso conocido como <em>mongos</em>, que recibe las peticiones y las envía al servidor correcto.</p>
 
 <p>Elegir una <strong>sharding key</strong>, es seguramente la parte más importante cuándo queremos habilitar el <em>sharding</em>. El rendimiento de la base de datos dependerá de la clave que elijamos. Además eliminar una <strong>sharding key</strong> una vez establecida puede ser una experiencia poco recomendable. Así que mejor estar muy seguros de hacer una buena elección.</p>
 
-<p>Es importante destacar, que los campos que se incluyan en una <strong>sharding key</strong> deberán tener un índice. Si quieres saber más sobre los índices en <strong>MongoDB</strong>, puedes consultar <a href="http://www.charlascylon.com/post/61794351054/tutorial-mongodb-indices">el artículo que escribí sobre los índices</a>.</p>
+<p>Es importante destacar, que los campos que se incluyan en una <strong>sharding key</strong> deberán tener un índice. Si quieres saber más sobre los índices en <strong>MongoDB</strong>, puedes consultar <a href="https://www.charlascylon.com/post/61794351054/tutorial-mongodb-indices">el artículo que escribí sobre los índices</a>.</p>
 
 <h3>Puntos a tener en cuenta a la hora de elegir nuestra sharding key</h3>
 
@@ -65,4 +65,4 @@ redirect_from:
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

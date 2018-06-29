@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 <blockquote>
-<p><strong>Nota: </strong>Recuerda que este artículo foma parte del tutorial de MongoDB, al que puedes acceder desde <a href="http://charlascylon.com/tutorialmongo">este enlace.</a> En el tutorial explico como instalar MongoDB, como conectar a la base de datos o cosas más avanzadas com Aggregation Framework y conjuntos de réplicas. </p> 
+<p><strong>Nota: </strong>Recuerda que este artículo foma parte del tutorial de MongoDB, al que puedes acceder desde <a href="https://charlascylon.com/tutorialmongo">este enlace.</a> En el tutorial explico como instalar MongoDB, como conectar a la base de datos o cosas más avanzadas com Aggregation Framework y conjuntos de réplicas. </p> 
 </blockquote>
 
 <p>En el pasado artículo, hicimos una aproximación a los comandos <em>find </em>y <em>findOne</em>, para realizar consultas sencillas sobre <strong>MongoDB</strong>. En esta entrada profundizaremos un poco más y explicaremos consultas más complicadas. Inicialmente había pensado explicar todo en un solo artículo, pero creo que este hubiera sido demasiado largo, así que vamos a dividirlo en dos partes. </p>
@@ -274,4 +274,4 @@ redirect_from:
 
 * * * * *
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

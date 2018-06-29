@@ -2,10 +2,10 @@
 layout: post
 title: Ojalá hubiese tenido un mentor, la charla
 subtitle: Episodio II
-share-img: http://charlascylon.com/img/posts/2018/yoda.jpg
+share-img: https://charlascylon.com/img/posts/2018/yoda.jpg
 ---
 
-En el [anterior post del blog](http://charlascylon.com/2018-01-24-ojala-hubiese-tenido-un-mentor-la-charla-episodio-i), os estuve contando la que fue mi charla en Codenares Lite. La charla, dirigida a estudiantes de informática, intentaba contar algunas de las cosas que a mí me hubiese gustado que me contaran cuando estaba estudiando. El subtítulo entonces era el de *Episodio I* así que vamos ahora con el *Episiodio II**. 
+En el [anterior post del blog](https://charlascylon.com/2018-01-24-ojala-hubiese-tenido-un-mentor-la-charla-episodio-i), os estuve contando la que fue mi charla en Codenares Lite. La charla, dirigida a estudiantes de informática, intentaba contar algunas de las cosas que a mí me hubiese gustado que me contaran cuando estaba estudiando. El subtítulo entonces era el de *Episodio I* así que vamos ahora con el *Episiodio II**. 
 
 
 ## MAS CONSEJOS GRATIS
@@ -28,7 +28,7 @@ Al igual que me pasó con el inglés, es mucho más fácil progresar si estás e
 
 En informática solemos medir nuestra experiencia en años. *Desarrollador con más de 10 años de experiencia en el sector* o *desarrollador junior con 1 año de experiencia*. Si bien es una medida que puede ayudar en ciertos casos, generalmente es engañosa. ¿10 Años de experiencia haciendo qué? Si te has pasado 10 años haciendo exactamente lo mismo tu experiencia es muy limitada. En el caso de que tengas que cambiar de empleo, vas a sufrir, porque salvo que tus conocimientos sean muy demandados, no podrás enfrentarte a lo que el mercado requiere (lo sé, porque me ha pasado).
 
-Así que lo mejor es salir de vez en cuando de la zona de confort. Esto lo puedes hacer de varias maneras. Quizá tengas suerte y tu trabajo te permita tocar varios palos, y estar saliendo de tu zona de confort con frecuencia. Es lo ideal, pero no los empleos así no son mayoría. Así que puedes intentar hacerlo en tu tiempo libre. Aprende nuevos lenguajes o nuevas plataformas. A mí me ha ido muy bien [aprendiendo Elixir](http://charlascylon.com/2015-12-06-aprendiendo-elixir-o-intentandolo), ya que he aprendido cosas que jamás hubiera aprendido siguiendo con .NET. 
+Así que lo mejor es salir de vez en cuando de la zona de confort. Esto lo puedes hacer de varias maneras. Quizá tengas suerte y tu trabajo te permita tocar varios palos, y estar saliendo de tu zona de confort con frecuencia. Es lo ideal, pero no los empleos así no son mayoría. Así que puedes intentar hacerlo en tu tiempo libre. Aprende nuevos lenguajes o nuevas plataformas. A mí me ha ido muy bien [aprendiendo Elixir](https://charlascylon.com/2015-12-06-aprendiendo-elixir-o-intentandolo), ya que he aprendido cosas que jamás hubiera aprendido siguiendo con .NET. 
 
 Vuelvo a hacer la analogía del ejercicio. Salir de la zona de confort es incómodo, y a veces te hace sufrir. Pero a la larga te proporciona muchos beneficios. Como las agujetas.
 
@@ -49,7 +49,7 @@ Todo tiene ventajas e inconvenientes, y lo importante es que sepamos ser imparci
 
 ### Ten cuidado con los hypes
 
-De esto ya os hablé en el blog en [un artículo anterior](http://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender). En el mundo del desarrollo nos movemos mucho por modas. Lo que hoy acapara los focos de atención, mañana pasa a ser lo peor cayendo en desuso. Es algo que pasa mucho en el mundo acelerado de JavaScript pero que también pasa en el resto de plataformas. 
+De esto ya os hablé en el blog en [un artículo anterior](https://charlascylon.com/2016-11-07-los-hypes-la-especializaci%C3%B3n-y-que-aprender). En el mundo del desarrollo nos movemos mucho por modas. Lo que hoy acapara los focos de atención, mañana pasa a ser lo peor cayendo en desuso. Es algo que pasa mucho en el mundo acelerado de JavaScript pero que también pasa en el resto de plataformas. 
 
 Como es imposible aprenderlo todo, es importante tener cuidado con caer en un hype. Aprender nunca es malo, y más si lo haces por diversión, pero si buscas algo que sea útil en un tiempo futuro, intenta no caer en un hype desmedido. 
 

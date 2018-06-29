@@ -6,7 +6,7 @@ redirect_from:
   - /post/100816290873/
 ---
 
-<p>En el <a href="http://www.charlascylon.com/post/100146951744/tutorial-mongodb-y-c-mapeado-de-clases-con-atributos">anterior artículo</a> contaba como podíamos tener un mayor control sobre la serialización de los elementos de un documento. <strong>Ayudados por los atributos</strong>, podíamos modificar el comportamiento. Así podíamos mapear un documento con una clase aunque los campos fueran de distinto tipo, no existieran o tuvieran nombres diferentes.</p>
+<p>En el <a href="https://www.charlascylon.com/post/100146951744/tutorial-mongodb-y-c-mapeado-de-clases-con-atributos">anterior artículo</a> contaba como podíamos tener un mayor control sobre la serialización de los elementos de un documento. <strong>Ayudados por los atributos</strong>, podíamos modificar el comportamiento. Así podíamos mapear un documento con una clase aunque los campos fueran de distinto tipo, no existieran o tuvieran nombres diferentes.</p>
 
 <p>Pero como comentaba en el final del artículo, es posible que el uso de atributos no sea la solución más indicada para nosotros. Por ejemplo, puede pasar que no queramos mezclar nuestro modelo de clases de datos con la implementación específica que hace <strong>MongoDB</strong>. O que no queramos especificar los atributos por cada clase generada.</p>
 
@@ -121,4 +121,4 @@ ConventionRegistry.Register("My Conventions", pack, t =&gt; true);
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

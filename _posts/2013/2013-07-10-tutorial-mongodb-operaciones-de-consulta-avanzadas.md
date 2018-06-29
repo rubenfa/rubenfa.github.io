@@ -6,12 +6,12 @@ redirect_from:
   - /post/61794345688/
 ---
 
->Nota: Esta serie de artículos pertenece al tutorial que escribí hace unos años sobre MongoDB. La versión de MongoDB ha sido actualizada varias veces, pero podéis ver el resto de los artículos de la serie en [este enlace](http://charlascylon.com/tutorialmongo)
+>Nota: Esta serie de artículos pertenece al tutorial que escribí hace unos años sobre MongoDB. La versión de MongoDB ha sido actualizada varias veces, pero podéis ver el resto de los artículos de la serie en [este enlace](https://charlascylon.com/tutorialmongo)
 
 
-<p>Volvemos a la carga con nuestro tutorial de <strong>MongoDB</strong>, continuando con las operaciones de consulta avanzadas <a href="http://www.charlascylon.com/2013/07/tutorial-mongodb-operaciones-de.html" title="artículo Operaciones Avanzadas I">que ya empezamos la semana pasada.</a></p>
+<p>Volvemos a la carga con nuestro tutorial de <strong>MongoDB</strong>, continuando con las operaciones de consulta avanzadas <a href="https://www.charlascylon.com/2013/07/tutorial-mongodb-operaciones-de.html" title="artículo Operaciones Avanzadas I">que ya empezamos la semana pasada.</a></p>
 <p>En la anterior entrega vimos como realizar consultas complejas con find o findOne, incluyendo en ellas operadores lógicos como <strong>$gt, $lt, $exists, $and</strong> y algunos más. En esta entrada nos vamos a centrar en las consultas sobre elementos complejos, como  los arrays y los subdocumentos. Así que vamos a ello.</p>
-<p>Recuerda: que para los ejemplos estamos utilizando el conjunto de datos que puedes descargar de <a href="https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE!1168" title="enlace a conjunto de datos de los ejemplos">aquí</a>. Si todavía no sabes como importar estos datos a tu base de datos **MongoDB **tienes una pequeña guía de como hacerlo <a href="http://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta" title="enlace a entrada donde se explica el comando mongoimport">aquí</a>. Si aún no tienes instalado **MongoDB **<a href="http://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion" title="enlace a entrada de instalación de MongoDB">aquí </a>explico como puedes hacerlo.</p>
+<p>Recuerda: que para los ejemplos estamos utilizando el conjunto de datos que puedes descargar de <a href="https://skydrive.live.com/download?resid=1F8D7C58B1FC74AE!1168" title="enlace a conjunto de datos de los ejemplos">aquí</a>. Si todavía no sabes como importar estos datos a tu base de datos **MongoDB **tienes una pequeña guía de como hacerlo <a href="https://www.charlascylon.com/post/61794340001/tutorial-mongodb-operaciones-de-consulta" title="enlace a entrada donde se explica el comando mongoimport">aquí</a>. Si aún no tienes instalado **MongoDB **<a href="https://www.charlascylon.com/post/61794337102/tutorial-mongodb-instalacion-y-configuracion" title="enlace a entrada de instalación de MongoDB">aquí </a>explico como puedes hacerlo.</p>
 <p><strong>Consultar arrays</strong></p>
 <p>Como ya hemos visto en anteriores entregas de este tutorial, **MongoDB **puede guardar array de elementos. Los elementos que guarda un array pueden ser de cualquier tipo, es decir que pueden ser strings, números, otros arrays o incluso subdocumentos.</p>
 <p>En nuestros datos de prueba (podéis ver la primera entrega para saber como importarlos), cada persona de la colección people tiene asociado un campo _ tags_, que es un array de <em>strings</em>. Si queremos buscar un solo elemento dentro de ese array bastará con hacer una consulta similar a la siguiente:</p>
@@ -100,4 +100,4 @@ redirect_from:
 
 * * * * *
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*

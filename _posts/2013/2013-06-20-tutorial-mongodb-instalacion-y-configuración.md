@@ -8,7 +8,7 @@ redirect_from:
 
 [![logo\_10gen\_mongodb1](http://lh6.ggpht.com/-sOFuOMBtNm4/UcIoiQk6jBI/AAAAAAAAAz0/5lIzCghBMK8/logo_10gen_mongodb1_thumb.png?imgmax=800 "logo_10gen_mongodb1")](http://lh4.ggpht.com/-55DoRJE-qY8/UcIoay823oI/AAAAAAAAAzs/ETO8lK-cmSI/s1600-h/logo_10gen_mongodb1%25255B2%25255D.png)[La
 semana pasada hice una breve
-introducción](http://charlascylon.com/post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html)
+introducción](https://charlascylon.com/post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html)
 a lo que son las bases de datos documentales y como éstas almacenan los
 documentos. Como el movimiento se demuestra andando vamos a ejecutar una
 instancia de **MongoDB**, para en artículos posteriores poder realizar
@@ -198,5 +198,5 @@ consultas. No os perdáis las próximas entregas.
 * * * * *
 
 *Recuerda que puedes ver el índice del tutorial y acceder a todos los
-artículos de la serie [desde aquí.](http://charlascylon.com/tutorialmongo)*
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
 
