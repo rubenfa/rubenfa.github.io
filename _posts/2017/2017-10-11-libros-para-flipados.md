@@ -30,7 +30,7 @@ El libro es un poco la versión literaria este curso, escrito por la misma Barba
 Hay partes del libro que se centran en como enfrentarse a los exámenes, que a mí no me resultaron muy útiles, pero en general el libro está muy bien.
 
 ## Mindset 
-### [Enlace al libro](https://www.amazon.es/MINDSET-CAROL-DWECK-ebook/dp/B0744LQGH9/)
+### [Enlace al libro](https://www.amazon.es/MINDSET-CAROL-DWECK-ebook/dp/B0744LQGH9)
 
 No sé si lo sabéis pero un tal Bill Gates, tiene una lista anual de libros recomendados. En [la lista de 2015](https://www.gatesnotes.com/About-Bill-Gates/Best-Books-2015), el tío Bill proponía un libro que en seguida me llamó la atención: Mindset, de Carol Dweck. 
 
@@ -55,7 +55,7 @@ Este libro es otro clásico, y en él Stephen Covey, nos cuenta 7 hábitos para 
 El libro nos dice que debemos de ser proactivos, tener el fin de lo que empezamos en mente, que hagamos primero lo más importante etc. Las ideas de este libro me gustaron tanto, que [como ya os conté cuando hablaba de formación](http://charlascylon.com/2017-09-13-en-continua-formacion) compré una [versión infantil](https://www.amazon.es/Los-h%C3%A1bitos-los-ni%C3%B1os-felices/dp/849801400X/ref=sr_1_fkmr1_3?s=books&ie=UTF8&qid=1507704585&sr=1-3-fkmr1&keywords=los+siete+habitos+de+la+gente+altamente+efectiva+infantil) para leerla con mis hijos.
 
 ## Pensar rápido, pensar despacio 
-### [Enlace al libro](https://www.amazon.es/Pensar-r%C3%A1pido-pensar-despacio-Kahneman-ebook/dp/B008BPHBTO)
+### [Enlace al libro](https://www.amazon.es/Pensar-r%C3%A1pido-pensar-despacio-Kahneman-ebook/dp/B008BPHBTO/)
 
 Este libro está escrito por Daniel Kahneman, que tiene el honor de ser un psicólogo al que han dado el premio Nobel ¡ De economía ! Y es que en el libro cuenta un poco sobre su trabajo en el campo de la toma de decisiones.
 
@@ -64,14 +64,14 @@ A veces nos creemos que las decisiones que tomamos son plenamente conscientes, p
 En el libro nos habla de nuestro cerebro más emocional e impulsivo, y de nuestro cerebro más racional y pausado, y como afecta a nuestra vida que uno u otro se encarguen de tomar las decisiones.
 
 ## Autocontrol 
-### [Enlace al libro](https://www.amazon.es/Autocontrol-Crecimiento-personal-Kelly-McGonigal-ebook/dp/B01B4RB4Z2)
+### [Enlace al libro](https://www.amazon.es/Autocontrol-Crecimiento-personal-Kelly-McGonigal-ebook/dp/B01B4RB4Z2/)
 
 Es curioso como somos capaces de sabotear nuestra propia vida ignorando cosas que sabemos que a la larga serán perjudiciales para nosotros. Somos capaces de postergar acciones para ver vídeos de gatitos en Youtube, aunque sepamos que lo que tenemos que hacer es importante para nuestro futuro. ¿Y por que pasan estas cosas? 
 
 En este libro Kelly McGonigal, nos habla de distintos estudios que nos explican porque a veces perdemos el autocontrol, y hacemos cosas que no nos benefician. Presenta la interesante teoría de que el autocontrol es como un músculo, que es se puede ejercitar y por tanto mejora, pero que a veces también se agota y nos hace sucumbir a tentaciones que la vida nos pone delante.
 
 ## El método Lean Startup: Cómo crear empresas de éxito utilizando la innovación continua 
-### [Enlace al libro](https://www.amazon.es/gp/product/B0079MWRIK)
+### [Enlace al libro](https://www.amazon.es/gp/product/B0079MWRIK/)
 
 Si alguna vez has tenido la idea de montar una empresa, o un producto software, este libro es muy ilustrativo de algunas cosas que puedes hacer para conseguirlo. Y es que a veces somos esclavos de métricas que muestran las cosas que nosotros queremos mostrar, pero que no sirven de mucho.
 
