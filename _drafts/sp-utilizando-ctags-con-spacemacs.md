@@ -9,19 +9,21 @@ Hace unos días empecé el desarrollo de una sencilla web para uno de mis proyec
 
 Ctags no es más que una herramienta que permite crear un índice (tag) con información de los archivos de código fuente de nuestros proyectos. Dependiendo de nuestra configuración, podremos generar índices para archivos de diferentes lenguajes, haciendo que sus variables, clases, funciones etc. estén indexadas y por tanto sean fáciles de encontrar. En definitiva es como crear una guía de teléfonos para nuestro código fuente, de manera que si tenemos que buscar la variable `productId`, bastará con buscar en el índice para encontrar su posición exacta en un archivo de código.
 
-Lo bueno es que **este índice puede ser aprovechado por otras herramientas** para darnos funcionalidad extra. Por ejemplo, Emacs podrá navegar por el código fuente, permitiéndonos saltar desde dónde se está usando una función a dónde está definida utilizando `M-.`. También podemos conseguir que los modos de autocompletado de código, en este caso `company-mode`, nos muestren elementos del índice que ha creado ctags, para poder seleccionarlos. Justo lo que yo quería conseguir.
+Lo bueno es que **este índice puede ser aprovechado por otras herramientas** para darnos funcionalidad extra. Por ejemplo, Emacs podrá navegar por el código fuente, permitiéndonos saltar a la definición de una función o variable, utilizando `M-.`. También podemos conseguir que los modos de autocompletado de código, en este caso `company-mode`, nos muestren elementos del índice que ha creado ctags, para poder seleccionarlos. Justo lo que yo quería conseguir.
 
 Aunque ctags es bastante sencillo en cuanto a concepto, la cosa se complica por la multitud de opciones que tenemos.
 
 
-## Ctags y sus diferentes saboress
+## Ctags y sus diferentes sabores
 
-La filosofía Open Source tiene muchas cosas buenas. Más buenas que malas diría yo. Pero entre las malas, la que peor llevo es la de la dispersión del esfuerzo para crear herramientas diferentes que tienen el mismo objetivo. Y es que esto seguro que es un problema que también habéis sufrido. Existe una herramienta que hace X y alguien decide que no le gusta, que no se mantiene lo suficiente o que va a cambiar el enfoque, así que decide crear la herramienta Y. Pasa el tiempo y alguien decide que ni Y, hacen las cosas como a ellos les gustaría. ¿Solución? Sí, lo has adivinado: crear la librería Z. 
+La filosofía Open Source tiene muchas cosas buenas. Más buenas que malas diría yo. Pero entre las malas, la que peor llevo es la de la dispersión del esfuerzo para crear herramientas diferentes que tienen el mismo objetivo. Y es que esto seguro que es un problema que también habéis sufrido. Existe una herramienta que hace X y alguien decide que no le gusta, que no se mantiene lo suficiente o que va a cambiar el enfoque, así que decide crear la herramienta Y. Pasa el tiempo y alguien decide que ni Y, , ni X, hacen las cosas como a ellos les gustaría. ¿Solución? Sí, lo has adivinado: crear la librería Z. 
 
-Es cierto que la filosofía de Microsoft de intentar coparlo todo tampoco es buena, pero como se suele decir, en el termino medio está la virtud. Y es que hay que pensar que cuando se dispersan tanto las herramientas, también lo hace su documentación. La ayuda que proporciona la gente en foros, también se dispersa, haciendo difícil la solución de problemas concretos.
+Es cierto que la filosofía de Microsoft de intentar coparlo todo tampoco es buena, pero como se suele decir, en el termino medio está la virtud. Y es que hay que pensar que cuando se dispersan tanto las herramientas, también lo hace su documentación. La ayuda que proporcionan los compañeros desarrolladores en foros y listas de distribución, también se dispersa, haciendo difícil la solución de problemas concretos.
 
 Pero bueno, después de este discurso de abuelo cebolleta enfadado, vamos a ver los distintos sabores que existen para generar el índice con ctags.
 
 - Exuberant Ctags: inicialmente creado para Vim, aunque es compatible con Emacs. No hay que olvidarse de incluir la opción `-e` para la compatibilidad con este editor. Soporta cerca de 40 lenguajes de programación y la posibilidad de ampliar el soporte utilizando expresiones regulares.
 - Etags: es la utilidad que viene de serie con Emcas y en este caso el índice se genera especialmente para Emacs.
 - Universal Ctags: fork de Exuberant Ctags. Por lo visto el mantenimiento de Exuberant Ctags ha sido inexistente en estos últimos años, así que alguien decidió crear un fork y hacer la guerra por su cuenta.
+
+s
