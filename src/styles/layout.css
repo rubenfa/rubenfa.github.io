@@ -1,6 +1,24 @@
 /* define the layout and structure of the entire page */
 
-.l-header {}
+.l-header {
+  
+
+
+}
+
+.l-header a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  gap: 0.1rem;
+}
+
+.l-header h1 a img {
+  width: 128px; /* o el tamaño que prefieras */
+  height: auto; /* para mantener la proporción */
+}
 
 .l-main {
   margin-block-start: var(--sp-l);
