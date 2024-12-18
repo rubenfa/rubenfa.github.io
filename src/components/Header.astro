@@ -29,60 +29,10 @@ const isActive = (path: string) =>
     <ul>
       <li>
         <a
-          href={getRelativeLocaleUrl(locale, "/setup")}
-          class={isActive("/setup") ? "active" : null}
-        >
-          {t({ ja: "設定", en: "Setup", "zh-cn": "设置", ar: "إعداد" })}
-        </a>
-      </li>
-
-      <li>
-        <a
-          href={getRelativeLocaleUrl(locale, "/page")}
-          class={isActive("/page") ? "active" : null}
-        >
-          {
-            t({
-              ja: "ページの追加",
-              en: "Add Page",
-              "zh-cn": "添加页面",
-              ar: "إضافة صفحة",
-            })
-          }
-        </a>
-      </li>
-
-      <li>
-        <a
-          href={getRelativeLocaleUrl(locale, "/feature")}
-          class={isActive("/feature") ? "active" : null}
-        >
-          {
-            t({
-              ja: "その他の機能",
-              en: "Features",
-              "zh-cn": "特性",
-              ar: "الميزات",
-            })
-          }
-        </a>
-      </li>
-
-      <li class="en-only">
-        <a
-          href={getRelativeLocaleUrl(locale, "/monolingual")}
-          class={isActive("/monolingual") ? "active" : null}
-        >
-          Monolingual
-        </a>
-      </li>
-
-      <li>
-        <a
           href={getRelativeLocaleUrl(locale, "/blog")}
           class={isActive("/blog") ? "active" : null}
         >
-          {t({ ja: "ブログ", en: "Blog", "zh-cn": "博客", ar: "مدونة" })}
+          {t({ en: "Blog", es: "Blog" })}
         </a>
       </li>
 

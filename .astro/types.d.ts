@@ -157,6 +157,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"es/2013-01-25-volver-a-windows-7-desde-windows-8-regresar-al/index.mdx": {
+	id: "es/2013-01-25-volver-a-windows-7-desde-windows-8-regresar-al/index.mdx";
+  slug: "es/2013-01-25-volver-a-windows-7-desde-windows-8-regresar-al";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "es/first-post/index.mdx": {
 	id: "es/first-post/index.mdx";
   slug: "es/first-post";
