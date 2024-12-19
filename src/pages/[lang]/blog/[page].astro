@@ -1,0 +1,103 @@
+
+---
+import { LOCALES, useTranslations, type Lang } from "@/i18n";
+import Layout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const { page } = Astro.params;
+const currentPage = parseInt(page);
+const postsPerPage = 10;
+
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
+
+const allPosts = (await getCollection("blog"))
+  .filter((post) => post.slug.split("/")[0] === locale)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
+const posts = allPosts.slice(
+  (currentPage - 1) * postsPerPage,
+  currentPage * postsPerPage
+);
+
+export const getStaticPaths = async () => {
+  const allPosts = await getCollection("blog");
+  const postsByLang = Object.keys(LOCALES).map((lang) => ({
+    lang,
+    posts: allPosts.filter((post) => post.slug.split("/")[0] === lang),
+  }));
+
+  return postsByLang.flatMap(({ lang, posts }) => {
+    const totalPages = Math.ceil(posts.length / 10);
+    return Array.from({ length: totalPages }, (_, i) => ({
+      params: { lang, page: `${i + 1}` },
+    }));
+  });
+};
+
+const title = t({
+  en: "Blog",
+  es: "Blog",
+});
+---
+
+<Layout {title}>
+  <ul>
+    {
+      posts.map((post) => {
+        const [, ...slug] = post.slug.split("/");
+        return (
+          <li>
+            <a href={`/${locale}/blog/${slug.join("/")}/`}>
+              {post.data.cover && (
+                <Image src={post.data.cover} alt={post.data.title} />
+              )}
+              <h2>{post.data.title}</h2>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <nav class="pagination">
+    {currentPage > 1 && (
+      <a href={`/${locale}/blog/${currentPage - 1}`}>Previous</a>
+    )}
+    <span>
+      Page {currentPage} of {totalPages}
+    </span>
+    {currentPage < totalPages && (
+      <a href={`/${locale}/blog/${currentPage + 1}`}>Next</a>
+    )}
+  </nav>
+</Layout>
+
+<style>
+  p {
+    margin-block-start: var(--sp-s);
+  }
+  ul {
+    margin-block-start: var(--sp-m);
+    display: grid;
+    gap: var(--sp-s);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+
+  li {
+    margin-block-end: 1rem;
+    img {
+      border-radius: 6px;
+    }
+  }
+
+  .pagination {
+    margin-top: var(--sp-m);
+    display: flex;
+    gap: var(--sp-s);
+    justify-content: center;
+    align-items: center;
+  }
+</style>
