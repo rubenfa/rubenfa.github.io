@@ -1,6 +1,7 @@
 ---
 import { LOCALES, useTranslations, type Lang } from "@/i18n";
 import Layout from "@/layouts/Base.astro";
+import "@/styles/blog.css"; // Importar el nuevo archivo de estilos
 import { getCollection } from "astro:content";
 
 const { page } = Astro.params;
@@ -73,59 +74,3 @@ const title = t({
     )}
   </nav>
 </Layout>
-
-<style>
-  p {
-    margin-block-start: var(--sp-s);
-  }
-  ul.post-list {
-    margin-block-start: var(--sp-m);
-    list-style: none;
-    padding: 0;
-  }
-
-  ul.post-list li {
-    margin-block-end: var(--sp-s);
-    border-bottom: 1px solid var(--color-border); /* Línea separadora entre posts */
-    padding-bottom: var(--sp-s);
-  }
-
-  /* Definir la variable --color-border si no está definida */
-  :root {
-    --color-border: #ccc; /* Puedes cambiar #ccc por el color que prefieras */
-  }
-
-  ul.post-list li a {
-    display: block;
-    text-decoration: none;
-  }
-
-  .pagination {
-    margin-top: var(--sp-m);
-    display: flex;
-    gap: var(--sp-s);
-    justify-content: center;
-    align-items: center;
-  }
-  h2 {
-    font-size: 1.5rem; /* Reducir el tamaño de fuente */
-    transition: color 0.3s;
-    word-break: break-word; /* Permitir saltos de línea dentro de palabras largas */
-    hyphens: auto; /* Habilitar guiones automáticos */
-    font-weight: normal; /* Texto del título sin negrita */
-  }
-  a:hover h2 {
-    color: var(--color-accent);
-  }
-  .post-date {
-    font-size: 0.9rem;
-    color: var(--color-secondary);
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  .icon-date::before {
-    content: "🗓️";
-    margin-right: 0.5rem;
-  }
-</style>

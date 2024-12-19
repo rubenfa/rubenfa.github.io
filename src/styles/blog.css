@@ -1,0 +1,58 @@
+
+p {
+  margin-block-start: var(--sp-s);
+}
+
+ul.post-list {
+  margin-block-start: var(--sp-m);
+  list-style: none;
+  padding: 0;
+}
+
+ul.post-list li {
+  margin-block-end: var(--sp-s);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--sp-s);
+}
+
+:root {
+  --color-border: #ccc;
+}
+
+ul.post-list li a {
+  display: block;
+  text-decoration: none;
+}
+
+.pagination {
+  margin-top: var(--sp-m);
+  display: flex;
+  gap: var(--sp-s);
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  word-break: break-word;
+  hyphens: auto;
+  font-weight: normal;
+}
+
+a:hover h2 {
+  color: var(--color-theme);
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon-date::before {
+  content: "🗓️";
+  margin-right: 0.5rem;
+}
