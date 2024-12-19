@@ -3,8 +3,8 @@ import PageHeadline from "@/components/PageHeadline.astro";
 import { LOCALES, useTranslations, type Lang } from "@/i18n";
 import Layout from "@/layouts/Base.astro";
 import "@/styles/blog.css"; // Importar el nuevo archivo de estilos
+import { Icon } from 'astro-icon/components';
 import { getCollection } from "astro:content";
-
 const { page } = Astro.params;
 const currentPage = parseInt(page);
 const postsPerPage = 10;
@@ -54,7 +54,7 @@ const title = t({
           <li>
             <a href={`/${locale}/blog/${slug.join("/")}/`}>
               <p class="post-date">
-                <span class="icon-date"></span>
+                <Icon name="calendar" size="32px" />
                 {post.data.date.toLocaleDateString(locale)}
               </p>
               <h2>{post.data.title}</h2>

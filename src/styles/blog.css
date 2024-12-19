@@ -1,4 +1,3 @@
-
 p {
   margin-block-start: var(--sp-s);
 }
@@ -10,18 +9,24 @@ ul.post-list {
 }
 
 ul.post-list li {
+  min-height: 120px; /* aumentamos un poco la altura */
   margin-block-end: var(--sp-s);
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: var(--sp-s);
+  border-bottom: 1px solid var(--color-theme);
+  padding: var(--sp-s) 0;
+  display: flex;
+  align-items: center; /* centrado vertical */
 }
 
-:root {
-  --color-border: #ccc;
-}
+/* eliminamos la definición de --color-border ya que no se usa */
 
 ul.post-list li a {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
+  width: 100%;
+  gap: 0.75rem; /* espacio consistente entre fecha y título */
+  align-items: flex-start; /* alinea los elementos a la izquierda */
 }
 
 .pagination {
@@ -33,11 +38,12 @@ ul.post-list li a {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: color 0.3s;
   word-break: break-word;
   hyphens: auto;
   font-weight: normal;
+  color: #342c28;
 }
 
 a:hover h2 {
@@ -49,10 +55,16 @@ a:hover h2 {
   color: var(--color-secondary);
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0 2rem; /* mismo margen izquierdo que el título */
+  justify-content: flex-start;
+  padding-left: 0.5rem; 
 }
 
 .icon-date::before {
   content: "🗓️";
   margin-right: 0.5rem;
+}
+
+.post-list h2 {
+  margin: 0 0 0 2rem; /* elimina el margen superior */
 }
