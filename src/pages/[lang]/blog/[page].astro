@@ -1,4 +1,5 @@
 ---
+import PageHeadline from "@/components/PageHeadline.astro";
 import { LOCALES, useTranslations, type Lang } from "@/i18n";
 import Layout from "@/layouts/Base.astro";
 import "@/styles/blog.css"; // Importar el nuevo archivo de estilos
@@ -37,12 +38,14 @@ export const getStaticPaths = async () => {
 };
 
 const title = t({
-  en: "Blog",
-  es: "Blog",
+  en: "Latest posts",
+  es: "Últimas publicaciones",
 });
 ---
 
+
 <Layout {title}>
+    <PageHeadline {title} />
   <ul class="post-list">
     {
       posts.map((post) => {
