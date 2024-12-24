@@ -3,8 +3,21 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 
-const SOURCE_DIR = '../_posts/2013';
+const SOURCE_DIR = '../_posts/2014';
 const TARGET_DIR = '../src/content/blog/es';
+
+function normalizeString(str) {
+    return str
+        .toLowerCase()
+        // Reemplazar acentos y ñ
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/ñ/g, 'n')
+        // Reemplazar espacios y caracteres especiales por guiones
+        .replace(/[^a-z0-9]+/g, '-')
+        // Eliminar guiones al inicio y final
+        .replace(/^-+|-+$/g, '');
+}
 
 async function convertPosts() {
     try {
@@ -29,7 +42,8 @@ async function convertPosts() {
             };
             
             // Create new directory name from original filename
-            const dirName = file.slice(0, -3); // remove .md extension
+            var dirName = file.slice(0, -3); // remove .md extension
+            dirName = normalizeString(dirName);
             const targetDir = path.join(TARGET_DIR, dirName);
             
             // Create directory and write new file
