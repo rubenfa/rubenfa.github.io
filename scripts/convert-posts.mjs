@@ -38,7 +38,7 @@ async function convertPosts() {
                 title: data.title,
                 description: data.description || data.title,
                 date: file.slice(0, 10),
-                cover: './cover.png'
+                cover: '../images/quite-old.png'
             };
             
             // Create new directory name from original filename
