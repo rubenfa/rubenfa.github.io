@@ -1,0 +1,99 @@
+---
+title: 'Tutorial MongoDB. Explicando el sharding con una baraja de cartas'
+description: 'Tutorial MongoDB. Explicando el sharding con una baraja de cartas'
+date: '2014-01-30'
+cover: '../images/quite-old.png'
+---
+
+<p><img src="http://31.media.tumblr.com/a3646f5efc4bb551d1005763127cd175/tumblr_inline_n04sjcGiLB1sno6e9.jpg" alt=""/></p>
+
+<p>Una de las características más interesantes de <strong>MongoDB</strong> es el <em>sharding</em>. Este concepto, se podría traducir como <em>particionado</em>. Aunque soy firme defensor de usar las palabras en español, creo que la palabra <em>sharding</em>, es más conocida y fácil de identificar en internet.</p>
+
+<p><strong>MongoDB</strong> utiliza esta técnica para gestionar la carga de los servidores. Distribuye los datos entre distintos <em>shards</em> (conjuntos de servidores que almacenan parte de los datos), para que la carga a la hora de realizar consultas e inserciones se reparta.</p>
+
+<p>Voy a explicar este concepto con una baraja de cartas. La idea no es mía, es de <a href="http://www.kchodorow.com/blog/2011/01/04/how-to-choose-a-shard-key-the-card-game/">Kristina Chodorow</a>, autora de varios libros de <strong>MongoDB</strong> y actualmente trabajando para Google. Yo voy a explicarlo utilizando su idea, pero en español y con una baraja española que es mucho más bonita.</p>
+
+<p>La entrada va a ser solamente teórica. Dejaremos la parte técnica para entradas posteriores.</p>
+
+<h3>Punto de partida</h3>
+
+<p>Vamos a jugar con una baraja de cartas española de 48 cartas. Para el que no la conozca, decir que esta baraja está dividida en cuatro palos: <em>oros, copas, espadas y bastos</em>. Cada palo tiene doce cartas numeradas del uno al doce.</p>
+
+<p>En la partida jugarán cuatro jugadores, mientras que otra persona será la encargada de repartir las cartas. La persona que reparte las cartas no juega. Solo se dedica a repartir de una forma concreta: repartirá todas las cartas entre los cuatro jugadores, de manera que todos tengan doce cartas como máximo. Eso sí, antes de repartir y decidir a qué jugador le corresponderá la carta, mirará de qué carta se trata. Vamos, que las cartas no son secretas ni deben esconderse.</p>
+
+<h3>¿Y en qué se parece este juego al <em>sharding</em> de <strong>MongoDB</strong>?</h3>
+
+<p>Las cartas representarán los documentos a insertar, los jugadores representarán los <em>shards</em> y la persona que reparte se corresponde con el servicio <em>mongos</em>. Este servicio es el que conoce todos los <em>shards</em>, y es el encargado de repartir los documentos a partir de una <strong>shard key</strong> determinada.</p>
+
+<p>Elegir la clave por la que repartir los documentos (<strong>shard key</strong>) es una de las decisiones más importantes que tendremos que tomar al usar <em>sharding</em> en <strong>MongoDB</strong>. Este tema lo trataremos en un artículo más adelante, pero para jugar a nuestro juego de cartas, necesitamos definir una forma de reparto. Para el ejemplo vamos a suponer, que las cartas se repartirán según su valor. Es decir, nos fijaremos en el número que tenga la carta - del uno al doce - y repartiremos en consecuencia.</p>
+
+<h3>Empezando el juego</h3>
+
+<p>La persona que reparte las cartas coge la primera del mazo y mira su valor. Es el tres de copas. El palo de la carta nos da igual, solo nos fijamos en el valor. Como ninguno de los jugadores tiene cartas, se la da al primer jugador.</p>
+
+<p>Desde el punto de vista de <strong>MongoDB</strong>,  podríamos decir que se se intenta insertar un documento y el proceso <em>mongos</em> decide que como todos los <em>shards</em> están vacíos, debe darle el documento al primero.</p>
+
+<p>Este proceso se repite hasta que el primer jugador va a recibir su doceava carta. Supongamos que la secuencia de las doce cartas ha sido la siguiente: <em>3,4,9,10,9,2,3,1,12,5,5,6</em>. Si las ordenamos tendríamos algo así como: <em>1,2,3,3,4,5,5,6,9,9,10,12</em>. Cuando el repartidor va a dar la carta número doce, se da cuenta de que el jugador uno tiene todas, mientras que los demás no tienen ninguna. Entonces se mueven algunas de las cartas del <em>Jugador 1</em> (incluyendo la carta número doce) al montón del <em>Jugador 2</em>. Para repartir tenemos en cuenta el criterio por el que hemos iniciado el juego, es decir, el valor de la carta. Por tanto el reparto quedará así:</p>
+
+<ul><li><strong>Jugador 1</strong>: 1,2,3,3,4,5,5</li>
+<li><strong>Jugador 2</strong>: 6,9,9,10,12</li>
+<li><strong>Jugador 3</strong>: sin cartas</li>
+<li><strong>Jugador 4</strong>: sin cartas.</li>
+</ul><p>El reparto se realiza más o menos por la mitad. Un jugador tendrá las cartas del uno al cinco y el otro del seis al doce. Los números repetidos los tiene que tener el mismo jugador.</p>
+
+<h3>Seguimos repartiendo cartas</h3>
+
+<p>Ahora hay dos jugadores con cartas (dos <em>shards</em>) que tienen más o menos el mismo número de ellas.</p>
+
+<p>El reparto de cartas continua hasta que uno de los jugadores vuelve a tener doce cartas. En este caso habrá que repartir las cartas también con el jugador número tres. Supongamos que las doce cartas repartidas, y ya ordenadas, han sido las siguientes: 1,4,5,6,7,8,8,9,10,11,11,12.</p>
+
+<blockquote>
+  <p><strong>Importante</strong>: por simplicidad estoy repartiendo en bloques de doce cartas, pero las cartas se reparten de una en una y en orden aleatorio. Si un jugador llega a las doce cartas en cualquier momento, habrá que mover cartas de un jugador a otro.</p>
+</blockquote>
+
+<p>El reparto quedaría de la siguiente manera:</p>
+
+<ul><li><strong>Jugador 1</strong>: 1,1,2,3,3,4,4</li>
+<li><strong>Jugador 2</strong>: 5,5,5,6,6,7,8,8</li>
+<li><strong>Jugador 3</strong>: 9,9,9,10,10,11,11,12,12</li>
+<li><strong>Jugador 4</strong>: sin cartas.</li>
+</ul><p>Y vamos a por el penúltimo reparto de cartas, que ya ordenado es: 3,4,5,6,6,7,7,8,9,10,11,12. Y repartido entre los jugadores sería algo así como:</p>
+
+<ul><li><strong>Jugador 1</strong>: 1,1,2,3,3,3</li>
+<li><strong>Jugador 2</strong>: 4,4,4,5,5,5,5,6,6,6,6</li>
+<li><strong>Jugador 3</strong>: 7,7,7,8,8,8,9,9,9,9</li>
+<li><strong>Jugador 4</strong>: 10,10,10,11,11,11,12,12,12</li>
+</ul><h3>Finalizando el juego</h3>
+
+<p>Tras el último reparto de doce cartas, al final las cartas de los jugadores quedarían así:</p>
+
+<ul><li><strong>Jugador 1</strong>: 1,1,1,1,2,2,2,2,3,3,3,3</li>
+<li><strong>Jugador 2</strong>: 4,4,4,4,5,5,5,5,6,6,6,6</li>
+<li><strong>Jugador 3</strong>: 7,7,7,7,8,8,8,8,9,9,9,9</li>
+<li><strong>Jugador 4</strong>: 10,10,10,10,11,11,11,11,12,12,12,12</li>
+</ul><h3>Un par de cosas a tener en cuenta</h3>
+
+<h4>El movimiento de documentos entre particiones</h4>
+
+<p>Por simplificar, el movimiento de cartas lo he realizado tras repartir doce. Como ya he dicho antes, el movimiento de cartas debería producirse después de que se reparta una y siempre que un jugador tenga doce cartas. Doce cartas es el equivalente al tamaño máximo de un <em>shard</em>.</p>
+
+<h4>El tamaño de las particiones</h4>
+
+<p>Como número máximo de cartas yo he utilizado doce cartas. Es decir, cada jugador como mucho, podía tener doce cartas. En <strong>MongoDB</strong>, el tamaño de las particiones no se mide en número de documentos, si no en MB. Por defecto un <em>shard</em> tiene un tamaño máximo de 64 MB, aunque es algo que podemos configurar. Este tamaño está bien para la mayoría de desarrollos, pero puede interesarnos cambiarlo si vemos que los documentos se acumulan en pocos <em>shards</em> o si hay demasiados movimientos de un <em>shard</em> a otro.</p>
+
+<h4>Las cartas se acaban, los documentos no</h4>
+
+<p>En el ejemplo hemos terminado tras repartir 48 cartas, pero en un escenario real, se continuarían insertando documentos.  Si cogiésemos otra baraja, y repartiéramos las cartas otra vez, estas se irían repartiendo por los jugadores. El jugador uno se quedaría con las cartas del uno al tres, el jugador dos con las cartas del cuatro al seis, el tres con las cartas del siete al nueve, y el último jugador se quedaría con las cartas del diez al doce.</p>
+
+<h3>Conclusiones</h3>
+
+<p>El <em>sharding</em> es una herramienta muy útil para balancear la carga de datos entre servidores. <strong>MongoDB</strong> nos proporciona una forma sencilla de hacerlo, pero que hay que configurar correctamente. La elección de la clave por la que se realizará el <em>sharding</em> (<strong>shard key</strong>) es muy importante. Esta elección no se puede cambiar una vez se ha establecido. En el próximo artículo veremos cuál es la mejor manera de elegir una <strong>shard key</strong>.</p>
+
+<p>Imagen | <a href="http://www.flickr.com/photos/16435172@N05/3543021627/in/photolist-6p5UTM-6QJjJ8-6QJjP6-6QNoxm-6SvA7H-6U2hrz-71xyuT-7bwxNv-7dLd5z-7f2oJo-7gCGUJ-7iFNHR-7kANZs-7x3xZs-9PvAmW-foEJpd-dxK6PA-8FsFzV-8FsFxP-8FsFuX-8MGdGK-j6bcMh-7DirQm-8N1gZp-81aRGf-azzWZS-9XpnKq-9XEpKS-7HCQz6-abNYLb-98nQue-7UMxTR-8FsFyX-7M5r9P-9FUeyV-aBmBVA-82Y9pE-7Z6mug-9XBwvz-9XpnRh-eWXvQw-8kYWWk-egKFMy-8Nc38b-99xnop-bH29cz-8vDMEM-8PXwUh-adSeyj-8QeUJN-bSC5Ap">Guillermo Viciano</a></p>
+
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
