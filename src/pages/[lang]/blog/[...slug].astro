@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Article.astro";
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -22,7 +22,9 @@ const title = post.data.title;
 <Layout {title}>
   {
     post.data.cover && (
-      <Image src={post.data.cover} alt={post.data.title} class="cover" />
+      <div class="cover-container">
+        <Image src={post.data.cover} alt={post.data.title} class="cover" />
+      </div>
     )
   }
 
@@ -46,6 +48,13 @@ const title = post.data.title;
       font-size: 1.8rem;
     }
   }
+
+  .cover-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
   .cover {
     border-radius: 16px;
     margin: 0;
