@@ -49,10 +49,11 @@ const title = t({
   <ul class="post-list">
     {
       posts.map((post) => {
-        const [, ...slug] = post.slug.split("/");
+        const [, ...slugParts] = post.slug.split("/");
+        const slug = slugParts.join("/");
         return (
           <li>
-            <a href={`/${locale}/blog/${slug.join("/")}/`}>
+            <a href={`/${locale}/blog/${slug}/`}> <!-- Removed the year from the URL -->
               <p class="post-date">
                 <Icon name="calendar" size="32px" />
                 {post.data.date.toLocaleDateString(locale)}

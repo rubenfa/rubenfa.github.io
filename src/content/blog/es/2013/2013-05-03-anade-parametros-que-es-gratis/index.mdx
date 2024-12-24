@@ -1,0 +1,85 @@
+---
+title: 'Añade parámetros, que es gratis'
+description: 'Añade parámetros, que es gratis'
+date: '2013-05-03'
+cover: '../../images/quite-old.png'
+---
+
+Estoy añadiendo funcionalidad a un web service existente y me he
+encontrado con una desagradable sorpresa. Un método que acepta 19
+parámetros. Sí, habéis leído bien, acepta 19 parámetros. 
+
+Lo peor de todo es que tengo que modificar este engendro y añadirle un
+parámetro más. Lo ideal sería refactorizar todo el método, pero no tengo
+tiempo para eso. Más que nada porque el código es tan malo que tendría
+que modificar todo el web service, y a mi jefe de proyecto le podría dar
+algo.
+
+**¿Por qué no es bueno añadir tantos parámetros?**
+
+En un capítulo de [Clean
+Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+(de Robert C.Martin) analizan este problema. Al final llegan a la
+conclusión de que un parámetro es bueno, dos no es malo, tres podría ser
+aceptable siempre que sea justificado y más de tres ya habría que
+justificarlos muy, pero que muy bien. En el caso que nos ocupa, parece
+improbable que se pueda justificar el uso de 19 parámetros en un mismo
+método. Normalmente esto indica un problema de diseño. Es probable que
+se esté rompiendo [el principio de responsabilidad
+única](http://en.wikipedia.org/wiki/Single_responsibility_principle),
+que dice que una clase o método debería hacer una cosa y solo una.
+Lógicamente si el método recibe tantos parámetros, es probable que sea
+porque el mismo esté realizando más de una cosa.
+
+Bien, en este caso, no se está haciendo más de una cosa. Simplemente el
+método crea un XML dependiendo de los parámetros de entrada. Entonces
+¿no habría una manera mejor de hacerlo? Sí, usar clases o estructuras.
+En mi caso el método tiene conjuntos de datos que se podrían agrupar de
+forma bastante sencilla. Por ejemplo, suponiendo el método:
+
+
+```csharp
+public XmlDocument GenerateXML(
+    int id_cliente, string nombre_cliente, boolean recibir_publicidad_cliente, 
+    DateTime fecha_alta_cliente, int id_producto_comprado, string descripcion_producto_comprado,                                   
+    DateTime fecha_lanzamiento, string codigo_activacion_producto_comprado, string version_producto_comprado,
+    int dias_validez_producto_comprado )    
+```
+ 
+
+He creado un método con 10 parámetros y hasta me he cansado.
+Independientemente de lo que haga este método, ¿no es más fácil hacerlo
+de esta otra manera?:
+
+```csharp
+struct Cliente 
+{    
+        public int id { get; set; }    
+        public string nombre { get; set; }    
+        public DateTime fecha_alta { get; set; }    
+        public bool acepta_publicidad { get; set; }    
+        public int id_cliente { get; set; }
+ }
+ 
+ struct Producto
+ {    
+     public int id { get; set; }    
+     public string decripcion { get; set; }    
+     public DateTime fecha_lanzamiento { get; set; }    
+     public string codigo_activacion { get; set; }    
+     public string version { get; set; }    
+     public int dias_validez { get; set; }
+ }
+ 
+ public XmlDocument GenerateXML(Cliente cliente, Producto producto)
+
+```
+
+Yo lo he hecho con estructuras, pero se podría hacer lo mismo con
+clases. Instanciando un objecto ***Cliente***y otro ***Producto***, nos
+bastaría con pasárselo al método para que realizara las operaciones
+necesarias. El código quedaría más limpio y más fácil de mantener.
+
+Así que ya sabéis, antes de definir un nuevo parámetro, pensar si es
+necesario. Yo me voy a añadir otro más al engendro. Total dónde caben
+19, caben 20.
