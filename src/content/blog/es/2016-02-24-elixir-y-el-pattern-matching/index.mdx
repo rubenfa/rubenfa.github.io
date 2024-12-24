@@ -1,0 +1,183 @@
+---
+title: 'Elixir y el pattern matching'
+description: 'Elixir y el pattern matching'
+date: '2016-02-24'
+cover: '../images/quite-old.png'
+---
+
+Una de las primeras cosas que he aprendido usando Elixir, es que casi todo funciona con [pattern matching](https://en.wikipedia.org/wiki/Pattern_matching).  Esta técnica propia de los lenguajes funcionales, se utiliza para buscar patrones y decidir qué hacer en cada momento. 
+
+Por ejemplo, pensemos en este código Elixir:
+
+```elixir
+defmodule Elixir.Test1 do    
+  def sum(a, b) do
+    a + b
+  end
+	    
+  def sum(a, b, c) do
+    a + b + c
+  end
+	    
+  def sum(a, b, c, d) do
+    a + b + c + d
+  end    
+end
+```
+
+Si lo cargamos en `IEX`, podremos hacer algunas pruebas con las funciones: 
+
+```
+iex(3)> Elixir.Test1.sum(1,2)
+3
+iex(4)> Elixir.Test1.sum(1,6)
+7
+iex(5)> Elixir.Test1.sum(1,6,7)
+14
+iex(6)> Elixir.Test1.sum(1,6,1,1)
+9
+```
+
+ 
+> `IEX` es la línea de comandos interactiva de Elixir. Similar a `REPL` en Node o `F# Interactive` en F#. Para ejecutar la consola
+> solo tenemos que ejecutar el comando `iex` en una línea de comandos de Windows, Linux o Mac (obviamente con Elixir instalado y las rutas necesarias en el PATH).
+ 
+
+Se puede ve en el ejemplo, que dependiendo de los parámetros de entrada, Elixir sabe que función debemos ejecutar. Vale, pero tampoco hay mucha diferencia, con otros lenguajes como C# ¿verdad?
+Al fin y al cabo, a diferente número de parámetros la firma de las funciones es diferente. En Elixir esto no es así. Veamos otro ejemplo:
+
+```elixir
+defmodule Elixir.Test2 do    
+  def mult(a, 1) do
+    a * 1
+  end
+    
+  def mult(a, 2) do
+    a * 2
+  end
+    
+  def mult(a, b) do
+    a * b
+  end  
+end
+````
+El ejemplo es bastante sencillo. Tenemos tres funciones `mult`. En este caso ambas reciben el mismo número de parámetros. ¿Cómo sabe Elixir cuáll ejecutar? Buscando patrones.
+
+```
+iex(1)> Elixir.Test2.mult(2,1)
+2
+iex(2)> Elixir.Test2.mult(3,1)
+3
+iex(3)> Elixir.Test2.mult(2,2)
+4
+iex(4)> Elixir.Test2.mult(3,2)
+6
+iex(5)> Elixir.Test2.mult(1,3)
+3
+iex(6)> Elixir.Test2.mult(2,3)
+6
+iex(7)> Elixir.Test2.mult(3,3)
+9
+```
+
+Si el segundo parámetro es un `1` se ejecuta la primera función. Si es un `2` se ejecuta la segunda. En otro caso se ejecuta la tercera. Y esto tan simple es **Pattern Matching**.
+
+Es importante recalcar, que el orden de las declaraciones influye. Por ejemplo, cambiemos el orden de nuestras funciones `mult`:
+
+```elixir
+defmodule Elixir.Test2 do    
+  def mult(a, b) do
+    a * b
+  end  
+  
+  def mult(a, 1) do
+    a * 1
+  end
+    
+  def mult(a, 2) do
+    a * 2
+  end
+end 
+```
+
+Si intentamos cargar el anterior ejemplo en `IEX` obtendremos el siguiente mensaje de error:
+
+```
+pattern-matching3.ex:6: warning: this clause cannot match because a previous clause at line 2 always matches
+pattern-matching3.ex:10: warning: this clause cannot match because a previous clause at line 2 always matches
+```
+
+La advertencia nos está indicando que la primera función es demasiado general y siempre se cumple, por lo que las otras dos funciones, nunca llegarán a ejecutarse.
+
+¿Parece fácil verdad? Lo es, pero es que Elixir, va todavía más allá.
+
+## El operador match
+
+En Elixir, el símbolo `=` no se utiliza de la misma manera que en otros lenguajes. De hecho se conoce como *match operator*. Según la experiencia que tenemos en otros lenguajes, 
+podríamos pensar que si hacemos `x=1` estamos asignando un valor `1` a la variable `x`, pero esto en Elixir no es así. Veamos un ejemplo en `IEX`:
+
+```
+iex(6)> x=1
+1
+iex(7)> 1=x
+1
+iex(8)> 2=x
+** (MatchError) no match of right hand side value: 1
+```
+
+En la última línea recibimos un error, porque con `2=x` no conseguimos hacer un *match* válido. Y es que en la primera línea Elixir enlaza `x` y `1`, por lo que la segunda sentencia es válida.
+
+Este operador, también funciona con enlaces más complejos. Por ejemplo, con tuplas:
+
+```
+iex(9)> {a, b, c} = {1, "elixir", "cylon"}
+{1, "elixir", "cylon"}
+
+iex(10)> a
+1
+
+iex(11)> b
+"elixir"
+
+iex(12)> c
+"cylon"
+```
+
+O con listas:
+
+```
+iex(13)> [x, y, z] = [8, 9, 10]
+'\b\t\n'
+
+iex(14)> x
+8
+
+iex(15)> y
+9
+
+iex(16)> z
+10
+```
+
+Con el operador `_` podemos ignorar valores. Por ejemplo:
+
+```
+iex(19)> list = [1, 2, 3]
+[1, 2, 3]
+
+iex(20)> [1, 2, _] = list
+[1, 2, 3]
+
+iex(21)> [1, 4, _] = list
+** (MatchError) no match of right hand side value: [1, 2, 3]
+
+iex(21)> [1, _, _] = list
+[1, 2, 3]
+```
+
+Primero hemos enlazado `lista` con `[1, 2, 3]`, y después hemos hecho algunas pruebas. Siempre que tengamos un signo `_` 
+le estaremos diciendo a Elixir, que no nos importa que valor aparezca ahí. Si los demás valores concuerdan se cumplirá el *pattern matching*.
+
+Para finalizar la entrada, un ejemplo para enteder bien el operador *match* lo leí en el libro [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir). 
+Y es que debemos pensar en este operador no como un signo igual típico de otros lenguajes, si no como el que nos encontramos en una función matemática del tipo
+`x = a + 1`. Es decir que estamos diciendo que `x` y `a + 1` tienen el mismo valor.

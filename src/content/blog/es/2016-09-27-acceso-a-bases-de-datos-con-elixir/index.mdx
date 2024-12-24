@@ -1,0 +1,189 @@
+---
+title: 'Acceso a base de datos con Elixir'
+description: 'Acceso a base de datos con Elixir'
+date: '2016-09-27'
+cover: '../images/quite-old.png'
+---
+
+Cuando se habla de programación funcional, siempre se habla de **inmutabilidad**. Utilizar un lenguaje de este tipo significa que no vas a poder cambiar valores en estructuras de datos existentes, que no existen las variables, y que una función que recibe los mismos parámetros, siempre devuelve el mismo resultado. Pero al final los datos que maneja una aplicación, hay que persistirlos en algún sitio. Y lo normal en toda aplicación de bien, es hacerlo en una base de datos. **En el caso de Elixir, podemos hacerlo usando Ecto**.
+
+## ¿Qué es Ecto?
+
+Ecto es una librería que nos permite acceder a bases de datos de forma sencilla. Aunque tiene algo de *ORM*, en realidad no es tal, ya que todo lo que queramos hacer se lo tenemos que indicar especificamente. Si yo le tuviera que sacar un parecido, diría que es algo así como LINQ to SQL, aunque salvando las distancias. Por ejemplo, esta consulta está sacada de la documentación oficial:
+
+``` elixir
+ def pipe_query do
+    Weather
+    |> where(city: "Kraków")
+    |> order_by(:temp_lo)
+    |> limit(10)
+    |> Repo.all
+  end
+```
+
+Vamos que si has trabajado con el LINQ de .NET seguro que la forma de utilizar Ecto para recuperar datos, te resultará familiar.
+
+En el ejemplo `Weather`, es una estructura definida, que luego se persistirá en base de datos. En Ecto se conocen como *esquemas*. Sacado de la documentación de Ecto, el esquema de `Wheather` sería el siguiente:
+
+``` elixir
+defmodule Sample.Weather do
+  use Ecto.Schema
+
+  schema "weather" do
+    field :city     # Defaults to type :string
+    field :temp_lo, :integer
+    field :temp_hi, :integer
+    field :prcp,    :float, default: 0.0
+  end
+end
+```
+
+## Configurando Ecto para usarlo en nuestra aplicación
+
+Lo primero, lógicamente, es añadir Ecto al proyecto, para lo cual deberemos añadir algunas dependencias a nuestro archivo `mix.ex`:
+
+``` elixir
+defp deps do
+  [{:ecto, "~> 1.0"},
+   {:postgrex, ">= 0.0.0"}]
+end
+```
+
+En el ejemplo estamos usando `~>` para definir la versión de Ecto que se utilizará. En este caso le estamos diciendo que utilice cualquier versión de Ecto superior a la 1.0, pero menor a la 1.1. 
+
+También vemos que estamos usando `postgrex` que e la librería utilizada para gestionar bases de datos **PostgreSQL**. Con el `>= 0.0.0` estamos diciendo que se utilice la última versión del driver de **PostgreSQL** disponible.
+
+En mi caso voy a utilizar MongoDb, así que la configuración es ligeramente distinta. En este caso la configuración sería así:
+
+``` elixir
+defp deps do
+  [{:ecto, "~> 1.0"},
+   {:mongodb_ecto, "~> 0.1"}]
+end
+```
+
+> **Nota:** Existe una versión 2 de Ecto, pero todavía no es compatible con **MongoDB** así que yo voy a usar para los ejemplos la versión 1. Si usáis *PostgreSQL*, podéis utilizar la versión 2, y los pasos de configuración no deberían diferir mucho de los que cuento aquí. 
+
+Una vez  tengamos el ar archivo `mix.ex` configurado, deberemos ejecutar el comando `mix deps.get` para descargar las dependencias de internet.
+
+También deberemos añadir Ecto y la librería para acceder a **MongoDB** a la sección `application` de nuestro archivo `mix.ex`.
+
+``` elixir
+def application do
+    [applications: [:logger, :ecto, :mongodb_ecto]
+     mod: {Repository, []}]
+end
+```
+
+Sin entrar mucho en detalle esto se hace para que Elixir ejecute los procesos necesarios para ejecutar la aplicación. A la hora de ejecutar nuestro repositorio, Elixir utilizará `logger`, `ecto` y `mongodb_ecto`. Además con `mod` le diremos que a la hora de arrancar la aplicación, deberá realizar una acción especial. La acción especial la definimos en el procedimiento `start` del archivo `repository.ex` que añadiremos en el directorio *lib*.
+
+``` elixir
+defmodule Repository do
+
+  use Application
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    children = [
+      worker(Repository.Repo, []),
+    ]
+
+    opts = [strategy: :one_for_one, name: Repository.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+
+end
+
+```
+
+Todo esto se hace para configurar **OTP**, y hacer que Elixir ejecute los procesos necesarios para iniciar la aplicación. La parte de **OTP** da para escribir varios libros de los gordos (de hecho hay varios), así que no voy a entrar en más de talles de momento. Solo deciros que *OTP* (*Open Telecom Platform*), es un conjunto de librerías que permiten a Erlang (sobre el que funciona Elixir) ejecutar aplicaciones robustas y tolerantes a fallos. Para lo que estamos haciendo podemos decir que nuestra aplicación será un **Supervisor** que se ocupará de que se lancen los procesos necesarios para su ejecución.
+
+En el código anterior, podemos ver que estamos usando `Repository.Repo`, pero todavía no lo tenemos creado. Así que vamos a hacerlo ahora. Para ello tenemos un comando que nos será de ayuda:
+
+``` 
+mix ecto.gen.repo -r Repository.Repo
+```
+Y ya casi lo tenemos. Podemos ver que nuestro archivo `config.ex` ha sido modificado con los parámetros necesarios para conectar a una base de datos. Nosotros lo vamos a modificar, añadiendo algunas líneas y actualizando otras:
+
+``` elixir
+use Mix.Config
+
+config :repository, ecto_repos: [Repository.Repo]
+
+config :repository, Repository.Repo,
+  adapter: Mongo.Ecto,
+  database: "products_db",
+  hostname: "localhost"
+```
+
+La primera línea con un `config` hay que añadirla. Las siguientes las añade el comando que hemos ejecutado, aunque hay que personalizarlas para acceder a la base de datos que vayamos a usar.
+
+Y para acabar, solo comprobar, que el comando, nos ha creado un archivo en `lib/repository` llamado `repo.ex`. Ahí está el repositorio que se utilizará para las consultas de Ecto.
+
+``` elixir
+defmodule Repository.Repo do
+  use Ecto.Repo, otp_app: :repository
+end
+```
+
+## Utilizando Ecto
+
+Y ahora es cuando viene el pollo del arroz con pollo. Una vez está todo configurado, podemos usar nuestra base de datos. Lo primero que habría que hacer sería crear la base de datos con el comando `mix ecto.create`. Luego tendríamos que crear la tabla donde vamos a persistir los datos, pero como vamos a usar **MongoDB** esto no es necesario. Ventajas de utilizar una base de datos sin esquema. Si usáis PostgreSQL, podéis echarle un ojo [a las Migraciones](https://hexdocs.pm/ecto/Ecto.Migration.html), que  permitirán crear las tablas desde Elixir.
+
+En cualquier caso, y como es lógico, **debemos tener una base de datos configurada y funcionando**. Elixir no hace magia. 
+
+Lo que si nos va a hacer falta será un esquema, con nuestro modelo de datos. En nuestro caso será el siguiente:
+
+``` elixir
+defmodule Repository.Product do
+  use Ecto.Schema
+  
+  @primary_key {:id, :binary_id, autogenerate: true}
+
+  schema "products" do
+    field :asin 
+    field :title
+    field :text_price
+  end
+end
+```
+
+> **Nota importante**: en el caso de usar MongoDB, tenemos que definir el campo `:id` como clave principal como se ve en el ejemplo. Este campo se autogenera siempre en MongoDB y si no lo añadimos así, Ecto nos devuelve una excepción al intentar insertar datos.
+
+
+Y una vez creado, ya podremos utilizarlo para insertar datos en nuestro MongoDB:
+
+``` elixir
+iex(1)> a = %Repository.Product{asin: "122222", title: "Lenovo laptop", text_price: "EUR 275.45"}
+
+%Repository.Product{__meta__: #Ecto.Schema.Metadata<:built>, asin: "122222",
+ id: nil, text_price: "EUR 275.45", title: "Lenovo laptop"}
+
+iex(2)> Repo.insert(a)
+
+23:17:29.336 [debug] INSERT coll="products" document=[asin: "122222", text_price: "EUR 275.45", title: "Lenovo laptop"] [] OK query=68.9ms
+{:ok,
+ %Repository.Product{__meta__: #Ecto.Schema.Metadata<:loaded>, asin: "122222",
+  id: "57e9906946801725a47dab74", text_price: "EUR 275.45",
+  title: "Lenovo laptop"}}
+```
+
+Y una vez insertado el producto, vamos a comprobar que se puede recuperar con una consulta.
+
+``` elixir
+iex(11)> import Ecto.Query
+Ecto.Query
+iex(12)> alias Repository.Product                                         
+Repository.Product
+iex(13)> alias Repository.Repo                                  
+Repository.Repo
+iex(14)> Product |> where(asin: "122222") |> Repo.all           
+
+23:29:53.644 [debug] FIND coll="products" query=[{"$query", [asin: "122222"]}, {"$orderby", %{}}] projection=%{_id: true, asin: true, text_price: true, title: true} [] OK query=0.9ms
+[%Repository.Product{__meta__: #Ecto.Schema.Metadata<:loaded>, asin: "122222",
+  id: "57e9906946801725a47dab74", text_price: "EUR 275.45",
+  title: "Lenovo laptop"}]
+```
+
+Y efectivamente, después de todo este jaleo, tenemos Ecto trabajando contra nuestra base de datos corriendo MongoDB. Casi nada.
