@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 
-const SOURCE_DIR = '../_posts/2016';
+const SOURCE_DIR = '../_posts/2018';
 const TARGET_DIR = '../src/content/blog/es';
 
 function normalizeString(str) {
