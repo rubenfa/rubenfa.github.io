@@ -14,7 +14,7 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 ---
 
 <Base {title} {description}>
-  <article>
+  <article lang="es">
     <slot />
   </article>
 </Base>
@@ -28,6 +28,11 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
 
     p {
       font-weight: 400;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphenate-limit-chars: 6 3 3;
     }
 
     h2 {
