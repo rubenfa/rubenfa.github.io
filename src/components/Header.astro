@@ -2,8 +2,8 @@
 // Header & Navigation UI displayed on each page.
 
 import LocaleSelect from "@/components/i18n/LocaleSelect.astro";
-import { Image } from "astro:assets";
 import { useTranslations, type Lang } from "@/i18n";
+import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 const t = useTranslations(Astro.currentLocale as Lang);
 
@@ -31,20 +31,18 @@ const isActive = (path: string) =>
         <a
           href={getRelativeLocaleUrl(locale, "/blog")}
           class={isActive("/blog") ? "active" : null}
-        >
+        > 
           {t({ en: "Blog", es: "Blog" })}
         </a>
       </li>
-
       <li>
         <a
-          href="https://github.com/psephopaiktes/astro-i18n-starter"
-          target="_blank"
+          href={getRelativeLocaleUrl(locale, "/aboutme")}
+          class={isActive("/aboutme") ? "active" : null}
         >
-          GitHub
-          <span class="material-icons-sharp dir">open_in_new</span>
+          {t({ en: "About me", es: "Sobre mí" })}
         </a>
-      </li>
+      </li>      
     </ul>
   </nav>
 </header>
