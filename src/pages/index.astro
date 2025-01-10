@@ -53,7 +53,7 @@ const defaultLocale = DEFAULT_LOCALE;
     <noscript>
       <meta
         http-equiv="refresh"
-        content={`0;url=${baseUrl + DEFAULT_LOCALE}/`}
+        content={`0;url=${baseUrl}en/blog/1/`}
       />
     </noscript>
 
@@ -62,17 +62,16 @@ const defaultLocale = DEFAULT_LOCALE;
         localStorage.selectedLang &&
         langs.includes(localStorage.selectedLang)
       ) {
-        location.href = `${baseUrl + localStorage.selectedLang}/`;
+        const path = localStorage.selectedLang.startsWith('es') 
+          ? 'es/blog/1/' 
+          : 'en/blog/1/';
+        location.href = `${baseUrl}${path}`;
       } else {
         const browserLang = navigator.language.toLowerCase();
-
-        if (langs.includes(browserLang)) {
-          location.href = `${baseUrl + browserLang}/`;
-        } else if (langs.includes(browserLang.split("-")[0])) {
-          location.href = `${baseUrl + browserLang.split("-")[0]}/`;
-        } else {
-          location.href = `${baseUrl + defaultLocale}/`;
-        }
+        const path = browserLang.startsWith('es') 
+          ? 'es/blog/1/' 
+          : 'en/blog/1/';
+        location.href = `${baseUrl}${path}`;
       }
     </script>
   </head>
