@@ -1,0 +1,116 @@
+---
+title: 'Compartiendo código en Elixir'
+description: 'Compartiendo código en Elixir'
+date: '2016-07-21'
+cover: '../../images/quite-old.png'
+---
+
+Cuando uno viene de programar en C#, piensa que utilizar código de otros proyectos o `namespaces` será igual de sencillo en todos los lenguajes. Pero resulta que hay lenguajes como Elixir en los que la cosa no es tan sencilla y existen varias maneras de compartir código entre módulos. Sin duda es una de las cosas que más me ha costando pillar (igual es que soy un zote), así que he pensado en escribirlo para aclararme yo, y de paso aclarar a quién pueda leerlo. Ojo, no es que sea difícil, pero hay que tener en cuenta que en Elixir existen las `macros` y que no existe el concepto de `namespace`. Así que hay más métodos para importar que el clásico `using` de C#.
+
+## Alias
+
+Esta es sin duda la directiva más fácil de entender. Aunque no se utiliza para compartir código, si puede simplificar mucho lo que escribamos. En Elixir, coomo he dicho antes, no existen `namespaces`, pero se pueden prefijar los módulos para tenerlos organizados. Imaginando el siguiente módulo:
+
+```elixir
+defmodule Console.Writer do
+  def write_line(text) do
+    IO.puts(text)
+  end
+end
+```
+
+El módulo es sencillo de entender. Cuando desde otro módulo, queramos escribir algo en la consola, solo tendremos que escribir `Console.Writer.write_line "mensaje en pantalla"`. Si solo lo tenemos que escribir una vez, no hay problema. ¿Y si lo utilizamos muchas veces? Entonces es cuando `alias` nos puede servir de ayuda. Por ejemplo si al principio de nuestro módulo, escribimos lo siguiente:
+
+```elixir
+alias Console.Writer 
+```
+
+Nos bastará con poner `Writer.write_line "mensaje en palntalla"`, para hacerlo funcionar. Pero si todavía queremos reducir más, o poner otro nombre diferente podemos hacer esto:
+
+```elixir
+alias Console.Writer as: console
+```
+Ahora usar nuestro `Writer` será tan sencillo como escribir `console.write_line "mensaje en pantalla"`
+
+## Import
+
+Con `import` podemos hacer algo parecido a `alias`, pero en este caso además importamos las funciones para que podamos utilizarlas directamente en nuestros módulos. Se ve mejor con un ejemplo. Si abrimos `iex` y directamente tratamos de usar la librería `Enum`, pasará esto:
+
+```
+iex(1)> sort [2, 1, 5]
+** (CompileError) iex:1: undefined function sort/1
+```
+
+Si hacemos `Enum.sort [2, 1, 4]` el código funcionará, pero como vemos estamos obligados a escribir el nombre completo. En cambio con un `import` al principio funcionará sin problemas:
+
+```
+iex(1)> import Enum
+Enum
+iex(2)> sort [2,1,5]
+[1, 2, 5]
+```
+
+Ahora ya no hace falta que escribamos toda la ruta de las funciones que hay en `Enum` (como `sort`), ya que estas funciones están disponibles en nuestro módulo, como si las hubiéramos programado nosotros.
+
+Con `import` también podemos indicar qué funciones queremos importar, evitando cargar todas.
+
+```elixir
+import Integer only: :macros #importa solo macros de la librería Integer
+import Integer only: :functions #importa solo las funciones de la librería Integer
+import Enum only: [sort:1] #importa solo la función sort con "arity" 2 (que recibe dos parámetros) de la librería Enum
+```
+
+## Require 
+
+En Elixir podemos utilizar `macros` para ampliar el lenguaje. De hecho Elixir está lleno de macros que podremos usar y aquí es cuando entra la directiva `require`.
+
+Para que una macro funcione al usarla desde nuestros módulos, le tendremos que decir al compilador que necesitamos tenerla lista y compilada, antes de ejecutar nuestro código. Por ejemplo para utilizar la macro `is_even` de la librería Integer, antes tendremos que hacer un `require`.
+
+```elixir
+defmodule Enteros do
+  require Integer
+
+  def es_par(num) do
+    Integer.is_even(num)
+  end
+end
+```
+
+Si no lo hacemos Elixir nos devolverá el error *"you must require Integer before invoking the macro Integer.is_even/1"*. En definitiva, para usar macros, nos tenemos que asegurar de que están cargadas antes de utilziarlas, y esto lo hacemos con `require`.
+
+
+## Use
+
+En este caso `use` se trata de una macro, que está relacionada con `require`. Si utilizamos `use` en un módulo, nos aseguramos de primero hacer un `require` y luego llamar a la función `__using__` para inicializar algún tipo de estado o importar librerías asociadas. Esta función es una especie de constructor, salvando las distancias.
+
+Un caso típico es el del framework de test que podemos usar en Elixir. Así, cuando hacemos esto:
+
+```elixir
+defmodule AssertionTest do
+  use ExUnit.Case, async: true
+
+  test "always pass" do
+    assert true
+  end
+end
+```
+
+El compilador acaba traduciéndolo en esto:
+
+```elixir
+defmodule AssertionTest do
+  require ExUnit.Case
+  ExUnit.Case.__using__([async: true])
+
+  test "always pass" do
+    assert true
+  end
+end
+```
+
+La función `__using__` la podremos definir en cualquiera de nuestros módulos para poder llamarla al utilizar `use`. 
+
+
+## Conclusión
+
+En definitiva, Elixir tiene varias formas diferentes de compartir código entre módulos, y es improtante que las conozcamos todas. Aunque algunas como `alias` e `import` son sencillas de entender, `use` y  `require` son algo más complejas, ya que implican la utilización de macros. Y espero poder hablaros de macros en un futuro no muy lejano.

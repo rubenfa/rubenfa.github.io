@@ -1,0 +1,12 @@
+---
+import { LOCALES, type Lang } from "@/i18n";
+
+const locale = Astro.currentLocale as Lang;
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+
+return Astro.redirect(`/${locale}/blog/1`);
+---

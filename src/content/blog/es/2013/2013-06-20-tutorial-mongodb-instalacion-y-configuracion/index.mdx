@@ -1,0 +1,200 @@
+---
+title: 'Tutorial MongoDB. Instalación y configuración'
+description: 'Tutorial MongoDB. Instalación y configuración'
+date: '2013-06-20'
+cover: '../../images/quite-old.png'
+---
+
+[![logo\_10gen\_mongodb1](http://lh6.ggpht.com/-sOFuOMBtNm4/UcIoiQk6jBI/AAAAAAAAAz0/5lIzCghBMK8/logo_10gen_mongodb1_thumb.png?imgmax=800 "logo_10gen_mongodb1")](http://lh4.ggpht.com/-55DoRJE-qY8/UcIoay823oI/AAAAAAAAAzs/ETO8lK-cmSI/s1600-h/logo_10gen_mongodb1%25255B2%25255D.png)[La
+semana pasada hice una breve
+introducción](https://charlascylon.com/post/61794334554/tutorial-mongodb-introducción-a-nosql-y-las-bases.html)
+a lo que son las bases de datos documentales y como éstas almacenan los
+documentos. Como el movimiento se demuestra andando vamos a ejecutar una
+instancia de **MongoDB**, para en artículos posteriores poder realizar
+operaciones sobre ella.
+
+### Instalación de MongoDB
+
+Seguramente este sea el proceso más sencillo de todos. Lo primero que
+tendremos que hacer [es bajar MongoDB para nuestro sistema
+operativo](http://www.mongodb.org/downloads). La versión para entornos
+de producción (Production Release), es ahora mismo la versión **2.4.4,**
+y como podéis ver hay versiones para varios sistemas.
+
+Aunque los ejemplos los voy a realizar sobre un Windows 8 64 bits, no
+creo que tengáis ningún problema para simularlos en cualquier otro
+sistema. También tengo que destacar que voy a utilizar **PowerShell**
+para realizar los ejemplos, pero si lo preferís, podéis utilizar la
+consola tradicional de Windows. No obstante os recomiendo usar
+PowerShell ya que es más versátil, y mucho más potente. [Podéis leer el
+post de la semana
+pasada](http://charlasconuncylon.blogspot.com.es/2013/06/mejorando-la-consola-de-windows-con.html),
+dónde indico como instalarlo y ponerlo a funcionar junto con **ConEmu**.
+
+Una vez descargado el software, vamos con la instalación. Abrimos el
+archivo comprimido que hemos descargado y extraemos el contenido del
+directorio *bin* a una ruta conocida. Yo por ejemplo lo he hecho en mi
+unidad *D*.
+
+Y con esto **ya hemos instalado MongoDB.** ¿Difícil verdad?
+
+### Ejecución de MongoDB
+
+Como acabamos de ver, MongoDB no requiere de ningún proceso de
+instalación. De hecho, para arrancar una instancia con los valores por
+defecto, tampoco se necesita configuración.
+
+Si queremos arrancar un proceso de MongoDB bastará con ir a la ruta
+dónde hemos descomprimido los archivos y ejecutar el comando
+
+```
+mongod
+```
+
+Si tenemos activado el firewall en Windows, es posible que el sistema
+operativo nos pregunte si queremos dar permisos a la aplicación.
+
+Con ese simple comando, tendremos el servicio de MongoDB ejecutándose en
+el puerto por defecto, que es el 27017. Para comprobar que todo funciona
+correctamente, abrimos otra consola y ejecutamos el comando ***mongo***,
+que nos devolverá los siguientes resultados
+
+```
+PS D:\Software\mongodb> ./mongo MongoDB shell version: 2.4.4 connecting to: test > 
+```
+
+El comando *mongo* es el que se utiliza para **iniciar la consola o
+shell** de MongoDB. Desde aquí podremos lanzar consultas a la base de
+datos. Como estamos en el mismo servidor y estamos usando el puerto por
+defecto, no ha sido necesario añadir ningún parámetro adicional.
+
+### Configuración avanzada del proceso de MongoDB
+
+Buscando en el directorio raíz de la unidad en la que habéis ejecutado
+el comando *mongod* (en mi caso D), podréis ver que se ha creado un
+directorio llamado *data*. Si lo abrimos veremos que dentro hay un
+directorio llamado *db*. Este directorio es en el que se guardan los
+archivos de nuestra base de datos.
+
+Para cambiar la ruta de dicho directorio, deberemos lanzar el proceso de
+MongoDB con el parámetro *dbpath*
+
+```
+PS D:\Software\mongodb> ./mongod --dbpath d:\software\mongodb\databases\db1
+```
+
+Al ejecutar este comando, se nos mostrará un error diciendo que la ruta
+no existe. Así que la creamos
+
+```
+PS D:\Software\mongodb> mkdir databases; mkdir databases\db1 
+```
+
+Si volvemos a ejecutar el comando *mongod* con la ruta, el proceso se
+lanzará sin problemas.
+
+Ahora imaginemos que queremos lanzar otro proceso *mongod*. Para ello
+tendremos que primero crear un nuevo directorio para la nueva base de
+datos
+
+```
+PS D:\Software\mongodb> mkdir .\databases\db2
+```
+
+Y luego lanzaremos el nuevo proceso, pero apuntando a la nueva ruta y
+cambiando el puerto, ya que el puerto por defecto estará siendo usado
+por el proceso *mongod* que hemos arrancado antes.
+
+```
+PS D:\Software\mongodb> ./mongod --dbpath d:\software\mongodb\databases\db1 --port 27018
+```
+
+Mongod acepta multitud de parámetros, que podéis consultar en la página
+oficial de MongoDB. Si queréis ver la lista en la consola, bastará con
+ejecutar un mongod —help.
+
+De todos los parámetros listados, además de los ya vistos, vamos a
+utilizar uno más: *smallfiles*.
+
+```
+PS D:\Software\mongodb> ./mongod --dbpath d:\software\mongodb\databases\db1 –smallfiles
+```
+
+Con el parámetro *smallfiles*, lo que decimos es que queremos reservar
+menos espacio para los archivos de la base de datos, ahorrando un poco
+de espacio en disco. Teniendo en cuenta que estamos haciendo pruebas,
+este parámetro puede sernos útil. En entornos de producción dejaremos
+los valores por defecto.
+
+### Instalación de MongoDB como servicio de Windows
+
+Aunque ejecutar un comando es bastante sencillo, nos puede interesar que
+el proceso de la base de datos se lance automáticamente al iniciar el
+equipo.Primero tendremos que crear un directorio para guardar el ***log
+de eventos*** ya que al iniciar desde un servicio Windows, perderemos la
+información que nos muestra la consola.
+
+```
+PS D:\Software\mongodb> mkdir databases\db1\logs
+```
+
+También es necesario crear un directorio para la configuración de la
+base de datos
+
+```
+PS D:\Software\mongodb> mkdir databases\db1\cfg
+```
+
+ En dicho directorio, vamos a crear un archivo que se llame
+***mongod.cfg*** y que contenga la líneas
+
+```
+logpath=d:\software\mongodb\databases\db1\logs\mongo.logport=27666 dbpath=d:\software\mongodb\databases\db1
+```
+
+*Logpath* será la ruta al archivo dónde se guardara el registro de
+eventos, *port* el puerto en el que se ejecutará el proceso y *dbpath*,
+como ya hemos visto, la ruta dónde se guardarán los archivos de la base
+de datos.
+
+```
+PS D:\Software\mongodb> ./mongod --config "d:\software\mongodb\databases\dbin\cfg\mongod.cfg" –install
+```
+
+Este comando lo deberemos ejecutar como administrador, o nos devolverá
+un error. Una vez ejecutado, y si no hay errores, desde ese momento
+tendremos disponible un nuevo servicio llamado MongoDB, que podremos
+configurar para ejecutarse automáticamente o de forma manual.
+
+\
+\
+[![mongodb\_servicio](http://lh6.ggpht.com/-IwGSmTz0Cy0/UcIopzdEB1I/AAAAAAAAA0E/owo9r8Wl-7M/mongodb_servicio_thumb%25255B3%25255D.png?imgmax=800 "mongodb_servicio")](http://lh6.ggpht.com/-PB_qW7ZcFTA/UcIoknGRBNI/AAAAAAAAAz8/hJKn_BHtgow/s1600-h/mongodb_servicio%25255B5%25255D.png)\
+
+Una vez iniciado podremos conectarnos a la consola de MongoDB con el
+siguiente comando (añadimos el puerto ya que la base de datos no está en
+el puerto por defecto).
+
+```
+PS D:\Software\mongodb> ./mongo localhost:27666 MongoDB shell version: 2.4.4 connecting to: localhost:27666/test >  
+```
+
+### Conclusión
+
+Podemos ver que ejecutar e instalar es bastante sencillo. Si solo
+queremos hacer algunas pruebas, **será suficiente con los comandos por
+defecto**. Si queremos tener un servidor de desarrollo para poder
+ejecutar consultas y conectarnos habitualmente, puede sernos útil
+instalar **MongoDB como servicio de Windows**.
+
+En definitiva, puesto que ya sabemos como arrancar el servicio *mongod*,
+lo siguiente será conectarnos a la base de datos para realizar
+consultas. No os perdáis las próximas entregas.
+
+
+
+* * * * *
+
+* * * * *
+
+*Recuerda que puedes ver el índice del tutorial y acceder a todos los
+artículos de la serie [desde aquí.](https://charlascylon.com/tutorialmongo)*
