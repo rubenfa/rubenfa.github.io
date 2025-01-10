@@ -51,17 +51,17 @@ es muy sencillo y basta con agregar los siguiente parámetros al arranque
 del programa: 
 
 
-{% highlight powershell %}
+```powershell
 "C:\Program Files\ConEmu\ConEmu64.exe" /config "shell" /dir "c:\" /cmd powershell -new_console:n
-{% endhighlight %}
+```
 
 De todas formas si queremos abrir una consola normal, podremos hacerlo
 en cualquier momento si al abrir insertamos:
 
 
-{% highlight powershell %}
+```powershell
 C:\Windows\System32\cmd.exe
-{% endhighlight %}
+```
 
 ### Añadir Notepad++ para editar texto
 
@@ -95,34 +95,34 @@ así que vamos a ello. Para ver la ruta dónde está nuestro perfil, basta
 con ejecutar el comando
 
 
-{% highlight powershell %}
+```powershell
 $profile
-{% endhighlight %}
+```
 
 Esto nos indica dónde está nuestro perfil, pero es posible que la ruta
 no exista. Cosa que podemos comprobar con el comando
 
 
-{% highlight powershell %}
+```powershell
 test-path $profile
-{% endhighlight %}
+```
 
 Este comando devuelve true si el archivo existe o false si no existe. En
 cualquier caso ahora vamos a abrir el perfil con el comando
 
 
-{% highlight powershell %}
+```powershell
 notepad $profile
-{% endhighlight %}
+```
 
 Lo abrimos con Notepad, porque aun no tenemos ningún otro editor
 configurado. Si el archivo no existe PowerShell nos preguntará si
 queremos crearlo. Le diremos que sí y añadiremos las siguientes líneas:
 
 
-{% highlight powershell %}
+```powershell
 $NOTEPADPLUS = "C:\Program Files (x86)\Notepad++\notepad++.exe"Set-Alias notepadp $NOTEPADPLUS
-{% endhighlight %}
+```
 
 
 Las líneas son bastante sencillas. Estamos declarando una variable
@@ -141,26 +141,26 @@ script lo hemos creado nosotros, así que deberíamos poder ejecutarlo. Si
 ejecutamos: 
 
 
-{% highlight powershell %}
+```powershell
 Get-Help About_Signing
-{% endhighlight %}
+```
 
 Obtendremos mucha información sobre la firma de scripts. Nosotros en
 este caso ejecutaremos simplemente el comando:
 
 
-{% highlight powershell %}
+```powershell
 Set-ExecutionPolicy RemoteSigned
-{% endhighlight %}
+```
 
 Que nos permitirá ejecutar scripts creados localmente. Una vez hecho
 esto, cerramos y abrimos ConEmu, y veremos que el error ya no aparece. Y
 ahora si ejecutamos el alias se nos abrirá Notepad++ e incluso nos
 creará el archivo si se lo pasamos el nombre como parámetro:
 
-{% highlight powershell %}
+```powershell
 notepadp test.sql
-{% endhighlight %}
+```
 
 ### Añadir nano para tener un editor de texto interno
 
@@ -176,9 +176,9 @@ Así que bajamos nano y lo descomprimimos en una ruta conocida. No es
 necesario instalarlo. Y siguiendo los mismos pasos que hemos seguido
 antes, añadimos un alias para nano en nuestro perfil de PowerShell.
 
-{% highlight powershell %}
+```powershell
 $NANOPATH = "C:\Program Files (x86)\Nano\nano.exe"Set-Alias nano $NANOPATHFunction Edit-Profile{    nano $profile}
-{% endhighlight %}
+```
 
 La idea es la misma que con Notepad++. Creamos un alias llamado nano
 (podéis poner lo que queráis) que se ejecutará desde cualquier consola
@@ -186,9 +186,9 @@ PowerShell. Y como bonus track, sobreescribimos la funcionalidad de la
 función Edit-Profile para que use nano. Así que si en PowerShell
 ejecutamos:
 
-{% highlight powershell %}
+```powershell
 Edit-Profile
-{% endhighlight %}
+```
 
 Veremos nuestro perfil dentro de PowerShell en un editor nano.
 
