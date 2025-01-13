@@ -6,7 +6,7 @@ import redirects from './redirects.json';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-i18n-starter.pages.dev',
+  site: 'https://blog.rubenfa.me',
   integrations: [mdx(), sitemap(), icon()],
   i18n: {
     defaultLocale: 'en',
