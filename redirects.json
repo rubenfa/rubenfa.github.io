@@ -3,93 +3,257 @@
     "status": 301,
     "destination": "/es/blog/2013/2013-01-25-volver-a-windows-7-desde-windows-8-regresar-al/"
   },
+  "/2013-04-26-cursos-gratuitos-sobre-mongodb": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-04-26-cursos-gratuitos-sobre-mongodb/"
+  },
+  "/2013-05-03-anade-parametros-que-es-gratis": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-05-03-anade-parametros-que-es-gratis/"
+  },
   "/2013-06-10-tutorial-mongodb-introduccion-a-nosql-y-las-bases": {
     "status": 301,
     "destination": "/es/blog/2013/2013-06-10-tutorial-mongodb-introduccion-a-nosql-y-las-bases/"
   },
-  "/2013-06-20-tutorial-mongodb-instalacion-y-configuración": {
+  "/2013-06-14-mejorando-la-consola-de-windows-con-conemu-y": {
     "status": 301,
-    "destination": "/es/blog/2013/2013-06-20-tutorial-mongodb-instalacion-y-configuración/"
+    "destination": "/es/blog/2013/2013-06-14-mejorando-la-consola-de-windows-con-conemu-y/"
   },
-  "/2013-07-03-tutorial-mongodb-operaciones-de-consulta": {
+  "/2013-06-20-tutorial-mongodb-instalacion-y-configuracion": {
     "status": 301,
-    "destination": "/es/blog/2013/2013-07-03-tutorial-mongodb-operaciones-de-consulta/"
+    "destination": "/es/blog/2013/2013-06-20-tutorial-mongodb-instalacion-y-configuracion/"
   },
-  "/2013-07-10-tutorial-mongodb-operaciones-de-consulta-avanzadas": {
+  "/2013-06-26-tutorial-mongodb-operaciones-de-consulta": {
     "status": 301,
-    "destination": "/es/blog/2013/2013-07-10-tutorial-mongodb-operaciones-de-consulta-avanzadas/"
+    "destination": "/es/blog/2013/2013-06-26-tutorial-mongodb-operaciones-de-consulta/"
   },
-  "/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de": {
+  "/2013-07-18-tutorial-mongodb-operaciones-de-actualizacion-de": {
     "status": 301,
-    "destination": "/es/blog/2013/2013-07-18-tutorial-mongodb-operaciones-de-actualización-de/"
+    "destination": "/es/blog/2013/2013-07-18-tutorial-mongodb-operaciones-de-actualizacion-de/"
   },
-  "/2013-07-25-tutorial-mongodb-operaciones-de-actualización-de-ii": {
+  "/2013-08-04-comprando-un-portatil-usado-pero-como-nuevo-en": {
     "status": 301,
-    "destination": "/es/blog/2013/2013-07-25-tutorial-mongodb-operaciones-de-actualización-de-ii/"
+    "destination": "/es/blog/2013/2013-08-04-comprando-un-portatil-usado-pero-como-nuevo-en/"
+  },
+  "/2013-10-02-mongodb-trucos-y-consejos-aplicaciones": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-10-02-mongodb-trucos-y-consejos-aplicaciones/"
+  },
+  "/2013-10-10-tutorial-mongodb-introduccion-aggregation-framework": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-10-10-tutorial-mongodb-introduccion-aggregation-framework/"
+  },
+  "/2013-10-17-tutorial-mongodb-pipelines-aggregation-i": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-10-17-tutorial-mongodb-pipelines-aggregation-i/"
   },
   "/2013-10-23-tutorial-mongodb-y-c-conexion-a-la-base-de-datos": {
     "status": 301,
     "destination": "/es/blog/2013/2013-10-23-tutorial-mongodb-y-c-conexion-a-la-base-de-datos/"
   },
+  "/2013-10-24-tutorial-mongodb-aggregation-framework-ii": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-10-24-tutorial-mongodb-aggregation-framework-ii/"
+  },
+  "/2013-11-05-tutorial-mongodb-operadores-expresion-ii": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-11-05-tutorial-mongodb-operadores-expresion-ii/"
+  },
+  "/2013-11-12-javascript-que-son-los-closures": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-11-12-javascript-que-son-los-closures/"
+  },
+  "/2013-11-14-tutorial-mongodb-operadores-expresion-iii": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-11-14-tutorial-mongodb-operadores-expresion-iii/"
+  },
+  "/2013-11-19-javascript-para-que-sirven-los-closures": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-11-19-javascript-para-que-sirven-los-closures/"
+  },
+  "/2013-11-21-tutorial-mongodb-aggregation-framework-operadores-iv": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-11-21-tutorial-mongodb-aggregation-framework-operadores-iv/"
+  },
   "/2013-11-28-tutorial-mongodb-mapreduce": {
     "status": 301,
     "destination": "/es/blog/2013/2013-11-28-tutorial-mongodb-mapreduce/"
+  },
+  "/2013-12-05-tutorial-mongodb-alta-disponibilidad-replicas": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-12-05-tutorial-mongodb-alta-disponibilidad-replicas/"
   },
   "/2013-12-10-mundo-laboral-desarrollador-pescadilla-muerde-cola": {
     "status": 301,
     "destination": "/es/blog/2013/2013-12-10-mundo-laboral-desarrollador-pescadilla-muerde-cola/"
   },
+  "/2013-12-10-windows-phone-introducion-mvvm-y-binding": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-12-10-windows-phone-introducion-mvvm-y-binding/"
+  },
+  "/2013-12-12-tutorial-mongodb-creacion-configuracion-replicas": {
+    "status": 301,
+    "destination": "/es/blog/2013/2013-12-12-tutorial-mongodb-creacion-configuracion-replicas/"
+  },
   "/2013-12-17-mongodb-trucos-y-consejos-campos-autoincrementales": {
     "status": 301,
     "destination": "/es/blog/2013/2013-12-17-mongodb-trucos-y-consejos-campos-autoincrementales/"
-  },
-  "/2014-01-09-tutorial-mongodb-trabajando-con-conjuntos-de": {
+  },  
+  "/2014-01-20-opinion-el-buscador-imperfecto": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-01-09-tutorial-mongodb-trabajando-con-conjuntos-de/"
+    "destination": "/es/blog/2014/2014-01-20-opinion-el-buscador-imperfecto/"
   },
-  "/2014-01-24-tutorial-mongodb-como-funciona-el-oplog-en-un": {
+  "/2014-01-20-opinión-el-buscador-imperfecto": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-01-24-tutorial-mongodb-como-funciona-el-oplog-en-un/"
+    "destination": "/es/blog/2014/2014-01-20-opinión-el-buscador-imperfecto/"
   },
-  "/2014-02-06-mongodb-trucos-y-consejos-opciones-de-la-consola": {
+  "/2014-01-30-tutorial-mongodb-explicando-el-sharding-con-una": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-02-06-mongodb-trucos-y-consejos-opciones-de-la-consola/"
+    "destination": "/es/blog/2014/2014-01-30-tutorial-mongodb-explicando-el-sharding-con-una/"
   },
-  "/2014-03-10-mongodb-comprobando-el-rendimiento-de": {
+  "/2014-02-20-muerte-al-tipo-de-sistemas-viva-el-tipo-de": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-03-10-mongodb-comprobando-el-rendimiento-de/"
+    "destination": "/es/blog/2014/2014-02-20-muerte-al-tipo-de-sistemas-viva-el-tipo-de/"
   },
-  "/2014-04-04-usando-elmah-con-mongodb": {
+  "/2014-02-28-imputacion-de-horas-vamos-a-contar-mentiras": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-04-04-usando-elmah-con-mongodb/"
+    "destination": "/es/blog/2014/2014-02-28-imputacion-de-horas-vamos-a-contar-mentiras/"
   },
-  "/2014-06-26-los-problemas-de-tener-un-cerebro-fuertemente": {
+  "/2014-02-28-imputación-de-horas-vamos-a-contar-mentiras": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-06-26-los-problemas-de-tener-un-cerebro-fuertemente/"
+    "destination": "/es/blog/2014/2014-02-28-imputación-de-horas-vamos-a-contar-mentiras/"
   },
-  "/2014-07-03-y-por-que-tengo-un-blog": {
+  "/2014-04-11-heartbleed-o-el-ejemplo-codigo-abierto-no-es-mas-seguro": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-07-03-y-por-que-tengo-un-blog/"
+    "destination": "/es/blog/2014/2014-04-11-heartbleed-o-el-ejemplo-codigo-abierto-no-es-mas-seguro/"
   },
-  "/2014-10-24-tutorial-mongodb-modificando-mapeo-class-maps-convention": {
+  "/2014-08-01-la-deuda-tecnica-aplicada-a-los-desarrolladores": {
     "status": 301,
-    "destination": "/es/blog/2014/2014-10-24-tutorial-mongodb-modificando-mapeo-class-maps-convention/"
+    "destination": "/es/blog/2014/2014-08-01-la-deuda-tecnica-aplicada-a-los-desarrolladores/"
   },
-  "/2015-12-06-aprendiendo-elixir-o-intentandolo": {
+  "/2014-10-02-tutorial-mongodb-eligiendo-una-sharding-key": {
     "status": 301,
-    "destination": "/es/blog/2015/2015-12-06-aprendiendo-elixir-o-intentandolo/"
+    "destination": "/es/blog/2014/2014-10-02-tutorial-mongodb-eligiendo-una-sharding-key/"
+  },
+  "/2014-11-18-windows-phone-ejecutando-aplicaciones-android": {
+    "status": 301,
+    "destination": "/es/blog/2014/2014-11-18-windows-phone-ejecutando-aplicaciones-android/"
   },
   "/2016-01-27-mis-progresos-aprendiendo-elixir": {
     "status": 301,
     "destination": "/es/blog/2016/2016-01-27-mis-progresos-aprendiendo-elixir/"
   },
+  "/2016-02-24-elixir-y-el-pattern-matching": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-02-24-elixir-y-el-pattern-matching/"
+  },
+  "/2016-03-02-los-atoms-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-03-02-los-atoms-en-elixir/"
+  },
+  "/2016-03-21-tipos-colecciones-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-03-21-tipos-colecciones-elixir/"
+  },
+  "/2016-06-17-ser-ingeniero-o-no-ser-informatico": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-06-17-ser-ingeniero-o-no-ser-informatico/"
+  },
+  "/2016-06-20-spacemacs-el-editor-perfecto-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-06-20-spacemacs-el-editor-perfecto-elixir/"
+  },
+  "/2016-06-29-instalando-spacemacs-en-windows": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-06-29-instalando-spacemacs-en-windows/"
+  },
+  "/2016-07-14-efecto-einstellung-ocultando-ideas-brillantes-tras-buenas-ideas": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-07-14-efecto-einstellung-ocultando-ideas-brillantes-tras-buenas-ideas/"
+  },
+  "/2016-07-21-compartiendo-codigo-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-07-21-compartiendo-codigo-en-elixir/"
+  },
+  "/2016-08-03-usando-estructuras-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-08-03-usando-estructuras-en-elixir/"
+  },
+  "/2016-09-11-todo-es-fabuloso": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-09-11-todo-es-fabuloso/"
+  },
+  "/2016-09-27-acceso-a-bases-de-datos-con-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-09-27-acceso-a-bases-de-datos-con-elixir/"
+  },
   "/2016-10-10-tecnicas-para-mejorar-tu-memoria": {
     "status": 301,
     "destination": "/es/blog/2016/2016-10-10-tecnicas-para-mejorar-tu-memoria/"
   },
+  "/2016-11-07-los-hypes-la-especializacion-y-que-aprender": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-11-07-los-hypes-la-especializacion-y-que-aprender/"
+  },
+  "/2016-11-30-behaviours-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-11-30-behaviours-en-elixir/"
+  },
+  "/2016-12-14-ojala-hubiese-tenido-un-mentor": {
+    "status": 301,
+    "destination": "/es/blog/2016/2016-12-14-ojala-hubiese-tenido-un-mentor/"
+  },
   "/2017-01-10-objetivos-para-2017": {
     "status": 301,
     "destination": "/es/blog/2017/2017-01-10-objetivos-para-2017/"
+  },
+  "/2017-01-25-protocols-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-01-25-protocols-en-elixir/"
+  },
+  "/2017-02-15-fail-fast": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-02-15-fail-fast/"
+  },
+  "/2017-03-01-productividad-con-gtd": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-03-01-productividad-con-gtd/"
+  },
+  "/2017-03-15-ecto-configurando-repositorio-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-03-15-ecto-configurando-repositorio-elixir/"
+  },
+  "/2017-03-29-jugando-con-strings-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-03-29-jugando-con-strings-en-elixir/"
+  },
+  "/2017-04-12-el-sindrome-del-impostor": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-04-12-el-sindrome-del-impostor/"
+  },
+  "/2017-05-10-dynamic-vs-static": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-05-10-dynamic-vs-static/"
+  },
+  "/2017-05-31-clausula-with-en-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-05-31-clausula-with-en-elixir/"
+  },
+  "/2017-06-13-tercera-edicion-codenares": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-06-13-tercera-edicion-codenares/"
+  },
+  "/2017-06-28-debugging-elixir": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-06-28-debugging-elixir/"
+  },
+  "/2017-09-13-en-continua-formacion": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-09-13-en-continua-formacion/"
+  },
+  "/2017-09-20-spacemacs-mi-configuracion-personal": {
+    "status": 301,
+    "destination": "/es/blog/2017/2017-09-20-spacemacs-mi-configuracion-personal/"
   },
   "/2017-10-11-libros-para-flipados": {
     "status": 301,
@@ -97,10 +261,14 @@
   },
   "/2018-01-03-objetivos-para-2018": {
     "status": 301,
-    "destination": "/es/blog/2018/2018-01-03-objetivos-para-2018"
+    "destination": "/es/blog/2018/2018-01-03-objetivos-para-2018/"
+  },
+  "/2018-01-24-ojala-hubiese-tenido-un-mentor-la-charla-episodio-i": {
+    "status": 301,
+    "destination": "/es/blog/2018/2018-01-24-ojala-hubiese-tenido-un-mentor-la-charla-episodio-i/"
   },
   "/2018-03-07-deep-work": {
     "status": 301,
     "destination": "/es/blog/2018/2018-03-07-deep-work/"
-  }
+  } 
 }
