@@ -1,0 +1,91 @@
+---
+title: 'Magic or frustration, my experience with code-generating AIs'
+description: 'Vibe coding won't work in the long run'
+date: '2025-04-14'
+cover: '../../../images/2025/ia-magic-frustration.jpeg'
+---
+
+Artificial intelligence is everywhere these days. AI here, AI there, it's impossible to escape it. And as programmers, the impact is even greater. AI-driven tools seem to be here to stay, and at the very least, we need to pay attention to them.
+
+I've been testing some of these tools over the past few months. **GitHub Copilot is part of my daily workflow at work**, but I've also been testing Cline for some personal projects. Overall, the experience has been positive, **although with some caveats**.
+
+But before getting into the details, let me explain each of these tools and how I use them.
+
+> **Important:** Both at work and in my personal projects, I typically use Elixir and Phoenix. Although AIs work quite well with this stack, some of the information in this article may not be accurate for other languages. So your experiences might be different.
+
+## GitHub Copilot
+
+I use Copilot from VS Code. Nothing unusual there. The integration with the editor is good, and it offers several features.
+
+- It can **generate code as you type** to improve your productivity. It's not perfect, and you generally have to modify what Copilot suggests a bit, but it's quite useful.
+- Within the code itself, you can select portions (functions, loops, etc.) to either modify the code by passing a prompt or to have it explain what the code does. I don't use the modification function much, but I've used the **ask what this section of code does** feature many times.
+- **Copilot Ask**. You can provide context (code files) to Copilot and ask questions to help you. It's useful for understanding something you're struggling with, or to search for alternative approaches to the solution you want to implement. It can be a good companion for rubber duck debugging.
+- **Copilot Edit**. You also provide context to Copilot, but in this case, you can request modifications in the form of a prompt. "I want to add tests for this function," or "I want to refactor the module to use simpler functions," or "I want to add a new parameter to the function that does such and such." Based on the prompt, Copilot will modify the existing code (or create new code) to meet the requirements you ask for. Along with auto-completion, this is the function I've used the most.
+
+Some of you might miss discussion of the _Agent_ or _agentive_ mode of VS Code and Copilot, which works similarly to other editors like Cursor or Windsurf. This functionality has been added to VS Code very recently, and I haven't been able to try it yet. For that, I've used the Cline extension, which I'll explain next.
+
+## Cline
+
+[Cline](https://cline.bot/) is an extension for VS Studio that incorporates the _agentive_ mode into the editor. In this case, you pass a prompt with information about what you want to implement, and **the agent does it by itself**. When you see it working, creating files, adding code, installing dependencies, and executing commands in the console, you can't help but think that these agents have something magical about them.
+
+It also has an _Ask_ mode where you can ask questions, and the agent itself will search for information in your code and help you.
+
+Cline allows you to use [OpenRouter](https://openrouter.ai/), so you can use practically any AI model on the market. Generally, you'll need to add money to your account to use most models, but some are free. **Prices vary significantly between models**, so it's not the same to use `Sonnet 3.5` as `Sonnet 3.7`, `GPT 4.5`, or `Gemini Flash 2.0`. You have to be careful not to burn through your budget.
+
+I've used this extension only for personal projects.
+
+## Magic or frustration
+
+As I mentioned earlier, using AIs for programming initially feels like magic. The idea of giving instructions in natural language and having the editor do the work seems incredible. The problem is that when you work with it for a while, **you realize that not everything is as wonderful or magical as it seems. And then the frustration begins**. You start to think that if you had done it yourself directly, you probably would have taken less time or the result would have been better. This doesn't mean the tool is useless, but it does mean that **you need an expert eye behind it to control things and prevent chaos**, as well as a series of good practices to be productive. Let me give you some examples and recommendations.
+
+### It programs like a developer would, but using brute force
+
+This is interesting. The AI (especially in _agentive_ mode) thinks like we developers do. It writes a function, adds parameters, and tries to fulfill what you asked for. If you told it to add tests, it will do that too, and it will run them after to see if the code does what it's supposed to do. **My surprise is that the AI doesn't generate the code correctly on the first try**, and it needs several iterations to make it work. Sometimes, too many iterations. Since the AI can generate code much faster than a human, it starts developing and executing things one after another. It tries different approaches until it makes it work. **If you're not careful, it can create quite a mess and use up your tokens**. This gets worse if you have auto-accept enabled in Cline, and you let the agent run freely instead of having it ask you occasionally.
+
+Maybe it's just me, but I expected the AI to be smarter than I am and create code that would work practically on the first try. But if the task is moderately complex, that's not going to happen.
+
+### The AI won't tell you how badly you program
+
+One of the problems I see with these LLM models that power these tools is that **they are very polite and too subservient**. You ask them for something, and in their eagerness to help, they end up doing it without questioning much. The same happens when you want to develop code. **If the solution you propose is terrible, the AI won't give you alternatives** unless you explicitly request them. It will simply generate code to meet the objective you asked for.
+
+Moreover, **without custom instructions, the generated code can be chaotic**, either because it doesn't follow your style guide or because it doesn't do things the way you like (or best practices suggest). In this case, it's helpful to create a file with prior instructions for the AI to incorporate into its context and use to generate code. For Copilot, this is done by adding a file called `copilot-instructions`, and for Cline, you can pass custom instructions in the extension itself. For example, I ask them to generate code following Elixir style guides, to always add tests, and to follow typical functional programming practices such as avoiding side effects, using function composition, recursion, and first-order functions. This significantly changes the code these tools generate, and it's very useful.
+
+### Hallucinations
+
+This is a problem that artificial intelligence models still haven't completely solved. **Occasionally, the AI hallucinates and makes things up**. This is already quite dangerous, but if the hallucination occurs at the beginning of the thought chain, the error can grow increasingly larger, rendering your code useless.
+
+As a curious note, one day I asked Cline to implement a scraping service, and **it invented a library. It added the dependency and even tried to install it. But there was no trace of that library on the internet**. And I must not be the only one this has happened to, because there's even [an attack vector](https://www.theregister.com/2025/04/12/ai_code_suggestions_sabotage_supply_chain) that takes advantage of these errors.
+
+On other occasions, I've experienced that despite explaining to the machine that a certain language function won't work, it insists on using it. And sometimes even adding parameters that the function won't accept. This can be very frustrating at times, because it's like talking to a colleague who stubbornly refuses to listen to you.
+
+I think this has to do with how LLMs work. They have a context in which they add your question and all the information generated during the interaction with the model (in our case, programming files). If at some point they introduce an error, this error remains in the context and can influence the code and responses they generate afterward.
+
+**So many times it's better to discard that context and start over.**
+
+### Expert eye
+
+Using AI can be very useful or a nightmare. For example, I remember that while using Cline in my personal project, **the AI spent more than 10 minutes trying to solve an error** that occurred when running the project. First, it tried to execute certain commands, then it tried to generate a self-signed certificate, and it returned again and again to execute the same steps. I admit I wasn't paying much attention to what it was doing, but after a few tokens spent, I stopped the execution. I realized that the problem was that the environment variables weren't working correctly in the VS Code console, and an old version of Erlang/Elixir was being used. It's something that had happened to me on occasion before, so I could solve it quickly, but **the AI didn't know how to do it and didn't even explore that possibility**.
+
+**It's clear that the experience you've accumulated over the years is still useful.**
+
+And that experience is also useful for applying to code design. If you don't watch the machine, it will likely generate unmaintainable code. If you're doing something as a test, it might not matter, but for code that will run in production, **it's much better to guide the AI with your experience**. You can do this by talking to it before starting to implement anything, and explaining and debugging what your application design will be. Even so, I recommend going step by step and using small, incremental steps.
+
+### Step by step
+
+**The best results with Copilot and Cline I've obtained when I guided the AI to work in small, controlled steps**. The first impulse is to give it a huge prompt to solve a gigantic problem. But with that, all models end up complicating their lives and implementing functionality that either doesn't work or is excessively complex.
+
+Knowing what you want to do and how helps a lot. **Just as you would do when programming yourself, it's better to divide your tasks and take small steps**, until you have something that works and is easy to understand and maintain.
+
+Obviously, to apply this, you need a certain domain knowledge of the context you're working in, understanding of your codebase, and experience developing similar products. **I don't think AI is ready yet to make up for a lack of experience**, although they are very useful if you have doubts and want to know the pros and cons of different development strategies.
+
+Needless to say, **it's important to use a version control system, like git**, and save changes and make commits frequently. Especially when working in agent mode, the AI can change many (too many) files. Those of us who do this for a living have internalized this, but many inexperienced people, venturing to develop their product with AI, are discovering with great suffering that a project that was fully functional has gone to hell because of too many changes. And there's no going back because they can't return to a previous state.
+
+### Vibe Coding
+
+**Vibe coding** is the trendy term. It's basically **using AI to generate code-based products without needing to understand what that code does**. You enter instructions in natural language, and the machine develops the solution. Many people with no programming experience are launching into creating their software products with the help of these tools, causing the entry barrier to collapse.
+
+My opinion is that **with the current state of these tools, this is not sustainable for moderately complex products**. As I mentioned earlier, AI starts to be a problem as soon as things get complicated, and you need to guide the design and implementation toward a better path. We've already seen examples of people on the internet who manage to create their SaaS without basic security measures, sharing important credentials, struggling to solve bugs that appear, or losing progress because they don't know what a version control system is. As I've read somewhere, **with AI, you can get up to 70% of the work done, but for the remaining 30%, specific knowledge is still needed**.
+
+I don't know if that's an exact statistic, but my impression is that something like this is happening. The progress that AI tools have made in recent years has been incredible, so it remains to be seen if they can also overcome this barrier and make it unnecessary to be an expert in software development.
+
+For now, I'll continue trying to use these tools, as I believe they **are very useful for my daily work. They increase my productivity and help me develop with more confidence and higher quality**. And we'll see what the future holds.
