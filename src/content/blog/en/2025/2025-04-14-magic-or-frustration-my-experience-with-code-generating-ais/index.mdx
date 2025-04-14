@@ -1,6 +1,6 @@
 ---
 title: 'Magic or frustration, my experience with code-generating AIs'
-description: 'Vibe coding won't work in the long run'
+description: 'Vibe coding wont work in the long run'
 date: '2025-04-14'
 cover: '../../../images/2025/ia-magic-frustration.jpeg'
 ---
@@ -22,11 +22,11 @@ I use Copilot from VS Code. Nothing unusual there. The integration with the edit
 - **Copilot Ask**. You can provide context (code files) to Copilot and ask questions to help you. It's useful for understanding something you're struggling with, or to search for alternative approaches to the solution you want to implement. It can be a good companion for rubber duck debugging.
 - **Copilot Edit**. You also provide context to Copilot, but in this case, you can request modifications in the form of a prompt. "I want to add tests for this function," or "I want to refactor the module to use simpler functions," or "I want to add a new parameter to the function that does such and such." Based on the prompt, Copilot will modify the existing code (or create new code) to meet the requirements you ask for. Along with auto-completion, this is the function I've used the most.
 
-Some of you might miss discussion of the _Agent_ or _agentive_ mode of VS Code and Copilot, which works similarly to other editors like Cursor or Windsurf. This functionality has been added to VS Code very recently, and I haven't been able to try it yet. For that, I've used the Cline extension, which I'll explain next.
+Some of you might miss discussion of the _Agent_ or _agentic_ mode of VS Code and Copilot, which works similarly to other editors like Cursor or Windsurf. This functionality has been added to VS Code very recently, and I haven't been able to try it yet. For that, I've used the Cline extension, which I'll explain next.
 
 ## Cline
 
-[Cline](https://cline.bot/) is an extension for VS Studio that incorporates the _agentive_ mode into the editor. In this case, you pass a prompt with information about what you want to implement, and **the agent does it by itself**. When you see it working, creating files, adding code, installing dependencies, and executing commands in the console, you can't help but think that these agents have something magical about them.
+[Cline](https://cline.bot/) is an extension for VS Studio that incorporates the _agentic_ mode into the editor. In this case, you pass a prompt with information about what you want to implement, and **the agent does it by itself**. When you see it working, creating files, adding code, installing dependencies, and executing commands in the console, you can't help but think that these agents have something magical about them.
 
 It also has an _Ask_ mode where you can ask questions, and the agent itself will search for information in your code and help you.
 
@@ -40,7 +40,7 @@ As I mentioned earlier, using AIs for programming initially feels like magic. Th
 
 ### It programs like a developer would, but using brute force
 
-This is interesting. The AI (especially in _agentive_ mode) thinks like we developers do. It writes a function, adds parameters, and tries to fulfill what you asked for. If you told it to add tests, it will do that too, and it will run them after to see if the code does what it's supposed to do. **My surprise is that the AI doesn't generate the code correctly on the first try**, and it needs several iterations to make it work. Sometimes, too many iterations. Since the AI can generate code much faster than a human, it starts developing and executing things one after another. It tries different approaches until it makes it work. **If you're not careful, it can create quite a mess and use up your tokens**. This gets worse if you have auto-accept enabled in Cline, and you let the agent run freely instead of having it ask you occasionally.
+This is interesting. The AI (especially in _agentic_ mode) thinks like we developers do. It writes a function, adds parameters, and tries to fulfill what you asked for. If you told it to add tests, it will do that too, and it will run them after to see if the code does what it's supposed to do. **My surprise is that the AI doesn't generate the code correctly on the first try**, and it needs several iterations to make it work. Sometimes, too many iterations. Since the AI can generate code much faster than a human, it starts developing and executing things one after another. It tries different approaches until it makes it work. **If you're not careful, it can create quite a mess and use up your tokens**. This gets worse if you have auto-accept enabled in Cline, and you let the agent run freely instead of having it ask you occasionally.
 
 Maybe it's just me, but I expected the AI to be smarter than I am and create code that would work practically on the first try. But if the task is moderately complex, that's not going to happen.
 
