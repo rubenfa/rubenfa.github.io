@@ -1,0 +1,99 @@
+---
+title: 'Magia o frustración, mi experiencia con las IA generadoras de código'
+description: 'El vibe coding no va a funcionar a largo plazo'
+date: '2025-04-14'
+cover: '../../../images/2025/ia-magic-frustration.jpeg'
+---
+
+Tenemos el término inteligencia artificial hasta en la sopa. Inteligencia artificial aquí, inteligencia artificial allí, es imposible escapar de ello. Y como programadores, el impacto es aún mayor. Las herramientas dirigidas por IA parece que han venido para quedarse, y cuanto menos hay que estar atento a ellas.
+
+Yo he estado probando algunas durante estos últimos meses. **Github Copilot forma parte de mi flujo diario en el trabajo**, pero también he estado probando Cline en algún proyecto personal. En general la experiencia es positiva, **aunque con matices**.
+
+Aunque antes de empezar con los matices voy a explicar cada una de esas herramientas y cómo las utilizo. 
+
+> **Importante:**
+> Tanto en mi trabajo, como en mis proyectos personales, suelo utilizar Elixir y Phoenix. Aunque 
+> las IAs trabajan con este stack bastante bien, es posible que algunas de la información de
+> este artículo no sea exacta para otros lenguajes. Así que quizá vuestras experiencias 
+> sean diferentes.
+
+## Github Copilot
+
+Utilizo Copilot desde VS Code. Lo normal, vaya. La integración en el editor es buena, y tiene varias funcionalidades. 
+
+- Es capaz de **generar código según lo estás escribiendo** para mejorar tu productividad. No es perfecto, y generalmente tienes que modificar un poco lo que Copilot propone, pero es bastante útil.
+- Dentro del propio código, puedes seleccionar porciones del mismo (funciones, bucles etc.) para bien modificar el código pasando un prompt, o para que te explique lo que hace. La función de modificar no la uso mucho, pero la de **preguntar qué hace esa sección del código** la he usado bastantes veces.
+- **Copilot Ask**. Le puedes pasar contexto (archivos de código) a Copilot y preguntarle cosas para que te ayude. Es útil para entender algo que no acabas de comprender, o para buscar otras aproximaciones a la solución que quieres implementar. Puede ser un buen compañero para hacer de patito de goma.
+- **Copilot Edit**. También le pasas contexto a Copilot, solo que en este caso le puedes pedir modificaciones en forma de prompt. "Quiero añadir tests para esta función", o "quiero refactorizar el módulo para utilizar funciones más sencillas", o "quiero añadir un nuevo parámetro a la función que haga tal cosa". En base al prompt, Copilot modificará el código o existente (o creará código nuevo) para cumplir con los requisitos que se le piden. Junto con el autocompletado, es la función que más he utilizado.
+
+Algunos podréis echar de menos hablar del modo *Agent* o *agéntico* de VS Code y Copilot. En la manera en la que trabajan otros editores como Cursor o Windsurf. Esta funcionalidad ha sido añadida a VS Code hace muy poco y todavía no he podido probarla. Para eso he utilizado la extensión Cline, que explico a continuación.
+
+
+## Cline
+
+[Cline](https://cline.bot/) es una extensión para VS Studio que incorpora el modo *agéntico*  al editor. En este caso lo que haces es pasarle un prompt con información sobre lo que quieres implementar, y **el agente se pone a hacerlo solo**. Cuando lo ves funcionando, creando archivos, añadiendo código, instalando dependencias y ejecutando comandos en la consola, no puedes dejar de pensar que estos agentes tienen algo de mágico.
+
+También tiene un modo *Ask*, en el que le puedes preguntar cosas, y el propio agente se encargará de buscar la información en tu código y ayudarte.
+
+Cline permite usar [OpenRouter](https://openrouter.ai/), de manera que puedes usar prácticamente cualquier modelo IA del mercado. Generalmente necesitarás añadir dinero a tu cuenta para poder utilizar la mayoría de los modelos, pero algunos son gratuitos. **Los precios varían bastante entre modelos**, así que no es lo mismo usar `Sonnet 3.5`, que `Sonnet 3.7`, que `GPT 4.5` o `Gemini Flash 2.0`.  Hay que tener cuidado para no fundirse el presupuesto.
+
+He utilizado esta extensión, solo para proyectos personales.
+
+
+## Magia o frustración
+
+Como decía antes, utilizar las IAs para programar, se empieza sintiendo como magia. Eso de dar instrucciones en lenguaje natural, y que el editor se ponga a hacer el trabajo parece increíble. El problema es que cuando trabajas un rato con ello, **te das cuenta de que ni todo es tan maravilloso, ni tan mágico. Y entonces empieza la frustración**. Empiezas a pensar que si lo hubieras hecho tú directamente, seguramente habrías tardado menos o el resultado habría sido mejor. Esto no significa que la herramienta sea inútil, pero si quiere decir que **hace falta un ojo experto detrás para controlar que la cosa no se desmadre**, así como una serie de buenas prácticas, para ser productivos. Os pongo algunos ejemplos y recomendaciones.
+
+### Programa como haría un programador, pero usando fuerza bruta
+
+Esto es curioso. La IA (especialmente el modelo *agéntico*) piensa como lo haríamos nosotros los desarrolladores. Escribe una función, añade sus parámetros e intenta que cumpla con lo que le has pedido. Si le has dicho que añada tests, también lo hará, y los ejecutará al terminar para ver que el código hace lo que tiene que hacer. **Mi sorpresa está en que la IA no genera el código bien a la primera**, y necesita varias iteraciones para que funcione. A veces, demasiadas iteraciones. Como la IA es capaz de generar código mucho más rápido que un humano, se pone a desarrollar y ejecutar cosas una detrás de otra. Va probando cosas, hasta que lo hace funcionar. **Si no tienes cuidado te puede montar un buen lío y gastar tus tokens**. Esto se agrava si tienes habilitado al auto aceptar en Cline, y le dejas al agente que vaya a su aire, en lugar de que te pregunte de vez en cuando.
+
+Igual es cosa mía, pero yo esperaba que la IA fuera más lista que yo, y creara código que funcionara prácticamente a la primera. Pero si la tarea es medianamente compleja, eso no va a pasar.
+
+### La IA no te dice lo mal que programas
+
+Uno de los problemas que les veo a estos modelos LLM en los que se basan estas herramientas, es que **son muy educados y demasiado serviles**. Tú les pides algo, y con el afán de ayudar, acaban haciéndolo sin cuestionar demasiado. Lo mismo pasa cuando quieres desarrollar código. **Si la solución que propones es una mierda, la IA no te va a dar alternativas** salvo que se lo solicites explícitamente. Simplemente se va a poner a generar el código para cumplir con el objetivo que le has pedido. 
+
+Es más, **sin instrucciones personalizadas, el código generado puede ser un caos**, bien porque no siga tu guía de estilo, bien porque no hace las cosas como a ti te gustan (ni las buenas prácticas sugieren). En este caso viene bien generar un archivo con instrucciones previas, para que la IA lo incorpore a su contexto y las utilice para generar el código. En el caso de Copilot esto se hace añadiendo un archivo llamado `copilot-instructions` y a Clint le puedes pasar instrucciones personalizadas en la propia extensión. Por ejemplo yo pido que generen código siguiendo las guías de estilo de Elixir, que añadan siempre tests, y que sigan las típicas prácticas de programación funcional, como evitar side-effects, utilizar composición de funciones, recursividad y funciones de primer orden. Esto cambia mucho el código que estas herramientas generan, y es muy útil.
+
+### Alucinaciones
+
+Este es un problema que los modelos de inteligencia artificial, todavía no han acabado de solucionar. **En ocasiones, la IA alucina y se inventa cosas**. Esto ya es bastante peligroso, pero si la alucinación sucede al principio de la cadena de pensamiento, el error se puede ir haciendo cada vez más grande, hasta hacer tu código inservible.
+
+Como nota curiosa, un día le pedía a la Cline que implementara un servicio de scrapping y **se inventó una librería. Me añadió la dependencia e intentó incluso instalarla. Pero no había rastro de esa librería en internet**.
+
+En otras ocasiones, me ha pasado que a pesar de explicarle a la máquina que esa función del lenguaje, no va a funcionar, se ha empeñado en hacerlo. Y a veces incluso añadiendo parámetros que esa función no iba a aceptar. Esto puede ser muy frustrante en ocasiones, porque es como estar hablando con un compañero que se empeña en no hacerte caso. 
+
+Creo que esto tiene que ver por cómo funcionan los LLM. Tienen un contexto, en el que van añadiendo tu pregunta y toda la información que se genera durante la interacción con el modelo (en nuestro caso, archivos de programación). Si en algún momento introducen un error, este error queda en el contexto y puede influir en el código y respuestas que generan después.
+
+**Así que muchas veces es mejor desechar ese contexto, y volver a empezar.**
+
+
+### Ojo experto
+
+Utilizar la IA puede ser muy útil o una pesadilla. Por ejemplo, recuerdo que usando Cline en mi proyecto personal **la IA se tiró más de 10 minutos intentando resolver un error** que sucedía al ejecutar el proyecto. Primero intentaba ejecutar ciertos comandos, luego intento generar un certificado autofirmado, y volvió una y otra vez a ejecutar los mismos pasos. Reconozco que no estaba prestando mucha atención a lo que hacía, pero después de unos cuantos tokens gastados, paré la ejecución. Me di cuenta que el problema era que las variables de entorno no estaban funcionando correctamente en la consola de VS Code, y se estaba utilizando una versión antigua de Erlang/Elixir. Es algo que ya me había pasado en alguna ocasión, así que pude solucionarlo rápido, pero **la IA no supo como hacerlo y ni siquiera exploró esa posibilidad**.
+
+**Está claro que la experiencia que has acumulado a lo largo de los años, todavía es útil.** 
+
+Y esa experiencia sirve también para aplicarla en el diseño del código. Si no vigilas a la máquina, es probable que te genere un código inmantenible. Si estás haciendo algo para probar, igual no importa, pero para código que se va a ejecutar en producción, **es mucho mejor guiar a la IA con tu experiencia**. Esto lo puedes hacer hablando con ella antes de empezar a implementar nada, y conseguir explicar y depurar, cual va a ser el diseño de tu aplicación. Aun así, yo recomiendo ir paso a paso y utilizar pasos pequeños e incrementales.
+
+
+### Paso a paso
+
+**Los mejores resultados de Copilot y Cline, los he obtenido cuando yo guiaba a la IA para trabajar en pasos pequeños y controlados**. El primer impulso es pegarle una chapa enorme en formato prompt para que te solucione un problema gigantesco. Pero con eso, todos los modelos acaban complicándose la vida, y implementan una funcionalidad que o no funciona, o es excesivamente compleja. 
+
+Saber lo que quieres hacer y cómo, ayuda mucho. **Como harías programando tú mismo, es mejor dividir tus tareas, e ir dando pasos pequeños**, hasta tener algo que funcione y sea sencillo de entender y mantener. 
+
+Obviamente para aplicar esto necesitas un cierto dominio del contexto en el que estás trabajando, entender la base de código que tienes y experiencia desarrollando productos similares. **No creo que la IA esté todavía preparada para suplir la falta de experiencia**, aunque son muy útiles si tienes dudas y quieres conocer los pros y los contras de distintas estrategias de desarrollo.
+
+Ni que decir tiene que **es importante utilizar un gestor de código fuente, como git**, e ir guardando los cambios y haciendo commits frecuentemente. Especialmente cuando trabajas en modo agente, la IA puede cambiar muchos (demasiados) archivos. Los que nos dedicamos a esto ya lo tenemos interiorizado, pero mucha gente sin experiencia, atreviéndose a desarrollar su producto con IA, está descubriendo con mucho sufrimiento, que un proyecto que era totalmente funcional se ha ido a la porra por hacer demasiados cambios. Y ya no hay vuelta atrás, porque no pueden volver a un estado anterior.
+
+### Vibe Coding
+
+El **vibe coding** es el término de moda. Es básicamente **utilizar la IA para generar productos basados en código, sin necesidad de entender lo que ese código hace**. Introduces las instrucciones en lenguaje natural, y la máquina desarrolla la solución. Muchas personas sin experiencia programando, se están lanzando a crear sus productos software con la ayuda de estas herramientas, haciendo que la barrera de entrada se desplome.
+
+Mi opinión es que **con el estado actual de estas herramientas, esto no se sostiene para productos que sean medianamente complejos**. Como he mencionado anteriormente, la IA empieza a ser un problema en cuanto las cosas se complican, y tú ayudas a guiar el diseño y la implementación por un mejor camino. Ya hemos visto ejemplos de gente en internet que consiguen crear sus SaaS sin las medidas de seguridad básicas, compartiendo credenciales importantes, sufriendo para solucionar los bugs que aparecen o perdiendo el progreso por no conocer lo que es un gestor de código fuente. Como ya he leído por ahí, **con las IA puedes llegar hasta tener el 70% del trabajo hecho, pero para el 30% restante, aun se necesitan conocimientos específicos**. 
+
+No sé si es una estadística exacta, pero mi impresión es que algo así sucede. El progreso que han hecho las herramientas IA en estos últimos años ha sido increíble, así que está por ver si son capaces de superar también esta barrera, y hacer que no sea necesario ser experto en desarrollo de software. 
+
+De momento, yo seguiré intentando utilizar estas herramientas, ya que creo que **son muy útiles para mi trabajo diario. Aumentan mi productividad y me ayudan a desarrollar con más confianza y con mayor calidad**. Y ya veremos lo que nos depara el futuro.
